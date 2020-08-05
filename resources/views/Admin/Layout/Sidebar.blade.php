@@ -80,8 +80,13 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a href="{{route('checklist')}}" class="nav-link ">
+                                <a href="{{route('CheckList.index')}}" class="nav-link ">
                                     <span class="title">Document Checklist</span>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="{{route('Education.index')}}" class="nav-link ">
+                                    <span class="title">Education</span>
                                 </a>
                             </li>
                         </ul>

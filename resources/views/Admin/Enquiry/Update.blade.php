@@ -30,9 +30,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">First Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">First Name*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="first_name" placeholder="Enter First name"
                                            value="{{$enquiry->first_name}}">
                                 </div>
@@ -41,9 +41,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Last Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Last Name*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="last_name" placeholder="Enter Last name"
                                            value="{{$enquiry->last_name}}">
                                 </div>
@@ -52,9 +52,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Middle Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Middle Name*</p>
                                     <input class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="middle_name" placeholder="Enter Middle name"
                                            value="{{$enquiry->middle_name}}">
                                 </div>
@@ -63,9 +63,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Email*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Email*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="email" name="email" placeholder="Enter Email"
                                            value="{{$enquiry->email}}">
                                 </div>
@@ -74,9 +74,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Phone*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Phone*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="number" name="phone" placeholder="Enter Phone"
                                            value="{{$enquiry->phone}}">
                                 </div>
@@ -85,9 +85,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Address*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Address*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="address" placeholder="Enter Address"
                                            value="{{$enquiry->address}}">
                                 </div>
@@ -96,9 +96,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">category*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="Category_id">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">category*</p>
+                                    <select required class="form-control form  select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="Category_id">
                                         <option value="" selected disabled>--select any one--</option>
                                         @foreach($category as $category)
                                             <option @if($category->Name==$cat) selected
@@ -111,9 +111,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Subject*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="subject">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Subject*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="subject">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->subject=='Nursing') selected @endif value="Nursing">
                                             Nursing
@@ -149,9 +149,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Qualification Level*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="qualification_level">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Qualification Level*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="qualification_level">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->qualification_level=='Diploma') selected
                                                 @endif value="Diploma">Diploma
@@ -169,9 +169,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Experience*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="experience">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Experience*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="experience">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->experience=='1') selected @endif value="1">1</option>
                                         <option @if($enquiry->experience=='2') selected @endif value="2">2</option>
@@ -190,9 +190,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Country Intrested*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="country_interested">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Country Intrested*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="country_interested">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->country_interested=='UAE-Dubai') selected
                                                 @endif value="UAE-Dubai">UAE-Dubai
@@ -233,9 +233,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Service Intrested*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="service_interested">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Service Intrested*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="service_interested">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->service_interested=='Sasto Website') selected
                                                 @endif  value="Sasto Website">Sasto Website
@@ -328,9 +328,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Enquiry From*</p>
-                                    <select class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="enquiry_from">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Enquiry From*</p>
+                                    <select class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="enquiry_from">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->enquiry_from=='Prometric Exam Nepal') selected
                                                 @endif value="Prometric Exam Nepal">Prometric Exam Nepal
@@ -387,9 +387,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Souce*</p>
-                                    <select class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="source">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Souce*</p>
+                                    <select class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="source">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->source=='facebook') selected @endif value="facebook">
                                             facebook
@@ -413,7 +413,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Remarks*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Remarks*</p>
                                     <textarea class="form form-control" style="width:80%;margin-top:-15px;"
                                               rows="5"
                                               type="text" name="remarks"
@@ -424,9 +424,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Responded Through*</p>
-                                    <select class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -10px;" name="responded_through">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Responded Through*</p>
+                                    <select class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="responded_through">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->responded_through=='None') selected @endif value="None">
                                             None
@@ -456,9 +456,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Eligibility*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="eligibility">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Eligibility*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="eligibility">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->eligibility=='Eligible') selected @endif value="Eligible">
                                             Eligible
@@ -470,7 +470,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="submit" style="margin-top: 40px;margin-bottom: 30px;">
+                        <div class="submit" style="margin-top: 20px;margin-bottom: 30px;">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-2">

@@ -168,8 +168,4 @@ class ApplicantController extends Controller
         }
 
     }
-
-    public function checklist(){
-        return view('Admin.Applicant.CheckList.Index');
-    }
 }

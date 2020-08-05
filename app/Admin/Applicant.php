@@ -18,4 +18,12 @@ class Applicant extends Model
     public function Enquiry_Applicant(){
         return $this->belongsTo('App\Admin\Enquiry','enquired_id');
     }
+
+    public function CheckList(){
+        return $this->HasOne('App\Admin\CheckList');
+    }
+
+    public function Education(){
+        return $this->HasOne('App\Admin\Education');
+    }
 }

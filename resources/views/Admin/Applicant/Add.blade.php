@@ -39,7 +39,7 @@
                         <div class="container" style="margin-bottom:-20px;">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Applicant Enquired*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Applicant Enquired*</p>
                                     <input required type="radio" name="enquired" id="enquiredyes" value="Yes">
                                     <label for="male">Yes</label>
                                     <input required type="radio" name="enquired" id="enquiredno" value="No">
@@ -51,9 +51,9 @@
                         <div class="container d-none" id="enquired_id">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Enquired Applicant</p>
-                                    <select  class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="enquired_id">
+                                    <p class="ah1" style="margin-top: 20px;">Enquired Applicant</p>
+                                    <select  class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="enquired_id">
                                         <option value="" selected disabled>--select any one--</option>
                                         @foreach($enquiry as $enquiry)
                                         <option value="{{$enquiry->id}}">{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</option>
@@ -65,9 +65,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">First Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">First Name*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="first_name" placeholder="Enter First name">
                                 </div>
                             </div>
@@ -75,9 +75,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Last Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Last Name*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="surname" placeholder="Enter Last name">
                                 </div>
                             </div>
@@ -85,9 +85,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Middle Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Middle Name*</p>
                                     <input  class="form form-control"
-                                            style="width: 80%;height:45%;margin-top:-15px;"
+                                            style="width: 80%;height:34px;margin-top:-15px;"
                                             type="text" name="middle_name" placeholder="Enter Middle name">
                                 </div>
                             </div>
@@ -95,9 +95,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">mobile Number*</p>
+                                    <p class="ah1" style="margin-top: 20px;">mobile Number*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="mobile_no" placeholder="Enter Phone">
                                 </div>
                             </div>
@@ -105,9 +105,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Email*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Email*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="email" name="email" placeholder="Enter Email">
                                 </div>
                             </div>
@@ -115,9 +115,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Maiden Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Maiden Name*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="maiden_name" placeholder="Enter Maiden Name">
                                 </div>
                             </div>
@@ -125,9 +125,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Gender*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="gender">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Gender*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="gender">
                                         <option value="" selected disabled>--select any one--</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
@@ -138,9 +138,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Date Of Birth*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Date Of Birth*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="date" name="dob" placeholder="Enter Date of birth">
                                 </div>
                             </div>
@@ -148,9 +148,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Identity Type*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Identity Type*</p>
                                     <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="identity_type">
+                                            style="height:50%;width:80%;margin-top: -20px;" name="identity_type">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Citizen">Citizen</option>
                                         <option value="Passport">Passport</option>
@@ -161,9 +161,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Identity Card No*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Identity Card No*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="identity_card_no" placeholder="Enter Identity Card No">
                                 </div>
                             </div>
@@ -171,9 +171,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Passport No*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Passport No*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="passport_no" placeholder="Enter Passport No">
                                 </div>
                             </div>
@@ -181,9 +181,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Nationality*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Nationality*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="birth_country" placeholder="Enter Nationality">
                                 </div>
                             </div>
@@ -191,7 +191,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Passport Docs*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Passport Docs*</p>
                                     <input  class="form form-control"
                                            style="width: 80%;height:30%;margin-top:-15px;"
                                            type="file" name="passport_docs" placeholder="Enter Passport Docs">
@@ -201,9 +201,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Applicant's category*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Applicant's category*</p>
                                     <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="applicant_category">
+                                            style="height:50%;width:80%;margin-top: -20px;" name="applicant_category">
                                         <option value="" selected disabled>--select any one--</option>
                                         @foreach($category as $category)
                                             <option value="{{$category->id}}">{{$category->Name}}</option>
@@ -212,7 +212,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="submit" style="margin-top: 40px;margin-bottom: 30px;">
+                        <div class="submit" style="margin-top: 20px;margin-bottom: 30px;">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-2">

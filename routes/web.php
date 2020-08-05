@@ -25,6 +25,7 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::resource('/Category','Admin\CategoryController');
     Route::resource('/Enquiry','Admin\EnquiryController');
     Route::resource('/Applicant','Admin\ApplicantController');
-    Route::get('/checklist','Admin\ApplicantController@checklist')->name('checklist');
+    Route::resource('/CheckList','Admin\CheckListController');
+    Route::resource('/Education','Admin\EducationController');
     Route::get('/logout','Admin\LoginController@logout')->name('logout');
 });

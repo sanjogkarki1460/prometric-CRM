@@ -39,8 +39,12 @@
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
-    <!-- favicon -->
-    {{--<link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}"/>--}}
+    <!--select2-->
+
+    <link href="{{asset('assets/plugins/select2/css/select2.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('assets/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet"
+          type="text/css"/>
+
     <!--Toastr-->
     <link rel="stylesheet" href="{{asset('assets/css/toastr.min.css')}}">
 

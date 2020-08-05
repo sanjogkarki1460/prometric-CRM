@@ -41,7 +41,7 @@
                         <div class="container" style="margin-bottom:-20px;">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Applicant Enquired*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Applicant Enquired*</p>
                                     <input @if($applicant->enquired=='Yes') checked @endif required type="radio"
                                            name="enquired" id="enquiredyes" value="Yes">
                                     <label for="male">Yes</label>
@@ -55,9 +55,9 @@
                         <div class="container d-none" id="enquired_id">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Enquired Applicant</p>
-                                    <select class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;" name="enquired_id">
+                                    <p class="ah1" style="margin-top: 20px;">Enquired Applicant</p>
+                                    <select class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="enquired_id">
                                         <option value="" selected disabled>--select any one--</option>
                                         @foreach($enquiry as $enquiry)
                                             <option @if(@$enquiry->first_name==$first_name) selected @endif
@@ -70,9 +70,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">First Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">First Name*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" name="first_name" placeholder="Enter First name"
                                            value="{{$applicant->first_name}}">
                                 </div>
@@ -81,9 +81,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Last Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Last Name*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" name="surname" placeholder="Enter Last name"
                                            value="{{$applicant->surname}}">
                                 </div>
@@ -92,9 +92,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Middle Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Middle Name*</p>
                                     <input class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" name="middle_name" placeholder="Enter Middle name"
                                            value="{{$applicant->middle_name}}">
                                 </div>
@@ -103,9 +103,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">mobile Number*</p>
+                                    <p class="ah1" style="margin-top: 20px;">mobile Number*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" name="mobile_no" placeholder="Enter Phone"
                                            value="{{$applicant->mobile_no}}">
                                 </div>
@@ -114,9 +114,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Email*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Email*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="email" value="{{$applicant->email}}" name="email"
                                            placeholder="Enter Email">
                                 </div>
@@ -125,9 +125,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Maiden Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Maiden Name*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" value="{{$applicant->maiden_name}}" name="maiden_name"
                                            placeholder="Enter Maiden Name">
                                 </div>
@@ -136,9 +136,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Gender*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;"
+                                    <p class="ah1" style="margin-top: 20px;">Gender*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;"
                                             value="{{$applicant->gender}}" name="gender">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($applicant->gender=='Male') selected @endif value="Male">Male
@@ -153,9 +153,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Date Of Birth*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Date Of Birth*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="date" value="{{$applicant->dob}}" name="dob"
                                            placeholder="Enter Date of birth">
                                 </div>
@@ -164,9 +164,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Identity Type*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;"
+                                    <p class="ah1" style="margin-top: 20px;">Identity Type*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;"
                                             value="{{$applicant->identity_type}}" name="identity_type">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($applicant->identity_type=='Citizen') selected
@@ -182,9 +182,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Identity Card No*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Identity Card No*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" value="{{$applicant->identity_card_no}}" name="identity_card_no"
                                            placeholder="Enter Identity Card No">
                                 </div>
@@ -193,9 +193,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Passport No*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Passport No*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" value="{{$applicant->passport_no}}" name="passport_no"
                                            placeholder="Enter Passport No">
                                 </div>
@@ -204,9 +204,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Nationality*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Nationality*</p>
                                     <input required class="form form-control"
-                                           style="width: 80%;height:45%;margin-top:-15px;"
+                                           style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" value="{{$applicant->birth_country}}" name="birth_country"
                                            placeholder="Enter Nationality">
                                 </div>
@@ -215,9 +215,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Passport Docs*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Passport Docs*</p>
                                     <input class="form form-control"
-                                           style="width: 80%;height:30%;margin-top:-15px;"
+                                           style="width: 80%;height:30%;margin-top:-20px;"
                                            type="file" value="{{$applicant->passport_docs}}" name="passport_docs"
                                            placeholder="Enter Passport Docs">
                                 </div>
@@ -226,9 +226,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;">Applicant's category*</p>
-                                    <select required class="form-control form"
-                                            style="height:50%;width:80%;margin-top: -15px;"
+                                    <p class="ah1" style="margin-top: 20px;">Applicant's category*</p>
+                                    <select required class="form-control form select2"
+                                            style="height:50%;width:80%;margin-top: -20px;"
                                             value="{{$applicant->applicant_category}}" name="applicant_category">
                                         <option value="" selected disabled>--select any one--</option>
                                         @foreach($category as $category)
@@ -239,7 +239,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="submit" style="margin-top: 40px;margin-bottom: 30px;">
+                        <div class="submit" style="margin-top: 20px;margin-bottom: 30px;">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-2">

@@ -55,7 +55,10 @@
     <script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/summernote/summernote.js"></script>
     <script src="{{asset('assets/js/pages/summernote/summernote-data.js')}}"></script>
 
-
+    <!--select2-->
+    <script src="{{asset('assets/plugins/select2/js/select2.js')}}"></script>
+    <script src="{{asset('assets/js/pages/select2/select2-init.js')}}"></script>
+    <!--select2-->
     <!-- end js include path -->
     </body>
 @endsection
