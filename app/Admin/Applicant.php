@@ -26,4 +26,8 @@ class Applicant extends Model
     public function Education(){
         return $this->HasOne('App\Admin\Education');
     }
+    public function HealthLisence(){
+        return $this->HasOne('App\Admin\HealthLisence');
+    }
 }
+

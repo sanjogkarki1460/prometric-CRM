@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\Education;
+use App\Http\Requests\Educationvalidator;
 use App\Admin\Applicant;
 use File;
 
@@ -42,7 +43,7 @@ class EducationController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Educationvalidator $request)
     {
         $data = $request->all();
 //        dd($data);
@@ -123,7 +124,7 @@ class EducationController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Educationvalidator $request, $id)
     {
         $this->education = $this->education->find($id);
         $data = $request->all();

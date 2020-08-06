@@ -24,7 +24,27 @@ class ApplicantValidator extends FormRequest
     public function rules()
     {
         return [
-            //
+            'first_name'=>'required',
+            'middel_name'=>'',
+            'surname' =>'required',
+            'maiden_name'=>'',
+            'gender'=>'required',
+            'dob'=>'required',
+            'identity_type'=>'required',
+            'identity_card_no'=>'',
+            'passport_no'=>'',
+            'birth_country'=>'required',
+            'country_code'=>'',
+            'mobile_no' =>'',
+            'current_country'=>'required',
+            'nationality' =>'required',
+            'email' =>'required',
+            'passport_docs' =>'',
+            'applicant_category' =>'required',
+            'services_id' =>'',
+            'enquired'=>'required',
+            'enquired_id'=>'',
+            'progress_sts'=>'',
         ];
     }
 }

@@ -164,7 +164,7 @@ class ApplicantController extends Controller
         if ($success) {
             return redirect()->route('Applicant.index')->with('success', 'Applicant Deleted Successfully');
         } else {
-            return redirect()->route('Applicant.index')->with('Error', 'Sorry! Applicant Not Deleted');
+            return redirect()->route('Applicant.index')->with('Error', 'Sorry! ApSorry! there is an error deleting applicant');
         }
 
     }
