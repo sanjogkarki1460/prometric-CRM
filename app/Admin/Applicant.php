@@ -29,5 +29,12 @@ class Applicant extends Model
     public function HealthLisence(){
         return $this->HasOne('App\Admin\HealthLisence');
     }
+
+    public function Employemnt(){
+        return $this->HasOne('App\Admin\Employemnt');
+    }
+    public function ProgressFlow(){
+        return $this->HasOne('App\Admin\ProgressFlow');
+    }
 }
 

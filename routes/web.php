@@ -29,5 +29,9 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::resource('/Education','Admin\EducationController');
     Route::resource('/HealthLisence','Admin\HealthLisenceController');
     Route::resource('/Employment','Admin\EmploymentController');
+    Route::resource('/ProgressFlow','Admin\ProgressFlowController');
+    Route::get('/EnquirySMS','Admin\SMSController@EnquirySMS')->name('EnquirySMS');
+    Route::get('/ApplicantSMS','Admin\SMSController@ApplicantSMS')->name('ApplicantSMS');
+    Route::Post('/SendSMS','Admin\SMSController@SendSMS')->name('SendSMS');
     Route::get('/logout','Admin\LoginController@logout')->name('logout');
 });

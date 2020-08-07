@@ -32,7 +32,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Select Applicant*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Select Applicant*</p>
                                     <select  class="form-control form select2"
                                              style="height:34px;width:80%;margin-top: -20px;" name="applicant_id">
                                         <option value="" selected disabled>select Appliant</option>
@@ -46,7 +46,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">qualification</p>
+                                    <p class="ah1" style="margin-top: 20px; margin-bottom: 2px;">qualification</p>
                                     <select  class="form-control form select2"
                                              style="height:34px;width:80%;margin-top: -20px;" name="qualification">
                                         <option value="" selected disabled>select Qualification</option>
@@ -60,7 +60,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority country</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Authority country</p>
                                     <select  class="form-control form select2"
                                              style="height:34px;width:80%;margin-top: -20px;" name="authority_country">
                                         <option value="" selected disabled>select Authority country</option>
@@ -167,7 +167,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Mode</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode</p>
                                     <select  class="form-control form select2"
                                              style="height:34px;width:80%;margin-top: -20px;" name="mode">
                                         <option value="" selected disabled>select Mode</option>

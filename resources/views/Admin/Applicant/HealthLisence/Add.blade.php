@@ -31,7 +31,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Applicant*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Applicant*</p>
                                     <select class="form-control form select2"
                                             style="height:34px;width:80%;margin-top: -20px;" name="applicant_id">
                                         <option value="" selected disabled>select</option>
@@ -67,7 +67,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Issuing Authority Country*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;margin-bottom: 2px;">Issuing Authority Country*</p>
                                     <select class="form-control form select2"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="issuing_authority_country">
@@ -123,7 +123,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">License Type*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;margin-bottom: 2px;">License Type*</p>
                                     <select class="form-control form select2"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="license_type">
@@ -148,7 +148,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">License Status*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;margin-bottom: 2px;">License Status*</p>
                                     <select class="form-control form select2"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="license_status">

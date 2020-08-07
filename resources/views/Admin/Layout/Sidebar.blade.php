@@ -99,6 +99,11 @@
                                         <span class="title">Employment</span>
                                     </a>
                                 </li>
+                                <li class="nav-item ">
+                                    <a href="{{route('ProgressFlow.index')}}" class="nav-link ">
+                                        <span class="title">Progress Flow Report</span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item start ">
@@ -109,13 +114,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item   ">
-                                    <a href="{{--{{route('EnquirySMS')}}--}}" class="nav-link ">
+                                    <a href="{{route('EnquirySMS')}}" class="nav-link ">
                                         <i class="fa fa-user"></i>
                                         <span class="title">To Enquiry</span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a href="{{--{{route('ApplicantSMS')}}--}}" class="nav-link ">
+                                    <a href="{{route('ApplicantSMS')}}" class="nav-link ">
                                         <i class="fa fa-user"></i>
                                         <span class="title">To Applicant</span>
                                     </a>
