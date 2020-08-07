@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6558f74828bca9ebecac73d90cea4b1a",
+    "content-hash": "3d440913b28fd1b5e497a5683b7495a9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4248,6 +4248,53 @@
                 }
             ],
             "time": "2020-06-24T13:36:18+00:00"
+        },
+        {
+            "name": "thebikramlama/sparrow",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TheBikramLama/sparrow.git",
+                "reference": "f58441e7cf2e717870de840c1cb1b0ba0fb11706"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TheBikramLama/sparrow/zipball/f58441e7cf2e717870de840c1cb1b0ba0fb11706",
+                "reference": "f58441e7cf2e717870de840c1cb1b0ba0fb11706",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3",
+                "php": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Thebikramlama\\Sparrow\\SparrowServiceProvider"
+                    ],
+                    "aliases": {
+                        "Sparrow": "Thebikramlama\\Sparrow\\Sparrow"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Thebikramlama\\Sparrow\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bikram Lama",
+                    "email": "thebikramlama1123@gmail.com"
+                }
+            ],
+            "description": "Laravel Package to send SMS via Sparrow SMS",
+            "time": "2020-02-28T21:37:48+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

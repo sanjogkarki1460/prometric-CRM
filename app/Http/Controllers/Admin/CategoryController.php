@@ -6,19 +6,26 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\Category;
 use App\Http\Requests\CategoryValidator;
+use App\Admin\Applicant;
+use App\Admin\Enquiry;
+use DB;
 
 class CategoryController extends Controller
 {
-    protected $catrgory = null;
+    protected $category = null;
+    protected $applicant= null;
+    protected $enquiry = null;
 
-    public function __construct(Category $category)
+    public function __construct(Category $category,Applicant $applicant,Enquiry $enquiry)
     {
-        $this->catrgory = $category;
+        $this->category = $category;
+        $this->applicant = $applicant;
+        $this->enquiry = $enquiry;
     }
 
     public function index()
     {
-        $category = $this->catrgory->orderBy('id', 'desc')->get();
+        $category = $this->category->orderBy('id', 'desc')->get();
         return view('Admin.Category.Index')->with('category', $category);
     }
 
@@ -42,8 +49,8 @@ class CategoryController extends Controller
     {
         $data = $request->all();
 //        dd($data);
-        $this->catrgory->fill($data);
-        $success = $this->catrgory->save();
+        $this->category->fill($data);
+        $success = $this->category->save();
         if ($success) {
             return redirect()->route('Category.index')->with('success', 'Category Created Successfully');
         }
@@ -82,10 +89,10 @@ class CategoryController extends Controller
      */
     public function update(CategoryValidator $request, $id)
     {
-        $this->catrgory=$this->catrgory->find($id);
+        $this->category=$this->category->find($id);
         $data=$request->all();
-        $this->catrgory->fill($data);
-        $success = $this->catrgory->save();
+        $this->category->fill($data);
+        $success = $this->category->save();
         return redirect()->route('Category.index')->with('success','Category Updated Successfully');
     }
 
@@ -98,6 +105,15 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrfail($id);
+        $enquiry = $this->enquiry->where('Category_id',$id)->get();
+        $applicant= $this->applicant->where('applicant_category',$id)->get();
+//        dd($applicant);
+        foreach ($enquiry as $data) {
+            DB::table('enquiries')->where('Category_id', $id)->delete();
+        };
+        foreach ($applicant as $data) {
+            DB::table('applicants')->where('applicant_category', $id)->delete();
+        };
         $success= $category->delete();
         if ($success) {
             return redirect()->route('Category.index')->with('success', 'Category Deleted Successfully');

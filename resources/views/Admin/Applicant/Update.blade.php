@@ -95,8 +95,8 @@
                                     <p class="ah1" style="margin-top: 20px;">Middle Name*</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-20px;"
-                                           type="text" name="middle_name" placeholder="Enter Middle name"
-                                           value="{{$applicant->middle_name}}">
+                                           type="text" name="middel_name" placeholder="Enter Middle name"
+                                           value="{{$applicant->middel_name}}">
                                 </div>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Nationality*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-20px;"
-                                           type="text" value="{{$applicant->birth_country}}" name="birth_country"
+                                           type="text" value="{{$applicant->nationality}}" name="nationality"
                                            placeholder="Enter Nationality">
                                 </div>
                             </div>
@@ -217,7 +217,7 @@
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Passport Docs*</p>
                                     <input class="form form-control"
-                                           style="width: 80%;height:30%;margin-top:-20px;"
+                                           style="width: 80%;height:40%;margin-top:-20px;"
                                            type="file" value="{{$applicant->passport_docs}}" name="passport_docs"
                                            placeholder="Enter Passport Docs">
                                 </div>

@@ -32,9 +32,22 @@
                                         <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Name</th>
-                                            <th>Emaik</th>
-                                            <th>Phone</th>
+                                            <th>ENQUIRED</th>
+                                            <th>ENQUIRED NAME</th>
+                                            <th>FIRST NAME</th>
+                                            <th>MIDDLE NAME</th>
+                                            <th>LAST NAME</th>
+                                            <th>GENDER</th>
+                                            <th>DATE OF BIRTH</th>
+                                            <th>MAIDEN NANE</th>
+                                            <th>IDENTITY TYPE</th>
+                                            <th>IDENTITY CARD NO</th>
+                                            <th>PASSPORT NO</th>
+                                            <th>MOBILE NO</th>
+                                            <th>NATIONALITY</th>
+                                            <th>EMAIL</th>
+                                            <th>PASSPORT DOCS</th>
+                                            <th>APPLICANT'S CATEGORY</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
@@ -42,9 +55,28 @@
                                         @foreach($applicant as $applicant)
                                             <tr>
                                                 <td>{{$applicant->id}}</td>
-                                                <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</td>
-                                                <td>{{$applicant->email}}</td>
+                                                <td>{{@$applicant->enquired}}</td>
+                                                <td>{{@$applicant->Enquiry_Applicant->first_name}} {{@$applicant->Enquiry_Applicant->middle_name}} {{@$applicant->Enquiry_Applicant->Last_name}}</td>
+                                                <td>{{$applicant->first_name}}</td>
+                                                <td>{{$applicant->middel_name}}</td>
+                                                <td>{{$applicant->surname}}</td>
+                                                <td>{{$applicant->gender}}</td>
+                                                <td>{{$applicant->dob}}</td>
+                                                <td>{{$applicant->maiden_name}}</td>
+                                                <td>{{$applicant->identity_type}}</td>
+                                                <td>{{$applicant->identity_card_no}}</td>
+                                                <td>{{$applicant->passport_no}}</td>
                                                 <td>{{$applicant->mobile_no}}</td>
+                                                <td>{{$applicant->nationality}}</td>
+                                                <td>{{$applicant->email}}</td>
+                                                @if($applicant->passport_docs)
+                                                    <td><a target="_blank"
+                                                           href="{{asset('/upload/file/'.$applicant->passport_docs)}}">Passport
+                                                            Document</a></td>
+                                                @else
+                                                    <td>No Document File</td>
+                                                @endif
+                                                <td>{{$applicant->Category_Applicant->Name}}</td>
                                                 <td class="text-left">
                                                     <form action="{{ route('Applicant.edit', $applicant->id)}}"
                                                           method="GET"
@@ -54,18 +86,11 @@
                                                         <button class="btn btn-primary btn-sm" type="submit">Edit
                                                         </button>
                                                     </form>
-                                                    <a href="#"
-                                                       method="GET"
-                                                       style="display: inline-block">
-
-                                                        <button class="btn btn-success btn-sm" type="submit">View
-                                                        </button>
-                                                    </a>
-                                                    <form  action="{{ route('Applicant.destroy', $applicant->id)}}"
-                                                           method="post" style="display: inline-block">
+                                                    <form action="{{ route('Applicant.destroy', $applicant->id)}}"
+                                                          method="post" style="display: inline-block">
                                                         {{csrf_field()}}
                                                         {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit" >Delete
+                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
                                                         </button>
                                                     </form>
                                                 </td>

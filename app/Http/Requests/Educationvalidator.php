@@ -25,7 +25,7 @@ class Educationvalidator extends FormRequest
     {
         return [
             'applicant_id'=>'required',
-            'authority_country_code'=>'integer',
+            'authority_country_code'=>'string',
             'authority_email'=>'email',
             'study_from'=>'date',
             'study_to'=>'date',

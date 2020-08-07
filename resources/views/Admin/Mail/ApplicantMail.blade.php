@@ -16,7 +16,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Send SMS</div>
+                            <div class="page-title">Send Mail</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -25,20 +25,20 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
 
-                                <li class="active">Send SMS</li>
+                                <li class="active">Send Mail </li>
                             </ol>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <form action="{{route('SendSMS')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('SendMail')}}" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="user_type" value="Applicant">
                         <label for="" class="ah1">
                             Enter Message
                         </label>
                         <div>
-                            <textarea name="message" id="" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea name="message" id="summernote" cols="30" rows="5" class="form-control"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Send</button>
                         <div class="mt-5">
@@ -58,10 +58,10 @@
                                             <tbody>
                                             <tr>
                                                 <td><input type="checkbox" id="phonenumbers"
-                                                           value="{{ $applicant->mobile_no }}" name="phone_number[]">
+                                                           value="{{ $applicant->email }}" name="email[]">
                                                 </td>
                                                 <td>{{$applicant->id}}</td>
-                                                <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</td>
+                                                <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</td>
                                                 <td>{{$applicant->email}}</td>
                                                 <td>{{$applicant->mobile_no}}</td>
 

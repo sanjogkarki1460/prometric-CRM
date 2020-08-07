@@ -20,21 +20,22 @@ class Applicant extends Model
     }
 
     public function CheckList(){
-        return $this->HasOne('App\Admin\CheckList');
+        return $this->HasMany('App\Admin\CheckList');
     }
 
     public function Education(){
-        return $this->HasOne('App\Admin\Education');
+        return $this->HasMany('App\Admin\Education');
     }
+
     public function HealthLisence(){
-        return $this->HasOne('App\Admin\HealthLisence');
+        return $this->HasMany('App\Admin\HealthLisence');
     }
 
     public function Employemnt(){
-        return $this->HasOne('App\Admin\Employemnt');
+        return $this->HasMany('App\Admin\Employemnt');
     }
     public function ProgressFlow(){
-        return $this->HasOne('App\Admin\ProgressFlow');
+        return $this->HasMany('App\Admin\ProgressFlow');
     }
 }
 

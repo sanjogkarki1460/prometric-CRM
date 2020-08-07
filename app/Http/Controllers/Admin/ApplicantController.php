@@ -9,18 +9,36 @@ use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use App\Http\Requests\ApplicantValidator;
 use File;
+use App\Admin\CheckList;
+use App\Admin\Education;
+use App\Admin\HealthLisence;
+use App\Admin\Employment;
+use App\Admin\ProgressFlow;
+use DB;
 
 class ApplicantController extends Controller
 {
     protected $category = null;
     protected $applicant = null;
     protected $enquiry = null;
+    protected $checklist= null;
+    protected $education= null;
+    protected $healthlisence= null;
+    protected $employment= null;
+    protected $progressflow= null;
 
-    public function __construct(Applicant $applicant, Category $category, Enquiry $enquiry)
+    public function __construct(Applicant $applicant, Category $category, Enquiry $enquiry,CheckList $checkList,
+                                Education $education, HealthLisence $healthlisence,Employment $employment,
+                                ProgressFlow $progressflow)
     {
         $this->category = $category;
         $this->applicant = $applicant;
         $this->enquiry = $enquiry;
+        $this->checkList = $checkList;
+        $this->education = $education;
+        $this->healthlisence = $healthlisence;
+        $this->employment = $employment;
+        $this->progressflow = $progressflow;
     }
 
     public function index()
@@ -160,6 +178,26 @@ class ApplicantController extends Controller
         if (File::exists($image_path)) {
             $delete = File::delete($image_path);
         }
+        $checkList = $this->checkList->where('applicant_id',$id)->get();
+        $education= $this->education->where('applicant_id',$id)->get();
+        $healthlisence= $this->healthlisence->where('applicant_id',$id)->get();
+        $employment= $this->employment->where('applicant_id',$id)->get();
+        $progressflow= $this->progressflow->where('applicant_id',$id)->get();
+        foreach ($checkList as $data) {
+            DB::table('check_lists')->where('applicant_id', $id)->delete();
+        };
+        foreach ($education as $data) {
+            DB::table('education')->where('applicant_id', $id)->delete();
+        };
+        foreach ($healthlisence as $data) {
+            DB::table('health_lisences')->where('applicant_id', $id)->delete();
+        };
+        foreach ($employment as $data) {
+            DB::table('employments')->where('applicant_id', $id)->delete();
+        };
+        foreach ($progressflow as $data) {
+            DB::table('progress_flows')->where('applicant_id', $id)->delete();
+        };
         $success = $applicant->delete();
         if ($success) {
             return redirect()->route('Applicant.index')->with('success', 'Applicant Deleted Successfully');

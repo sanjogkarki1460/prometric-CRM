@@ -24,7 +24,7 @@ class CreateApplicantsTable extends Migration
             $table->string('identity_type');
             $table->string('identity_card_no')->nullable();
             $table->string('passport_no')->nullable();
-            $table->string('birth_country');
+            $table->string('birth_country')->nullable();
             $table->string('country_code')->nullable();
             $table->string('mobile_no' );
             $table->string('current_country')->nullable();

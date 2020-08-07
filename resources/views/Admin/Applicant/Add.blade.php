@@ -88,7 +88,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Middle Name*</p>
                                     <input  class="form form-control"
                                             style="width: 80%;height:34px;margin-top:-15px;"
-                                            type="text" name="middle_name" placeholder="Enter Middle name">
+                                            type="text" name="middel_name" placeholder="Enter Middle name">
                                 </div>
                             </div>
                         </div>
@@ -184,7 +184,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Nationality*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="birth_country" placeholder="Enter Nationality">
+                                           type="text" name="nationality" placeholder="Enter Nationality">
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Passport Docs*</p>
                                     <input  class="form form-control"
-                                           style="width: 80%;height:30%;margin-top:-15px;"
+                                           style="width: 80%;height:37%;margin-top:-15px;"
                                            type="file" name="passport_docs" placeholder="Enter Passport Docs">
                                 </div>
                             </div>

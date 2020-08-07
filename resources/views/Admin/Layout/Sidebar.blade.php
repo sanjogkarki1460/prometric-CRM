@@ -135,13 +135,13 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item   ">
-                                    <a href="{{--{{route('EnquiryMail')}}--}}" class="nav-link ">
+                                    <a href="{{route('EnquiryMail')}}" class="nav-link ">
                                         <i class="fa fa-user"></i>
                                         <span class="title">To Enquiry</span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a href="{{--{{route('ApplicantMail')}}--}}" class="nav-link ">
+                                    <a href="{{route('ApplicantMail')}}" class="nav-link ">
                                         <i class="fa fa-user"></i>
                                         <span class="title">To Applicant</span>
                                     </a>

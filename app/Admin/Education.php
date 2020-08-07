@@ -13,7 +13,7 @@ class Education extends Model
         'applicant_id'];
 
     public function Applicant_Education(){
-        return $this->belongsTO('App\Admin\Applicant','applicant_id');
+        return $this->belongsTo('App\Admin\Applicant','applicant_id');
     }
 }
 

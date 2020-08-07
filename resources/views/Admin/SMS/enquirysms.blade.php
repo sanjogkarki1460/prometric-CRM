@@ -16,7 +16,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add Applicant CheckList</div>
+                            <div class="page-title">Send SMS</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -24,12 +24,8 @@
                                                                        href="{{route('admin.home')}}">Dashboard</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
-                                <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('Applicant.index')}}">Applicant Education
-                                        View</a>&nbsp;<i
-                                            class="fa fa-angle-right"></i>
-                                </li>
-                                <li class="active">Applicant Education Create</li>
+
+                                <li class="active">Send SMS</li>
                             </ol>
                         </div>
                     </div>
@@ -62,10 +58,10 @@
                                             <tbody>
                                             <tr>
                                                 <td><input type="checkbox" id="phonenumbers"
-                                                           value="{{ $enquiry->Phone }}" name="phone[]"></td>
+                                                           value="{{ $enquiry->phone }}" name="phone_number[]">
                                                 </td>
                                                 <td>{{$enquiry->id}}</td>
-                                                <td>{{$enquiry->first_name}} {{$enquiry->last_name}}</td>
+                                                <td>{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</td>
                                                 <td>{{$enquiry->email}}</td>
                                                 <td>{{$enquiry->phone}}</td>
 

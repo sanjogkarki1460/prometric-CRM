@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Mail\PrometricMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,8 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::get('/EnquirySMS','Admin\SMSController@EnquirySMS')->name('EnquirySMS');
     Route::get('/ApplicantSMS','Admin\SMSController@ApplicantSMS')->name('ApplicantSMS');
     Route::Post('/SendSMS','Admin\SMSController@SendSMS')->name('SendSMS');
+    Route::get('/EnquiryMail','Admin\MailController@Enquiry')->name('EnquiryMail');
+    Route::get('/ApplicantMail','Admin\MailController@Applicant')->name('ApplicantMail');
+    Route::post('/SendMail','Admin\MailController@SendMail')->name('SendMail');
     Route::get('/logout','Admin\LoginController@logout')->name('logout');
 });
