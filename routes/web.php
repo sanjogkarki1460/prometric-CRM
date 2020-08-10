@@ -27,6 +27,7 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::resource('/Enquiry','Admin\EnquiryController');
     Route::get('/EnquiryDetail/{id}','Admin\EnquiryController@Detail')->name('EnquiryDetail');
     Route::resource('/Applicant','Admin\ApplicantController');
+    Route::get('/ApplicantDetail/{id}','Admin\ApplicantController@Detail')->name('ApplicantDetail');
     Route::resource('/CheckList','Admin\CheckListController');
     Route::resource('/Education','Admin\EducationController');
     Route::resource('/HealthLisence','Admin\HealthLisenceController');

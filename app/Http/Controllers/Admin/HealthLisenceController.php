@@ -46,12 +46,18 @@ class HealthLisenceController extends Controller
     public function store(HealthLisencevalidator $request)
     {
         $data=$request->all();
+        $this->healthlisence->fill($data);
+        $success=$this->healthlisence->save();
         if ($request->license_copy) {
+            $first_Name=$this->healthlisence->Applicant_Health->first_name;
+            $middel_Name=$this->healthlisence->Applicant_Health->middel_name;
+            $last_Name=$this->healthlisence->Applicant_Health->surname;
+            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = public_path() . '/upload/Applicant/Health Lisence';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "HealthLisence-" . date('Ymdhid') . rand(0, 99) . "." . $request->license_copy->getClientOriginalExtension();
+            $file_name = $name."-HealthLisence-" . date('Ymdhid') . rand(0, 99) . "." . $request->license_copy->getClientOriginalExtension();
 //        dd($file_name);
             $success = $request->license_copy->move($path, $file_name);
 
@@ -93,7 +99,7 @@ class HealthLisenceController extends Controller
     {
             $healthlisence=$this->healthlisence->find($id);
         $applicant=$this->applicant->get();
-        $app=$healthlisence->applicant_id;
+        $app=$healthlisence->Applicant_Health->first_name;
         return view('Admin.Applicant.HealthLisence.Update')->with('healthlisence',$healthlisence)->with('applicant',$applicant)
             ->with('app',$app);
     }
@@ -110,6 +116,11 @@ class HealthLisenceController extends Controller
         $healthlisence=$this->healthlisence->find($id);
         $data=$request->all();
         if ($request->license_copy) {
+            $first_Name=$healthlisence->Applicant_Health->first_name;
+            $middel_Name=$healthlisence->Applicant_Health->middel_name;
+            $last_Name=$healthlisence->Applicant_Health->surname;
+            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
+//            dd($name);
             $image_path = public_path() . '/upload/Applicant/Health Lisence/' . $healthlisence->license_copy;
 //        dd($image_path);
             if (File::exists($image_path)) {
@@ -120,7 +131,7 @@ class HealthLisenceController extends Controller
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "HealthLisence-" . date('Ymdhid') . rand(0, 99) . "." . $request->license_copy->getClientOriginalExtension();
+            $file_name = $name."-HealthLisence-" . date('Ymdhid') . rand(0, 99) . "." . $request->license_copy->getClientOriginalExtension();
 //        dd($file_name);
             $success = $request->license_copy->move($path, $file_name);
 

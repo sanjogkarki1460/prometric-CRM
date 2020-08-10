@@ -41,35 +41,48 @@
                             <textarea name="message" id="" cols="30" rows="5" class="form-control"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Send</button>
-                        <div class="card-body ">
-                            <div class="table-scrollable">
-                                <table id="example1" class="display" style="width:100%;">
-                                    <thead>
-                                    <tr>
-                                    <tr>
-                                        <th><input type="checkbox" id="checkbox" name="checkbox"></th>
-                                        <th >Id</th>
-                                        <th >Name</th>
-                                        <th >Email</th>
-                                        <th >Contact</th>
-                                    </tr>
-                                    </tr>
-                                    </thead>
-                                    @foreach($applicant as $applicant)
-                                        <tbody>
-                                        <tr>
-                                            <td><input type="checkbox" id="phonenumbers"
-                                                       value="{{ $applicant->mobile_no }}" name="phone_number[]">
-                                            </td>
-                                            <td>{{$applicant->id}}</td>
-                                            <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</td>
-                                            <td>{{$applicant->email}}</td>
-                                            <td>{{$applicant->mobile_no}}</td>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card ">
+                                    <div class="card-head">
+                                        <div class="tools">
+                                            <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                            <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                            <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body ">
+                                        <div class="table-scrollable">
+                                            <table id="example1" class="display" style="width:100%;">
+                                                <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" id="checkbox" name="checkbox"></th>
+                                                    <th>Id</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Contact</th>
 
-                                        </tr>
-                                        </tbody>
-                                    @endforeach
-                                </table>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($applicant as $applicant)
+                                                    <tr>
+                                                        <td><input type="checkbox" id="phonenumbers"
+                                                                   value="{{ $applicant->mobile_no }}"
+                                                                   name="phone_number[]">
+                                                        </td>
+                                                        <td>{{$applicant->id}}</td>
+                                                        <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</td>
+                                                        <td>{{$applicant->email}}</td>
+                                                        <td>{{$applicant->mobile_no}}</td>
+
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         {{--<div class="mt-5">--}}

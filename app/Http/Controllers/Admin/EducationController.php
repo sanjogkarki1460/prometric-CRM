@@ -34,6 +34,7 @@ class EducationController extends Controller
     public function create()
     {
         $applicant = $this->applicant->get();
+//        dd($applicant);
         return view('Admin.Applicant.Education.Add')->with('applicant', $applicant);
     }
 
@@ -46,14 +47,20 @@ class EducationController extends Controller
     public function store(Educationvalidator $request)
     {
         $data = $request->all();
-//        dd($data);
-        /*Qualification Certificate*/
+        $this->education->fill($data);
+        $success=$this->education->save();
+
         if ($request->qualification_certificate) {
+            $first_Name=$this->education->Applicant_Education->first_name;
+            $middel_Name=$this->education->Applicant_Education->middel_name;
+            $last_Name=$this->education->Applicant_Education->surname;
+            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = public_path() . '/upload/Applicant/Education';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "qualification_certificate-" . date('Ymdhid') . rand(0, 99) . "." . $request->qualification_certificate->getClientOriginalExtension();
+            $file_name = $name.'-Qualification Certificate-'. date('Ymdhid') . rand(0, 99) . "." . $request->qualification_certificate->getClientOriginalExtension();
+//            dd($file_name);
             $success = $request->qualification_certificate->move($path, $file_name);
 
             if ($success) {
@@ -61,16 +68,19 @@ class EducationController extends Controller
             } else {
                 $data['qualification_certificate'] = null;
             }
-
         }
         /*Marksheet*/
         if ($request->marksheet) {
+            $first_Name=$this->education->Applicant_Education->first_name;
+            $middel_Name=$this->education->Applicant_Education->middel_name;
+            $last_Name=$this->education->Applicant_Education->surname;
+            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = public_path() . '/upload/Applicant/Education';
 //            dd($path);
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "marksheet-" . date('Ymdhid') . rand(0, 99) . "." . $request->marksheet->getClientOriginalExtension();
+            $file_name = $name."-marksheet-" . date('Ymdhid') . rand(0, 99) . "." . $request->marksheet->getClientOriginalExtension();
 //        dd($file_name);
             $success = $request->marksheet->move($path, $file_name);
 
@@ -112,7 +122,8 @@ class EducationController extends Controller
     {
         $education=$this->education->find($id);
         $applicant = $this->applicant->get();
-        $app=$education->applicant_id;
+        $app=$education->Applicant_Education->first_name;
+//        dd($app);
         return view('Admin.Applicant.Education.Update')->with('applicant', $applicant)->with('education',$education)
             ->with('app',$app);
     }
@@ -131,11 +142,19 @@ class EducationController extends Controller
 //        dd($data);
         /*Qualification Certificate*/
         if ($request->qualification_certificate) {
+            $first_name=$this->education->Applicant_Education->first_name;
+            $middel_name=$this->education->Applicant_Education->middel_name;
+            $surname=$this->education->Applicant_Education->surname;
+            $name=$name=$first_name.' '.$middel_name.' '.$surname;
+            $qualification_certificate = public_path() . '/upload/Applicant/Education/'.$this->education->qualification_certificate;
+            if (File::exists($qualification_certificate)) {
+                $delete = File::delete($qualification_certificate);
+            }
             $path = public_path() . '/upload/Applicant/Education';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "qualification_certificate-" . date('Ymdhid') . rand(0, 99) . "." . $request->qualification_certificate->getClientOriginalExtension();
+            $file_name = $name."-qualification_certificate-" . date('Ymdhid') . rand(0, 99) . "." . $request->qualification_certificate->getClientOriginalExtension();
             $success = $request->qualification_certificate->move($path, $file_name);
 
             if ($success) {
@@ -147,13 +166,21 @@ class EducationController extends Controller
         }
         /*Marksheet*/
         if ($request->marksheet) {
+            $first_name=$this->education->Applicant_Education->first_name;
+            $middel_name=$this->education->Applicant_Education->middel_name;
+            $surname=$this->education->Applicant_Education->surname;
+            $name=$name=$first_name.' '.$middel_name.' '.$surname;
+            $marksheet = public_path() . '/upload/Applicant/Education/'.$this->education->marksheet;
+            if (File::exists($marksheet)) {
+                $delete = File::delete($marksheet);
+            }
             $path = public_path() . '/upload/Applicant/Education';
 //            dd($path);
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "marksheet-" . date('Ymdhid') . rand(0, 99) . "." . $request->marksheet->getClientOriginalExtension();
-//        dd($file_name);
+            $file_name = $name."-marksheet-" . date('Ymdhid') . rand(0, 99) . "." . $request->marksheet->getClientOriginalExtension();
+//
             $success = $request->marksheet->move($path, $file_name);
 
             if ($success) {

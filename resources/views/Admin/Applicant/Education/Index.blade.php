@@ -61,7 +61,7 @@
                                         <tbody>
                                         @foreach($education as $education)
                                             <tr>
-                                                <td>{{$education->Applicant_Education->first_name}} {{$education->Applicant_Education->middle_name}} {{$education->Applicant_Education->surname}}</td>
+                                                <td>{{$education->Applicant_Education->first_name}} {{$education->Applicant_Education->middel_name}} {{$education->Applicant_Education->surname}}</td>
                                                 <td>{{$education->authority_name}}</td>
                                                 <td>{{$education->authority_address}}</td>
                                                 <td>{{$education->authority_city}}</td>
@@ -83,9 +83,21 @@
                                                 <td>{{$education->conferred_date}}</td>
                                                 <td>{{$education->degree_issue_date}}</td>
                                                 <td>{{$education->expected_degree_issue_date}}</td>
-                                                <td><a target="_blank" href="{{asset('/upload/Applicant/Education/'.$education->qualification_certificate)}}">Qualification Certificate</a></td>
-                                                <td><a target="_blank" href="{{asset('/upload/Applicant/Education/'.$education->marksheet)}}">MarkSheet</a></td>
+                                                @if($education->qualification_certificate)
+                                                <td><a target="_blank"
+                                                       href="{{asset('/upload/Applicant/Education/'.$education->qualification_certificate)}}">Qualification
+                                                        Certificate</a></td>
 
+                                                @else
+                                                    <td>No Qualification Certificate Found</td>
+                                                @endif
+                                                @if($education->marksheet)
+                                                    <td><a target="_blank"
+                                                           href="{{asset('/upload/Applicant/Education/'.$education->marksheet)}}">MarkSheet</a>
+                                                    </td>
+                                                @else
+                                                    <td>No Marksheet Found</td>
+                                                @endif
                                                 <td class="text-left">
                                                     <form action="{{ route('Education.edit', $education->id)}}"
                                                           method="GET"
@@ -95,11 +107,11 @@
                                                         <button class="btn btn-primary btn-sm" type="submit">Edit
                                                         </button>
                                                     </form>
-                                                    <form  action="{{ route('Education.destroy', $education->id)}}"
-                                                           method="post" style="display: inline-block">
+                                                    <form action="{{ route('Education.destroy', $education->id)}}"
+                                                          method="post" style="display: inline-block">
                                                         {{csrf_field()}}
                                                         {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit" >Delete
+                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
                                                         </button>
                                                     </form>
                                                 </td>

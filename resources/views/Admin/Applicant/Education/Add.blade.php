@@ -7,7 +7,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add Applicant CheckList</div>
+                            <div class="page-title">Add Applicant Education Detail</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -16,7 +16,7 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('Applicant.index')}}">Applicant Education
+                                                 href="{{route('Education.index')}}">Applicant Education
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>

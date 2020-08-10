@@ -36,6 +36,7 @@ class MailController extends Controller
 
     public function SendMail(Request $request)
     {
+//        dd($request->all());
         if (empty($request->email)) {
             session::flash('Error', 'please Select receiver');
             return redirect()->back();

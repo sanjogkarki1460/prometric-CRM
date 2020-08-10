@@ -32,17 +32,7 @@
                                         <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>ENQUIRED</th>
-                                            <th>ENQUIRED NAME</th>
-                                            <th>FIRST NAME</th>
-                                            <th>MIDDLE NAME</th>
-                                            <th>LAST NAME</th>
-                                            <th>GENDER</th>
-                                            <th>DATE OF BIRTH</th>
-                                            <th>MAIDEN NANE</th>
-                                            <th>IDENTITY TYPE</th>
-                                            <th>IDENTITY CARD NO</th>
-                                            <th>PASSPORT NO</th>
+                                            <th>Name</th>
                                             <th>MOBILE NO</th>
                                             <th>NATIONALITY</th>
                                             <th>EMAIL</th>
@@ -55,23 +45,13 @@
                                         @foreach($applicant as $applicant)
                                             <tr>
                                                 <td>{{$applicant->id}}</td>
-                                                <td>{{@$applicant->enquired}}</td>
-                                                <td>{{@$applicant->Enquiry_Applicant->first_name}} {{@$applicant->Enquiry_Applicant->middle_name}} {{@$applicant->Enquiry_Applicant->Last_name}}</td>
-                                                <td>{{$applicant->first_name}}</td>
-                                                <td>{{$applicant->middel_name}}</td>
-                                                <td>{{$applicant->surname}}</td>
-                                                <td>{{$applicant->gender}}</td>
-                                                <td>{{$applicant->dob}}</td>
-                                                <td>{{$applicant->maiden_name}}</td>
-                                                <td>{{$applicant->identity_type}}</td>
-                                                <td>{{$applicant->identity_card_no}}</td>
-                                                <td>{{$applicant->passport_no}}</td>
+                                                <td><a href="{{route('ApplicantDetail',$applicant->id)}}">{{$applicant->first_name}} {{$applicant->middel_name}} {{$applicant->surname}}</a></td>
                                                 <td>{{$applicant->mobile_no}}</td>
                                                 <td>{{$applicant->nationality}}</td>
                                                 <td>{{$applicant->email}}</td>
                                                 @if($applicant->passport_docs)
                                                     <td><a target="_blank"
-                                                           href="{{asset('/upload/file/'.$applicant->passport_docs)}}">Passport
+                                                           href="{{asset('/upload/Applicant/'.$applicant->passport_docs)}}">Passport
                                                             Document</a></td>
                                                 @else
                                                     <td>No Document File</td>

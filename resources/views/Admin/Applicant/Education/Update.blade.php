@@ -7,7 +7,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add Applicant CheckList</div>
+                            <div class="page-title">Update Applicant Education Detail</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -16,11 +16,11 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('CheckList.index')}}">Applicant CheckList
+                                                 href="{{route('Education.index')}}">Applicant Education
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
-                                <li class="active">Applicant CheckList Create</li>
+                                <li class="active">Applicant Education Create</li>
                             </ol>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                                              style="height:34px;width:80%;margin-top: -20px;" name="applicant_id">
                                         <option value="" selected disabled>select Appliant</option>
                                         @foreach($applicant as $applicant)
-                                            <option @if($education->applicant_id==$app) selected @endif value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</option>
+                                        <option @if($applicant->first_name==$app) selected @endif value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</option>
                                         @endforeach
                                     </select>
                                 </div>

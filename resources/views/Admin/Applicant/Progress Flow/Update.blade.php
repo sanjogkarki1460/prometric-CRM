@@ -37,7 +37,7 @@
                                             style="height:34px;width:80%;margin-top: -20px;"  name="applicant_id">
                                         <option value="" selected disabled>select Appliant</option>
                                         @foreach($applicant as $applicant)
-                                            <option @if($progressflow->applicant_id==$app) selected @endif value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</option>
+                                            <option @if($applicant->first_name==$app) selected @endif value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</option>
                                         @endforeach
                                     </select>
                                 </div>

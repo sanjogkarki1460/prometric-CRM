@@ -46,12 +46,19 @@ class EmploymentController extends Controller
     public function store(EmploymentValidator $request)
     {
         $data = $request->all();
+//        dd($data);
+        $this->employment->fill($data);
+        $success = $this->employment->save();
         if ($request->experience_letter) {
+            $first_Name=$this->employment->Applicant_Employment->first_name;
+            $middel_Name=$this->employment->Applicant_Employment->middel_name;
+            $last_Name=$this->employment->Applicant_Employment->surname;
+            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = public_path() . '/upload/Applicant/Employment';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "experience_letter-" . date('Ymdhid') . rand(0, 99) . "." . $request->experience_letter->getClientOriginalExtension();
+            $file_name = $name."-experience_letter-" . date('Ymdhid') . rand(0, 99) . "." . $request->experience_letter->getClientOriginalExtension();
             $success = $request->experience_letter->move($path, $file_name);
 
             if ($success) {
@@ -59,11 +66,9 @@ class EmploymentController extends Controller
             } else {
                 $data['experience_letter'] = null;
             }
-
+            $this->employment->fill($data);
+            $success = $this->employment->save();
         }
-//        dd($data);
-        $this->employment->fill($data);
-        $success = $this->employment->save();
         if ($success) {
             return redirect()->route('Employment.index')->with('success', 'Applicant Employment detail Added Successfully');
         } else {
@@ -92,7 +97,7 @@ class EmploymentController extends Controller
     {
         $employment = $this->employment->find($id);
         $applicant = $this->applicant->get();
-        $app = $employment->applicant_id;
+        $app = $employment->Applicant_Employment->first_name;
         return view('Admin.Applicant.Employment.Update')->with('applicant', $applicant)->with('employment', $employment)
             ->with('app', $app);
 
@@ -110,17 +115,19 @@ class EmploymentController extends Controller
         $employment = $this->employment->find($id);
         $data = $request->all();
         if ($request->experience_letter) {
+            $first_Name=$employment->Applicant_Employment->first_name;
+            $middel_Name=$employment->Applicant_Employment->middel_name;
+            $last_Name=$employment->Applicant_Employment->surname;
+            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $image_path = public_path() . '/upload/Applicant/Employment/' . $employment->experience_letter;
-//        dd($image_path);
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
-//            dd($delete);
             }
             $path = public_path() . '/upload/Applicant/Employment';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "experience_letter-" . date('Ymdhid') . rand(0, 99) . "." . $request->experience_letter->getClientOriginalExtension();
+            $file_name = $name."-experience_letter-" . date('Ymdhid') . rand(0, 99) . "." . $request->experience_letter->getClientOriginalExtension();
 //        dd($file_name);
             $success = $request->experience_letter->move($path, $file_name);
 

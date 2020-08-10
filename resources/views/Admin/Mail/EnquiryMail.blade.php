@@ -41,34 +41,47 @@
                             <textarea name="message" id="summernote" cols="30" rows="5" class="form-control"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Send</button>
-                        <div class="mt-5">
-                            <div class="row">
-                                <div class="col-12">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th><input type="checkbox" id="checkbox" name="checkbox"></th>
-                                            <th scope="col">Id</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Contact</th>
-                                        </tr>
-                                        </thead>
-                                        @foreach($enquiry as $enquiry)
-                                            <tbody>
-                                            <tr>
-                                                <td><input type="checkbox" id="phonenumbers"
-                                                           value="{{ $enquiry->email }}" name="email[]">
-                                                </td>
-                                                <td>{{$enquiry->id}}</td>
-                                                <td>{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</td>
-                                                <td>{{$enquiry->email}}</td>
-                                                <td>{{$enquiry->phone}}</td>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card ">
+                                    <div class="card-head">
+                                        <div class="tools">
+                                            <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                            <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                            <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body ">
+                                        <div class="table-scrollable">
+                                            <table id="example1" class="display" style="width:100%;">
+                                                <thead>
+                                                <tr>
+                                                    <th><input type="checkbox" id="checkbox" name="checkbox"></th>
+                                                    <th>Id</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>Contact</th>
 
-                                            </tr>
-                                            </tbody>
-                                        @endforeach
-                                    </table>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($enquiry as $enquiry)
+                                                    <tr>
+                                                        <td><input type="checkbox" id="email"
+                                                                   value="{{ $enquiry->email }}"
+                                                                   name="email[]">
+                                                        </td>
+                                                        <td>{{$enquiry->id}}</td>
+                                                        <td>{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</td>
+                                                        <td>{{$enquiry->email}}</td>
+                                                        <td>{{$enquiry->phone}}</td>
+
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

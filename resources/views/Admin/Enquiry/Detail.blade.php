@@ -62,47 +62,60 @@
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Experience</h5>
-                                <p>Null</p>
+                                <p>{{$enquiry->experience}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Country Interested</h5>
-                                <p>Null</p>
+                                <p>{{$enquiry->country_interested}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Service Interested</h5>
-                                <p>Null</p>
+                                <p>{{$enquiry->service_interested}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Enquiry From</h5>
-                                <p>Null</p>
+                                <p>{{$enquiry->enquiry_from}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Source</h5>
-                                <p>Null</p>
+                                <p>{{$enquiry->source}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Remarks</h5>
-                                <p>Null</p>
+                                <p>{{$enquiry->remarks}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Responded Through</h5>
-                                <p>Null</p>
+                                <p>{{$enquiry->responded_through}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Eligibility</h5>
-                                <p>Null</p>
+                                <p>{{$enquiry->eligibility}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Category</h5>
-                                <p>Null</p>
+                                <p>{{@$enquiry->Category_Enquiry->Name}}</p>
                             </div>
                         </div>
                         <div class="col-md-12 row">
                             <div class="col-md-9"></div>
                             <div class="col-md-3">
-                                <button  class="btn btn-success">Update</button>
-                                <button class="btn btn-danger">Delete</button>
-                                <button class="btn btn-primary">Back</button>
+                                <form action="{{ route('Enquiry.edit',$enquiry->id)}}"
+                                      method="GET"
+                                      style="display: inline-block">
+                                    {{csrf_field()}}
+                                    {{method_field('PUT')}}
+                                    <button class="btn btn-success" type="submit">Edit
+                                    </button>
+                                </form>
+                                <form  action="{{ route('Enquiry.destroy',$enquiry->id)}}"
+                                       method="post" style="display: inline-block">
+                                    {{csrf_field()}}
+                                    {{method_field('DELETE')}}
+                                    <button class="btn btn-danger" type="submit" >Delete
+                                    </button>
+                                </form>
+                                <a href="{{route('Enquiry.index')}}" class="btn btn-primary">Back</a>
                             </div>
                         </div>
                 </div>

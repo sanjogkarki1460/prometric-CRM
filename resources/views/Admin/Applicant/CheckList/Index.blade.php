@@ -55,7 +55,7 @@
                                         <tbody>
                                         @foreach($checklist as $checklist)
                                             <tr>
-                                                <td>{{$checklist->Applicant_CheckList->first_name}} {{$checklist->Applicant_CheckList->middle_name}} {{$checklist->Applicant_CheckList->surname}}</td>
+                                                <td>{{$checklist->Applicant_CheckList->first_name}} {{$checklist->Applicant_CheckList->middel_name}} {{$checklist->Applicant_CheckList->surname}}</td>
                                                 @if($checklist->password_citizenship_certificate=='Yes')
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
@@ -133,7 +133,7 @@
                                                             <input type="checkbox" disabled=""></div>
                                                     </td>
                                                 @endif
-                                                @if($checklist->council_registration_certificate_renew=='Yes')
+                                                    @if($checklist->council_registration_certificate_renew=='Yes')
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox" checked="" disabled=""></div>

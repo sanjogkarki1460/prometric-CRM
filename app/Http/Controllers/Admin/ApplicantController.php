@@ -23,14 +23,14 @@ class ApplicantController extends Controller
     protected $category = null;
     protected $applicant = null;
     protected $enquiry = null;
-    protected $checklist= null;
-    protected $education= null;
-    protected $healthlisence= null;
-    protected $employment= null;
-    protected $progressflow= null;
+    protected $checklist = null;
+    protected $education = null;
+    protected $healthlisence = null;
+    protected $employment = null;
+    protected $progressflow = null;
 
-    public function __construct(Applicant $applicant, Category $category, Enquiry $enquiry,CheckList $checkList,
-                                Education $education, HealthLisence $healthlisence,Employment $employment,
+    public function __construct(Applicant $applicant, Category $category, Enquiry $enquiry, CheckList $checkList,
+                                Education $education, HealthLisence $healthlisence, Employment $employment,
                                 ProgressFlow $progressflow)
     {
         $this->category = $category;
@@ -67,16 +67,19 @@ class ApplicantController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ApplicantValidator $request,Admin $thread)
+    public function store(ApplicantValidator $request, Admin $thread)
     {
         $data = $request->all();
+        $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
+//        dd($name);
 //        dd($data);
         if ($request->passport_docs) {
-            $path = public_path() . '/upload/file';
+            $path = public_path() . '/upload/Applicant';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "Document-" . date('Ymdhid') . rand(0, 99) . "." . $request->passport_docs->getClientOriginalExtension();
+            $file_name = $name . '-passport_docs-' . date('Ymdhid') . rand(0, 99) . "." . $request->passport_docs->getClientOriginalExtension();
+//            dd($file_name);
 //        dd($file_name);
             $success = $request->passport_docs->move($path, $file_name);
 
@@ -90,7 +93,7 @@ class ApplicantController extends Controller
         $success = $this->applicant->save();
         if ($success) {
             $admin = Admin::all();
-            $thread=$this->applicant;
+            $thread = $this->applicant;
 //        dd($admin);
             foreach ($admin as $admin)
                 $admin->notify(new \App\Notifications\ApplicantNotification($thread));
@@ -122,21 +125,22 @@ class ApplicantController extends Controller
         $enquiry = $this->enquiry->get();
         $applicant = $this->applicant->find($id);
 //        dd($applicant);
-        if($applicant->applicant_category){
+//        dd($applicant);
+        if ($applicant->applicant_category) {
             $cat = $applicant->Category_Applicant->Name;
+//            dd($cat);
         }
         @$first_name = $applicant->Enquiry_Applicant->first_name;
+//        dd($first_name);
         @$middle_name = $applicant->Enquiry_Applicant->middle_name;
         @$last_name = $applicant->Enquiry_Applicant->last_name;
 
         if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
-        }
-        elseif($applicant->applicant_category) {
+        } elseif ($applicant->applicant_category) {
             return view('Admin.Applicant.Update')->with('applicant', $applicant)->with('category', $category)->with('cat', $cat)
                 ->with('enquiry', $enquiry)->with('first_name', $first_name)->with('last_name', $last_name)->with('middle_name', $middle_name);
-        }
-        else{
+        } else {
             return view('Admin.Applicant.Update')->with('applicant', $applicant)->with('category', $category)
                 ->with('enquiry', $enquiry)->with('first_name', $first_name)->with('last_name', $last_name)->with('middle_name', $middle_name);
         }
@@ -154,15 +158,18 @@ class ApplicantController extends Controller
     {
 
         $this->applicant = $this->applicant->find($id);
+        $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
         $data = $request->all();
-//        dd($data);
         if ($request->passport_docs) {
-            $path = public_path() . '/upload/file';
+            $image_path = public_path() . '/upload/Applicant/'.$this->applicant->passport_docs;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
+            $path = public_path() . '/upload/Applicant/';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = "Document-" . date('Ymdhid') . rand(0, 99) . "." . $request->passport_docs->getClientOriginalExtension();
-//        dd($file_name);
+            $file_name = $name . '-passport_docs-' . date('Ymdhid') . rand(0, 99) . "." . $request->passport_docs->getClientOriginalExtension();
             $success = $request->passport_docs->move($path, $file_name);
 
             if ($success) {
@@ -193,15 +200,15 @@ class ApplicantController extends Controller
         if (!$applicant) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
         }
-        $image_path = public_path() . '/upload/file/' . $applicant->passport_docs;
+        $image_path = public_path() . '/upload/Applicant/' . $applicant->passport_docs;
         if (File::exists($image_path)) {
             $delete = File::delete($image_path);
         }
-        $checkList = $this->checkList->where('applicant_id',$id)->get();
-        $education= $this->education->where('applicant_id',$id)->get();
-        $healthlisence= $this->healthlisence->where('applicant_id',$id)->get();
-        $employment= $this->employment->where('applicant_id',$id)->get();
-        $progressflow= $this->progressflow->where('applicant_id',$id)->get();
+        $checkList = $this->checkList->where('applicant_id', $id)->get();
+        $education = $this->education->where('applicant_id', $id)->get();
+        $healthlisence = $this->healthlisence->where('applicant_id', $id)->get();
+        $employment = $this->employment->where('applicant_id', $id)->get();
+        $progressflow = $this->progressflow->where('applicant_id', $id)->get();
         foreach ($checkList as $data) {
             DB::table('check_lists')->where('applicant_id', $id)->delete();
         };
@@ -224,5 +231,19 @@ class ApplicantController extends Controller
             return redirect()->route('Applicant.index')->with('Error', 'Sorry! ApSorry! there is an error deleting applicant');
         }
 
+    }
+
+    public function Detail($id)
+    {
+        $applicant = $this->applicant->find($id);
+        $checklist = $this->checkList->where('applicant_id', $id)->get();
+        $education = $this->education->where('applicant_id', $id)->get();
+        $healthlisence = $this->healthlisence->where('applicant_id', $id)->get();
+        $employment = $this->employment->where('applicant_id', $id)->get();
+        $progressflow = $this->progressflow->where('applicant_id', $id)->get();
+//        dd($education);
+        return view('Admin.Applicant.Detail')->with('applicant', $applicant)->with('checklist', $checklist)
+            ->with('education', $education)->with('healthlisence', $healthlisence)->with('employment', $employment)
+            ->with('progressflow', $progressflow);
     }
 }
