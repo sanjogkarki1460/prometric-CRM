@@ -32,22 +32,9 @@
                                         <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>FIRST NAME</th>
-                                            <th>MIDDLE NAME</th>
-                                            <th>LAST NAME</th>
+                                            <th>NAME</th>
                                             <th>EmaiL</th>
                                             <th>Phone</th>
-                                            <th>ADDRESS</th>
-                                            <th>SUBJECT</th>
-                                            <th>QUALIFICATION TABLE</th>
-                                            <th>EXPERIENCE</th>
-                                            <th>COUNTRY INTRESTED</th>
-                                            <th>SERVICE INTRESTED</th>
-                                            <th>ENQUIRY FORM</th>
-                                            <th>SOURCE</th>
-                                            <th>REMARKS</th>
-                                            <th>RESPONDED THROUGH</th>
-                                            <th>eligibility</th>
                                             <th>CATEGORY</th>
                                             <th>Action</th>
                                         </tr>
@@ -56,23 +43,10 @@
                                         @foreach($enquiry as $enquiry)
                                             <tr>
                                                 <td>{{$enquiry->id}}</td>
-                                                <td>{{$enquiry->first_name}}</td>
-                                                <td>{{$enquiry->last_name}}</td>
-                                                <td>{{$enquiry->middle_name}}</td>
+                                                <td><a href="{{route('EnquiryDetail',$enquiry->id)}}">{{$enquiry->first_name}} {{$enquiry->last_name}} {{$enquiry->middle_name}}</a></td>
                                                 <td>{{$enquiry->email}}</td>
                                                 <td>{{$enquiry->phone}}</td>
-                                                <td>{{$enquiry->address}}</td>
-                                                <td>{{$enquiry->subject}}</td>
-                                                <td>{{$enquiry->qualification_level}}</td>
-                                                <td>{{$enquiry->experience}}</td>
-                                                <td>{{$enquiry->country_interested}}</td>
-                                                <td>{{$enquiry->service_interested}}</td>
-                                                <td>{{$enquiry->enquiry_from}}</td>
-                                                <td>{{$enquiry->source}}</td>
-                                                <td>{{$enquiry->remarks}}</td>
-                                                <td>{{$enquiry->responded_through}}</td>
-                                                <td>{{$enquiry->eligibility}}</td>
-                                                <td>{{$enquiry->Category_Enquiry->Name}}</td>
+                                                <td>{{@$enquiry->Category_Enquiry->Name}}</td>
                                                 <td class="text-left">
                                                     <form action="{{ route('Enquiry.edit',$enquiry->id)}}"
                                                           method="GET"

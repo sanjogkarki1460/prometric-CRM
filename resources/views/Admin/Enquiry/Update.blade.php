@@ -100,10 +100,12 @@
                                     <select required class="form-control form  select2"
                                             style="height:50%;width:80%;margin-top: -20px;" name="Category_id">
                                         <option value="" selected disabled>--select any one--</option>
-                                        @foreach($category as $category)
-                                            <option @if($category->Name==$cat) selected
-                                                    @endif  value="{{$category->id}}">{{$category->Name}}</option>
-                                        @endforeach
+                                        @if($enquiry->Category_id)
+                                            @foreach($category as $category)
+                                                <option @if($category->Name==$cat) selected
+                                                        @endif  value="{{$category->id}}">{{$category->Name}}</option>
+                                            @endforeach
+                                            @endif
                                     </select>
                                 </div>
                             </div>

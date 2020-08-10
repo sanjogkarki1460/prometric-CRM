@@ -105,15 +105,6 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::findOrfail($id);
-        $enquiry = $this->enquiry->where('Category_id',$id)->get();
-        $applicant= $this->applicant->where('applicant_category',$id)->get();
-//        dd($applicant);
-        foreach ($enquiry as $data) {
-            DB::table('enquiries')->where('Category_id', $id)->delete();
-        };
-        foreach ($applicant as $data) {
-            DB::table('applicants')->where('applicant_category', $id)->delete();
-        };
         $success= $category->delete();
         if ($success) {
             return redirect()->route('Category.index')->with('success', 'Category Deleted Successfully');

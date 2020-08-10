@@ -17,6 +17,11 @@ class AdminTableSeeder extends Seeder
                 'email'=>'admin@admin.com',
                 'password'=>Hash::make('admin123'),
             ),
+            array(
+                'name'=>'admin1',
+                'email'=>'admin1@admin.com',
+                'password'=>Hash::make('admin123'),
+            ),
         );
         DB::table('admins')->insert($admin_array);
     }

@@ -15,6 +15,8 @@ use App\Admin\HealthLisence;
 use App\Admin\Employment;
 use App\Admin\ProgressFlow;
 use DB;
+use App\Admin\Admin;
+use Thread;
 
 class ApplicantController extends Controller
 {
@@ -65,7 +67,7 @@ class ApplicantController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ApplicantValidator $request)
+    public function store(ApplicantValidator $request,Admin $thread)
     {
         $data = $request->all();
 //        dd($data);
@@ -87,6 +89,11 @@ class ApplicantController extends Controller
         $this->applicant->fill($data);
         $success = $this->applicant->save();
         if ($success) {
+            $admin = Admin::all();
+            $thread=$this->applicant;
+//        dd($admin);
+            foreach ($admin as $admin)
+                $admin->notify(new \App\Notifications\ApplicantNotification($thread));
             return redirect()->route('Applicant.index')->with('success', 'Applicant Created Succesfully');
         } else
             return redirect()->route('Applicant.index')->with('Error', 'Sorry! Applicant Creation Failed');
@@ -114,15 +121,23 @@ class ApplicantController extends Controller
         $category = $this->category->get();
         $enquiry = $this->enquiry->get();
         $applicant = $this->applicant->find($id);
-        $cat = $applicant->Category_Applicant->Name;
+//        dd($applicant);
+        if($applicant->applicant_category){
+            $cat = $applicant->Category_Applicant->Name;
+        }
         @$first_name = $applicant->Enquiry_Applicant->first_name;
         @$middle_name = $applicant->Enquiry_Applicant->middle_name;
         @$last_name = $applicant->Enquiry_Applicant->last_name;
 
         if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
-        } else {
+        }
+        elseif($applicant->applicant_category) {
             return view('Admin.Applicant.Update')->with('applicant', $applicant)->with('category', $category)->with('cat', $cat)
+                ->with('enquiry', $enquiry)->with('first_name', $first_name)->with('last_name', $last_name)->with('middle_name', $middle_name);
+        }
+        else{
+            return view('Admin.Applicant.Update')->with('applicant', $applicant)->with('category', $category)
                 ->with('enquiry', $enquiry)->with('first_name', $first_name)->with('last_name', $last_name)->with('middle_name', $middle_name);
         }
 
@@ -158,6 +173,10 @@ class ApplicantController extends Controller
         }
         $this->applicant->fill($data);
         $success = $this->applicant->save();
+        $admin = Admin::all();
+//        dd($admin);
+        foreach ($admin as $admin)
+            $admin->notify(new \App\Notifications\ApplicantUpdateNotification());
         return redirect()->route('Applicant.index')->with('success', 'Applicant Updated Successfully');
     }
 

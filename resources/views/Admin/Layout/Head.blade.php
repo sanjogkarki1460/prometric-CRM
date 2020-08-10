@@ -7,8 +7,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta name="description" content="Responsive Admin Template"/>
-    <meta name="author" content="SmartUniversity"/>
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>Immigration | Admin Dashboard</title>
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css"/>
@@ -21,6 +20,7 @@
     <link href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{asset('/assets/css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/assets/css/view.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/css/app.css')}}" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     {{--<!-- Material Design Lite CSS -->--}}
@@ -51,6 +51,8 @@
 <!-- data tables -->
     <link href="{{asset('assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
           type="text/css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <style>
 
 
@@ -64,6 +66,17 @@
         }
 
     </style>
+    <script>
+        window.laravel={!! json_encode([
+            'csrfToken'=>csrf_token(),
+        ])
+         !!};
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
+<body  class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
 @endsection

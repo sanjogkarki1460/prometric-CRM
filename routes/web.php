@@ -25,6 +25,7 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::get('/' ,'Admin\HomeController@index')->name('admin.home');
     Route::resource('/Category','Admin\CategoryController');
     Route::resource('/Enquiry','Admin\EnquiryController');
+    Route::get('/EnquiryDetail/{id}','Admin\EnquiryController@Detail')->name('EnquiryDetail');
     Route::resource('/Applicant','Admin\ApplicantController');
     Route::resource('/CheckList','Admin\CheckListController');
     Route::resource('/Education','Admin\EducationController');
@@ -37,5 +38,13 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::get('/EnquiryMail','Admin\MailController@Enquiry')->name('EnquiryMail');
     Route::get('/ApplicantMail','Admin\MailController@Applicant')->name('ApplicantMail');
     Route::post('/SendMail','Admin\MailController@SendMail')->name('SendMail');
+    Route::get('/Enquirymarkasread',function (){
+        auth()->user()->unreadNotifications->markAsRead();
+        return redirect()->route('Enquiry.index');
+    })->name('Enquirymarkasread');
+    Route::get('/Applicantmarkasread',function (){
+        auth()->user()->unreadNotifications->markAsRead();
+        return redirect()->route('Applicant.index');
+    })->name('Applicantmarkasread');
     Route::get('/logout','Admin\LoginController@logout')->name('logout');
 });

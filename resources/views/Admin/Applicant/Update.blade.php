@@ -231,10 +231,12 @@
                                             style="height:50%;width:80%;margin-top: -20px;"
                                             value="{{$applicant->applicant_category}}" name="applicant_category">
                                         <option value="" selected disabled>--select any one--</option>
+                                        @if($applicant->applicant_category)
                                         @foreach($category as $category)
                                             <option @if($category->Name==$cat) selected
                                                     @endif value="{{$category->id}}">{{$category->Name}}</option>
                                         @endforeach
+                                            @endif
                                     </select>
                                 </div>
                             </div>

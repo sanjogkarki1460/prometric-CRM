@@ -76,7 +76,7 @@
                                                 @else
                                                     <td>No Document File</td>
                                                 @endif
-                                                <td>{{$applicant->Category_Applicant->Name}}</td>
+                                                <td>{{@$applicant->Category_Applicant->Name}}</td>
                                                 <td class="text-left">
                                                     <form action="{{ route('Applicant.edit', $applicant->id)}}"
                                                           method="GET"
