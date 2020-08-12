@@ -43,7 +43,6 @@
                                             <th>SERVICE PAID DATE</th>
                                             <th>SERVICE MODE OF PAYMENT</th>
                                             <th>SERVICE CHARGE RECEIVED BY</th>
-                                            <th>GOOD STANDING CERTIFICATE ISSUE DATE</th>
                                             <th>DHAMCQ FEE</th>
                                             <th>DHAMCQ MODE OF PAYMENT</th>
                                             <th>DHAMCQ SUBJECT</th>
@@ -84,7 +83,7 @@
                                         <tbody>
                                         @foreach($progressflow as $progressflow)
                                             <tr>
-                                                <td>{{$progressflow->Applicant_ProgressFlow->first_name}} {{$progressflow->Applicant_ProgressFlow->middle_name}} {{$progressflow->Applicant_ProgressFlow->surname}}</td>
+                                                <td><a href="{{route('ApplicantDetail',$progressflow->applicant_id)}}">{{$progressflow->Applicant_ProgressFlow->first_name}} {{$progressflow->Applicant_ProgressFlow->middel_name}} {{$progressflow->Applicant_ProgressFlow->surname}}</a></td>
                                                 <td>{{$progressflow->profession}}</td>
                                                 <td>{{$progressflow->email}}</td>
                                                 <td>{{$progressflow->contact_number}}</td>

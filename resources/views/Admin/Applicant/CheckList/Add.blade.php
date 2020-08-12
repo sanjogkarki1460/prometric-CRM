@@ -31,11 +31,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 40px;">Select Applicant*</p>
-                                    <select required class="form-control form"
+                                    <select required class="form-control form select2" id="applicant"
                                             style="height:50%;width:80%;margin-top: -15px;" name="applicant_id">
-                                        <option  value="" selected disabled>--select any one--</option>
+                                        <option  value="" selected disabled></option>
                                         @foreach($applicant as $applicant)
-                                            <option value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</option>
+                                            <option value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middel_name}} {{$applicant->surname}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -44,50 +44,74 @@
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label class="control-label" for="name">password_citizenship_certificate</label>
-                                    <input type="checkbox" name="password_citizenship_certificate" id="a1"
+                                    <label class="control-label" for="name">MRP Size Photo</label>
+                                    <input type="checkbox" name="mrp_size_photo" id="a12" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Passport</label>
+                                    <input type="checkbox" name="passport" id="a1"
                                            class="toggleswitch" value="Yes">
-
                                     <br>
-                                    <label class="control-label" for="name">slc_certificate</label>
+                                    <label class="control-label" for="name">Citizen</label>
+                                    <input type="checkbox" name="citizen" id="a1"
+                                           class="toggleswitch" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">SLC Marksheet</label>
+                                    <input type="checkbox" name="slc_marksheet" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">SLC Certificate</label>
                                     <input type="checkbox" name="slc_certificate" class="toggleswitch" id="a2" value="Yes">
-
                                     <br>
-                                    <label class="control-label" for="name">plus_two_isc_pcl_certificate</label>
-                                    <input type="checkbox" name="plus_two_isc_pcl_certificate" id="a3" value="Yes">
+                                    <label class="control-label" for="name">SLC Character Certificate</label>
+                                    <input type="checkbox" name="slc_character_certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-
-                                    <label class="control-label" for="name">diploma_degree_certificate</label>
-                                    <input type="checkbox" name="diploma_degree_certificate" id="a4" value="Yes">
+                                    <label class="control-label" for="name">+2 Transcript</label>
+                                    <input type="checkbox" name="plus2transcript" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label"
-                                           for="name">mark_sheet_of_each_year_final_transcript</label>
-                                    <input type="checkbox" name="mark_sheet_of_each_year_final_transcript" id="a5"
-                                           value="Yes">
+                                    <label class="control-label" for="name">+2 Certificate</label>
+                                    <input type="checkbox" name="plus2certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">equivalent_certificate</label>
+                                    <label class="control-label" for="name">+2 Character Certificate</label>
+                                    <input type="checkbox" name="plus2character_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">PCL/Diploma Transcript</label>
+                                    <input type="checkbox" name="diploma_transcript" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">PCL/Diploma Certificate</label>
+                                    <input type="checkbox" name="diploma_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">PCL/Diploma Character Certificate</label>
+                                    <input type="checkbox" name="diploma_character_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Equivalent Certificate</label>
                                     <input type="checkbox" name="equivalent_certificate" id="a6" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">council_registration_certificate</label>
-                                    <input type="checkbox" name="council_registration_certificate" id="a7" value="Yes">
+                                    <label class="control-label" for="name">Council Registration Certificate Front</label>
+                                    <input type="checkbox" name="council_registration_certificate_front" id="a7" value="Yes">
                                     <br>
-                                    <label class="control-label"
-                                           for="name">council_registration_certificate_renew</label>
-                                    <input type="checkbox" name="council_registration_certificate_renew" id="a8"
-                                           value="Yes">
+                                    <label class="control-label" for="name">Council Registration Certificate Back</label>
+                                    <input type="checkbox" name="council_registration_certificate_back" id="a7" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">good_standing_letter_from_council</label>
-                                    <input type="checkbox" name="good_standing_letter_from_council" id="a9" value="Yes">
+                                    <label class="control-label" for="name">Council Good Standing Letter</label>
+                                    <input type="checkbox" name="council_good_standing_letter" id="a9" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">work_experience_letter_till_date</label>
-                                    <input type="checkbox" name="work_experience_letter_till_date" id="a10" value="Yes">
+                                    <label class="control-label" for="name">Work Experience Letter 1</label>
+                                    <input type="checkbox" name="work_experience_letter1" id="a10" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">basic_life_support_for_nurses</label>
-                                    <input type="checkbox" name="basic_life_support_for_nurses" id="a11" value="Yes">
+                                    <label class="control-label" for="name">Work Experience Letter 2</label>
+                                    <input type="checkbox" name="work_experience_letter2" id="a10" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">mrp_size_photo_in_white_background</label>
-                                    <input type="checkbox" name="mrp_size_photo_in_white_background" id="a12" value="Yes">
-
+                                    <label class="control-label" for="name">Work Experience Letter 3</label>
+                                    <input type="checkbox" name="work_experience_letter3" id="a10" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Basic Life Support For Certificate</label>
+                                    <input type="checkbox" name="basic_life_support_certificate" id="a11" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Signed Letter of Authorization</label>
+                                    <input type="checkbox" name="signed_letter_authorization" id="a11" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Signed Service Agreement</label>
+                                    <input type="checkbox" name="signed_service_agreement" id="a11" value="Yes">
+                                    <br>
                                 </div>
                             </div>
                         </div>
@@ -103,5 +127,12 @@
                     </form>
                 </div>
             </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#applicant').select2({
+                        placeholder: "select a applicant"
+                    });
 
+                });
+            </script>
 @endsection

@@ -23,7 +23,7 @@ class EmploymentController extends Controller
     public function index()
     {
         $employment = $this->employment->get();
-        return view('Admin.Applicant.Employment.Index')->with('employment', $employment);
+        return view('Admin.Applicant.Employment.Employment1.Index')->with('employment', $employment);
     }
 
     /**
@@ -34,7 +34,7 @@ class EmploymentController extends Controller
     public function create()
     {
         $applicant = $this->applicant->get();
-        return view('Admin.Applicant.Employment.Add')->with('applicant', $applicant);
+        return view('Admin.Applicant.Employment.Employment1.Add')->with('applicant', $applicant);
     }
 
     /**
@@ -98,7 +98,7 @@ class EmploymentController extends Controller
         $employment = $this->employment->find($id);
         $applicant = $this->applicant->get();
         $app = $employment->Applicant_Employment->first_name;
-        return view('Admin.Applicant.Employment.Update')->with('applicant', $applicant)->with('employment', $employment)
+        return view('Admin.Applicant.Employment.Employment1.Update')->with('applicant', $applicant)->with('employment', $employment)
             ->with('app', $app);
 
     }

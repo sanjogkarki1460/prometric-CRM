@@ -97,7 +97,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">category*</p>
-                                    <select required class="form-control form  select2"
+                                    <select required class="form-control form  select2" id="category"
                                             style="height:50%;width:80%;margin-top: -20px;" name="Category_id">
                                         <option value="" selected disabled>--select any one--</option>
                                         @if($enquiry->Category_id)
@@ -114,7 +114,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Subject*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="subject"
                                             style="height:50%;width:80%;margin-top: -20px;" name="subject">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->subject=='Nursing') selected @endif value="Nursing">
@@ -152,7 +152,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Qualification Level*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="qualification_level"
                                             style="height:50%;width:80%;margin-top: -20px;" name="qualification_level">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->qualification_level=='Diploma') selected
@@ -172,7 +172,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Experience*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="experience"
                                             style="height:50%;width:80%;margin-top: -20px;" name="experience">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->experience=='1') selected @endif value="1">1</option>
@@ -193,7 +193,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Country Intrested*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="country_interested"
                                             style="height:50%;width:80%;margin-top: -20px;" name="country_interested">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->country_interested=='UAE-Dubai') selected
@@ -236,7 +236,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Service Intrested*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="service_interested"
                                             style="height:50%;width:80%;margin-top: -20px;" name="service_interested">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->service_interested=='Sasto Website') selected
@@ -331,7 +331,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Enquiry From*</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="enquiry_from"
                                             style="height:50%;width:80%;margin-top: -20px;" name="enquiry_from">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->enquiry_from=='Prometric Exam Nepal') selected
@@ -390,7 +390,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Souce*</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="source"
                                             style="height:50%;width:80%;margin-top: -20px;" name="source">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->source=='facebook') selected @endif value="facebook">
@@ -427,9 +427,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Responded Through*</p>
-                                    <select class="form-control form select2"
-                                            style="height:50%;width:80%;margin-top: -20px;" name="responded_through">
-                                        <option value="" selected disabled>--select any one--</option>
+                                    <select required class="form-control form select2 sjs-example-placeholder-multiple js-state" multiple="multiple" id="responded_through"
+                                            style="height:50%;width:80%;margin-top: -20px;" name="responded_through[]">
+                                        {{--<option value="" selected disabled>--select any one--</option>--}}
                                         <option @if($enquiry->responded_through=='None') selected @endif value="None">
                                             None
                                         </option>
@@ -459,7 +459,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Eligibility*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="eligibility"
                                             style="height:50%;width:80%;margin-top: -20px;" name="eligibility">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option @if($enquiry->eligibility=='Eligible') selected @endif value="Eligible">
@@ -484,5 +484,38 @@
                     </form>
                 </div>
             </div>
-
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#category').select2({
+                        placeholder: "select a category"
+                    });
+                    $('#subject').select2({
+                        placeholder: "select a subject"
+                    });
+                    $('#qualification_level').select2({
+                        placeholder: "select a Qualification Level"
+                    });
+                    $('#experience').select2({
+                        placeholder: "select a experience"
+                    });
+                    $('#country_interested').select2({
+                        placeholder: "select a interested country"
+                    });
+                    $('#service_interested').select2({
+                        placeholder: "select a interested service"
+                    });
+                    $('#enquiry_from').select2({
+                        placeholder: "select a enquiry from"
+                    });
+                    $('#source').select2({
+                        placeholder: "select a source"
+                    });
+                    $('#responded_through').select2({
+                        placeholder: "select a responded through"
+                    });
+                    $('#eligibility').select2({
+                        placeholder: "select a eligibility"
+                    });
+                });
+            </script>
 @endsection

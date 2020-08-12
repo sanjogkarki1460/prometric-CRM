@@ -2,7 +2,7 @@
 
     <div class="page-footer">
         <div class="page-footer-inner"> 2020 &copy; Visa Immigration
-            {{--<a href="mailto:redstartheme@gmail.com" target="_top" class="makerCss"></a>--}}
+            <a href="https://www.gcn.com.np/" target="_blank" class="makerCss">GCN</a>
         </div>
         <div class="scroll-to-top">
             <i class="icon-arrow-up"></i>
@@ -62,6 +62,8 @@
     <!--select2-->
     <script src="{{asset('assets/plugins/select2/js/select2.js')}}"></script>
     <script src="{{asset('assets/js/pages/select2/select2-init.js')}}"></script>
+
+
     <!--select2-->
     <!-- end js include path -->
     </body>

@@ -28,7 +28,7 @@ class ApplicantNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database'];
     }
 
     public function toDatabase($notifiable)
@@ -39,13 +39,6 @@ class ApplicantNotification extends Notification
         ];
     }
 
-    public function toBroadcast($notifiable)
-    {
-        return new BroadcastMessage([
-            'thread' => $this->thread,
-            'message'=>'New Applicant Added'
-        ]);
-    }
 
     public function toArray($notifiable)
     {

@@ -32,11 +32,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Select Applicant*</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="applicant"
                                             style="height:34px;width:80%;margin-top: -20px;" name="applicant_id">
                                         <option value="" selected disabled>select Appliant</option>
                                         @foreach($applicant as $applicant)
-                                            <option value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</option>
+                                            <option value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middel_name}} {{$applicant->surname}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Select Profession</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="profession"
                                             style="height:34px;width:80%;margin-top: -20px;" name="profession">
                                         <option value="" selected disabled>select Profession</option>
                                         <option value="Registered Nurse" data-select2-id="3">Registered Nurse</option>
@@ -107,7 +107,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Signed By Applicant</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="signed_by_applicant"
                                             style="height:34px;width:80%;margin-top: -20px;" name="signed_by_applicant">
                                         <option value="" selected disabled>select Profession</option>
                                         <option value="Yes" data-select2-id="3">Yes</option>
@@ -153,7 +153,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode Of Payment</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="mode_of_payment"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="service_mode_of_payment">
                                         <option value="" disabled selected>select</option>
@@ -192,8 +192,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode Of Payment</p>
-                                    <select class="form-control form select2"
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">DHAMCQ Mode Of Payment</p>
+                                    <select class="form-control form select2" id="DHA_mode_of_payment"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="dhamcq_mode_of_payment">
                                         <option value="" disabled selected>select</option>
@@ -279,7 +279,7 @@
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Equivalent Certificate
                                         (PCL Only)</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="equivalent_certificate"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="equivalent_certificate">
                                         <option value="" selected disabled>select Profession</option>
@@ -295,7 +295,7 @@
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">
                                         Books Provided</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="book_provided"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="books_provided">
                                         <option value="" selected disabled>select Profession</option>
@@ -394,7 +394,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode Of Payment</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="DHA_first_mode_of_payment"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="first_installment_mode_of_payment">
                                         <option value="" disabled selected>select</option>
@@ -449,7 +449,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Second installment Mode Of Payment</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="DHA_second_mode_of_payment"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="second_installment_mode_of_payment">
                                         <option value="" disabled selected>select</option>
@@ -562,7 +562,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Send Confirmation To Candidate</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="confirmation"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="send_confirmation_to_candidate">
                                         <option value="" selected disabled>select</option>
@@ -576,7 +576,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Exam Result</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="result"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="exam_result">
                                         <option value="" selected disabled>select</option>
@@ -591,7 +591,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Data Flow Report</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="data_flow"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="data_flow_report">
                                         <option value="" selected disabled>select</option>
@@ -625,5 +625,44 @@
                     </form>
                 </div>
             </div>
-
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#applicant').select2({
+                        placeholder: "select a applicant"
+                    });
+                    $('#profession').select2({
+                        placeholder: "select a profession"
+                    });
+                    $('#signed_by_applicant').select2({
+                        placeholder: "select a signed by applicant"
+                    });
+                    $('#mode_of_payment').select2({
+                        placeholder: "select a mode of payment"
+                    });
+                    $('#DHA_mode_of_payment').select2({
+                        placeholder: "select a mode of payment"
+                    });
+                    $('#equivalent_certificate').select2({
+                        placeholder: "select a equivalent_certificate"
+                    });
+                    $('#book_provided').select2({
+                        placeholder: "select one"
+                    });
+                    $('#DHA_first_mode_of_payment').select2({
+                        placeholder: "select a mode of payment"
+                    });
+                    $('#DHA_second_mode_of_payment').select2({
+                        placeholder: "select a mode of payment"
+                    });
+                    $('#confirmation').select2({
+                        placeholder: "select a confrimation mode"
+                    });
+                    $('#result').select2({
+                        placeholder: "select a result"
+                    });
+                    $('#data_flow').select2({
+                        placeholder: "select a data flow report"
+                    });
+                });
+            </script>
 @endsection

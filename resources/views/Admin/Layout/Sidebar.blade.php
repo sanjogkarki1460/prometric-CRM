@@ -84,20 +84,74 @@
                                         <span class="title">Document Checklist</span>
                                     </a>
                                 </li>
-                                <li class="nav-item ">
-                                    <a href="{{route('Education.index')}}" class="nav-link ">
+                                {{--<li class="nav-item ">--}}
+                                    {{--<a href="{{route('Education.index')}}" class="nav-link ">--}}
+                                        {{--<span class="title">Education</span>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                <li class="nav-item">
+                                    <a href="javascript:;" class="nav-link nav-toggle">
                                         <span class="title">Education</span>
+                                        <span class="arrow "></span>
                                     </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item">
+                                            <a href="{{route('Education.index')}}" class="nav-link nav-toggle">
+                                                <i class="title"></i> Education 1
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('Education2.index')}}" class="nav-link">
+                                                <i class="title"></i> Education 2 </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="nav-item ">
-                                    <a href="{{route('HealthLisence.index')}}" class="nav-link ">
+                                <li class="nav-item">
+                                    <a href="javascript:;" class="nav-link nav-toggle">
                                         <span class="title">Health Lisence</span>
+                                        <span class="arrow "></span>
                                     </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item">
+                                            <a href="{{route('HealthLicense.index')}}" class="nav-link nav-toggle">
+                                                <i class="title"></i> Health Lisence 1
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('HealthLicense2.index')}}" class="nav-link">
+                                                <i class="title"></i> Health Lisence 2 </a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li class="nav-item ">
-                                    <a href="{{route('Employment.index')}}" class="nav-link ">
+                                <li class="nav-item">
+                                    <a href="javascript:;" class="nav-link nav-toggle">
                                         <span class="title">Employment</span>
+                                        <span class="arrow "></span>
                                     </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item">
+                                            <a href="{{route('Employment.index')}}" class="nav-link nav-toggle">
+                                                <i class="title"></i> Employment 1
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('Employment2.index')}}" class="nav-link">
+                                                <i class="title"></i> Employment 2 </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('Employment3.index')}}" class="nav-link nav-toggle">
+                                                <i class="title"></i> Employment 3
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('Employment4.index')}}" class="nav-link">
+                                                <i class="title"></i> Employment 4 </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{route('Employment5.index')}}" class="nav-link">
+                                                <i class="title"></i> Employment 5 </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item ">
                                     <a href="{{route('ProgressFlow.index')}}" class="nav-link ">

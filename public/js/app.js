@@ -1945,52 +1945,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['unreads', 'userid'],
   data: function data() {
     return {
-      unreadNotifications: this.unreads
+      notification: {}
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  methods: {
+    loadUsers: function loadUsers() {
+      var _this = this;
 
-    console.log('Component mounted');
-    Echo["private"]('App.Admin.Admin' + this.userId).notification(function (notification) {
-      console.log(notification);
-      var newUnread = {
-        data: {
-          thread: notification.thread,
-          message: notification.message
-        }
-      };
-
-      _this.unreadNotifications.push(newUnread);
-    });
-  }
+      axios.get('admin/notification').then(function (_ref) {
+        var data = _ref.data;
+        return _this.notification = data.data;
+      });
+    }
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -43692,93 +43663,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "nav navbar-nav pull-left" }, [
-    _c(
-      "li",
-      {
-        staticClass: "dropdown dropdown-extended dropdown-notification",
-        attrs: { id: "header_notification_bar" }
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass: "dropdown-toggle",
-            attrs: {
-              href: "javascript:;",
-              "data-toggle": "dropdown",
-              "data-hover": "dropdown",
-              "data-close-others": "true"
-            }
-          },
-          [
-            _c("i", { staticClass: "fa fa-bell-o" }, [
-              _c("span", { staticClass: "badge" }, [
-                _vm._v(_vm._s(_vm.unreadNotifications.length))
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c("ul", { staticClass: "dropdown-menu" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("li", [
-            _c(
-              "ul",
-              {
-                staticClass: "dropdown-menu-list small-slimscroll-style",
-                attrs: { "data-handle-color": "#637283" }
-              },
-              [
-                _c(
-                  "li",
-                  [
-                    _vm._l(_vm.unreadNotifications, function(unreads) {
-                      return _c("notification-itme")
-                    }),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: _vm.threadUrl } }, [
-                      _c("span", { staticClass: "details" }, [
-                        _vm._m(1),
-                        _vm._v(
-                          "\n                                                    " +
-                            _vm._s(_vm.unreads.data.thread.id) +
-                            " "
-                        )
-                      ])
-                    ])
-                  ],
-                  2
-                )
-              ]
-            )
-          ])
-        ])
-      ]
-    )
-  ])
+  return _c("div", [_vm._v("hello")])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "external" }, [
-      _c("h3", [_c("span", { staticClass: "bold" }, [_vm._v("Notifications")])])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "span",
-      { staticClass: "notification-icon circle deepPink-bgcolor" },
-      [_c("i", { staticClass: "fa fa-check" })]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -55971,10 +55858,7 @@ Vue.component('notification', __webpack_require__(/*! ./components/Notification.
  */
 
 var app = new Vue({
-  el: '#app' // components: {
-  //     'notification': require('./components/Notification.vue'),
-  // }
-
+  el: '#app'
 });
 
 /***/ }),

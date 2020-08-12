@@ -50,7 +50,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Middle Name*</p>
-                                    <input  class="form form-control"
+                                    <input class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="middle_name" placeholder="Enter Middle name">
                                 </div>
@@ -90,7 +90,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">category*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="category"
                                             style="height:50%;width:80%;margin-top: -20px;" name="Category_id">
                                         <option value="" selected disabled>--select any one--</option>
                                         <optgroup label="Category">
@@ -106,7 +106,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Subject*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="subject"
                                             style="height:50%;width:80%;margin-top: -15px;" name="subject">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Nursing">Nursing</option>
@@ -126,7 +126,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Qualification Level*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="qualification_level"
                                             style="height:50%;width:80%;margin-top: -15px;" name="qualification_level">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Diploma">Diploma</option>
@@ -140,7 +140,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Experience*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="experience"
                                             style="height:50%;width:80%;margin-top: -15px;" name="experience">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="1">1</option>
@@ -161,7 +161,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Country Intrested*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="country_interested"
                                             style="height:50%;width:80%;margin-top: -15px;" name="country_interested">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="UAE-Dubai">UAE-Dubai</option>
@@ -183,7 +183,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Service Intrested*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="service_interested"
                                             style="height:50%;width:80%;margin-top: -15px;" name="service_interested">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Sasto Website">Sasto Website</option>
@@ -240,7 +240,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Enquiry From*</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="enquiry_from"
                                             style="height:50%;width:80%;margin-top: -15px;" name="enquiry_from">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Prometric Exam Nepal">Prometric Exam Nepal</option>
@@ -267,7 +267,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Souce*</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="source"
                                             style="height:50%;width:80%;margin-top: -15px;" name="source">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="facebook">facebook</option>
@@ -294,9 +294,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Responded Through*</p>
-                                    <select class="form-control form" select2
-                                            style="height:50%;width:80%;margin-top: -10px;" name="responded_through">
-                                        <option value="" selected disabled>--select any one--</option>
+                                    <select class="form-control form select2 sjs-example-placeholder-multiple js-state" multiple="multiple" id="responded_through"
+                                            style="height:50%;width:80%;margin-top: -10px;" name="responded_through[]">
+                                        {{--<option value="" selected disabled></option>--}}
                                         <option value="None">None</option>
                                         <option value="SMS">SMS</option>
                                         <option value="Email">Email</option>
@@ -312,7 +312,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Eligibility*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="eligibility"
                                             style="height:50%;width:80%;margin-top: -15px;" name="eligibility">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Eligible">Eligible</option>
@@ -333,5 +333,39 @@
                     </form>
                 </div>
             </div>
-
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#category').select2({
+                        placeholder: "select a category"
+                    });
+                    $('#subject').select2({
+                        placeholder: "select a subject"
+                    });
+                    $('#qualification_level').select2({
+                        placeholder: "select a Qualification Level"
+                    });
+                    $('#experience').select2({
+                        placeholder: "select a experience"
+                    });
+                    $('#country_interested').select2({
+                        placeholder: "select a interested country"
+                    });
+                    $('#service_interested').select2({
+                        placeholder: "select a interested service"
+                    });
+                    $('#enquiry_from').select2({
+                        placeholder: "select a enquiry from"
+                    });
+                    $('#source').select2({
+                        placeholder: "select a source"
+                    });
+                    $('#responded_through').select2({
+                        placeholder: "select a responded through"
+                    });
+                    $('#eligibility').select2({
+                        placeholder: "select a eligibility"
+                    });
+                });
+            </script>
 @endsection
+

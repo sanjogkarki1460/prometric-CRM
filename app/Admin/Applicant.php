@@ -27,6 +27,10 @@ class Applicant extends Model
         return $this->HasMany('App\Admin\Education');
     }
 
+    public function Education2(){
+        return $this->HasMany('App\Admin\Education2');
+    }
+
     public function HealthLisence(){
         return $this->HasMany('App\Admin\HealthLisence');
     }
@@ -34,6 +38,19 @@ class Applicant extends Model
     public function Employemnt(){
         return $this->HasMany('App\Admin\Employemnt');
     }
+    public function Employemnt2(){
+        return $this->HasMany('App\Admin\Employemnt2');
+    }
+     public function Employemnt3(){
+        return $this->HasMany('App\Admin\Employemnt3');
+    }
+     public function Employemnt4(){
+        return $this->HasMany('App\Admin\Employemnt4');
+    }
+     public function Employemnt5(){
+        return $this->HasMany('App\Admin\Employemnt5');
+    }
+
     public function ProgressFlow(){
         return $this->HasMany('App\Admin\ProgressFlow');
     }

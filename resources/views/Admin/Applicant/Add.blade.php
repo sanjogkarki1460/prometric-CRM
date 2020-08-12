@@ -3,10 +3,10 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#enquiredyes").click(function () {
-                $("#enquired_id").removeClass('d-none');
+                $("#enquired_id1").removeClass('d-none');
             });
             $("#enquiredno").click(function () {
-                $("#enquired_id ").addClass('d-none');
+                $("#enquired_id1 ").addClass('d-none');
             });
         });
     </script>
@@ -48,16 +48,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="container d-none" id="enquired_id">
+                        <div class="container d-none" id="enquired_id1">
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Enquired Applicant</p>
-                                    <select  class="form-control form select2"
+                                    <select class="form-control form select2" id="enquired_id"
                                             style="height:50%;width:80%;margin-top: -20px;" name="enquired_id">
                                         <option value="" selected disabled>--select any one--</option>
                                         @foreach($enquiry as $enquiry)
-                                        <option value="{{$enquiry->id}}">{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</option>
-                                            @endforeach
+                                            <option value="{{$enquiry->id}}">{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -86,16 +86,16 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Middle Name*</p>
-                                    <input  class="form form-control"
-                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                            type="text" name="middel_name" placeholder="Enter Middle name">
+                                    <input class="form form-control"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
+                                           type="text" name="middel_name" placeholder="Enter Middle name">
                                 </div>
                             </div>
                         </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">mobile Number*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Mobile Number*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="mobile_no" placeholder="Enter Phone">
@@ -126,11 +126,11 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Gender*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="gender"
                                             style="height:50%;width:80%;margin-top: -20px;" name="gender">
                                         <option value="" selected disabled>--select any one--</option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Identity Type*</p>
-                                    <select required class="form-control form"
+                                    <select required class="form-control form select2" id="identity_type"
                                             style="height:50%;width:80%;margin-top: -20px;" name="identity_type">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Citizen">Citizen</option>
@@ -192,7 +192,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Passport Docs*</p>
-                                    <input  class="form form-control"
+                                    <input class="form form-control"
                                            style="width: 80%;height:37%;margin-top:-15px;"
                                            type="file" name="passport_docs" placeholder="Enter Passport Docs">
                                 </div>
@@ -201,8 +201,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Applicant's category*</p>
-                                    <select required class="form-control form"
+                                    <p class="ah1" style="margin-top: 20px;">Applicant's Category*</p>
+                                    <select required class="form-control form select2" id="category"
                                             style="height:50%;width:80%;margin-top: -20px;" name="applicant_category">
                                         <option value="" selected disabled>--select any one--</option>
                                         @foreach($category as $category)
@@ -224,5 +224,20 @@
                     </form>
                 </div>
             </div>
-
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#gender').select2({
+                        placeholder: "select a gender"
+                    });
+                    $('#identity_type').select2({
+                        placeholder: "select a identity type"
+                    });
+                    $('#enquired_id').select2({
+                        placeholder: "select a Enquiry"
+                    });
+                    $('#category').select2({
+                        placeholder: "select a category"
+                    });
+                });
+            </script>
 @endsection

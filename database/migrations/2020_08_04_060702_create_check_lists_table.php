@@ -16,18 +16,29 @@ class CreateCheckListsTable extends Migration
         Schema::create('check_lists', function (Blueprint $table) {
             $table->id();
             $table->integer('applicant_id');
-            $table->enum('password_citizenship_certificate',['Yes','No'])->default('No');
+            $table->enum('mrp_size_photo',['Yes','No'])->default('No');
+            $table->enum('passport',['Yes','No'])->default('No');
+            $table->enum('citizen',['Yes','No'])->default('No');
+            $table->enum('slc_marksheet',['Yes','No'])->default('No');
+            $table->enum('slc_character_certificate',['Yes','No'])->default('No');
             $table->enum('slc_certificate',['Yes','No'])->default('No');
-            $table->enum('plus_two_isc_pcl_certificate',['Yes','No'])->default('No');
-            $table->enum('diploma_degree_certificate',['Yes','No'])->default('No');
-            $table->enum('mark_sheet_of_each_year_final_transcript',['Yes','No'])->default('No');
+            $table->enum('plus2certificate',['Yes','No'])->default('No');
+            $table->enum('plus2transcript',['Yes','No'])->default('No');
+            $table->enum('plus2character_certificate',['Yes','No'])->default('No') ;
+            $table->enum('diploma_certificate',['Yes','No'])->default('No') ;
+            $table->enum('diploma_transcript',['Yes','No'])->default('No');
+            $table->enum('diploma_character_certificate',['Yes','No'])->default('No');
             $table->enum('equivalent_certificate',['Yes','No'])->default('No');
-            $table->enum('council_registration_certificate',['Yes','No'])->default('No');
-            $table->enum('council_registration_certificate_renew',['Yes','No'])->default('No');
-            $table->enum('good_standing_letter_from_council',['Yes','No'])->default('No');
-            $table->enum('work_experience_letter_till_date',['Yes','No'])->default('No');
-            $table->enum('basic_life_support_for_nurses',['Yes','No'])->default('No');
-            $table->enum('mrp_size_photo_in_white_background',['Yes','No'])->default('No');
+            $table->enum('council_registration_certificate_front',['Yes','No'])->default('No');
+            $table->enum('council_registration_certificate_back',['Yes','No'])->default('No');
+            $table->enum('council_good_standing_letter',['Yes','No'])->default('No');
+            $table->enum('work_experience_letter1',['Yes','No'])->default('No');
+            $table->enum('work_experience_letter2',['Yes','No'])->default('No');
+            $table->enum('work_experience_letter3',['Yes','No'])->default('No');
+            $table->enum('basic_life_support_certificate',['Yes','No'])->default('No');
+            $table->enum('signed_letter_authorization',['Yes','No'])->default('No');
+            $table->enum('signed_service_agreement',['Yes','No'])->default('No');
+
             $table->timestamps();
         });
     }

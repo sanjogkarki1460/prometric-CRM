@@ -30,7 +30,7 @@
                 </a>
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
-                        {{--<notification :userid="{{auth()->id()}}" :unreads="{{auth()->user()->unreadNotifications}}"></notification>--}}
+                        {{--<notification></notification>--}}
                         <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                data-close-others="true">
@@ -45,7 +45,7 @@
                                     <ul class="dropdown-menu-list small-slimscroll-style" data-handle-color="#637283">
                                         @foreach(auth()->user()->unreadNotifications as $notification )
                                             <li>
-                                                <a @if ($notification->type=='App\Notifications\ApplicantNotification') href="{{route('Applicantmarkasread')}} @else href="{{route('Enquirymarkasread')}} @endif
+                                                <a @if ($notification->type=='App\Notifications\ApplicantNotification') href="{{route('Applicantmarkasread')}} @elseif($notification->type=='App\Notifications\ApplicantUpdateNotification') href="{{route('Applicantmarkasread')}} @else href="{{route('Enquirymarkasread')}} @endif
                                                 ">
                                                 @if($notification->read_at==null)
                                                     <span class="time">Unread</span>

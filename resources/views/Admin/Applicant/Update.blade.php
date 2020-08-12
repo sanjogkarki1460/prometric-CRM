@@ -3,10 +3,26 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#enquiredyes").click(function () {
-                $("#enquired_id").removeClass('d-none');
+                $("#enquired_id1").removeClass('d-none');
             });
             $("#enquiredno").click(function () {
-                $("#enquired_id ").addClass('d-none');
+                $("#enquired_id1 ").addClass('d-none');
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#gender').select2({
+                placeholder: "select a gender"
+            });
+            $('#identity_type').select2({
+                placeholder: "select a identity type"
+            });
+            $('#enquired_id').select2({
+                placeholder: "select a Enquiry"
+            });
+            $('#category').select2({
+                placeholder: "select a category"
             });
         });
     </script>
@@ -52,16 +68,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="container d-none" id="enquired_id">
+                        <div class="container d-none" id="enquired_id1">
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Enquired Applicant</p>
-                                    <select class="form-control form select2"
+                                    <select class="form-control form select2" id="enquired_id"
                                             style="height:50%;width:80%;margin-top: -20px;" name="enquired_id">
                                         <option value="" selected disabled>--select any one--</option>
                                         @foreach($enquiry as $enquiry)
                                             <option @if(@$enquiry->first_name==$first_name) selected @endif
-                                                    value="{{$enquiry->id}}">{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</option>
+                                            value="{{$enquiry->id}}">{{$enquiry->first_name}} {{$enquiry->middel_name}} {{$enquiry->last_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -137,7 +153,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Gender*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="gender"
                                             style="height:50%;width:80%;margin-top: -20px;"
                                             value="{{$applicant->gender}}" name="gender">
                                         <option value="" selected disabled>--select any one--</option>
@@ -165,7 +181,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Identity Type*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="identity_type"
                                             style="height:50%;width:80%;margin-top: -20px;"
                                             value="{{$applicant->identity_type}}" name="identity_type">
                                         <option value="" selected disabled>--select any one--</option>
@@ -227,16 +243,16 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Applicant's category*</p>
-                                    <select required class="form-control form select2"
+                                    <select required class="form-control form select2" id="category"
                                             style="height:50%;width:80%;margin-top: -20px;"
                                             value="{{$applicant->applicant_category}}" name="applicant_category">
                                         <option value="" selected disabled>--select any one--</option>
                                         @if($applicant->applicant_category)
-                                        @foreach($category as $category)
-                                            <option @if($category->Name==$cat) selected
-                                                    @endif value="{{$category->id}}">{{$category->Name}}</option>
-                                        @endforeach
-                                            @endif
+                                            @foreach($category as $category)
+                                                <option @if($category->Name==$cat) selected
+                                                        @endif value="{{$category->id}}">{{$category->Name}}</option>
+                                            @endforeach
+                                        @endif
                                     </select>
                                 </div>
                             </div>

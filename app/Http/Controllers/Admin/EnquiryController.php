@@ -27,6 +27,7 @@ class EnquiryController extends Controller
     public function index()
     {
         $enquiry = $this->enquiry->get();
+
         return view('Admin.Enquiry.Index')->with('enquiry', $enquiry);
     }
 
@@ -51,7 +52,8 @@ class EnquiryController extends Controller
     {
         $data = $request->all();
 //        dd($data);
-
+        $responded_through = implode(',', $request->responded_through);
+        $data['responded_through'] = $responded_through;
         $this->enquiry->fill($data);
         $success = $this->enquiry->save();
         if ($success) {
@@ -116,6 +118,8 @@ class EnquiryController extends Controller
     {
         $this->enquiry = $this->enquiry->find($id);
         $data = $request->all();
+        $responded_through = implode(',', $request->responded_through);
+        $data['responded_through'] = $responded_through;
         $this->enquiry->fill($data);
         $success = $this->enquiry->save();
         $admin = Admin::all();

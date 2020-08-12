@@ -38,7 +38,7 @@ class EnquiryValidator extends FormRequest
             'enquiry_from'=>'',
             'source'=>'',
             'remarks'=>'',
-            'responded_through'=>'',
+            'responded_through'=>'required',
             'eligibility'=>'required|string',
             'Category_id'=>'required|string'
         ];

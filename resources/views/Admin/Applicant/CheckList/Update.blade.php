@@ -27,54 +27,80 @@
                 <div class="card">
                     <form action="{{route('CheckList.update',$checklist->id)}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
+                        {{--@if($checklist->password_citizenship_certificate=='Yes') Checked @endif--}}
                         <input  type="hidden" name="_method" value="put">
                         <input class="d-none" type="hidden" name="applicant_id" readonly value="{{$checklist->applicant_id}}">
                         <div class="container mt-5">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label class="control-label" for="name">password_citizenship_certificate</label>
-                                        <input @if($checklist->password_citizenship_certificate=='Yes') Checked @endif  type="checkbox" name="password_citizenship_certificate" id="a1"
-                                           class="toggleswitch" value="@if($checklist->password_citizenship_certificate=='Yes' ? 'Yes' : 'No') @endif">
+                                    <label class="control-label">MRP Size Photo</label>
+                                    <input type="checkbox" @if($checklist->mrp_size_photo=='Yes') checked @endif name="mrp_size_photo" id="a12" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">slc_certificate</label>
-                                    <input @if($checklist->slc_certificate=='Yes') Checked @endif type="checkbox" name="slc_certificate" class="toggleswitch" id="a2" value="Yes">
-
+                                    <label class="control-label">Passport</label>
+                                    <input type="checkbox" @if($checklist->passport=='Yes') checked @endif name="passport" id="a1"
+                                           class="toggleswitch" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">plus_two_isc_pcl_certificate</label>
-                                    <input @if($checklist->plus_two_isc_pcl_certificate=='Yes') Checked @endif type="checkbox" name="plus_two_isc_pcl_certificate" id="a3" value="Yes">
+                                    <label class="control-label">Citizen</label>
+                                    <input type="checkbox" @if($checklist->citizen=='Yes') checked @endif name="citizen" id="a1"
+                                           class="toggleswitch" value="Yes">
                                     <br>
-
-                                    <label class="control-label" for="name">diploma_degree_certificate</label>
-                                    <input @if($checklist->diploma_degree_certificate=='Yes') Checked @endif type="checkbox" name="diploma_degree_certificate" id="a4" value="Yes">
+                                    <label class="control-label">SLC Marksheet</label>
+                                    <input type="checkbox" @if($checklist->slc_marksheet=='Yes') checked @endif name="slc_marksheet" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label"
-                                           for="name">mark_sheet_of_each_year_final_transcript</label>
-                                    <input @if($checklist->mark_sheet_of_each_year_final_transcript=='Yes') Checked @endif type="checkbox" name="mark_sheet_of_each_year_final_transcript" id="a5"
-                                           value="Yes">
+                                    <label class="control-label">SLC Certificate</label>
+                                    <input type="checkbox" @if($checklist->slc_certificate=='Yes') checked @endif name="slc_certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">equivalent_certificate</label>
-                                    <input @if($checklist->equivalent_certificate=='Yes') Checked @endif type="checkbox" name="equivalent_certificate" id="a6" value="Yes">
+                                    <label class="control-label">SLC Character Certificate</label>
+                                    <input type="checkbox" @if($checklist->slc_character_certificate=='Yes') checked @endif name="slc_character_certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">council_registration_certificate</label>
-                                    <input @if($checklist->council_registration_certificate=='Yes') Checked @endif type="checkbox" name="council_registration_certificate" id="a7" value="Yes">
+                                    <label class="control-label">+2 Transcript</label>
+                                    <input type="checkbox" @if($checklist->plus2transcript=='Yes') checked @endif name="plus2transcript" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label"
-                                           for="name">council_registration_certificate_renew</label>
-                                    <input @if($checklist->council_registration_certificate_renew=='Yes') Checked @endif type="checkbox" name="council_registration_certificate_renew" id="a8"
-                                           value="Yes">
+                                    <label class="control-label">+2 Certificate</label>
+                                    <input type="checkbox" @if($checklist->plus2certificate=='Yes') checked @endif name="plus2certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">good_standing_letter_from_council</label>
-                                    <input @if($checklist->good_standing_letter_from_council=='Yes') Checked @endif type="checkbox" name="good_standing_letter_from_council" id="a9" value="Yes">
+                                    <label class="control-label">+2 Character Certificate</label>
+                                    <input type="checkbox" @if($checklist->plus2character_certificate=='Yes') checked @endif name="plus2character_certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">work_experience_letter_till_date</label>
-                                    <input @if($checklist->work_experience_letter_till_date=='Yes') Checked @endif type="checkbox" name="work_experience_letter_till_date" id="a10" value="Yes">
+                                    <label class="control-label">PCL/Diploma Transcript</label>
+                                    <input type="checkbox" @if($checklist->diploma_transcript=='Yes') checked @endif name="diploma_transcript" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">basic_life_support_for_nurses</label>
-                                    <input @if($checklist->basic_life_support_for_nurses=='Yes') Checked @endif type="checkbox" name="basic_life_support_for_nurses" id="a11" value="Yes">
+                                    <label class="control-label">PCL/Diploma Certificate</label>
+                                    <input type="checkbox" @if($checklist->diploma_certificate=='Yes') checked @endif name="diploma_certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
-                                    <label class="control-label" for="name">mrp_size_photo_in_white_background</label>
-                                    <input @if($checklist->mrp_size_photo_in_white_background=='Yes') Checked @endif type="checkbox" name="mrp_size_photo_in_white_background" id="a12" value="Yes">
-
+                                    <label class="control-label">PCL/Diploma Character Certificate</label>
+                                    <input type="checkbox" @if($checklist->diploma_character_certificate=='Yes') checked @endif name="diploma_character_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label">Equivalent Certificate</label>
+                                    <input type="checkbox" @if($checklist->equivalent_certificate=='Yes') checked @endif name="equivalent_certificate" id="a6" value="Yes">
+                                    <br>
+                                    <label class="control-label">Council Registration Certificate Front</label>
+                                    <input type="checkbox" @if($checklist->council_registration_certificate_front=='Yes') checked @endif name="council_registration_certificate_front" id="a7" value="Yes">
+                                    <br>
+                                    <label class="control-label">Council Registration Certificate Back</label>
+                                    <input type="checkbox" @if($checklist->council_registration_certificate_back=='Yes') checked @endif name="council_registration_certificate_back" id="a7" value="Yes">
+                                    <br>
+                                    <label class="control-label">Council Good Standing Letter</label>
+                                    <input type="checkbox" @if($checklist->council_good_standing_letter=='Yes') checked @endif name="council_good_standing_letter" id="a9" value="Yes">
+                                    <br>
+                                    <label class="control-label">Work Experience Letter 1</label>
+                                    <input type="checkbox" @if($checklist->work_experience_letter1=='Yes') checked @endif name="work_experience_letter1" id="a10" value="Yes">
+                                    <br>
+                                    <label class="control-label">Work Experience Letter 2</label>
+                                    <input type="checkbox" @if($checklist->work_experience_letter2=='Yes') checked @endif name="work_experience_letter2" id="a10" value="Yes">
+                                    <br>
+                                    <label class="control-label">Work Experience Letter 3</label>
+                                    <input type="checkbox" @if($checklist->work_experience_letter3=='Yes') checked @endif name="work_experience_letter3" id="a10" value="Yes">
+                                    <br>
+                                    <label class="control-label">Basic Life Support For Certificate</label>
+                                    <input type="checkbox" @if($checklist->basic_life_support_certificate=='Yes') checked @endif name="basic_life_support_certificate" id="a11" value="Yes">
+                                    <br>
+                                    <label class="control-label">Signed Letter of Authorization</label>
+                                    <input type="checkbox" @if($checklist->signed_letter_authorization=='Yes') checked @endif name="signed_letter_authorization" id="a11" value="Yes">
+                                    <br>
+                                    <label class="control-label">Signed Service Agreement</label>
+                                    <input type="checkbox" @if($checklist->signed_service_agreement=='Yes') checked @endif name="signed_service_agreement" id="a11" value="Yes">
+                                    <br>
                                 </div>
                             </div>
                         </div>

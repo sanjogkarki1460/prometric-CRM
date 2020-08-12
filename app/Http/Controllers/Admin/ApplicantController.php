@@ -11,8 +11,14 @@ use App\Http\Requests\ApplicantValidator;
 use File;
 use App\Admin\CheckList;
 use App\Admin\Education;
+use App\Admin\Education2;
 use App\Admin\HealthLisence;
+use App\Admin\HealthLicense2;
 use App\Admin\Employment;
+use App\Admin\Employment2;
+use App\Admin\Employment3;
+use App\Admin\Employment4;
+use App\Admin\Employment5;
 use App\Admin\ProgressFlow;
 use DB;
 use App\Admin\Admin;
@@ -25,21 +31,34 @@ class ApplicantController extends Controller
     protected $enquiry = null;
     protected $checklist = null;
     protected $education = null;
+    protected $education2 = null;
     protected $healthlisence = null;
+    protected $healthlicense2 = null;
     protected $employment = null;
+    protected $employment2 = null;
+    protected $employment3 = null;
+    protected $employment4 = null;
+    protected $employment5 = null;
     protected $progressflow = null;
 
     public function __construct(Applicant $applicant, Category $category, Enquiry $enquiry, CheckList $checkList,
-                                Education $education, HealthLisence $healthlisence, Employment $employment,
-                                ProgressFlow $progressflow)
+                                Education2 $education2, Education $education, HealthLisence $healthlisence, HealthLicense2 $healthlicense2,
+                                Employment $employment, Employment2 $employment2, Employment3 $employment3, Employment4 $employment4
+        , Employment5 $employment5, ProgressFlow $progressflow)
     {
         $this->category = $category;
         $this->applicant = $applicant;
         $this->enquiry = $enquiry;
         $this->checkList = $checkList;
         $this->education = $education;
+        $this->education2 = $education2;
         $this->healthlisence = $healthlisence;
+        $this->healthlicense2 = $healthlicense2;
         $this->employment = $employment;
+        $this->employment2 = $employment2;
+        $this->employment3 = $employment3;
+        $this->employment4 = $employment4;
+        $this->employment5 = $employment5;
         $this->progressflow = $progressflow;
     }
 
@@ -161,7 +180,7 @@ class ApplicantController extends Controller
         $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
         $data = $request->all();
         if ($request->passport_docs) {
-            $image_path = public_path() . '/upload/Applicant/'.$this->applicant->passport_docs;
+            $image_path = public_path() . '/upload/Applicant/' . $this->applicant->passport_docs;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
@@ -204,27 +223,98 @@ class ApplicantController extends Controller
         if (File::exists($image_path)) {
             $delete = File::delete($image_path);
         }
+        $success = $applicant->delete();
         $checkList = $this->checkList->where('applicant_id', $id)->get();
         $education = $this->education->where('applicant_id', $id)->get();
+        $education2 = $this->education2->where('applicant_id', $id)->get();
         $healthlisence = $this->healthlisence->where('applicant_id', $id)->get();
+        $healthlicense2 = $this->healthlicense2->where('applicant_id', $id)->get();
         $employment = $this->employment->where('applicant_id', $id)->get();
+        $employment2 = $this->employment2->where('applicant_id', $id)->get();
+        $employment3 = $this->employment3->where('applicant_id', $id)->get();
+        $employment4 = $this->employment4->where('applicant_id', $id)->get();
+        $employment5 = $this->employment5->where('applicant_id', $id)->get();
         $progressflow = $this->progressflow->where('applicant_id', $id)->get();
         foreach ($checkList as $data) {
             DB::table('check_lists')->where('applicant_id', $id)->delete();
         };
         foreach ($education as $data) {
             DB::table('education')->where('applicant_id', $id)->delete();
+            $qualification_certificate = public_path() . '/upload/Applicant/Education/'.$data->qualification_certificate;if (File::exists($qualification_certificate)) {
+                $delete = File::delete($qualification_certificate);
+            }
+            $marksheet = public_path() . '/upload/Applicant/Education/'.$data->marksheet;
+            if (File::exists($marksheet)) {
+                $delete = File::delete($marksheet);
+            }
+        };
+        foreach ($education2 as $data) {
+            $qualification_certificate = public_path() . '/upload/Applicant/Education/'.$data->qualification_certificate;
+            if (File::exists($qualification_certificate)) {
+                $delete = File::delete($qualification_certificate);
+            }
+            $marksheet = public_path() . '/upload/Applicant/Education/'.$data->marksheet;
+            if (File::exists($marksheet)) {
+                $delete = File::delete($marksheet);
+            }
+            DB::table('education2s')->where('applicant_id', $id)->delete();
         };
         foreach ($healthlisence as $data) {
+            $image_path = public_path() . '/upload/Applicant/Health License/' . $data->license_copy;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
             DB::table('health_lisences')->where('applicant_id', $id)->delete();
         };
+        foreach ($healthlicense2 as $data) {
+            $image_path = public_path() . '/upload/Applicant/Health License/' . $data->license_copy;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
+            DB::table('health_license2s')->where('applicant_id', $id)->delete();
+        };
         foreach ($employment as $data) {
+            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
             DB::table('employments')->where('applicant_id', $id)->delete();
         };
+        foreach ($employment2 as $data) {
+            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
+            DB::table('employment2s')->where('applicant_id', $id)->delete();
+        };
+        foreach ($employment3 as $data) {
+            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
+            DB::table('employment3s')->where('applicant_id', $id)->delete();
+        };
+        foreach ($employment4 as $data) {
+            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
+            DB::table('employment4s')->where('applicant_id', $id)->delete();
+        };
+        foreach ($employment5 as $data) {
+            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
+            DB::table('employment5s')->where('applicant_id', $id)->delete();
+        };
         foreach ($progressflow as $data) {
+            $signed_docs = public_path() . '/upload/Applicant/Progress flow/' . $data->signed_docs;
+            if (File::exists($signed_docs)) {
+                $delete = File::delete($signed_docs);
+            }
             DB::table('progress_flows')->where('applicant_id', $id)->delete();
         };
-        $success = $applicant->delete();
         if ($success) {
             return redirect()->route('Applicant.index')->with('success', 'Applicant Deleted Successfully');
         } else {
@@ -236,14 +326,25 @@ class ApplicantController extends Controller
     public function Detail($id)
     {
         $applicant = $this->applicant->find($id);
+        if (!$applicant) {
+            return redirect()->back()->with('Error', 'Applicant Not Found Or Already Deleted');
+        }
         $checklist = $this->checkList->where('applicant_id', $id)->get();
         $education = $this->education->where('applicant_id', $id)->get();
+        $education2 = $this->education2->where('applicant_id', $id)->get();
         $healthlisence = $this->healthlisence->where('applicant_id', $id)->get();
+        $healthlicense2 = $this->healthlicense2->where('applicant_id', $id)->get();
         $employment = $this->employment->where('applicant_id', $id)->get();
+        $employment2 = $this->employment2->where('applicant_id', $id)->get();
+        $employment3 = $this->employment3->where('applicant_id', $id)->get();
+        $employment4 = $this->employment4->where('applicant_id', $id)->get();
+        $employment5 = $this->employment5->where('applicant_id', $id)->get();
         $progressflow = $this->progressflow->where('applicant_id', $id)->get();
 //        dd($education);
         return view('Admin.Applicant.Detail')->with('applicant', $applicant)->with('checklist', $checklist)
-            ->with('education', $education)->with('healthlisence', $healthlisence)->with('employment', $employment)
+            ->with('education2', $education2)->with('education', $education)->with('healthlisence', $healthlisence)
+            ->with('healthlicense2', $healthlicense2)->with('employment', $employment)->with('employment2', $employment2)
+            ->with('employment3', $employment3)->with('employment4', $employment4)->with('employment5', $employment5)
             ->with('progressflow', $progressflow);
     }
 }

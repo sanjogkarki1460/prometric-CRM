@@ -30,8 +30,14 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::get('/ApplicantDetail/{id}','Admin\ApplicantController@Detail')->name('ApplicantDetail');
     Route::resource('/CheckList','Admin\CheckListController');
     Route::resource('/Education','Admin\EducationController');
-    Route::resource('/HealthLisence','Admin\HealthLisenceController');
+    Route::resource('/Education2','Admin\Education2Controller');
+    Route::resource('/HealthLicense','Admin\HealthLisenceController');
+    Route::resource('/HealthLicense2','Admin\HealthLicense2Controller');
     Route::resource('/Employment','Admin\EmploymentController');
+    Route::resource('/Employment2','Admin\Employment2Controller');
+    Route::resource('/Employment3','Admin\Employment3Controller');
+    Route::resource('/Employment4','Admin\Employment4Controller');
+    Route::resource('/Employment5','Admin\Employment5Controller');
     Route::resource('/ProgressFlow','Admin\ProgressFlowController');
     Route::get('/EnquirySMS','Admin\SMSController@EnquirySMS')->name('EnquirySMS');
     Route::get('/ApplicantSMS','Admin\SMSController@ApplicantSMS')->name('ApplicantSMS');
@@ -40,11 +46,14 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::get('/ApplicantMail','Admin\MailController@Applicant')->name('ApplicantMail');
     Route::post('/SendMail','Admin\MailController@SendMail')->name('SendMail');
     Route::get('/Enquirymarkasread',function (){
-        auth()->user()->unreadNotifications->markAsRead();
+        auth()->user()->unreadNotifications->where('type','App\Notifications\EnquiryNotification')->markAsRead();
+        auth()->user()->unreadNotifications->where('type','App\Notifications\EnquiryUpdateNotification')->markAsRead();
         return redirect()->route('Enquiry.index');
     })->name('Enquirymarkasread');
     Route::get('/Applicantmarkasread',function (){
-        auth()->user()->unreadNotifications->markAsRead();
+//        return 'hello';
+        auth()->user()->unreadNotifications->where('type','App\Notifications\ApplicantNotification')->markAsRead();
+        auth()->user()->unreadNotifications->where('type','App\Notifications\ApplicantUpdateNotification')->markAsRead();
         return redirect()->route('Applicant.index');
     })->name('Applicantmarkasread');
     Route::get('/logout','Admin\LoginController@logout')->name('logout');

@@ -23,7 +23,7 @@ class EducationController extends Controller
     public function index()
     {
         $education = $this->education->get();
-        return view('Admin.Applicant.Education.index')->with('education', $education);
+        return view('Admin.Applicant.Education.Education1.index')->with('education', $education);
     }
 
     /**
@@ -35,7 +35,7 @@ class EducationController extends Controller
     {
         $applicant = $this->applicant->get();
 //        dd($applicant);
-        return view('Admin.Applicant.Education.Add')->with('applicant', $applicant);
+        return view('Admin.Applicant.Education.Education1.Add')->with('applicant', $applicant);
     }
 
     /**
@@ -124,7 +124,7 @@ class EducationController extends Controller
         $applicant = $this->applicant->get();
         $app=$education->Applicant_Education->first_name;
 //        dd($app);
-        return view('Admin.Applicant.Education.Update')->with('applicant', $applicant)->with('education',$education)
+        return view('Admin.Applicant.Education.Education1.Update')->with('applicant', $applicant)->with('education',$education)
             ->with('app',$app);
     }
 

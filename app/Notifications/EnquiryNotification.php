@@ -30,7 +30,7 @@ class EnquiryNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database'];
     }
 
 
@@ -43,13 +43,7 @@ class EnquiryNotification extends Notification
         ];
     }
 
-    public function toBroadcast($notifiable)
-    {
-        return [
-            'thread' => $this->thread,
-            'message'=>'New Enquiry Added'
-        ];
-    }
+
 
     public function toArray($notifiable)
     {
