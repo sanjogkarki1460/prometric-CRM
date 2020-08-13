@@ -10,7 +10,7 @@ class Education extends Model
         'authority_phone_type', 'authority_country_code', 'authority_phone', 'authority_email', 'authority_website',
         'qualification', 'institution','mode', 'major_subject', 'minor_subject', 'roll', 'study_from', 'study_to',
         'conferred_date', 'degree_issue_date', 'expected_degree_issue_date', 'qualification_certificate', 'marksheet',
-        'applicant_id'];
+        'character_certificate','applicant_id'];
 
     public function Applicant_Education(){
         return $this->belongsTo('App\Admin\Applicant','applicant_id');

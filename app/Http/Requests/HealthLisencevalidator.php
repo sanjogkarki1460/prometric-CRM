@@ -25,8 +25,8 @@ class HealthLisencevalidator extends FormRequest
     {
         return [
             'applicant_id' => 'required',
-            'license_conferred_date'=>'date',
-            'license_expiry_date'=>'date',
+            'license_conferred_date'=>'',
+            'license_expiry_date'=>'',
             'license_number'=>'integer',
         ];
     }

@@ -61,7 +61,6 @@
                                                     <th>Name</th>
                                                     <th>Email</th>
                                                     <th>Contact</th>
-
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -75,7 +74,6 @@
                                                         <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</td>
                                                         <td>{{$applicant->email}}</td>
                                                         <td>{{$applicant->mobile_no}}</td>
-
                                                     </tr>
                                                 @endforeach
                                                 </tbody>

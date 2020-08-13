@@ -316,6 +316,16 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Character Certificate</p>
+                                    <input type="file"  class="form-control form"
+                                           style="height:27px;width:80%;margin-top: -20px;" name="character_certificate">
+                                    </input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Marksheet</p>
                                     <input type="file" class="form-control form"
                                            style="height:27px;width:80%;margin-top: -20px;" name="marksheet"
@@ -339,16 +349,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "select a applicant"
+                        placeholder: "Select a applicant"
                     });
                     $('#qualification').select2({
-                        placeholder: "select a qualification"
+                        placeholder: "Select a qualification"
                     });
                     $('#authority_country').select2({
-                        placeholder: "select a authority country"
+                        placeholder: "Select a authority country"
                     });
                     $('#mode').select2({
-                        placeholder: "select a mode"
+                        placeholder: "Select a mode"
                     });
                 });
             </script>

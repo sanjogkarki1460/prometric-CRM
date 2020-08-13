@@ -116,7 +116,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Maiden Name*</p>
-                                    <input required class="form form-control"
+                                    <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="maiden_name" placeholder="Enter Maiden Name">
                                 </div>
@@ -154,6 +154,7 @@
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Citizen">Citizen</option>
                                         <option value="Passport">Passport</option>
+                                        <option value="Both">Both</option>
                                     </select>
                                 </div>
                             </div>
@@ -162,7 +163,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Identity Card No*</p>
-                                    <input required class="form form-control"
+                                    <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="identity_card_no" placeholder="Enter Identity Card No">
                                 </div>
@@ -172,7 +173,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Passport No*</p>
-                                    <input required class="form form-control"
+                                    <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="passport_no" placeholder="Enter Passport No">
                                 </div>
@@ -227,16 +228,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#gender').select2({
-                        placeholder: "select a gender"
+                        placeholder: "Select a gender"
                     });
                     $('#identity_type').select2({
-                        placeholder: "select a identity type"
+                        placeholder: "Select a identity type"
                     });
                     $('#enquired_id').select2({
-                        placeholder: "select a Enquiry"
+                        placeholder: "Select a Enquiry"
                     });
                     $('#category').select2({
-                        placeholder: "select a category"
+                        placeholder: "Select a category"
                     });
                 });
             </script>

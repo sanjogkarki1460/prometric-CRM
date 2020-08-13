@@ -40,6 +40,7 @@ class CreateEducation2sTable extends Migration
             $table->date('expected_degree_issue_date')->nullable();
             $table->string('qualification_certificate')->nullable();
             $table->string('marksheet')->nullable();
+            $table->string('character_certificate')->nullable();
             $table->timestamps();
         });
     }

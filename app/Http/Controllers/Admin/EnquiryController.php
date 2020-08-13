@@ -48,12 +48,14 @@ class EnquiryController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EnquiryValidator $request,Admin $thread)
+    public function store(EnquiryValidator $request, Admin $thread)
     {
         $data = $request->all();
 //        dd($data);
-        $responded_through = implode(',', $request->responded_through);
-        $data['responded_through'] = $responded_through;
+        if ($request->responded_through) {
+            $responded_through = implode(',', $request->responded_through);
+            $data['responded_through'] = $responded_through;
+        }
         $this->enquiry->fill($data);
         $success = $this->enquiry->save();
         if ($success) {
@@ -100,8 +102,7 @@ class EnquiryController extends Controller
             return redirect()->back()->with('Error', 'Enquiry Not Found');
         } elseif ($enquiry->Category_id) {
             return view('Admin.Enquiry.Update')->with('enquiry', $enquiry)->with('category', $category)->with('cat', $cat);
-        }
-        else {
+        } else {
             return view('Admin.Enquiry.Update')->with('enquiry', $enquiry)->with('category', $category);
         }
 //        dd($enquiry);
@@ -118,8 +119,10 @@ class EnquiryController extends Controller
     {
         $this->enquiry = $this->enquiry->find($id);
         $data = $request->all();
-        $responded_through = implode(',', $request->responded_through);
-        $data['responded_through'] = $responded_through;
+        if ($request->responded_through) {
+            $responded_through = implode(',', $request->responded_through);
+            $data['responded_through'] = $responded_through;
+        }
         $this->enquiry->fill($data);
         $success = $this->enquiry->save();
         $admin = Admin::all();
@@ -150,8 +153,9 @@ class EnquiryController extends Controller
 
     }
 
-    public function Detail($id){
-        $enquiry=$this->enquiry->find($id);
-        return view('Admin.Enquiry.Detail')->with('enquiry',$enquiry);
+    public function Detail($id)
+    {
+        $enquiry = $this->enquiry->find($id);
+        return view('Admin.Enquiry.Detail')->with('enquiry', $enquiry);
     }
 }

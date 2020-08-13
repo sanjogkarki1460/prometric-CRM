@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <title>Immigration | Admin Dashboard</title>
+    <title>Prometric | Admin Dashboard</title>
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
           type="text/css"/>
 
     <!--Toastr-->
-    <link rel="stylesheet" href="{{asset('assets/css/toastr.min.css')}}">
+    {{--<link rel="stylesheet" href="{{asset('assets/css/toastr.min.css')}}">--}}
 
 <!-- data tables -->
     <link href="{{asset('assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css')}}" rel="stylesheet"

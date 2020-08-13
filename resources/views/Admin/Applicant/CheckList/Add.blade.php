@@ -130,7 +130,7 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "select a applicant"
+                        placeholder: "Select a applicant"
                     });
 
                 });

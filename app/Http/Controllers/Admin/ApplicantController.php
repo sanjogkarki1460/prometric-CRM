@@ -23,6 +23,7 @@ use App\Admin\ProgressFlow;
 use DB;
 use App\Admin\Admin;
 use Thread;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ApplicantController extends Controller
 {
@@ -44,7 +45,7 @@ class ApplicantController extends Controller
     public function __construct(Applicant $applicant, Category $category, Enquiry $enquiry, CheckList $checkList,
                                 Education2 $education2, Education $education, HealthLisence $healthlisence, HealthLicense2 $healthlicense2,
                                 Employment $employment, Employment2 $employment2, Employment3 $employment3, Employment4 $employment4
-        , Employment5 $employment5, ProgressFlow $progressflow)
+        ,Employment5 $employment5, ProgressFlow $progressflow)
     {
         $this->category = $category;
         $this->applicant = $applicant;
@@ -90,16 +91,13 @@ class ApplicantController extends Controller
     {
         $data = $request->all();
         $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
-//        dd($name);
-//        dd($data);
         if ($request->passport_docs) {
             $path = public_path() . '/upload/Applicant';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name . '-passport_docs-' . date('Ymdhid') . rand(0, 99) . "." . $request->passport_docs->getClientOriginalExtension();
-//            dd($file_name);
-//        dd($file_name);
+            $file_name = $name .'-passport_docs-' . date('Ymdhid') . rand(0, 99) . "." . $request->passport_docs->getClientOriginalExtension();
+
             $success = $request->passport_docs->move($path, $file_name);
 
             if ($success) {
@@ -107,6 +105,7 @@ class ApplicantController extends Controller
             } else {
                 $data['passport_docs'] = null;
             }
+
         }
         $this->applicant->fill($data);
         $success = $this->applicant->save();
@@ -239,7 +238,6 @@ class ApplicantController extends Controller
             DB::table('check_lists')->where('applicant_id', $id)->delete();
         };
         foreach ($education as $data) {
-            DB::table('education')->where('applicant_id', $id)->delete();
             $qualification_certificate = public_path() . '/upload/Applicant/Education/'.$data->qualification_certificate;if (File::exists($qualification_certificate)) {
                 $delete = File::delete($qualification_certificate);
             }
@@ -247,6 +245,11 @@ class ApplicantController extends Controller
             if (File::exists($marksheet)) {
                 $delete = File::delete($marksheet);
             }
+            $character_certificate = public_path() . '/upload/Applicant/Education/'.$data->character_certificate;
+            if (File::exists($character_certificate)) {
+                $delete = File::delete($character_certificate);
+            }
+            DB::table('education')->where('applicant_id', $id)->delete();
         };
         foreach ($education2 as $data) {
             $qualification_certificate = public_path() . '/upload/Applicant/Education/'.$data->qualification_certificate;
@@ -256,6 +259,10 @@ class ApplicantController extends Controller
             $marksheet = public_path() . '/upload/Applicant/Education/'.$data->marksheet;
             if (File::exists($marksheet)) {
                 $delete = File::delete($marksheet);
+            }
+            $character_certificate = public_path() . '/upload/Applicant/Education/'.$data->character_certificate;
+            if (File::exists($character_certificate)) {
+                $delete = File::delete($character_certificate);
             }
             DB::table('education2s')->where('applicant_id', $id)->delete();
         };

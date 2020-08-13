@@ -116,5 +116,12 @@
                     </form>
                 </div>
             </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#applicant').select2({
+                        placeholder: "Select a applicant"
+                    });
 
+                });
+            </script>
 @endsection

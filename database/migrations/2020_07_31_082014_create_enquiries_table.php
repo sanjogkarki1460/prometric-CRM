@@ -32,6 +32,9 @@ class CreateEnquiriesTable extends Migration
             $table->string('responded_through')->nullable();
             $table->string('eligibility');
             $table->string('Category_id');
+            $table->date('Enquired_date');
+            $table->enum('Office_visited',['Yes','No'])->default('No');
+            $table->Date('Visited_date')->nullable();
             $table->timestamps();
         });
     }

@@ -54,6 +54,7 @@
                                             <th>DEGREE ISSUE DATE</th>
                                             <th>EXPECTED DEGREE ISSUE DATE</th>
                                             <th>QUALIFICATION CERTIFICATE</th>
+                                            <th>Character CERTIFICATE</th>
                                             <th>MARKSHEET</th>
                                             <th>Action</th>
                                         </tr>
@@ -90,6 +91,14 @@
 
                                                 @else
                                                     <td>No Qualification Certificate Found</td>
+                                                @endif
+                                                @if($education->character_certificate)
+                                                    <td><a target="_blank"
+                                                           href="{{asset('/upload/Applicant/Education/'.$education->character_certificate)}}">Character
+                                                            Certificate</a></td>
+
+                                                @else
+                                                    <td>No Character Certificate Found</td>
                                                 @endif
                                                 @if($education->marksheet)
                                                     <td><a target="_blank"

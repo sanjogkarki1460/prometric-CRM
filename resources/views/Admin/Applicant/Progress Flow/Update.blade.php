@@ -630,40 +630,40 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "select a applicant"
+                        placeholder: "Select a applicant"
                     });
                     $('#profession').select2({
-                        placeholder: "select a profession"
+                        placeholder: "Select a profession"
                     });
                     $('#signed_by_applicant').select2({
-                        placeholder: "select a signed by applicant"
+                        placeholder: "Select a signed by applicant"
                     });
                     $('#mode_of_payment').select2({
-                        placeholder: "select a mode of payment"
+                        placeholder: "Select a mode of payment"
                     });
                     $('#DHA_mode_of_payment').select2({
-                        placeholder: "select a mode of payment"
+                        placeholder: "Select a mode of payment"
                     });
                     $('#equivalent_certificate').select2({
-                        placeholder: "select a equivalent_certificate"
+                        placeholder: "Select a equivalent_certificate"
                     });
                     $('#book_provided').select2({
-                        placeholder: "select one"
+                        placeholder: "Select one"
                     });
                     $('#DHA_first_mode_of_payment').select2({
-                        placeholder: "select a mode of payment"
+                        placeholder: "Select a mode of payment"
                     });
                     $('#DHA_second_mode_of_payment').select2({
-                        placeholder: "select a mode of payment"
+                        placeholder: "Select a mode of payment"
                     });
                     $('#confirmation').select2({
-                        placeholder: "select a confrimation mode"
+                        placeholder: "Select a confrimation mode"
                     });
                     $('#result').select2({
-                        placeholder: "select a result"
+                        placeholder: "Select a result"
                     });
                     $('#data_flow').select2({
-                        placeholder: "select a data flow report"
+                        placeholder: "Select a data flow report"
                     });
                 });
             </script>

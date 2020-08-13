@@ -96,6 +96,18 @@
                                 <h5 class="text-primary">Category</h5>
                                 <p>{{@$enquiry->Category_Enquiry->Name}}</p>
                             </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Enquired Date</h5>
+                                <p>{{@$enquiry->Enquired_date}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Office Visited</h5>
+                                <p>{{@$enquiry->Office_visited}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Visited Date</h5>
+                                <p>{{@$enquiry->Visited_date}}</p>
+                            </div>
                         </div>
                         <div class="col-md-12 row">
                             <div class="col-md-9"></div>

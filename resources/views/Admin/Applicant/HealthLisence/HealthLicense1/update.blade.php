@@ -241,16 +241,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "select a applicant"
+                        placeholder: "Select a applicant"
                     });
                     $('#license_status').select2({
-                        placeholder: "select a license status"
+                        placeholder: "Select a license status"
                     });
                     $('#license_type').select2({
-                        placeholder: "select a license type"
+                        placeholder: "Select a license type"
                     });
                     $('#authority_country').select2({
-                        placeholder: "select a country"
+                        placeholder: "Select a country"
                     });
                 });
             </script>

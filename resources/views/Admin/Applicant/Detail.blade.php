@@ -378,6 +378,18 @@
                                                 @endif
                                             </div>
                                             <div class="col-md-3">
+                                                <h5 class="text-primary">Character Certificate</h5>
+                                                @if($education->character_certificate)
+                                                    <p><a target="_blank"
+                                                          style="color: blue"
+                                                          href="{{asset('/upload/Applicant/Education/'.$education->character_certificate)}}">Click
+                                                            here for Character
+                                                            Certificate</a></p>
+                                                @else
+                                                    <p>No Character Certificate Found</p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-3">
                                                 <h5 class="text-primary">Marksheet</h5>
                                                 @if($education->marksheet)
                                                     <p><a target="_blank"
@@ -487,6 +499,18 @@
                                                             Certificate</a></p>
                                                 @else
                                                     <p>No Qualification Certificate Found</p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Character Certificate</h5>
+                                                @if($education->character_certificate)
+                                                    <p><a target="_blank"
+                                                          style="color: blue"
+                                                          href="{{asset('/upload/Applicant/Education/'.$education->character_certificate)}}">Click
+                                                            here for Character
+                                                            Certificate</a></p>
+                                                @else
+                                                    <p>No Character Certificate Found</p>
                                                 @endif
                                             </div>
                                             <div class="col-md-3">

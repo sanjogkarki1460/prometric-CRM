@@ -8,7 +8,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="RedstarHospital" />
-    <title>Immigration | login</title>
+    <title>Promteric | login</title>
     <!-- google font -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
           type="text/css" />
@@ -22,7 +22,7 @@
     <!--Toastr-->
     <link rel="stylesheet" href="{{asset('assets/css/toastr.min.css')}}">
     <!-- favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}" />
+    {{--<link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}" />--}}
 </head>
 
 <body>

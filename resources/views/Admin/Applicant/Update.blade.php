@@ -13,16 +13,16 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('#gender').select2({
-                placeholder: "select a gender"
+                placeholder: "Select a gender"
             });
             $('#identity_type').select2({
-                placeholder: "select a identity type"
+                placeholder: "Select a identity type"
             });
             $('#enquired_id').select2({
-                placeholder: "select a Enquiry"
+                placeholder: "Select a Enquiry"
             });
             $('#category').select2({
-                placeholder: "select a category"
+                placeholder: "Select a category"
             });
         });
     </script>
@@ -142,7 +142,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Maiden Name*</p>
-                                    <input required class="form form-control"
+                                    <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" value="{{$applicant->maiden_name}}" name="maiden_name"
                                            placeholder="Enter Maiden Name">
@@ -191,6 +191,9 @@
                                         <option @if($applicant->identity_type=='Passport') selected
                                                 @endif value="Passport">Passport
                                         </option>
+                                        <option @if($applicant->identity_type=='Both') selected
+                                                @endif value="Both">Both
+                                        </option>
                                     </select>
                                 </div>
                             </div>
@@ -199,7 +202,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Identity Card No*</p>
-                                    <input required class="form form-control"
+                                    <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" value="{{$applicant->identity_card_no}}" name="identity_card_no"
                                            placeholder="Enter Identity Card No">
@@ -210,7 +213,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Passport No*</p>
-                                    <input required class="form form-control"
+                                    <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-20px;"
                                            type="text" value="{{$applicant->passport_no}}" name="passport_no"
                                            placeholder="Enter Passport No">

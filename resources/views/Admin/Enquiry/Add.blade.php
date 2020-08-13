@@ -283,6 +283,34 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Enquired date*</p>
+                                    <input required class="form form-control"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
+                                           type="date" name="Enquired_date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Office Visited*</p>
+                                    <input type="checkbox" name="Office_visited" value="Yes">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Visited date*</p>
+                                    <input class="form form-control"
+                                           style="width: 80%;height:34px;margin-top:-15px;"
+                                           type="date" name="Visited_date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Remarks*</p>
                                     <textarea class="form form-control" style="width:80%;margin-top:-15px;"
                                               rows="5"
@@ -294,7 +322,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Responded Through*</p>
-                                    <select class="form-control form select2 sjs-example-placeholder-multiple js-state" multiple="multiple" id="responded_through"
+                                    <select class="form-control form select2 sjs-example-placeholder-multiple js-state"
+                                            multiple="multiple" id="responded_through"
                                             style="height:50%;width:80%;margin-top: -10px;" name="responded_through[]">
                                         {{--<option value="" selected disabled></option>--}}
                                         <option value="None">None</option>
@@ -312,7 +341,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Eligibility*</p>
-                                    <select required class="form-control form select2" id="eligibility"
+                                    <select class="form-control form select2" id="eligibility"
                                             style="height:50%;width:80%;margin-top: -15px;" name="eligibility">
                                         <option value="" selected disabled>--select any one--</option>
                                         <option value="Eligible">Eligible</option>
@@ -336,34 +365,34 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#category').select2({
-                        placeholder: "select a category"
+                        placeholder: "Select a category"
                     });
                     $('#subject').select2({
-                        placeholder: "select a subject"
+                        placeholder: "Select a subject"
                     });
                     $('#qualification_level').select2({
-                        placeholder: "select a Qualification Level"
+                        placeholder: "Select a Qualification Level"
                     });
                     $('#experience').select2({
-                        placeholder: "select a experience"
+                        placeholder: "Select a experience"
                     });
                     $('#country_interested').select2({
-                        placeholder: "select a interested country"
+                        placeholder: "Select a interested country"
                     });
                     $('#service_interested').select2({
-                        placeholder: "select a interested service"
+                        placeholder: "Select a interested service"
                     });
                     $('#enquiry_from').select2({
-                        placeholder: "select a enquiry from"
+                        placeholder: "Select a enquiry from"
                     });
                     $('#source').select2({
-                        placeholder: "select a source"
+                        placeholder: "Select a source"
                     });
                     $('#responded_through').select2({
-                        placeholder: "select a responded through"
+                        placeholder: "Select a responded through"
                     });
                     $('#eligibility').select2({
-                        placeholder: "select a eligibility"
+                        placeholder: "Select a eligibility"
                     });
                 });
             </script>

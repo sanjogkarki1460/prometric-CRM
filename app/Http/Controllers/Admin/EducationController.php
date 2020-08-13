@@ -91,6 +91,28 @@ class EducationController extends Controller
             }
 
         }
+        /*Chearacter Certificate*/
+        if ($request->character_certificate) {
+            $first_Name=$this->education->Applicant_Education->first_name;
+            $middel_Name=$this->education->Applicant_Education->middel_name;
+            $last_Name=$this->education->Applicant_Education->surname;
+            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
+            $path = public_path() . '/upload/Applicant/Education';
+//            dd($path);
+            if (!File::exists($path)) {
+                File::makeDirectory($path, true, true);
+            }
+            $file_name = $name."-character_certificate-" . date('Ymdhid') . rand(0, 99) . "." . $request->character_certificate->getClientOriginalExtension();
+//        dd($file_name);
+            $success = $request->character_certificate->move($path, $file_name);
+
+            if ($success) {
+                $data['character_certificate'] = $file_name;
+            } else {
+                $data['character_certificate'] = null;
+            }
+
+        }
         $this->education->fill($data);
         $success=$this->education->save();
         if($success){
@@ -190,6 +212,32 @@ class EducationController extends Controller
             }
 
         }
+        /*Character Certificate*/
+        if ($request->character_certificate) {
+            $first_Name=$this->education->Applicant_Education->first_name;
+            $middel_Name=$this->education->Applicant_Education->middel_name;
+            $last_Name=$this->education->Applicant_Education->surname;
+            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
+            $character_certificate = public_path() . '/upload/Applicant/Education/'.$this->education->character_certificate;
+            if (File::exists($character_certificate)) {
+                $delete = File::delete($character_certificate);
+            }
+            $path = public_path() . '/upload/Applicant/Education';
+//            dd($path);
+            if (!File::exists($path)) {
+                File::makeDirectory($path, true, true);
+            }
+            $file_name = $name."-character_certificate-" . date('Ymdhid') . rand(0, 99) . "." . $request->character_certificate->getClientOriginalExtension();
+//        dd($file_name);
+            $success = $request->character_certificate->move($path, $file_name);
+
+            if ($success) {
+                $data['character_certificate'] = $file_name;
+            } else {
+                $data['character_certificate'] = null;
+            }
+
+        }
         $this->education->fill($data);
         $success=$this->education->save();
         if($success){
@@ -221,6 +269,10 @@ class EducationController extends Controller
         $marksheet = public_path() . '/upload/Applicant/Education/'.$education->marksheet;
         if (File::exists($marksheet)) {
             $delete = File::delete($marksheet);
+        }
+        $character_certificate = public_path() . '/upload/Applicant/Education/'.$education->character_certificate;
+        if (File::exists($character_certificate)) {
+            $delete = File::delete($character_certificate);
         }
         $success=$education->delete();
         if($success){

@@ -24,23 +24,23 @@ class EnquiryValidator extends FormRequest
     public function rules()
     {
         return [
-            'first_name'=>'required|string',
-            'last_name'=>'required|string',
+            'first_name'=>'required',
+            'last_name'=>'required',
             'middle_name'=>'',
-            'email'=>'required|email',
+            'email'=>'required',
             'phone'=>'required|integer',
-            'address'=>'required|string',
-            'subject'=>'required|string',
-            'qualification_level'=>'required|string',
-            'experience'=>'required|string',
-            'country_interested'=>'required|string',
-            'service_interested'=>'required|string',
+            'address'=>'required',
+            'subject'=>'required',
+            'qualification_level'=>'required',
+            'experience'=>'required',
+            'country_interested'=>'required',
+            'service_interested'=>'required',
             'enquiry_from'=>'',
             'source'=>'',
             'remarks'=>'',
-            'responded_through'=>'required',
-            'eligibility'=>'required|string',
-            'Category_id'=>'required|string'
+            'responded_through'=>'',
+            'eligibility'=>'',
+            'Category_id'=>'required'
         ];
     }
 }

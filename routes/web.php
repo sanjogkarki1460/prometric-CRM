@@ -14,12 +14,10 @@ use App\Mail\PrometricMail;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/','Admin\LoginController@loginForm')->name('login')->middleware('AdminGuest');
-Route::post('/login/check','Admin\LoginController@loginCheck')->name('loginCheck')->middleware('AdminGuest');
+
+Route::get('/','Admin\loginController@loginForm')->name('login')->middleware('AdminGuest');
+Route::post('/login/check','Admin\loginController@loginCheck')->name('loginCheck')->middleware('AdminGuest');
 
 Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::get('/' ,'Admin\HomeController@index')->name('admin.home');
@@ -56,5 +54,5 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
         auth()->user()->unreadNotifications->where('type','App\Notifications\ApplicantUpdateNotification')->markAsRead();
         return redirect()->route('Applicant.index');
     })->name('Applicantmarkasread');
-    Route::get('/logout','Admin\LoginController@logout')->name('logout');
+    Route::get('/logout','Admin\loginController@logout')->name('logout');
 });

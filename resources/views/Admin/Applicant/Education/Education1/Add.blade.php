@@ -44,13 +44,13 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">qualification</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Qualification</p>
                                     <select  class="form-control form select2" id="qualification"
                                             style="height:34px;width:80%;margin-top: -20px;" name="qualification">
                                         <option value="" selected disabled>select Qualification</option>
                                         <option value="Diploma">Diploma</option>
                                         <option value="Bachelor">Bachelor</option>
-                                        <option value="Master">Masterd</option>
+                                        <option value="Master">Master</option>
                                     </select>
                                 </div>
                             </div>
@@ -269,6 +269,16 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Character Certificate</p>
+                                    <input type="file"  class="form-control form"
+                                           style="height:27px;width:80%;margin-top: -20px;" name="character_certificate">
+                                    </input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Marksheet</p>
                                     <input type="file"  class="form-control form"
                                            style="height:27px;width:80%;margin-top: -20px;" name="marksheet">
@@ -291,16 +301,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "select a applicant"
+                        placeholder: "Select a applicant"
                     });
                     $('#qualification').select2({
-                        placeholder: "select a qualification"
+                        placeholder: "Select a qualification"
                     });
                     $('#authority_country').select2({
-                        placeholder: "select a authority country"
+                        placeholder: "Select a authority country"
                     });
                     $('#mode').select2({
-                        placeholder: "select a mode"
+                        placeholder: "Select a mode"
                     });
                 });
             </script>

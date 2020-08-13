@@ -292,16 +292,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "select a applicant"
+                        placeholder: "Select a applicant"
                     });
                     $('#designation').select2({
-                        placeholder: "select a designation"
+                        placeholder: "Select a designation"
                     });
                     $('#nature_of_employment').select2({
-                        placeholder: "select a nature of employment"
+                        placeholder: "Select a nature of employment"
                     });
                     $('#issuing_authority_country').select2({
-                        placeholder: "select a issuing authority country"
+                        placeholder: "Select a issuing authority country"
                     });
                 });
             </script>
