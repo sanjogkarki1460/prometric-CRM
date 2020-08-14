@@ -52,7 +52,6 @@
         @if(Session::has('Error'))
         toastr.error("{{Session::get('Error')}}")
         @endif
-
     </script>
 
     <!-- summernote -->

@@ -86,7 +86,7 @@
                                                 <td>{{$education->expected_degree_issue_date}}</td>
                                                 @if($education->qualification_certificate)
                                                 <td><a target="_blank"
-                                                       href="{{asset('/upload/Applicant/Education/'.$education->qualification_certificate)}}">Qualification
+                                                       href="{{asset('/upload/Education/'.$education->qualification_certificate)}}">Qualification
                                                         Certificate</a></td>
 
                                                 @else
@@ -94,7 +94,7 @@
                                                 @endif
                                                 @if($education->character_certificate)
                                                     <td><a target="_blank"
-                                                           href="{{asset('/upload/Applicant/Education/'.$education->character_certificate)}}">Character
+                                                           href="{{asset('/upload/Education/'.$education->character_certificate)}}">Character
                                                             Certificate</a></td>
 
                                                 @else
@@ -102,7 +102,7 @@
                                                 @endif
                                                 @if($education->marksheet)
                                                     <td><a target="_blank"
-                                                           href="{{asset('/upload/Applicant/Education/'.$education->marksheet)}}">MarkSheet</a>
+                                                           href="{{asset('/upload/Education/'.$education->marksheet)}}">MarkSheet</a>
                                                     </td>
                                                 @else
                                                     <td>No Marksheet Found</td>

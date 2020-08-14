@@ -29,6 +29,15 @@
                     <span></span>
                 </a>
                 <div class="top-menu">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                             <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <ul class="nav navbar-nav pull-right">
                         {{--<notification></notification>--}}
                         <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
@@ -81,5 +90,6 @@
                 </div>
             </div>
         </div>
+
 
 @endsection

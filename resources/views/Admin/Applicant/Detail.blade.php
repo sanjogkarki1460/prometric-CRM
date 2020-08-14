@@ -370,7 +370,7 @@
                                                 @if($education->qualification_certificate)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Education/'.$education->qualification_certificate)}}">Click
+                                                          href="{{asset('/upload/Education/'.$education->qualification_certificate)}}">Click
                                                             here for Qualification
                                                             Certificate</a></p>
                                                 @else
@@ -382,7 +382,7 @@
                                                 @if($education->character_certificate)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Education/'.$education->character_certificate)}}">Click
+                                                          href="{{asset('/upload/Education/'.$education->character_certificate)}}">Click
                                                             here for Character
                                                             Certificate</a></p>
                                                 @else
@@ -394,7 +394,7 @@
                                                 @if($education->marksheet)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Education/'.$education->marksheet)}}">Click
+                                                          href="{{asset('/upload/Education/'.$education->marksheet)}}">Click
                                                             Here for MarkSheet</a></p>
                                                 @else
                                                     <p>No Marksheet found</p>
@@ -494,7 +494,7 @@
                                                 @if($education2->qualification_certificate)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Education/'.$education2->qualification_certificate)}}">Click
+                                                          href="{{asset('/upload/Education/'.$education2->qualification_certificate)}}">Click
                                                             here for Qualification
                                                             Certificate</a></p>
                                                 @else
@@ -506,7 +506,7 @@
                                                 @if($education->character_certificate)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Education/'.$education->character_certificate)}}">Click
+                                                          href="{{asset('/upload/Education/'.$education->character_certificate)}}">Click
                                                             here for Character
                                                             Certificate</a></p>
                                                 @else
@@ -518,7 +518,7 @@
                                                 @if($education2->marksheet)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Education/'.$education2->marksheet)}}">Click
+                                                          href="{{asset('/upload/Education/'.$education2->marksheet)}}">Click
                                                             Here for MarkSheet</a></p>
                                                 @else
                                                     <p>No Marksheet found</p>
@@ -530,7 +530,7 @@
                                 <hr>
                                 @foreach($healthlisence as $healthlisence)
                                     <div>
-                                        <h3 class="text-center text-danger">Applicant's Health Lisence Detail</h3>
+                                        <h3 class="text-center text-danger">Applicant's Health License Detail</h3>
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-3">
@@ -550,37 +550,37 @@
                                                 <p>{{$healthlisence->issuing_authority_city}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Conferred date</h5>
+                                                <h5 class="text-primary">License Conferred date</h5>
                                                 <p>{{$healthlisence->license_conferred_date}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Expiry Date</h5>
+                                                <h5 class="text-primary">License Expiry Date</h5>
                                                 <p>{{$healthlisence->license_expiry_date}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Type</h5>
+                                                <h5 class="text-primary">License Type</h5>
                                                 <p>{{$healthlisence->license_type}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Number</h5>
+                                                <h5 class="text-primary">License Number</h5>
                                                 <p>{{$healthlisence->license_number}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Status</h5>
+                                                <h5 class="text-primary">License Status</h5>
                                                 <p>{{$healthlisence->license_status}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Attained</h5>
+                                                <h5 class="text-primary">License Attained</h5>
                                                 <p>{{$healthlisence->license_attained}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Copy</h5>
+                                                <h5 class="text-primary">License Copy</h5>
                                                 @if($healthlisence->license_copy)
                                                     <p><a target="_blank" style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Health License/'.$healthlisence->license_copy)}}">click
-                                                            here Lisence Copy</a></p>
+                                                          href="{{asset('/upload/Health License/'.$healthlisence->license_copy)}}">click
+                                                            here License Copy</a></p>
                                                 @else
-                                                    <p>No Lisence copy Found</p>
+                                                    <p>No License copy Found</p>
                                                 @endif
                                             </div>
                                         </div>
@@ -589,7 +589,7 @@
                                 @endforeach
                                 @foreach($healthlicense2 as $healthlicense2)
                                     <div>
-                                        <h3 class="text-center text-danger">Applicant's Second Health Lisence Detail</h3>
+                                        <h3 class="text-center text-danger">Applicant's Second Health License Detail</h3>
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-3">
@@ -609,37 +609,37 @@
                                                 <p>{{$healthlicense2->issuing_authority_city}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Conferred date</h5>
+                                                <h5 class="text-primary">License Conferred date</h5>
                                                 <p>{{$healthlicense2->license_conferred_date}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Expiry Date</h5>
+                                                <h5 class="text-primary">License Expiry Date</h5>
                                                 <p>{{$healthlicense2->license_expiry_date}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Type</h5>
+                                                <h5 class="text-primary">License Type</h5>
                                                 <p>{{$healthlicense2->license_type}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Number</h5>
+                                                <h5 class="text-primary">License Number</h5>
                                                 <p>{{$healthlicense2->license_number}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Status</h5>
+                                                <h5 class="text-primary">License Status</h5>
                                                 <p>{{$healthlicense2->license_status}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Attained</h5>
+                                                <h5 class="text-primary">License Attained</h5>
                                                 <p>{{$healthlicense2->license_attained}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Lisence Copy</h5>
+                                                <h5 class="text-primary">License Copy</h5>
                                                 @if($healthlicense2->license_copy)
                                                     <p><a target="_blank" style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Health License/'.$healthlicense2->license_copy)}}">click
-                                                            here Lisence Copy</a></p>
+                                                          href="{{asset('/upload/Health License/'.$healthlicense2->license_copy)}}">click
+                                                            here License Copy</a></p>
                                                 @else
-                                                    <p>No Lisence copy Found</p>
+                                                    <p>No License copy Found</p>
                                                 @endif
                                             </div>
                                         </div>
@@ -720,7 +720,7 @@
                                                 @if($employment->experience_letter)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Employment/'.$employment->experience_letter)}}">Click
+                                                          href="{{asset('/upload/Employment/'.$employment->experience_letter)}}">Click
                                                             Here Experience Letter</a></p>
                                                 @else
                                                     <p>No Experience letter found</p>
@@ -804,7 +804,7 @@
                                                 @if($employment2->experience_letter)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Employment/'.$employment2->experience_letter)}}">Click
+                                                          href="{{asset('/upload/Employment/'.$employment2->experience_letter)}}">Click
                                                             Here Experience Letter</a></p>
                                                 @else
                                                     <p>No Experience letter found</p>
@@ -888,7 +888,7 @@
                                                 @if($employment3->experience_letter)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Employment/'.$employment3->experience_letter)}}">Click
+                                                          href="{{asset('/upload/Employment/'.$employment3->experience_letter)}}">Click
                                                             Here Experience Letter</a></p>
                                                 @else
                                                     <p>No Experience letter found</p>
@@ -972,7 +972,7 @@
                                                 @if($employment4->experience_letter)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Employment/'.$employment4->experience_letter)}}">Click
+                                                          href="{{asset('/upload/Employment/'.$employment4->experience_letter)}}">Click
                                                             Here Experience Letter</a></p>
                                                 @else
                                                     <p>No Experience letter found</p>
@@ -1056,7 +1056,7 @@
                                                 @if($employment5->experience_letter)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Applicant/Employment/'.$employment5->experience_letter)}}">Click
+                                                          href="{{asset('/upload/Employment/'.$employment5->experience_letter)}}">Click
                                                             Here Experience Letter</a></p>
                                                 @else
                                                     <p>No Experience letter found</p>
@@ -1100,7 +1100,7 @@
                                                 @if($progressflow->signed_docs)
                                                     <a target="_blank"
                                                        style="color: blue"
-                                                       href="{{asset('/upload/Applicant/Progress flow/'.$progressflow->signed_docs)}}">Clisck
+                                                       href="{{asset('/upload/Progress flow/'.$progressflow->signed_docs)}}">Clisck
                                                         here for Signed
                                                         Docs</a>
                                                 @else

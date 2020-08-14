@@ -25,7 +25,7 @@ class Education2Controller extends Controller
     {
         $education = $this->education2->get();
 //        dd($education);
-        return view('Admin.Applicant.Education.Education2.index')->with('education', $education);
+        return view('Admin.Applicant.Education.Education2.Index')->with('education', $education);
     }
 
     /**
@@ -58,7 +58,7 @@ class Education2Controller extends Controller
             $last_Name = $this->education2->Applicant_Education2->surname;
             $name = $first_Name . ' ' . $middel_Name . ' ' . $last_Name;
 //            dd($name);
-            $path = public_path() . '/upload/Applicant/Education';
+            $path = 'upload/Education';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -78,7 +78,7 @@ class Education2Controller extends Controller
             $middel_Name = $this->education2->Applicant_Education2->middel_name;
             $last_Name = $this->education2->Applicant_Education2->surname;
             $name = $first_Name . ' ' . $middel_Name . ' ' . $last_Name;
-            $path = public_path() . '/upload/Applicant/Education';
+            $path = 'upload/Education';
 //            dd($path);
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
@@ -99,7 +99,7 @@ class Education2Controller extends Controller
             $middel_Name=$this->education2->Applicant_Education2->middel_name;
             $last_Name=$this->education2->Applicant_Education2->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
-            $path = public_path() . '/upload/Applicant/Education';
+            $path = 'upload/Education';
 //            dd($path);
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
@@ -169,11 +169,11 @@ class Education2Controller extends Controller
             $middel_name = $this->education2->Applicant_Education2->middel_name;
             $surname = $this->education2->Applicant_Education2->surname;
             $name = $name = $first_name . ' ' . $middel_name . ' ' . $surname;
-            $qualification_certificate = public_path() . '/upload/Applicant/Education/' . $this->education2->qualification_certificate;
+            $qualification_certificate = 'upload/Education/' . $this->education2->qualification_certificate;
             if (File::exists($qualification_certificate)) {
                 $delete = File::delete($qualification_certificate);
             }
-            $path = public_path() . '/upload/Applicant/Education';
+            $path = 'upload/Education';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -193,11 +193,11 @@ class Education2Controller extends Controller
             $middel_name = $this->education2->Applicant_Education2->middel_name;
             $surname = $this->education2->Applicant_Education2->surname;
             $name = $name = $first_name . ' ' . $middel_name . ' ' . $surname;
-            $marksheet = public_path() . '/upload/Applicant/Education/' . $this->education2->marksheet;
+            $marksheet = 'upload/Education/' . $this->education2->marksheet;
             if (File::exists($marksheet)) {
                 $delete = File::delete($marksheet);
             }
-            $path = public_path() . '/upload/Applicant/Education';
+            $path = 'upload/Education';
 //            dd($path);
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
@@ -219,12 +219,12 @@ class Education2Controller extends Controller
             $middel_Name=$this->education2->Applicant_Education2->middel_name;
             $last_Name=$this->education2->Applicant_Education2->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
-            $character_certificate = public_path() . '/upload/Applicant/Education/'.$this->education2->character_certificate;
+            $character_certificate = 'upload/Education/'.$this->education2->character_certificate;
 //            dd($character_certificate);
             if (File::exists($character_certificate)) {
                 $delete = File::delete($character_certificate);
             }
-            $path = public_path() . '/upload/Applicant/Education';
+            $path = 'upload/Education';
 //            dd($path);
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
@@ -262,17 +262,17 @@ class Education2Controller extends Controller
         if(!$education){
             return redirect()->route()->with('Error','Applicant education list not found');
         }
-        $qualification_certificate = public_path() . '/upload/Applicant/Education/'.$education->qualification_certificate;
+        $qualification_certificate = 'upload/Education/'.$education->qualification_certificate;
 //        dd($qualification_certificate);
         if (File::exists($qualification_certificate)) {
             $delete = File::delete($qualification_certificate);
 //            dd($delete);
         }
-        $marksheet = public_path() . '/upload/Applicant/Education/'.$education->marksheet;
+        $marksheet = 'upload/Education/'.$education->marksheet;
         if (File::exists($marksheet)) {
             $delete = File::delete($marksheet);
         }
-        $character_certificate = public_path() . '/upload/Applicant/Education/'.$education->character_certificate;
+        $character_certificate = 'upload/Education/'.$education->character_certificate;
         if (File::exists($character_certificate)) {
             $delete = File::delete($character_certificate);
         }

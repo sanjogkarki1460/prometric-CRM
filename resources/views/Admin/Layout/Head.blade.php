@@ -46,7 +46,7 @@
           type="text/css"/>
 
     <!--Toastr-->
-    {{--<link rel="stylesheet" href="{{asset('assets/css/toastr.min.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('assets/css/toastr.min.css')}}">
 
 <!-- data tables -->
     <link href="{{asset('assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css')}}" rel="stylesheet"

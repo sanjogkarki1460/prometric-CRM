@@ -53,7 +53,7 @@ class HealthLisenceController extends Controller
             $middel_Name=$this->healthlisence->Applicant_Health->middel_name;
             $last_Name=$this->healthlisence->Applicant_Health->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
-            $path = public_path() . '/upload/Applicant/Health License';
+            $path = 'upload/Health License';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -121,13 +121,13 @@ class HealthLisenceController extends Controller
             $last_Name=$healthlisence->Applicant_Health->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
 //            dd($name);
-            $image_path = public_path() . '/upload/Applicant/Health License/' . $healthlisence->license_copy;
+            $image_path = 'upload/Health License/' . $healthlisence->license_copy;
 //        dd($image_path);
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
 //            dd($delete);
             }
-            $path = public_path() . '/upload/Applicant/Health License';
+            $path = 'upload/Health License';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -163,7 +163,7 @@ class HealthLisenceController extends Controller
         if (!$healthlisence) {
             return redirect()->back()->with('Error', 'List Not Found');
         }
-        $image_path = public_path() . '/upload/Applicant/Health License/' . $healthlisence->license_copy;
+        $image_path = 'upload/Health License/' . $healthlisence->license_copy;
         if (File::exists($image_path)) {
             $delete = File::delete($image_path);
         }

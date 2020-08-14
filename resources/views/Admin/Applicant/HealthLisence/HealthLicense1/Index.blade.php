@@ -65,7 +65,7 @@
                                                 @if(!$healthlisence->license_copy)
                                                     <td>No License Copy</td>
                                                 @else
-                                                    <td><a target="_blank " href="{{asset('/upload/Applicant/Health License/'.$healthlisence->license_copy)}}">Lisence Copy</a></td>
+                                                    <td><a target="_blank " href="{{asset('/upload/Health License/'.$healthlisence->license_copy)}}">Lisence Copy</a></td>
                                                 @endif
                                                 <td class="text-left">
                                                     <form action="{{ route('HealthLicense.edit', $healthlisence ->id)}}"

@@ -92,7 +92,7 @@ class ApplicantController extends Controller
         $data = $request->all();
         $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
         if ($request->passport_docs) {
-            $path = public_path() . '/upload/Applicant';
+            $path = 'upload/Applicant';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -179,11 +179,11 @@ class ApplicantController extends Controller
         $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
         $data = $request->all();
         if ($request->passport_docs) {
-            $image_path = public_path() . '/upload/Applicant/' . $this->applicant->passport_docs;
+            $image_path = 'upload/Applicant/' . $this->applicant->passport_docs;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
-            $path = public_path() . '/upload/Applicant/';
+            $path = 'upload/Applicant/';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -218,7 +218,7 @@ class ApplicantController extends Controller
         if (!$applicant) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
         }
-        $image_path = public_path() . '/upload/Applicant/' . $applicant->passport_docs;
+        $image_path = 'upload/Applicant/' . $applicant->passport_docs;
         if (File::exists($image_path)) {
             $delete = File::delete($image_path);
         }
@@ -238,85 +238,85 @@ class ApplicantController extends Controller
             DB::table('check_lists')->where('applicant_id', $id)->delete();
         };
         foreach ($education as $data) {
-            $qualification_certificate = public_path() . '/upload/Applicant/Education/'.$data->qualification_certificate;if (File::exists($qualification_certificate)) {
+            $qualification_certificate = 'upload/Education/'.$data->qualification_certificate;if (File::exists($qualification_certificate)) {
                 $delete = File::delete($qualification_certificate);
             }
-            $marksheet = public_path() . '/upload/Applicant/Education/'.$data->marksheet;
+            $marksheet = 'upload/Education/'.$data->marksheet;
             if (File::exists($marksheet)) {
                 $delete = File::delete($marksheet);
             }
-            $character_certificate = public_path() . '/upload/Applicant/Education/'.$data->character_certificate;
+            $character_certificate = 'upload/Education/'.$data->character_certificate;
             if (File::exists($character_certificate)) {
                 $delete = File::delete($character_certificate);
             }
             DB::table('education')->where('applicant_id', $id)->delete();
         };
         foreach ($education2 as $data) {
-            $qualification_certificate = public_path() . '/upload/Applicant/Education/'.$data->qualification_certificate;
+            $qualification_certificate = 'upload/Education/'.$data->qualification_certificate;
             if (File::exists($qualification_certificate)) {
                 $delete = File::delete($qualification_certificate);
             }
-            $marksheet = public_path() . '/upload/Applicant/Education/'.$data->marksheet;
+            $marksheet = 'upload/Education/'.$data->marksheet;
             if (File::exists($marksheet)) {
                 $delete = File::delete($marksheet);
             }
-            $character_certificate = public_path() . '/upload/Applicant/Education/'.$data->character_certificate;
+            $character_certificate = 'upload/Education/'.$data->character_certificate;
             if (File::exists($character_certificate)) {
                 $delete = File::delete($character_certificate);
             }
             DB::table('education2s')->where('applicant_id', $id)->delete();
         };
         foreach ($healthlisence as $data) {
-            $image_path = public_path() . '/upload/Applicant/Health License/' . $data->license_copy;
+            $image_path = 'upload/Health License/' . $data->license_copy;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
             DB::table('health_lisences')->where('applicant_id', $id)->delete();
         };
         foreach ($healthlicense2 as $data) {
-            $image_path = public_path() . '/upload/Applicant/Health License/' . $data->license_copy;
+            $image_path = 'upload/Health License/' . $data->license_copy;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
             DB::table('health_license2s')->where('applicant_id', $id)->delete();
         };
         foreach ($employment as $data) {
-            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            $image_path = 'upload/Employment/' . $data->experience_letter;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
             DB::table('employments')->where('applicant_id', $id)->delete();
         };
         foreach ($employment2 as $data) {
-            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            $image_path = 'upload/Employment/' . $data->experience_letter;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
             DB::table('employment2s')->where('applicant_id', $id)->delete();
         };
         foreach ($employment3 as $data) {
-            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            $image_path = 'upload/Employment/' . $data->experience_letter;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
             DB::table('employment3s')->where('applicant_id', $id)->delete();
         };
         foreach ($employment4 as $data) {
-            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            $image_path = 'upload/Employment/' . $data->experience_letter;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
             DB::table('employment4s')->where('applicant_id', $id)->delete();
         };
         foreach ($employment5 as $data) {
-            $image_path = public_path() . '/upload/Applicant/Employment/' . $data->experience_letter;
+            $image_path = 'upload/Employment/' . $data->experience_letter;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
             DB::table('employment5s')->where('applicant_id', $id)->delete();
         };
         foreach ($progressflow as $data) {
-            $signed_docs = public_path() . '/upload/Applicant/Progress flow/' . $data->signed_docs;
+            $signed_docs = 'upload/Progress flow/' . $data->signed_docs;
             if (File::exists($signed_docs)) {
                 $delete = File::delete($signed_docs);
             }

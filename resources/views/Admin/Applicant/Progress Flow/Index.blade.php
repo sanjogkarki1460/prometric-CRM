@@ -92,7 +92,7 @@
                                                 <td>{{$progressflow->signed_by_applicant}}</td>
                                                 @if($progressflow->signed_docs)
                                                     <td><a target="_blank"
-                                                           href="{{asset('/upload/Applicant/Progress flow/'.$progressflow->signed_docs)}}">Signed
+                                                           href="{{asset('/upload/Progress flow/'.$progressflow->signed_docs)}}">Signed
                                                             Docs</a></td>
                                                 @else
                                                     <td>No Signed Document</td>

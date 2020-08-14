@@ -74,7 +74,7 @@
                                                 <td>{{$employment->department}}</td>
                                                 @if($employment->experience_letter)
                                                     <td><a target="_blank"
-                                                           href="{{asset('/upload/Applicant/Employment/'.$employment->experience_letter)}}">Experience Letter</a></td>
+                                                           href="{{asset('/upload/Employment/'.$employment->experience_letter)}}">Experience Letter</a></td>
                                                 @else
                                                     <td>No Experience Letter</td>
                                                 @endif

@@ -54,7 +54,7 @@ class Employment5Controller extends Controller
             $middel_Name=$this->employment5->Applicant_Employment5->middel_name;
             $last_Name=$this->employment5->Applicant_Employment5->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
-            $path = public_path() . '/upload/Applicant/Employment';
+            $path ='upload/Employment';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -119,11 +119,11 @@ class Employment5Controller extends Controller
             $middel_Name=$employment->Applicant_Employment5->middel_name;
             $last_Name=$employment->Applicant_Employment5->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
-            $image_path = public_path() . '/upload/Applicant/Employment/' . $employment->experience_letter;
+            $image_path ='upload/Employment/' . $employment->experience_letter;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
-            $path = public_path() . '/upload/Applicant/Employment';
+            $path ='upload/Employment';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -159,7 +159,7 @@ class Employment5Controller extends Controller
         if (!$employment) {
             return redirect()->route()->with('Error', 'Applicant employment list not found');
         }
-        $experience_letter = public_path() . '/upload/Applicant/Employment/' . $employment->experience_letter;
+        $experience_letter ='upload/Employment/' . $employment->experience_letter;
 //        dd($experience_letter);
         if (File::exists($experience_letter)) {
             $delete = File::delete($experience_letter);

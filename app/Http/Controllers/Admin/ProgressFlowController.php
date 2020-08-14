@@ -53,7 +53,7 @@ class ProgressFlowController extends Controller
             $last_Name=$this->progressflow->Applicant_ProgressFlow->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
 //            dd($name);
-            $path = public_path() . '/upload/Applicant/Progress flow';
+            $path = 'upload/Progress flow';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -119,11 +119,11 @@ class ProgressFlowController extends Controller
             $last_Name=$progressflow->Applicant_ProgressFlow->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
 //            dd($name);
-            $signed_docs = public_path() . '/upload/Applicant/Progress flow/' . $progressflow->signed_docs;
+            $signed_docs = 'upload/Progress flow/' . $progressflow->signed_docs;
             if (File::exists($signed_docs)) {
                 $delete = File::delete($signed_docs);
             }
-            $path = public_path() . '/upload/Applicant/Progress flow';
+            $path = 'upload/Progress flow';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
@@ -160,7 +160,7 @@ class ProgressFlowController extends Controller
         if (!$progressflow) {
             return redirect()->route()->with('Error', 'Applicant progressflow list not found');
         }
-        $signed_docs = public_path() . '/upload/Applicant/Progress flow/' . $progressflow->signed_docs;
+        $signed_docs = 'upload/Progress flow/' . $progressflow->signed_docs;
         if (File::exists($signed_docs)) {
             $delete = File::delete($signed_docs);
         }
