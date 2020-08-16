@@ -19,4 +19,9 @@ class Enquiry extends Model
     {
         return $this->hasOne('App\Admin\Applicant');
     }
+
+    public function EnquiryAppointment()
+    {
+        return $this->HasMany('App\Admin\EnquiryAppointment');
+    }
 }

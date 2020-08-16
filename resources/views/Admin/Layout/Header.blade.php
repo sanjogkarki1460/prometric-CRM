@@ -8,11 +8,10 @@
         <!-- start header -->
         <div class="page-header navbar navbar-fixed-top">
             <div class="page-header-inner ">
-                <!-- logo start -->
-                <div class="page-logo">
+
+                <div class="page-logo" style="background-color: white">
                     <a href="{{route('admin.home')}}">
-                        <span class="logo-icon material-icons fa-rotate-45">school</span>
-                        <span class="logo-default">Visa</span> </a>
+                        <span class="logo-default"><img style="margin-top:-15px;margin-left:30px;height: 65px;"src="{{asset('assets/img/pen.png')}}" alt=""></span> </a>
                 </div>
                 <form class="search-form-opened" action="#" method="GET">
                     <div class="input-group">
@@ -29,17 +28,7 @@
                     <span></span>
                 </a>
                 <div class="top-menu">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                             <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     <ul class="nav navbar-nav pull-right">
-                        {{--<notification></notification>--}}
                         <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                                data-close-others="true">

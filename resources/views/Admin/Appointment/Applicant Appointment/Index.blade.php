@@ -6,13 +6,13 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class=" pull-left">
-                            <div class="page-title">View Enquiry List</div>
+                            <div class="page-title">View Applicant Appointment Detail</div>
                         </div>
                         <ol class="breadcrumb page-breadcrumb pull-right">
                             <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{route('admin.home')}}">Dashboard</a>&nbsp;<i
                                         class="fa fa-angle-right"></i>
                             </li>
-                            <li class="active">Enquiry View</li>
+                            <li class="active">Applicant Appointment Detail</li>
                         </ol>
                     </div>
                 </div>
@@ -20,9 +20,9 @@
                     <div class="col-md-12">
                         <div class="card card-topline-aqua">
                             <div class="card-head">
-                                <header>Enquiry Detail Table</header>
+                                <header>Applicant Appointment Detail Table</header>
                                 <div class="cards pull-right">
-                                    <a href="{{route('Enquiry.create')}}" class="btn btn-success fa fa-plus">Add
+                                    <a href="{{route('ApplicantAppointment.create')}}" class="btn btn-success fa fa-plus">Add
                                         New</a>
                                 </div>
                             </div>
@@ -31,24 +31,26 @@
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>Id</th>
-                                            <th>NAME</th>
-                                            <th>EmaiL</th>
-                                            <th>Phone</th>
-                                            <th>CATEGORY</th>
+                                            <th>Applicant</th>
+                                            <th>Appointment Date</th>
+                                            <th>Appointment Time</th>
+                                            <th>Remarks</th>
+                                            <th>Applicant's Contact No.</th>
+                                            <th>APPLICANT'S Email</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($enquiry as $enquiry)
+                                        @foreach($appointment as $appointment)
                                             <tr>
-                                                <td>{{$enquiry->id}}</td>
-                                                <td><a href="{{route('EnquiryDetail',$enquiry->id)}}">{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</a></td>
-                                                <td>{{$enquiry->email}}</td>
-                                                <td>{{$enquiry->phone}}</td>
-                                                <td>{{@$enquiry->Category_Enquiry->Name}}</td>
+                                                <td>{{$appointment->Applicant_Appointment->first_name}} {{$appointment->Applicant_Appointment->middel_name}} {{$appointment->Applicant_Appointment->surname}}</td>
+                                                <td>{{$appointment->date}}</td>
+                                                <td>{{date('h:i A',strtotime($appointment->time))}}</td>
+                                                <td>{{$appointment->remarks}}</td>
+                                                <td>{{$appointment->Applicant_Appointment->mobile_no}}</td>
+                                                <td>{{$appointment->Applicant_Appointment->email}}</td>
                                                 <td class="text-left">
-                                                    <form action="{{ route('Enquiry.edit',$enquiry->id)}}"
+                                                    <form action="{{ route('ApplicantAppointment.edit', $appointment->id)}}"
                                                           method="GET"
                                                           style="display: inline-block">
                                                         {{csrf_field()}}
@@ -56,11 +58,11 @@
                                                         <button class="btn btn-primary btn-sm" type="submit">Edit
                                                         </button>
                                                     </form>
-                                                    <form  action="{{ route('Enquiry.destroy',$enquiry->id)}}"
+                                                    <form action="{{ route('ApplicantAppointment.destroy', $appointment->id)}}"
                                                           method="post" style="display: inline-block">
                                                         {{csrf_field()}}
                                                         {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit" >Delete
+                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
                                                         </button>
                                                     </form>
                                                 </td>

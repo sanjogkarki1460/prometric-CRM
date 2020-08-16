@@ -29,18 +29,20 @@ class EnquiryValidator extends FormRequest
             'middle_name'=>'',
             'email'=>'required',
             'phone'=>'required|integer',
-            'address'=>'required',
-            'subject'=>'required',
-            'qualification_level'=>'required',
-            'experience'=>'required',
-            'country_interested'=>'required',
-            'service_interested'=>'required',
+            'address'=>'',
+            'subject'=>'',
+            'qualification_level'=>'',
+            'experience'=>'',
+            'country_interested'=>'',
+            'service_interested'=>'',
             'enquiry_from'=>'',
             'source'=>'',
             'remarks'=>'',
             'responded_through'=>'',
             'eligibility'=>'',
-            'Category_id'=>'required'
+            'Category_id'=>'required',
+            'Office_visited'=>'',
+            'Visited_date'=>'',
         ];
     }
 }

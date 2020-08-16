@@ -84,11 +84,6 @@
                                         <span class="title">Document Checklist</span>
                                     </a>
                                 </li>
-                                {{--<li class="nav-item ">--}}
-                                    {{--<a href="{{route('Education.index')}}" class="nav-link ">--}}
-                                        {{--<span class="title">Education</span>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
                                 <li class="nav-item">
                                     <a href="javascript:;" class="nav-link nav-toggle">
                                         <span class="title">Education</span>
@@ -156,6 +151,25 @@
                                 <li class="nav-item ">
                                     <a href="{{route('ProgressFlow.index')}}" class="nav-link ">
                                         <span class="title">Progress Flow Report</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item start ">
+                            <a class="nav-link nav-toggle">
+                                <i class="fa fa-calendar"></i>
+                                <span class="title">Appointment</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item   ">
+                                    <a href="{{route('EnquiryAppointment.index')}}" class="nav-link ">
+                                        <span class="title">Enquiry Applintment</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="{{route('ApplicantAppointment.index')}}" class="nav-link ">
+                                        <span class="title">Applicant Applontment</span>
                                     </a>
                                 </li>
                             </ul>
