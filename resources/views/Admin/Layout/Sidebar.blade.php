@@ -176,6 +176,25 @@
                         </li>
                         <li class="nav-item start ">
                             <a class="nav-link nav-toggle">
+                                <i class="fa fa-history"></i>
+                                <span class="title">Call Log</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item   ">
+                                    <a href="{{route('IncomingCallLog.index')}}" class="nav-link ">
+                                        <span class="title">Incoming call log</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="{{route('OutgoingCallLog.index')}}" class="nav-link ">
+                                        <span class="title">Outgoing call log</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item start ">
+                            <a class="nav-link nav-toggle">
                                 <i class="fa fa-address-book"></i>
                                 <span class="title">Send SMs</span>
                                 <span class="arrow"></span>

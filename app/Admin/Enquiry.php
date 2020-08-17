@@ -24,4 +24,14 @@ class Enquiry extends Model
     {
         return $this->HasMany('App\Admin\EnquiryAppointment');
     }
+
+    public function IncommingCallLog()
+    {
+        return $this->HasMany('App\Admin\IncommingCallLog');
+    }
+
+    public function OutgoingCallLog()
+    {
+        return $this->HasMany('App\Admin\OutgoingCallLog');
+    }
 }

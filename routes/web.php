@@ -39,6 +39,8 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::resource('/ProgressFlow','Admin\ProgressFlowController');
     Route::resource('/EnquiryAppointment','Admin\EnquiryAppointmentController');
     Route::resource('/ApplicantAppointment','Admin\ApplicantAppointmentController');
+    Route::resource('/IncomingCallLog','Admin\IncommingCallLogController');
+    Route::resource('/OutgoingCallLog','Admin\OutgoingCallLogController');
     Route::get('/EnquirySMS','Admin\SMSController@EnquirySMS')->name('EnquirySMS');
     Route::get('/ApplicantSMS','Admin\SMSController@ApplicantSMS')->name('ApplicantSMS');
     Route::Post('/SendSMS','Admin\SMSController@SendSMS')->name('SendSMS');
