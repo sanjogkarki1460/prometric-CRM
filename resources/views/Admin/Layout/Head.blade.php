@@ -64,19 +64,12 @@
         td, th {
             vertical-align: middle;
         }
-
     </style>
-    <script>
-        window.laravel={!! json_encode([
-            'csrfToken'=>csrf_token(),
-        ])
-         !!};
-    </script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body  class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
+<body  class=" page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
 @endsection

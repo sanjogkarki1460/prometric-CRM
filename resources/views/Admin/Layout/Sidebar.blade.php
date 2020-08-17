@@ -195,6 +195,27 @@
                         </li>
                         <li class="nav-item start ">
                             <a class="nav-link nav-toggle">
+                                <i class="fa fa-flag"></i>
+                                <span class="title">Visitor Log</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item ">
+                                    <a href="{{route('VisitorLog.create')}}" class="nav-link ">
+                                        <i class="fa fa-user"></i>
+                                        <span class="title">Add Visitor Log</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item   ">
+                                    <a href="{{route('VisitorLog.index')}}" class="nav-link ">
+                                        <i class="fa fa-user"></i>
+                                        <span class="title">View Visitor Log</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item start ">
+                            <a class="nav-link nav-toggle">
                                 <i class="fa fa-address-book"></i>
                                 <span class="title">Send SMs</span>
                                 <span class="arrow"></span>

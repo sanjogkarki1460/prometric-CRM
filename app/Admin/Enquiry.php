@@ -34,4 +34,10 @@ class Enquiry extends Model
     {
         return $this->HasMany('App\Admin\OutgoingCallLog');
     }
+
+    public function VisitorLog()
+    {
+        return $this->HasMany('App\Admin\VisitorLog');
+    }
+
 }

@@ -6,13 +6,13 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class=" pull-left">
-                            <div class="page-title">View Incoming Call Log</div>
+                            <div class="page-title">View Visitor Log</div>
                         </div>
                         <ol class="breadcrumb page-breadcrumb pull-right">
                             <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{route('admin.home')}}">Dashboard</a>&nbsp;<i
                                         class="fa fa-angle-right"></i>
                             </li>
-                            <li class="active">Incoming Call Log</li>
+                            <li class="active">Visitor Log</li>
                         </ol>
                     </div>
                 </div>
@@ -20,9 +20,9 @@
                     <div class="col-md-12">
                         <div class="card card-topline-aqua">
                             <div class="card-head">
-                                <header>Incoming Call Log Table</header>
+                                <header>Visitor Log Table</header>
                                 <div class="cards pull-right">
-                                    <a href="{{route('IncomingCallLog.create')}}" class="btn btn-success fa fa-plus">Add
+                                    <a href="{{route('VisitorLog.create')}}" class="btn btn-success fa fa-plus">Add
                                         New</a>
                                 </div>
                             </div>
@@ -32,37 +32,53 @@
                                         <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Name of Person</th>
+                                            <th>Name of Visitor</th>
+                                            <th>Date of Visit</th>
+                                            <th>Time of Visit</th>
                                             <th>Phone Number</th>
-                                            <th>Date of call</th>
-                                            <th>Time of call</th>
-                                            <th>Length of call</th>
-                                            <th>Porpose of call</th>
+                                            <th>Email</th>
+                                            <th>Porpose of Visit</th>
                                             <th>Follow-Up Needed\Remarks</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($call as $call)
+                                        @foreach($visitorlog as $visitorlog)
                                             <tr>
-                                                <td>{{$call->id}}</td>
-                                                @if($call->call_by=='Applicant')
+                                                <td>{{$visitorlog->id}}</td>
+                                                @if($visitorlog->visited_by=='Applicant')
                                                     <td>
-                                                        <a href="{{route('ApplicantDetail',$call->applicant_id)}}">{{@$call->Applicant_Incomming->first_name}} {{@$call->Applicant_Incomming->middel_name}} {{@$call->Applicant_Incomming->surname}}</a>
+                                                        <a href="{{route('ApplicantDetail',$visitorlog->applicant_id)}}">{{@$visitorlog->Applicant_Visitor->first_name}} {{@$visitorlog->Applicant_Visitor->middel_name}} {{@$visitorlog->Applicant_Visitor->surname}}</a>
                                                     </td>
                                                 @else
                                                     <td>
-                                                        <a href="{{route('EnquiryDetail',$call->enquiry_id)}}">{{@$call->Enquiry_Incomming->first_name}} {{@$call->Enquiry_Incomming->middle_name}} {{@$call->Enquiry_Incomming->last_name}}</a>
+                                                        <a href="{{route('EnquiryDetail',$visitorlog->enquiry_id)}}">{{@$visitorlog->Enquiry_Visitor->first_name}} {{@$visitorlog->Enquiry_Visitor->middle_name}} {{@$visitorlog->Enquiry_Visitor->last_name}}</a>
                                                     </td>
                                                 @endif
-                                                <td>{{$call->phone}}</td>
-                                                <td>{{$call->date}}</td>
-                                                <td>{{date('h:i A',strtotime($call->time))}}</td>
-                                                <td>{{@$call->length}}</td>
-                                                <td>{{@$call->porpose}}</td>
-                                                <td>{{@$call->remarks}}</td>
+                                                <td>{{$visitorlog->date}}</td>
+                                                <td>{{date('h:i A',strtotime($visitorlog->time))}}</td>
+                                                @if($visitorlog->visited_by=='Applicant')
+                                                    <td>
+                                                        {{@$visitorlog->Applicant_Visitor->mobile_no}}
+                                                    </td>
+                                                @else
+                                                    <td>
+                                                        {{@$visitorlog->Enquiry_Visitor->phone}}
+                                                    </td>
+                                                @endif
+                                                @if($visitorlog->visited_by=='Applicant')
+                                                    <td>
+                                                        {{@$visitorlog->Applicant_Visitor->email}}
+                                                    </td>
+                                                @else
+                                                    <td>
+                                                        {{@$visitorlog->Enquiry_Visitor->email}}
+                                                    </td>
+                                                @endif
+                                                <td>{{@$visitorlog->porpose}}</td>
+                                                <td>{{@$visitorlog->remarks}}</td>
                                                 <td class="text-left">
-                                                    <form action="{{ route('IncomingCallLog.edit', $call->id)}}"
+                                                    <form action="{{ route('VisitorLog.edit', $visitorlog->id)}}"
                                                           method="GET"
                                                           style="display: inline-block">
                                                         {{csrf_field()}}
@@ -70,7 +86,7 @@
                                                         <button class="btn btn-primary btn-sm" type="submit">Edit
                                                         </button>
                                                     </form>
-                                                    <form action="{{ route('IncomingCallLog.destroy', $call->id)}}"
+                                                    <form action="{{ route('VisitorLog.destroy', $visitorlog->id)}}"
                                                           method="post" style="display: inline-block">
                                                         {{csrf_field()}}
                                                         {{method_field('DELETE')}}

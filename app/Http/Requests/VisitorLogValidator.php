@@ -13,7 +13,7 @@ class VisitorLogValidator extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class VisitorLogValidator extends FormRequest
     public function rules()
     {
         return [
-            //
+            'visitor_type'=>'required',
+            'applicant_id'=>'integer',
+            'enquiry_id'=>'integer',
+            'date'=>'required',
+            'time'=>'required',
+            'porpose'=>'',
+            'remarks'=>'',
         ];
     }
 }

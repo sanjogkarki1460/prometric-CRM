@@ -7,9 +7,9 @@
     <div class="page-wrapper" style="margin-top: -40px;" id="app">
         <!-- start header -->
         <div class="page-header navbar navbar-fixed-top">
-            <div class="page-header-inner ">
+            <div class=" page-header-inner ">
 
-                <div class="page-logo" style="background-color: white">
+                <div class=" page-logo" style="background-color: white">
                     <a href="{{route('admin.home')}}">
                         <span class="logo-default"><img style="margin-top:-15px;margin-left:30px;height: 65px;"src="{{asset('assets/img/pen.png')}}" alt=""></span> </a>
                 </div>

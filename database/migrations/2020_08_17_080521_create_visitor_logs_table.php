@@ -15,6 +15,13 @@ class CreateVisitorLogsTable extends Migration
     {
         Schema::create('visitor_logs', function (Blueprint $table) {
             $table->id();
+            $table->enum('visited_by',['Applicant','Enquiry']);
+            $table->integer('applicant_id')->nullable();
+            $table->integer('enquiry_id')->nullable();
+            $table->date('date');
+            $table->time('time');
+            $table->longText('porpose')->nullable();
+            $table->longText('remarks')->nullable();
             $table->timestamps();
         });
     }

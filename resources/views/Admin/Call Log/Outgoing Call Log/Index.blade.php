@@ -31,6 +31,7 @@
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Name of Person</th>
                                             <th>Phone Number</th>
                                             <th>Date of call</th>
@@ -44,6 +45,7 @@
                                         <tbody>
                                         @foreach($call as $call)
                                             <tr>
+                                                <td>{{$call->id}}</td>
                                                 @if($call->call_to=='Applicant')
                                                     <td>
                                                         <a href="{{route('ApplicantDetail',$call->applicant_id)}}">{{@$call->Applicant_Outgoing->first_name}} {{@$call->Applicant_Outgoing->middel_name}} {{@$call->Applicant_Outgoing->surname}}</a>

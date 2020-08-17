@@ -53,7 +53,6 @@ class IncommingCallLogController extends Controller
         {
             return redirect()->route('IncomingCallLog.create')->with('Error', 'Please choose either Applicant or Enquiry');
         }
-        dd($data);
         $this->incommingcalllog->fill($data);
         $success = $this->incommingcalllog->save();
         if ($success) {

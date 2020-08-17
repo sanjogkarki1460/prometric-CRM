@@ -4,17 +4,29 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Admin\VisitorLog;
+use App\Admin\Applicant;
+use App\Admin\Enquiry;
+use App\Http\Requests\VisitorLogValidator;
 
 class VisitorLogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $visitorlog=null;
+    protected $applicant=null;
+    protected $enquiry=null;
+
+    public function __construct(VisitorLog $visitorlog,Applicant $applicant,Enquiry $enquiry)
+    {
+        $this->visitorlog=$visitorlog;
+        $this->enquiry=$enquiry;
+        $this->applicant=$applicant;
+    }
+
     public function index()
     {
-        //
+        $visitorlog=$this->visitorlog->orderBy('id','desc')->get();
+//        dd($visitorlog);
+        return view('Admin.Visitor Log.Index')->with('visitorlog',$visitorlog);
     }
 
     /**
@@ -24,7 +36,9 @@ class VisitorLogController extends Controller
      */
     public function create()
     {
-        //
+        $applicant=$this->applicant->get();
+        $enquiry=$this->enquiry->get();
+        return view('Admin.Visitor Log.Add')->with('applicant',$applicant)->with('enquiry',$enquiry);
     }
 
     /**
@@ -35,7 +49,19 @@ class VisitorLogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->all();
+        if($request->applicant_id && $request->enquiry_id)
+        {
+            return redirect()->route('VisitorLog.create')->with('Error', 'Please choose either Applicant or Enquiry');
+        }
+        $this->visitorlog->fill($data);
+        $success=$this->visitorlog->save();
+        if($success){
+            return redirect()->route('VisitorLog.index')->with('success','Visitor log added successfully');
+        }
+        else{
+            return redirect()->route('VisitorLog.index')->with('error','Sorry! There is an arror adding visitor log ');
+        }
     }
 
     /**
@@ -57,7 +83,22 @@ class VisitorLogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $visitorlog=$this->visitorlog->find($id);
+        if(!$visitorlog){
+            return redirect()->route('VisitorLog.index')->with('Error','visitor log not found');
+        }
+        if($visitorlog->applicant_id){
+            $app=$visitorlog->Applicant_Visitor->first_name;
+
+        }
+        elseif($visitorlog->enquiry_id){
+            $app=$visitorlog->Enquiry_Visitor->first_name;
+        }
+        $applicant = $this->applicant->get();
+        $enquiry = $this->enquiry->get();
+
+        return view('Admin.Visitor Log.Update')->with('applicant', $applicant)->with('enquiry', $enquiry)
+            ->with('app',$app)->with('visitorlog',$visitorlog);
     }
 
     /**
@@ -69,7 +110,22 @@ class VisitorLogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $VisitorLog=$this->visitorlog->find($id);
+        if(!$VisitorLog){
+            return redirect()->route('VisitorLog.index')->with('Error','No Visitor log Found');
+        }
+        $data = $request->all();
+        if($request->applicant_id && $request->enquiry_id)
+        {
+            return redirect()->route('VisitorLog.edit')->with('Error', 'Please choose either Applicant or Enquiry');
+        }
+        $VisitorLog->fill($data);
+        $success = $VisitorLog->save();
+        if ($success) {
+            return redirect()->route('VisitorLog.index')->with('success', 'Incomming Visitor record updated successfully');
+        } else {
+            return redirect()->route('VisitorLog.index')->with('Error', 'Sorry! There was and error updating incomming Visitor record');
+        }
     }
 
     /**
@@ -80,6 +136,16 @@ class VisitorLogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $visitorlog=$this->visitorlog->find($id);
+        if(!$visitorlog){
+            return redirect()->route('VisitorLog.index')->with('Error','visitor log not found');
+        }
+        $success=$visitorlog->delete();
+        if($success){
+            return redirect()->route('VisitorLog.index')->with('success','visitor log deleted successfully');
+        }
+        else{
+            return redirect()->route('VisitorLog.index')->with('Error','Sorry! There is and error delting visitor log');
+        }
     }
 }
