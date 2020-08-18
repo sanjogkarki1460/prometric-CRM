@@ -31,53 +31,57 @@
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Name of Person</th>
-                                            <th>Phone Number</th>
-                                            <th>Date of call</th>
-                                            <th>Time of call</th>
-                                            <th>Length of call</th>
-                                            <th>Porpose of call</th>
-                                            <th>Follow-Up Needed\Remarks</th>
-                                            <th>Action</th>
+                                            <th style="font-size:13px; ">ID</th>
+                                            <th style="font-size:13px; ">Name of Person</th>
+                                            <th style="font-size:13px; ">Phone Number</th>
+                                            <th style="font-size:13px; ">Date of call</th>
+                                            <th style="font-size:13px; ">Time of call</th>
+                                            <th style="font-size:13px; ">Length of call</th>
+                                            <th style="font-size:13px; ">Purpose of call</th>
+                                            <th style="font-size:13px; ">Follow-Up Needed\Remarks</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th style="font-size:13px; ">Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($call as $call)
                                             <tr>
-                                                <td>{{$call->id}}</td>
+                                                <td style="font-size:13px; ">{{$call->id}}</td>
                                                 @if($call->call_to=='Applicant')
-                                                    <td>
+                                                    <td style="font-size:13px; ">
                                                         <a href="{{route('ApplicantDetail',$call->applicant_id)}}">{{@$call->Applicant_Outgoing->first_name}} {{@$call->Applicant_Outgoing->middel_name}} {{@$call->Applicant_Outgoing->surname}}</a>
                                                     </td>
                                                 @else
-                                                    <td>
+                                                    <td style="font-size:13px; ">
                                                         <a href="{{route('EnquiryDetail',$call->enquiry_id)}}">{{@$call->Enquiry_Outgoing->first_name}} {{@$call->Enquiry_Outgoing->middle_name}} {{@$call->Enquiry_Outgoing->last_name}}</a>
                                                     </td>
                                                 @endif
-                                                <td>{{$call->phone}}</td>
-                                                <td>{{$call->date}}</td>
-                                                <td>{{date('h:i A',strtotime($call->time))}}</td>
-                                                <td>{{@$call->length}}</td>
-                                                <td>{{@$call->porpose}}</td>
-                                                <td>{{@$call->remarks}}</td>
-                                                <td class="text-left">
-                                                    <form action="{{ route('OutgoingCallLog.edit', $call->id)}}"
-                                                          method="GET"
-                                                          style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('PUT')}}
-                                                        <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                        </button>
-                                                    </form>
-                                                    <form action="{{ route('OutgoingCallLog.destroy', $call->id)}}"
-                                                          method="post" style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                <td style="font-size:13px; ">{{$call->phone}}</td>
+                                                <td style="font-size:13px; ">{{$call->date}}</td>
+                                                <td style="font-size:13px; ">{{date('h:i A',strtotime($call->time))}}</td>
+                                                <td style="font-size:13px; ">{{@$call->length}}</td>
+                                                <td style="font-size:13px; ">{{@$call->purpose}}</td>
+                                                <td style="font-size:13px; ">{{@$call->remarks}}</td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('OutgoingCallLog.edit', $call->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('OutgoingCallLog.destroy', $call->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

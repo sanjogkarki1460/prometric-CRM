@@ -22,7 +22,8 @@
                             <div class="card-head">
                                 <header>Applicant Appointment Detail Table</header>
                                 <div class="cards pull-right">
-                                    <a href="{{route('ApplicantAppointment.create')}}" class="btn btn-success fa fa-plus">Add
+                                    <a href="{{route('ApplicantAppointment.create')}}"
+                                       class="btn btn-success fa fa-plus">Add
                                         New</a>
                                 </div>
                             </div>
@@ -31,41 +32,53 @@
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>Applicant</th>
-                                            <th>Appointment Date</th>
-                                            <th>Appointment Time</th>
-                                            <th>Remarks</th>
-                                            <th>Applicant's Contact No.</th>
-                                            <th>APPLICANT'S Email</th>
-                                            <th>Action</th>
+                                            <th style="font-size:13px;">Applicant</th>
+                                            <th style="font-size:13px;">Appointment Date</th>
+                                            <th style="font-size:13px;">Appointment Time</th>
+                                            <th style="font-size:13px; ">Appointment With</th>
+                                            <th style="font-size:13px;">Remarks</th>
+                                            <th style="font-size:13px;">Applicant's Contact No.</th>
+                                            <th style="font-size:13px;">APPLICANT'S Email</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th style="font-size:13px;">Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($appointment as $appointment)
                                             <tr>
-                                                <td>{{$appointment->Applicant_Appointment->first_name}} {{$appointment->Applicant_Appointment->middel_name}} {{$appointment->Applicant_Appointment->surname}}</td>
-                                                <td>{{$appointment->date}}</td>
-                                                <td>{{date('h:i A',strtotime($appointment->time))}}</td>
-                                                <td>{{$appointment->remarks}}</td>
-                                                <td>{{$appointment->Applicant_Appointment->mobile_no}}</td>
-                                                <td>{{$appointment->Applicant_Appointment->email}}</td>
-                                                <td class="text-left">
-                                                    <form action="{{ route('ApplicantAppointment.edit', $appointment->id)}}"
-                                                          method="GET"
-                                                          style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('PUT')}}
-                                                        <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                        </button>
-                                                    </form>
-                                                    <form action="{{ route('ApplicantAppointment.destroy', $appointment->id)}}"
-                                                          method="post" style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
-                                                        </button>
-                                                    </form>
+                                                <td style="font-size:13px;"><a
+                                                            href="{{route('ApplicantDetail',$appointment->applicant_id)}}">{{$appointment->Applicant_Appointment->first_name}} {{$appointment->Applicant_Appointment->middel_name}} {{$appointment->Applicant_Appointment->surname}}</a>
                                                 </td>
+                                                <td style="font-size:13px;">{{$appointment->date}}</td>
+                                                <td style="font-size:13px;">{{date('h:i A',strtotime($appointment->time))}}</td>
+                                                @if(Auth::user()->id==$appointment->appointment_with)
+                                                    <td>You</td>
+                                                @else
+                                                    <td>{{$appointment->Applicant_Admin->name}}</td>
+                                                @endif
+                                                <td style="font-size:13px;">{{$appointment->remarks}}</td>
+                                                <td style="font-size:13px;">{{$appointment->Applicant_Appointment->mobile_no}}</td>
+                                                <td style="font-size:13px;">{{$appointment->Applicant_Appointment->email}}</td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('ApplicantAppointment.edit', $appointment->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('ApplicantAppointment.destroy', $appointment->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

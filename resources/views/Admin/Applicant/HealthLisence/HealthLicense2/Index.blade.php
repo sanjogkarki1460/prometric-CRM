@@ -40,18 +40,22 @@
                                             <th>LICENSE CONFERRED</th>
                                             <th>LICENSE EXPIRY DATE</th>
                                             <th>LICENSE TYPE</th>
-                                            <th>LICENSE NUMBER	</th>
+                                            <th>LICENSE NUMBER</th>
                                             <th>LICENSE STATUS</th>
                                             <th>LICENSE ATTAINED</th>
                                             <th>LICENSE COPY</th>
-                                            <th>Action</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($healthlicense  as $healthlicense  )
                                             <tr>
                                                 <td>{{$healthlicense->id}}</td>
-                                                <td><a href="{{route('ApplicantDetail',$healthlicense->applicant_id)}}">{{$healthlicense->Applicant_Health2->first_name}} {{$healthlicense->Applicant_Health2->middel_name}} {{$healthlicense->Applicant_Health2->surname}}</a></td>
+                                                <td>
+                                                    <a href="{{route('ApplicantDetail',$healthlicense->applicant_id)}}">{{$healthlicense->Applicant_Health2->first_name}} {{$healthlicense->Applicant_Health2->middel_name}} {{$healthlicense->Applicant_Health2->surname}}</a>
+                                                </td>
                                                 <td>{{$healthlicense->professional_designation}}</td>
                                                 <td>{{$healthlicense->issuing_authority_name}}</td>
                                                 <td>{{$healthlicense->issuing_authority_country}}</td>
@@ -65,25 +69,29 @@
                                                 @if(!$healthlicense->license_copy)
                                                     <td>No License Copy</td>
                                                 @else
-                                                    <td><a target="_blank " href="{{asset('/upload/Health License/'.$healthlicense->license_copy)}}">Lisence Copy</a></td>
+                                                    <td><a target="_blank "
+                                                           href="{{asset('/upload/Health License/'.$healthlicense->license_copy)}}">Lisence
+                                                            Copy</a></td>
                                                 @endif
-                                                <td class="text-left">
-                                                    <form action="{{ route('HealthLicense2.edit', $healthlicense ->id)}}"
-                                                          method="GET"
-                                                          style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('PUT')}}
-                                                        <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                        </button>
-                                                    </form>
-                                                    <form  action="{{ route('HealthLicense2.destroy', $healthlicense ->id)}}"
-                                                           method="post" style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit" >Delete
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('HealthLicense2.edit', $healthlicense ->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('HealthLicense2.destroy', $healthlicense ->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

@@ -16,7 +16,17 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','role',
     ];
+
+    public function EnquiryAppointment()
+    {
+        return $this->HasMany('App\Admin\EnquiryAppointment');
+    }
+
+    public function ApplicantAppointment()
+    {
+        return $this->HasMany('App\Admin\ApplicantAppointment');
+    }
 
 }

@@ -112,6 +112,7 @@
                         <div class="col-md-12 row">
                             <div class="col-md-9"></div>
                             <div class="col-md-3">
+                                @if(Auth::user()->role=='Admin')
                                 <form action="{{ route('Enquiry.edit',$enquiry->id)}}"
                                       method="GET"
                                       style="display: inline-block">
@@ -127,6 +128,7 @@
                                     <button class="btn btn-danger" type="submit" >Delete
                                     </button>
                                 </form>
+                                @endif
                                 <a href="{{route('Enquiry.index')}}" class="btn btn-primary">Back</a>
                             </div>
                         </div>

@@ -30,7 +30,7 @@
                                 <div class="table-scrollable">
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
-                                        <tr >
+                                        <tr>
                                             <th>APPLICANTS NAME</th>
                                             <th>DESIGNATION</th>
                                             <th>ISSUING AUTHORITY NAME</th>
@@ -49,13 +49,17 @@
                                             <th>EMPLOYEE CODE</th>
                                             <th>DEPARTMENT</th>
                                             <th>EXPERIENCE LETTER</th>
-                                            <th>Action</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($employment as $employment)
                                             <tr>
-                                                <td><a href="{{route('ApplicantDetail',$employment->applicant_id)}}">{{$employment->Applicant_Employment5->first_name}} {{$employment->Applicant_Employment5->middel_name}} {{$employment->Applicant_Employment5->surname}}</a></td>
+                                                <td>
+                                                    <a href="{{route('ApplicantDetail',$employment->applicant_id)}}">{{$employment->Applicant_Employment5->first_name}} {{$employment->Applicant_Employment5->middel_name}} {{$employment->Applicant_Employment5->surname}}</a>
+                                                </td>
                                                 <td>{{$employment->designation}}</td>
                                                 <td>{{$employment->issuing_authority_name}}</td>
                                                 <td>{{$employment->issuing_authority_address}}</td>
@@ -74,27 +78,30 @@
                                                 <td>{{$employment->department}}</td>
                                                 @if($employment->experience_letter)
                                                     <td><a target="_blank"
-                                                           href="{{asset('/upload/Employment/'.$employment->experience_letter)}}">Experience Letter</a></td>
+                                                           href="{{asset('/upload/Employment/'.$employment->experience_letter)}}">Experience
+                                                            Letter</a></td>
                                                 @else
                                                     <td>No Experience Letter</td>
                                                 @endif
-                                                <td class="text-left">
-                                                    <form action="{{ route('Employment5.edit', $employment->id)}}"
-                                                          method="GET"
-                                                          style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('PUT')}}
-                                                        <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                        </button>
-                                                    </form>
-                                                    <form action="{{ route('Employment5.destroy', $employment->id)}}"
-                                                          method="post" style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('Employment5.edit', $employment->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('Employment5.destroy', $employment->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

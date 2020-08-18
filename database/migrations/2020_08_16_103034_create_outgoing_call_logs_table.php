@@ -22,7 +22,7 @@ class CreateOutgoingCallLogsTable extends Migration
             $table->date('date');
             $table->time('time');
             $table->string('length')->nullable();
-            $table->longText('porpose')->nullable();
+            $table->longText('purpose')->nullable();
             $table->longText('remarks')->nullable();
             $table->timestamps();
         });

@@ -8,6 +8,7 @@ use App\Admin\Education;
 use App\Http\Requests\Educationvalidator;
 use App\Admin\Applicant;
 use File;
+use Auth;
 
 class EducationController extends Controller
 {
@@ -142,6 +143,10 @@ class EducationController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $education=$this->education->find($id);
         $applicant = $this->applicant->get();
         $app=$education->Applicant_Education->first_name;
@@ -159,6 +164,10 @@ class EducationController extends Controller
      */
     public function update(Educationvalidator $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $this->education = $this->education->find($id);
         $data = $request->all();
 //        dd($data);
@@ -256,6 +265,10 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $education=$this->education->find($id);
 //        dd($education);
         if(!$education){

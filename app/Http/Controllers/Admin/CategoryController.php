@@ -9,6 +9,7 @@ use App\Http\Requests\CategoryValidator;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use DB;
+use Auth;
 
 class CategoryController extends Controller
 {
@@ -76,6 +77,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
+
         $category = Category::findOrfail($id);
         return view('Admin.Category.Update')->with('category',$category);
     }
@@ -89,6 +95,10 @@ class CategoryController extends Controller
      */
     public function update(CategoryValidator $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $this->category=$this->category->find($id);
         $data=$request->all();
         $this->category->fill($data);
@@ -104,6 +114,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $category = Category::findOrfail($id);
         $success= $category->delete();
         if ($success) {

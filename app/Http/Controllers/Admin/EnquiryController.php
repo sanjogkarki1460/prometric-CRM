@@ -88,16 +88,15 @@ class EnquiryController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $category = $this->category->get();
         $enquiry = $this->enquiry->find($id);
-//        dd($enquiry);
-//        dd($enquiry->Category_id);
         if ($enquiry->Category_id) {
             $cat = $enquiry->Category_Enquiry->Name;
-//            dd($cat);
         }
-//        dd($cat);
-//        dd($cat);
         if (empty($enquiry)) {
             return redirect()->back()->with('Error', 'Enquiry Not Found');
         } elseif ($enquiry->Category_id) {
@@ -105,7 +104,6 @@ class EnquiryController extends Controller
         } else {
             return view('Admin.Enquiry.Update')->with('enquiry', $enquiry)->with('category', $category);
         }
-//        dd($enquiry);
     }
 
     /**
@@ -117,6 +115,10 @@ class EnquiryController extends Controller
      */
     public function update(EnquiryValidator $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $this->enquiry = $this->enquiry->find($id);
         $data = $request->all();
         if ($request->responded_through) {
@@ -139,7 +141,10 @@ class EnquiryController extends Controller
      */
     public function destroy($id)
     {
-
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $enquiry = $this->enquiry->find($id);
         if (!$enquiry) {
             return redirect()->back()->with('Error', 'Enquiry Not Found');

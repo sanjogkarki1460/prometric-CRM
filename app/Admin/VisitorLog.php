@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class VisitorLog extends Model
 {
-    protected $fillable=['visited_by','applicant_id','enquiry_id','date','time','porpose','remarks'];
+    protected $fillable=['visited_by','applicant_id','enquiry_id','date','time','purpose','remarks'];
 
     public function Applicant_Visitor()
     {

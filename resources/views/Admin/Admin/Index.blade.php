@@ -6,13 +6,13 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class=" pull-left">
-                            <div class="page-title">View Applicant List</div>
+                            <div class="page-title">View Admin List</div>
                         </div>
                         <ol class="breadcrumb page-breadcrumb pull-right">
                             <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{route('admin.home')}}">Dashboard</a>&nbsp;<i
                                         class="fa fa-angle-right"></i>
                             </li>
-                            <li class="active">Applicant View</li>
+                            <li class="active">Admin View</li>
                         </ol>
                     </div>
                 </div>
@@ -20,9 +20,9 @@
                     <div class="col-md-12">
                         <div class="card card-topline-aqua">
                             <div class="card-head">
-                                <header>Applicant Detail Table</header>
+                                <header>Admin Detail Table</header>
                                 <div class="cards pull-right">
-                                    <a href="{{route('Applicant.create')}}" class="btn btn-success fa fa-plus">Add
+                                    <a href="{{route('Admin.create')}}" class="btn btn-success fa fa-plus">Add
                                         New</a>
                                 </div>
                             </div>
@@ -33,35 +33,20 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
-                                            <th>MOBILE NO</th>
-                                            <th>NATIONALITY</th>
+                                            <th>Role</th>
                                             <th>EMAIL</th>
-                                            <th>PASSPORT DOCS</th>
-                                            <th>APPLICANT'S CATEGORY</th>
-                                            @if(Auth::user()->role=='Admin')
                                             <th>Action</th>
-                                                @endif
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($applicant as $applicant)
+                                        @foreach($admin as $admin)
                                             <tr>
-                                                <td>{{$applicant->id}}</td>
-                                                <td><a href="{{route('ApplicantDetail',$applicant->id)}}">{{$applicant->first_name}} {{$applicant->middel_name}} {{$applicant->surname}}</a></td>
-                                                <td>{{$applicant->mobile_no}}</td>
-                                                <td>{{$applicant->nationality}}</td>
-                                                <td>{{$applicant->email}}</td>
-                                                @if($applicant->passport_docs)
-                                                    <td><a target="_blank"
-                                                           href="{{asset('/upload/Applicant/'.$applicant->passport_docs)}}">Passport
-                                                            Document</a></td>
-                                                @else
-                                                    <td>No Document File</td>
-                                                @endif
-                                                <td>{{@$applicant->Category_Applicant->Name}}</td>
-                                                @if(Auth::user()->role=='Admin')
+                                                <td>{{$admin->id}}</td>
+                                                <td>{{$admin->name}}</td>
+                                                <td>{{$admin->role}}</td>
+                                                <td>{{$admin->email}}</td>
                                                 <td class="text-left">
-                                                    <form action="{{ route('Applicant.edit', $applicant->id)}}"
+                                                    <form action="{{ route('Admin.edit', $admin->id)}}"
                                                           method="GET"
                                                           style="display: inline-block">
                                                         {{csrf_field()}}
@@ -69,7 +54,7 @@
                                                         <button class="btn btn-primary btn-sm" type="submit">Edit
                                                         </button>
                                                     </form>
-                                                    <form action="{{ route('Applicant.destroy', $applicant->id)}}"
+                                                    <form action="{{ route('Admin.destroy', $admin->id)}}"
                                                           method="post" style="display: inline-block">
                                                         {{csrf_field()}}
                                                         {{method_field('DELETE')}}
@@ -77,7 +62,6 @@
                                                         </button>
                                                     </form>
                                                 </td>
-                                                    @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

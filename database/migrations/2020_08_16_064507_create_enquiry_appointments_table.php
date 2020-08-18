@@ -16,6 +16,7 @@ class CreateEnquiryAppointmentsTable extends Migration
         Schema::create('enquiry_appointments', function (Blueprint $table) {
             $table->id();
             $table->integer('enquiry_id');
+            $table->integer('appointment_with');
             $table->date('date');
             $table->time('time');
             $table->longText('remarks')->nullable();

@@ -70,6 +70,10 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default">
                                 <li>
+                                    <a href="{{route('PasswordChangeView')}}">
+                                        <i class="icon-key"></i> Change Password </a>
+                                </li>
+                                <li>
                                     <a href="{{route('logout')}}">
                                         <i class="icon-logout"></i> Log Out </a>
                                 </li>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Admin\ProgressFlow;
 use App\Admin\Applicant;
 use File;
+use Auth;
 
 class ProgressFlowController extends Controller
 {
@@ -95,6 +96,10 @@ class ProgressFlowController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $progressflow = $this->progressflow->find($id);
         $applicant = $this->applicant->get();
         $app = $progressflow->Applicant_ProgressFlow->first_name;
@@ -111,6 +116,10 @@ class ProgressFlowController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $progressflow = $this->progressflow->find($id);
         $data = $request->all();
         if ($request->signed_docs) {
@@ -155,6 +164,10 @@ class ProgressFlowController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $progressflow = $this->progressflow->find($id);
 //        dd($progressflow);
         if (!$progressflow) {

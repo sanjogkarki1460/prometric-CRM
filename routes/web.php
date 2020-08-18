@@ -20,7 +20,12 @@ Route::get('/','Admin\loginController@loginForm')->name('login')->middleware('Ad
 Route::post('/login/check','Admin\loginController@loginCheck')->name('loginCheck')->middleware('AdminGuest');
 
 Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
-    Route::get('/' ,'Admin\HomeController@index')->name('admin.home');
+    Route::group(['prefix'=>'','middleware'=>['Admin']],function(){
+        Route::resource('/Admin','Admin\AdminController');
+
+    });
+    Route::get('/PasswordChangeView','Admin\AdminController@PasswordChangeView')->name('PasswordChangeView');
+    Route::put('/PasswordChange{id}','Admin\AdminController@PasswordChange')->name('PasswordChange');
     Route::resource('/Category','Admin\CategoryController');
     Route::resource('/Enquiry','Admin\EnquiryController');
     Route::get('/EnquiryDetail/{id}','Admin\EnquiryController@Detail')->name('EnquiryDetail');
@@ -37,8 +42,6 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::resource('/Employment4','Admin\Employment4Controller');
     Route::resource('/Employment5','Admin\Employment5Controller');
     Route::resource('/ProgressFlow','Admin\ProgressFlowController');
-    Route::resource('/EnquiryAppointment','Admin\EnquiryAppointmentController');
-    Route::resource('/ApplicantAppointment','Admin\ApplicantAppointmentController');
     Route::resource('/IncomingCallLog','Admin\IncommingCallLogController');
     Route::resource('/OutgoingCallLog','Admin\OutgoingCallLogController');
     Route::resource('/VisitorLog','Admin\VisitorLogController');
@@ -60,4 +63,8 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
         return redirect()->route('Applicant.index');
     })->name('Applicantmarkasread');
     Route::get('/logout','Admin\loginController@logout')->name('logout');
+    Route::get('/' ,'Admin\HomeController@index')->name('admin.home');
+    Route::resource('/EnquiryAppointment','Admin\EnquiryAppointmentController');
+    Route::resource('/ApplicantAppointment','Admin\ApplicantAppointmentController');
+
 });

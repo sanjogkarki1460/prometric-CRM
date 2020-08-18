@@ -2,20 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f48d3f4f-f188-46cc-a24d-3b47e27de37c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a1902b6c-9102-4f41-a752-3c062c5036f6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a1902b6c-9102-4f41-a752-3c062c5036f6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Applicant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Applicant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Enquiry.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Enquiry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/ApplicantAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/ApplicantAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/EnquiryAppointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/EnquiryAppointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/IncommingCallLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/IncommingCallLog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Admin/OutgoingCallLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/OutgoingCallLog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Admin/VisitorLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/VisitorLog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantAppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantAppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CheckListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CheckListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Education2Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Education2Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EducationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EducationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment2Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment2Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment3Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment3Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment4Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment4Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment5Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment5Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmploymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EmploymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EnquiryAppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EnquiryAppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EnquiryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EnquiryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HealthLicense2Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HealthLicense2Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HealthLisenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HealthLisenceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/IncommingCallLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/IncommingCallLogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OutgoingCallLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OutgoingCallLogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProgressFlowController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProgressFlowController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VisitorLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VisitorLogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EnquiryAppointmentValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EnquiryAppointmentValidator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/VisitorLogValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/VisitorLogValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_31_062855_create_admins_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_31_062855_create_admins_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_16_064507_create_enquiry_appointments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_16_064507_create_enquiry_appointments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_16_064517_create_applicant_appointments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_16_064517_create_applicant_appointments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_16_103019_create_incomming_call_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_16_103019_create_incomming_call_logs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_16_103034_create_outgoing_call_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_16_103034_create_outgoing_call_logs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_17_080521_create_visitor_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_17_080521_create_visitor_logs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education1/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education1/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment1/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment1/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment2/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment2/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment3/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment3/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment4/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment4/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment5/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment5/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense1/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense1/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense2/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense2/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Layout/Head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Layout/Head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Category/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Category/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/Layout/Header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Layout/Header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Admin/Layout/Sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Layout/Sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,21 +120,45 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VisitorLogController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/VisitorLogController.php">
+    <leaf>
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="282">
+              <caret line="152" column="36" lean-forward="true" selection-start-line="152" selection-start-column="10" selection-end-line="152" selection-end-column="36" />
+              <folding>
+                <element signature="e#46#82#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Index.blade.php">
+      <file leaf-file-name="Header.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/Header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+            <state relative-caret-position="224">
+              <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckListController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CheckListController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-992">
+              <caret line="82" column="9" selection-start-line="79" selection-start-column="8" selection-end-line="82" selection-end-column="9" />
+              <folding>
+                <element signature="e#46#82#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChangePassword.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin/ChangePassword.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="32" column="77" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -95,7 +173,11 @@
       <find>`</find>
       <find>scroll</find>
       <find>icon</find>
+      <find>porpose</find>
     </findStrings>
+    <replaceStrings>
+      <replace>purp</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -103,57 +185,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Education2Controller.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HealthLisenceController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense1/Index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/HealthLicense2Controller.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense2/Index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment2Controller.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment3Controller.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment4Controller.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Employment5Controller.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Detail.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantController.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Layout/Footer.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_07_31_082014_create_enquiries_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/EnquiryValidator.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Add.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_08_16_064517_create_applicant_appointments_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/ApplicantAppointment.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/ApplicantAppointmentValidator.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/EnquiryAppointment.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/EnquiryAppointmentValidator.php" />
-        <option value="$PROJECT_DIR$/app/Admin/ApplicantAppointment.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Update.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Add.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Add.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_08_16_064507_create_enquiry_appointments_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantAppointmentController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/EmploymentController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProgressFlowController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment1/Index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment2/Index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment3/Index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment4/Index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment5/Index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Index.blade.php" />
         <option value="$PROJECT_DIR$/app/Admin/EnquiryAppointment.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Enquiry/Index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Update.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/EnquiryAppointmentController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_08_16_103019_create_incomming_call_logs_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_08_16_103034_create_outgoing_call_logs_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/IncommingCallLogValidator.php" />
-        <option value="$PROJECT_DIR$/app/Admin/IncommingCallLog.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Update.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/OutgoingCallLogValidator.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/OutgoingCallLogController.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Add.blade.php" />
-        <option value="$PROJECT_DIR$/app/Admin/OutgoingCallLog.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Update.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Add.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/VisitorLogValidator.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Admin/VisitorLog.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Add.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Add.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Add.blade.php" />
+        <option value="$PROJECT_DIR$/app/Admin/Admin.php" />
+        <option value="$PROJECT_DIR$/app/Admin/ApplicantAppointment.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Update.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantAppointmentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/IncommingCallLogController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_08_17_080521_create_visitor_logs_table.php" />
-        <option value="$PROJECT_DIR$/app/Admin/Applicant.php" />
-        <option value="$PROJECT_DIR$/app/Admin/Enquiry.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Update.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Layout/Header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Layout/Head.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Layout/Sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/OutgoingCallLogController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/VisitorLogController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Add.blade.php" />
+        <option value="$PROJECT_DIR$/app/Admin/VisitorLog.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_08_17_080521_create_visitor_logs_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Update.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Visitor Log/Index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Add.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_08_16_103019_create_incomming_call_logs_table.php" />
+        <option value="$PROJECT_DIR$/app/Admin/IncommingCallLog.php" />
+        <option value="$PROJECT_DIR$/app/Admin/OutgoingCallLog.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_08_16_103034_create_outgoing_call_logs_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Update.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Update.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Admin/ChangePassword.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Admin/Layout/Header.blade.php" />
       </list>
     </option>
   </component>
@@ -294,7 +376,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,21 +407,13 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Call Log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prometric" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prometric" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-              <item name="Call Log" type="462c0819:PsiDirectoryNode" />
-              <item name="Outgoing Call Log" type="462c0819:PsiDirectoryNode" />
+              <item name="Layout" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,11 +428,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\prometric\resources\views\Admin\User" />
       <recent name="C:\xampp\htdocs\prometric\resources\views\Admin\Visitor Log" />
       <recent name="C:\xampp\htdocs\prometric\resources\views\Admin\Call Log\Outgoing Call Log" />
       <recent name="C:\xampp\htdocs\prometric\resources\views\Admin\Call Log\Incomming Call Log" />
       <recent name="C:\xampp\htdocs\prometric\resources\views\Admin\Appointment\Enquiry Appointment" />
-      <recent name="C:\xampp\htdocs\prometric\resources\views\Admin\Appointment\Applicant Appointment" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\prometric\resources\views\Admin\Applicant\Employment\Employment1" />
@@ -439,25 +512,26 @@
       <workItem from="1597559766137" duration="16631000" />
       <workItem from="1597640078958" duration="2856000" />
       <workItem from="1597647336656" duration="7144000" />
-      <workItem from="1597657268584" duration="1271000" />
+      <workItem from="1597657268584" duration="6826000" />
+      <workItem from="1597726717546" duration="16621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278511000" />
+    <option name="totallyTimeSpent" value="300687000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2990196" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2912254" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.295764" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -477,22 +551,22 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2602118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
       <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2990196" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32843137" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -517,344 +591,396 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_08_16_064507_create_enquiry_appointments_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Employment3Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        <state relative-caret-position="160">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Employment4Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Employment5Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/EmploymentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProgressFlowController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment1/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment2/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment3/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment4/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment5/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="103" column="54" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="159" column="54" selection-start-line="159" selection-start-column="54" selection-end-line="159" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="82" column="9" selection-start-line="79" selection-start-column="8" selection-end-line="82" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="35" column="105" selection-start-line="35" selection-start-column="105" selection-end-line="35" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/EnquiryAppointment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Enquiry/Index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="44" column="73" lean-forward="true" selection-start-line="44" selection-start-column="73" selection-end-line="44" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-308">
-          <caret line="45" column="199" selection-start-line="45" selection-start-column="199" selection-end-line="45" selection-end-column="199" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Enquiry/Update.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="28" column="74" selection-end-line="96" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/EnquiryAppointmentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="100" column="38" lean-forward="true" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="40" column="156" selection-start-line="40" selection-start-column="156" selection-end-line="40" selection-end-column="156" />
+        <state relative-caret-position="204">
+          <caret line="109" column="23" lean-forward="true" selection-start-line="106" selection-start-column="19" selection-end-line="109" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="27" selection-end-line="94" selection-end-column="11" />
+        <state relative-caret-position="268">
+          <caret line="109" column="23" selection-start-line="109" selection-start-column="23" selection-end-line="109" selection-end-column="23" />
+          <folding>
+            <element signature="e#2917#2961#0#HTML" expanded="true" />
+            <element signature="e#3132#3179#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Add.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Admin/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3444">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="314">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_08_16_103034_create_outgoing_call_logs_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Admin/EnquiryAppointment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_08_16_103019_create_incomming_call_logs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/IncommingCallLogValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="240">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/ApplicantAppointment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+        <state relative-caret-position="224">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="111" column="23" lean-forward="true" selection-start-line="108" selection-start-column="19" selection-end-line="111" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="111" column="23" selection-start-line="111" selection-start-column="23" selection-end-line="111" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/EnquiryAppointmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="136" column="9" selection-start-line="133" selection-start-column="8" selection-end-line="136" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Enquiry Appointment/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="41" column="76" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantAppointmentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
-          <caret line="47" column="77" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/OutgoingCallLogValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/IncommingCallLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="112" column="14" selection-start-line="112" selection-start-column="14" selection-end-line="112" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Add.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="34" column="118" selection-start-line="34" selection-start-column="118" selection-end-line="34" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/OutgoingCallLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/VisitorLogValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Add.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="153" column="64" selection-end-line="162" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/OutgoingCallLogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_08_17_080521_create_visitor_logs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Applicant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="90" column="5" lean-forward="true" selection-start-line="87" selection-start-column="4" selection-end-line="90" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Enquiry.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/SMS.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/VisitorLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Visitor Log/Update.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
-          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+          <caret line="147" column="35" lean-forward="true" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/IncommingCallLogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="127" column="9" lean-forward="true" selection-start-line="112" selection-start-column="8" selection-end-line="127" selection-end-column="9" />
+        <state relative-caret-position="160">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/OutgoingCallLogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/VisitorLogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Appointment/Applicant Appointment/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="41" column="76" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/VisitorLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="83" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_08_17_080521_create_visitor_logs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Visitor Log/Add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-134">
-          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-656">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3792" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education1/Index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1776" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/Header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/Head.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Applicant/Detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://a1902b6c-9102-4f41-a752-3c062c5036f6/schema/prometric/table/visitor_logs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://a1902b6c-9102-4f41-a752-3c062c5036f6/schema/prometric/table/check_lists">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/Sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="194" column="29" selection-start-line="194" selection-start-column="29" selection-end-line="194" selection-end-column="29" />
+        <state relative-caret-position="180">
+          <caret line="94" column="38" lean-forward="true" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Visitor Log/Index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
+        <state relative-caret-position="304">
+          <caret line="79" column="95" selection-start-line="79" selection-start-column="95" selection-end-line="79" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="107" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_08_16_103019_create_incomming_call_logs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/IncommingCallLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="97" selection-start-line="8" selection-start-column="97" selection-end-line="8" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/OutgoingCallLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="97" selection-start-line="8" selection-start-column="97" selection-end-line="8" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="116" column="30" lean-forward="true" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="39" column="75" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
+          <caret line="63" column="89" selection-start-line="63" selection-start-column="89" selection-end-line="63" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="111" column="98" selection-start-line="111" selection-start-column="98" selection-end-line="111" selection-end-column="98" />
+          <caret line="114" column="66" selection-start-line="114" selection-start-column="66" selection-end-line="114" selection-end-column="66" />
+          <caret line="114" column="87" selection-start-line="114" selection-start-column="87" selection-end-line="114" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_08_16_103034_create_outgoing_call_logs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="114" column="87" selection-start-line="114" selection-start-column="87" selection-end-line="114" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Visitor Log/Update.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
-          <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+          <caret line="39" column="75" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/VisitorLogController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin/Add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state>
+          <caret selection-end-line="100" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Index.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/AdminTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
+        <state relative-caret-position="128">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Applicant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="25" column="5" selection-start-line="22" selection-start-column="3" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2640" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CheckListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-992">
+          <caret line="82" column="9" selection-start-line="79" selection-start-column="8" selection-end-line="82" selection-end-column="9" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Admin/ChangePassword.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="32" column="77" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/Sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="152" column="36" lean-forward="true" selection-start-line="152" selection-start-column="10" selection-end-line="152" selection-end-column="36" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Layout/Header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
         </state>
       </provider>
     </entry>

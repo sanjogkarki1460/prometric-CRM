@@ -47,6 +47,20 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 1px;">Appointment With*</p>
+                                    <select required class="form-control form select2" id="appointment"
+                                            style="height:50%;width:80%;margin-top: -15px;" name="appointment_with">
+                                        <option value="" selected disabled></option>
+                                        @foreach($admin as $admin)
+                                            <option @if($admin->name==$ad) selected @endif value="{{$admin->id}}">{{$admin->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Appointment Date*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
@@ -89,7 +103,12 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#enquiry').select2({
+                        allowClear:true,
                         placeholder: "Select a enquiry"
+                    });
+                    $('#appointment').select2({
+                        allowClear:true,
+                        placeholder: "Select a appointment with"
                     });
 
                 });

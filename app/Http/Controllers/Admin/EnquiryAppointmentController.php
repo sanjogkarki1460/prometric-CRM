@@ -6,24 +6,29 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\EnquiryAppointment;
 use App\Admin\Enquiry;
+use App\Admin\Admin;
 use App\Http\Requests\EnquiryAppointmentValidator;
+use Auth;
 
 
 class EnquiryAppointmentController extends Controller
 {
     protected $enquiryappointment = null;
     protected $Enquiry = null;
+    protected $admin= null;
 
-    public function __construct(EnquiryAppointment $enquiryappointment, Enquiry $enquiry)
+    public function __construct(EnquiryAppointment $enquiryappointment, Enquiry $enquiry,Admin $admin)
     {
         $this->enquiryappointment = $enquiryappointment;
         $this->enquiry = $enquiry;
+        $this->admin= $admin;
     }
 
     public function index()
     {
-        $appointment=$this->enquiryappointment->orderBy('id','desc')->get();
-        return view('Admin.Appointment.Enquiry Appointment.Index')->with('appointment',$appointment);
+        $user=Auth::user()->id;
+            $appointment=$this->enquiryappointment->orderBy('id','desc')->get();
+            return view('Admin.Appointment.Enquiry Appointment.Index')->with('appointment',$appointment);
     }
 
     /**
@@ -33,8 +38,9 @@ class EnquiryAppointmentController extends Controller
      */
     public function create()
     {
+        $admin=$this->admin->get();
         $enquiry=$this->enquiry->orderBy('id','desc')->get();
-        return view('Admin.Appointment.Enquiry Appointment.Add')->with('enquiry',$enquiry);
+        return view('Admin.Appointment.Enquiry Appointment.Add')->with('enquiry',$enquiry)->with('admin',$admin);
     }
 
     /**
@@ -76,14 +82,20 @@ class EnquiryAppointmentController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');
+        }
         $appointment=$this->enquiryappointment->find($id);
         if(!$appointment){
             return redirect()->route('EnquiryAppointment.index')->with('Error','No Appointment Found');
         }
+        $admin=$this->admin->get();
         $app=$appointment->Enquiry_Appointment->first_name;
+        $ad=$appointment->Enquiry_Admin->name;
         $enquiry=$this->enquiry->orderBy('id','desc')->get();
         return view('Admin.Appointment.Enquiry Appointment.Update')->with('appointment',$appointment)
-            ->with('enquiry',$enquiry)->with('app',$app);
+            ->with('enquiry',$enquiry)->with('app',$app)->with('admin',$admin)->with('ad',$ad);
     }
 
     /**
@@ -95,6 +107,10 @@ class EnquiryAppointmentController extends Controller
      */
     public function update(EnquiryAppointmentValidator $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');
+        }
         $data=$request->all();
         $appointment=$this->enquiryappointment->find($id);
         $appointment->fill($data);
@@ -115,6 +131,10 @@ class EnquiryAppointmentController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');
+        }
         $appointment=$this->enquiryappointment->find($id);
         if(!$appointment){
             return redirect()->route('EnquiryAppointment.index')->with('Error','No Appointment Found');

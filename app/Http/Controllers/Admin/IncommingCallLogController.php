@@ -8,6 +8,7 @@ use App\Admin\IncommingCallLog;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use App\Http\Requests\IncommingCallLogValidator;
+use Auth;
 
 class IncommingCallLogController extends Controller
 {
@@ -81,8 +82,11 @@ class IncommingCallLogController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $calllog=$this->incommingcalllog->find($id);
-//        dd($calllog);
         if(!$calllog){
             return redirect()->route('IncomingCallLog.index')->with('Error','No call log Found');
         }
@@ -93,7 +97,6 @@ class IncommingCallLogController extends Controller
         elseif($calllog->enquiry_id){
             $app=$calllog->Enquiry_Incomming->first_name;
         }
-//        dd($app);
         $applicant = $this->applicant->get();
         $enquiry = $this->enquiry->get();
 
@@ -110,6 +113,10 @@ class IncommingCallLogController extends Controller
      */
     public function update(IncommingCallLogValidator $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $calllog=$this->incommingcalllog->find($id);
         if(!$calllog){
             return redirect()->route('IncomingCallLog.index')->with('Error','No call log Found');
@@ -136,6 +143,10 @@ class IncommingCallLogController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $calllog=$this->incommingcalllog->find($id);
         if(!$calllog){
             return redirect()->route('IncomingCallLog.index')->with('Error','No call log Found');

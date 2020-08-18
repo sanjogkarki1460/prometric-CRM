@@ -59,13 +59,17 @@
                                             <th style="font-size:10px;">BASIC LIFE SUPPORT CERTIFICATE</th>
                                             <th style="font-size:10px;">SIGNED LETTER AUTHORIZATION</th>
                                             <th style="font-size:10px;">SIGNED SERVICE AGREEMENT</th>
-                                            <th style="font-size:10px;">Action</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th style="font-size:10px;">Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($checklist as $checklist)
                                             <tr>
-                                                <td><a href="{{route('ApplicantDetail',$checklist->applicant_id)}}">{{$checklist->Applicant_CheckList->first_name}} {{$checklist->Applicant_CheckList->middel_name}} {{$checklist->Applicant_CheckList->surname}}</a></td>
+                                                <td>
+                                                    <a href="{{route('ApplicantDetail',$checklist->applicant_id)}}">{{$checklist->Applicant_CheckList->first_name}} {{$checklist->Applicant_CheckList->middel_name}} {{$checklist->Applicant_CheckList->surname}}</a>
+                                                </td>
                                                 @if($checklist->mrp_size_photo=='Yes')
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
@@ -223,7 +227,7 @@
                                                             <input type="checkbox" disabled=""></div>
                                                     </td>
                                                 @endif
-                                                    @if($checklist->council_registration_certificate_back=='Yes')
+                                                @if($checklist->council_registration_certificate_back=='Yes')
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox" checked="" disabled=""></div>
@@ -311,24 +315,25 @@
                                                             <input type="checkbox" disabled=""></div>
                                                     </td>
                                                 @endif
-
-                                                <td class="text-left">
-                                                    <form action="{{ route('CheckList.edit', $checklist->id)}}"
-                                                          method="GET"
-                                                          style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('PUT')}}
-                                                        <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                        </button>
-                                                    </form>
-                                                    <form action="{{ route('CheckList.destroy', $checklist->id)}}"
-                                                          method="post" style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('CheckList.edit', $checklist->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('CheckList.destroy', $checklist->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

@@ -24,6 +24,7 @@ use DB;
 use App\Admin\Admin;
 use Thread;
 use Intervention\Image\ImageManagerStatic as Image;
+use Auth;
 
 class ApplicantController extends Controller
 {
@@ -139,6 +140,10 @@ class ApplicantController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $category = $this->category->get();
         $enquiry = $this->enquiry->get();
         $applicant = $this->applicant->find($id);
@@ -174,7 +179,10 @@ class ApplicantController extends Controller
      */
     public function update(ApplicantValidator $request, $id)
     {
-
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $this->applicant = $this->applicant->find($id);
         $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
         $data = $request->all();
@@ -213,7 +221,10 @@ class ApplicantController extends Controller
      */
     public function destroy($id)
     {
-
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $applicant = $this->applicant->find($id);
         if (!$applicant) {
             return redirect()->back()->with('Error', 'Applicant Not Found');

@@ -56,13 +56,17 @@
                                             <th>QUALIFICATION CERTIFICATE</th>
                                             <th>Character CERTIFICATE</th>
                                             <th>MARKSHEET</th>
-                                            <th>Action</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($education as $education)
                                             <tr>
-                                                <td><a href="{{route('ApplicantDetail',$education->applicant_id)}}">{{$education->Applicant_Education->first_name}} {{$education->Applicant_Education->middel_name}} {{$education->Applicant_Education->surname}}</a></td>
+                                                <td>
+                                                    <a href="{{route('ApplicantDetail',$education->applicant_id)}}">{{$education->Applicant_Education->first_name}} {{$education->Applicant_Education->middel_name}} {{$education->Applicant_Education->surname}}</a>
+                                                </td>
                                                 <td>{{$education->authority_name}}</td>
                                                 <td>{{$education->authority_address}}</td>
                                                 <td>{{$education->authority_city}}</td>
@@ -85,9 +89,9 @@
                                                 <td>{{$education->degree_issue_date}}</td>
                                                 <td>{{$education->expected_degree_issue_date}}</td>
                                                 @if($education->qualification_certificate)
-                                                <td><a target="_blank"
-                                                       href="{{asset('/upload/Education/'.$education->qualification_certificate)}}">Qualification
-                                                        Certificate</a></td>
+                                                    <td><a target="_blank"
+                                                           href="{{asset('/upload/Education/'.$education->qualification_certificate)}}">Qualification
+                                                            Certificate</a></td>
 
                                                 @else
                                                     <td>No Qualification Certificate Found</td>
@@ -107,23 +111,25 @@
                                                 @else
                                                     <td>No Marksheet Found</td>
                                                 @endif
-                                                <td class="text-left">
-                                                    <form action="{{ route('Education.edit', $education->id)}}"
-                                                          method="GET"
-                                                          style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('PUT')}}
-                                                        <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                        </button>
-                                                    </form>
-                                                    <form action="{{ route('Education.destroy', $education->id)}}"
-                                                          method="post" style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('Education.edit', $education->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('Education.destroy', $education->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

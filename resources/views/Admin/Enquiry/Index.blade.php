@@ -36,34 +36,40 @@
                                             <th>EmaiL</th>
                                             <th>Phone</th>
                                             <th>CATEGORY</th>
-                                            <th>Action</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($enquiry as $enquiry)
                                             <tr>
                                                 <td>{{$enquiry->id}}</td>
-                                                <td><a href="{{route('EnquiryDetail',$enquiry->id)}}">{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</a></td>
+                                                <td>
+                                                    <a href="{{route('EnquiryDetail',$enquiry->id)}}">{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</a>
+                                                </td>
                                                 <td>{{$enquiry->email}}</td>
                                                 <td>{{$enquiry->phone}}</td>
                                                 <td>{{@$enquiry->Category_Enquiry->Name}}</td>
-                                                <td class="text-left">
-                                                    <form action="{{ route('Enquiry.edit',$enquiry->id)}}"
-                                                          method="GET"
-                                                          style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('PUT')}}
-                                                        <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                        </button>
-                                                    </form>
-                                                    <form  action="{{ route('Enquiry.destroy',$enquiry->id)}}"
-                                                          method="post" style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit" >Delete
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('Enquiry.edit',$enquiry->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('Enquiry.destroy',$enquiry->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

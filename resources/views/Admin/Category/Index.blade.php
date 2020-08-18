@@ -33,7 +33,9 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
-                                            <th>Action</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -41,6 +43,7 @@
                                             <tr>
                                                 <td>{{$category->id}}</td>
                                                 <td>{{$category->Name}}</td>
+                                                @if(Auth::user()->role=='Admin')
                                                 <td class="text-left">
                                                     <form action="{{ route('Category.edit', $category->id)}}"
                                                           method="GET"
@@ -58,6 +61,7 @@
                                                         </button>
                                                     </form>
                                                 </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

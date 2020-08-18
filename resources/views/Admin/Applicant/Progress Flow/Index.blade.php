@@ -77,13 +77,17 @@
                                             <th>EXAM RESULT</th>
                                             <th>DATA FLOW REPORT</th>
                                             <th>REMARKS</th>
-                                            <th>Action</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th>Action</th>
+                                            @endif
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($progressflow as $progressflow)
                                             <tr>
-                                                <td><a href="{{route('ApplicantDetail',$progressflow->applicant_id)}}">{{$progressflow->Applicant_ProgressFlow->first_name}} {{$progressflow->Applicant_ProgressFlow->middel_name}} {{$progressflow->Applicant_ProgressFlow->surname}}</a></td>
+                                                <td>
+                                                    <a href="{{route('ApplicantDetail',$progressflow->applicant_id)}}">{{$progressflow->Applicant_ProgressFlow->first_name}} {{$progressflow->Applicant_ProgressFlow->middel_name}} {{$progressflow->Applicant_ProgressFlow->surname}}</a>
+                                                </td>
                                                 <td>{{$progressflow->profession}}</td>
                                                 <td>{{$progressflow->email}}</td>
                                                 <td>{{$progressflow->contact_number}}</td>
@@ -135,23 +139,25 @@
                                                 <td>{{$progressflow->exam_result}}</td>
                                                 <td>{{$progressflow->data_flow_report}}</td>
                                                 <td>{{$progressflow->remarks}}</td>
-                                                <td class="text-left">
-                                                    <form action="{{ route('ProgressFlow.edit', $progressflow->id)}}"
-                                                          method="GET"
-                                                          style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('PUT')}}
-                                                        <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                        </button>
-                                                    </form>
-                                                    <form action="{{ route('ProgressFlow.destroy', $progressflow->id)}}"
-                                                          method="post" style="display: inline-block">
-                                                        {{csrf_field()}}
-                                                        {{method_field('DELETE')}}
-                                                        <button class="btn btn-danger btn-sm" type="submit">Delete
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('ProgressFlow.edit', $progressflow->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('ProgressFlow.destroy', $progressflow->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
                                             </tr>
                                         @endforeach
                                         </tbody>

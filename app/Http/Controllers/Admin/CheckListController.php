@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Admin\Applicant;
 use App\Admin\CheckList;
 use App\Http\Requests\CheckListValidator;
+use Auth;
 
 class CheckListController extends Controller
 {
@@ -76,6 +77,10 @@ class CheckListController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $checklist=$this->CheckList->find($id);
 //        dd($checklist);
         return view('Admin.Applicant.CheckList.Update')->with('checklist',$checklist);
@@ -90,6 +95,10 @@ class CheckListController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $checklist=$this->CheckList->find($id);
         if(!$checklist){
             return redirect()->route('CheckList.index')->with('Error','CheckList Not Found');
@@ -150,6 +159,10 @@ class CheckListController extends Controller
     }
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $checklist=$this->CheckList->find($id);
         if(!$checklist){
             return redirect()->route('CheckList.index')->with('Error','CheckList Not Found');

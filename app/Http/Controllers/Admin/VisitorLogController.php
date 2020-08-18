@@ -8,6 +8,7 @@ use App\Admin\VisitorLog;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use App\Http\Requests\VisitorLogValidator;
+use Auth;
 
 class VisitorLogController extends Controller
 {
@@ -47,7 +48,7 @@ class VisitorLogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VisitorLogValidator $request)
     {
         $data=$request->all();
         if($request->applicant_id && $request->enquiry_id)
@@ -83,6 +84,10 @@ class VisitorLogController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $visitorlog=$this->visitorlog->find($id);
         if(!$visitorlog){
             return redirect()->route('VisitorLog.index')->with('Error','visitor log not found');
@@ -108,8 +113,12 @@ class VisitorLogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(VisitorLogValidator $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $VisitorLog=$this->visitorlog->find($id);
         if(!$VisitorLog){
             return redirect()->route('VisitorLog.index')->with('Error','No Visitor log Found');
@@ -136,6 +145,10 @@ class VisitorLogController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $visitorlog=$this->visitorlog->find($id);
         if(!$visitorlog){
             return redirect()->route('VisitorLog.index')->with('Error','visitor log not found');

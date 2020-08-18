@@ -8,6 +8,7 @@ use App\Admin\Employment2;
 use App\Admin\Applicant;
 use App\Http\Requests\EmploymentValidator;
 use File;
+use Auth;
 
 class Employment2Controller extends Controller
 {
@@ -95,6 +96,10 @@ class Employment2Controller extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $employment = $this->employment2->find($id);
         $applicant = $this->applicant->get();
         $app = $employment->Applicant_Employment2->first_name;
@@ -112,6 +117,10 @@ class Employment2Controller extends Controller
      */
     public function update(EmploymentValidator $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $employment = $this->employment2->find($id);
         $data = $request->all();
         if ($request->experience_letter) {
@@ -154,6 +163,10 @@ class Employment2Controller extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $employment = $this->employment2->find($id);
 //        dd($employment);
         if (!$employment) {

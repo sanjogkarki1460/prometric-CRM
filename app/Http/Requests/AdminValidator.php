@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EnquiryAppointmentValidator extends FormRequest
+class AdminValidator extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,11 @@ class EnquiryAppointmentValidator extends FormRequest
     public function rules()
     {
         return [
-            'enquiry_id'=>'required',
-            'date'=>'required',
-            'time'=>'required',
-            'appointment_with'=>'required',
-            'remarks'=>'',
+            'name'=>'required|string',
+            'email'=>'required|email',
+            'password'=>'required',
+            'role'=>'required',
+
         ];
     }
 }

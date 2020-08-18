@@ -24,137 +24,160 @@
                                 <span class="title">Dashboard</span>
                             </a>
                         </li>
-                        <li class="nav-item start ">
-                            <a class="nav-link nav-toggle">
-                                <i class="fa fa-list"></i>
-                                <span class="title">Category</span>
-                                <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item   ">
-                                    <a href="{{route('Category.create')}}" class="nav-link ">
-                                        <span class="title">Add Category</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a href="{{route('Category.index')}}" class="nav-link ">
-                                        <span class="title">View Category</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item start ">
-                            <a class="nav-link nav-toggle">
-                                <i class="fa fa-comment"></i>
-                                <span class="title">Enquiry</span>
-                                <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item   ">
-                                    <a href="{{route('Enquiry.create')}}" class="nav-link ">
-                                        <span class="title">Add Enquiry</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a href="{{route('Enquiry.index')}}" class="nav-link ">
-                                        <span class="title">View Enquiry</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item start ">
-                            <a class="nav-link nav-toggle">
-                                <i class="fa fa-calendar-check-o"></i>
-                                <span class="title">Applicant</span>
-                                <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item   ">
-                                    <a href="{{route('Applicant.create')}}" class="nav-link ">
-                                        <span class="title">Add Applicant</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a href="{{route('Applicant.index')}}" class="nav-link ">
-                                        <span class="title">View Applicant</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a href="{{route('CheckList.index')}}" class="nav-link ">
-                                        <span class="title">Document Checklist</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript:;" class="nav-link nav-toggle">
-                                        <span class="title">Education</span>
-                                        <span class="arrow "></span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class="nav-item">
-                                            <a href="{{route('Education.index')}}" class="nav-link nav-toggle">
-                                                <i class="title"></i> Education 1
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{route('Education2.index')}}" class="nav-link">
-                                                <i class="title"></i> Education 2 </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript:;" class="nav-link nav-toggle">
-                                        <span class="title">Health Lisence</span>
-                                        <span class="arrow "></span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class="nav-item">
-                                            <a href="{{route('HealthLicense.index')}}" class="nav-link nav-toggle">
-                                                <i class="title"></i> Health Lisence 1
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{route('HealthLicense2.index')}}" class="nav-link">
-                                                <i class="title"></i> Health Lisence 2 </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="javascript:;" class="nav-link nav-toggle">
-                                        <span class="title">Employment</span>
-                                        <span class="arrow "></span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class="nav-item">
-                                            <a href="{{route('Employment.index')}}" class="nav-link nav-toggle">
-                                                <i class="title"></i> Employment 1
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{route('Employment2.index')}}" class="nav-link">
-                                                <i class="title"></i> Employment 2 </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{route('Employment3.index')}}" class="nav-link nav-toggle">
-                                                <i class="title"></i> Employment 3
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{route('Employment4.index')}}" class="nav-link">
-                                                <i class="title"></i> Employment 4 </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{route('Employment5.index')}}" class="nav-link">
-                                                <i class="title"></i> Employment 5 </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item ">
-                                    <a href="{{route('ProgressFlow.index')}}" class="nav-link ">
-                                        <span class="title">Progress Flow Report</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
+                        @if(Auth::user()->role=='Admin')
+                            <li class="nav-item start ">
+                                <a class="nav-link nav-toggle">
+                                    <i class="fa fa-user-circle"></i>
+                                    <span class="title">Users</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item   ">
+                                        <a href="{{route('Admin.create')}}" class="nav-link ">
+                                            <span class="title">Add Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{route('Admin.index')}}" class="nav-link ">
+                                            <span class="title">View Users</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        @endif
+                            <li class="nav-item start ">
+                                <a class="nav-link nav-toggle">
+                                    <i class="fa fa-list"></i>
+                                    <span class="title">Category</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item   ">
+                                        <a href="{{route('Category.create')}}" class="nav-link ">
+                                            <span class="title">Add Category</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{route('Category.index')}}" class="nav-link ">
+                                            <span class="title">View Category</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item start ">
+                                <a class="nav-link nav-toggle">
+                                    <i class="fa fa-comment"></i>
+                                    <span class="title">Enquiry</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item   ">
+                                        <a href="{{route('Enquiry.create')}}" class="nav-link ">
+                                            <span class="title">Add Enquiry</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{route('Enquiry.index')}}" class="nav-link ">
+                                            <span class="title">View Enquiry</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item start ">
+                                <a class="nav-link nav-toggle">
+                                    <i class="fa fa-calendar-check-o"></i>
+                                    <span class="title">Applicant</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item   ">
+                                        <a href="{{route('Applicant.create')}}" class="nav-link ">
+                                            <span class="title">Add Applicant</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{route('Applicant.index')}}" class="nav-link ">
+                                            <span class="title">View Applicant</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{route('CheckList.index')}}" class="nav-link ">
+                                            <span class="title">Document Checklist</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link nav-toggle">
+                                            <span class="title">Education</span>
+                                            <span class="arrow "></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item">
+                                                <a href="{{route('Education.index')}}" class="nav-link nav-toggle">
+                                                    <i class="title"></i> Education 1
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('Education2.index')}}" class="nav-link">
+                                                    <i class="title"></i> Education 2 </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link nav-toggle">
+                                            <span class="title">Health Lisence</span>
+                                            <span class="arrow "></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item">
+                                                <a href="{{route('HealthLicense.index')}}" class="nav-link nav-toggle">
+                                                    <i class="title"></i> Health Lisence 1
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('HealthLicense2.index')}}" class="nav-link">
+                                                    <i class="title"></i> Health Lisence 2 </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link nav-toggle">
+                                            <span class="title">Employment</span>
+                                            <span class="arrow "></span>
+                                        </a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item">
+                                                <a href="{{route('Employment.index')}}" class="nav-link nav-toggle">
+                                                    <i class="title"></i> Employment 1
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('Employment2.index')}}" class="nav-link">
+                                                    <i class="title"></i> Employment 2 </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('Employment3.index')}}" class="nav-link nav-toggle">
+                                                    <i class="title"></i> Employment 3
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('Employment4.index')}}" class="nav-link">
+                                                    <i class="title"></i> Employment 4 </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('Employment5.index')}}" class="nav-link">
+                                                    <i class="title"></i> Employment 5 </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{route('ProgressFlow.index')}}" class="nav-link ">
+                                            <span class="title">Progress Flow Report</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         <li class="nav-item start ">
                             <a class="nav-link nav-toggle">
                                 <i class="fa fa-calendar"></i>
@@ -174,6 +197,7 @@
                                 </li>
                             </ul>
                         </li>
+
                         <li class="nav-item start ">
                             <a class="nav-link nav-toggle">
                                 <i class="fa fa-history"></i>
@@ -255,7 +279,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li
                     </ul>
                 </div>
             </div>

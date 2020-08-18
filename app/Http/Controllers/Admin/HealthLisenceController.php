@@ -8,22 +8,23 @@ use App\Admin\Applicant;
 use App\Admin\HealthLisence;
 use App\Http\Requests\HealthLisencevalidator;
 use File;
+use Auth;
 
 class HealthLisenceController extends Controller
 {
-    protected $applicant=null;
-    protected $healthlisence=null;
+    protected $applicant = null;
+    protected $healthlisence = null;
 
-    public function __construct(Applicant $appliant,HealthLisence $healthLisence)
+    public function __construct(Applicant $appliant, HealthLisence $healthLisence)
     {
-        $this->applicant=$appliant;
-        $this->healthlisence=$healthLisence;
+        $this->applicant = $appliant;
+        $this->healthlisence = $healthLisence;
     }
 
     public function index()
     {
-        $healthlisence=$this->healthlisence->get();
-        return view('Admin.Applicant.HealthLisence.HealthLicense1.Index')->with('healthlisence',$healthlisence);
+        $healthlisence = $this->healthlisence->get();
+        return view('Admin.Applicant.HealthLisence.HealthLicense1.Index')->with('healthlisence', $healthlisence);
     }
 
     /**
@@ -33,31 +34,31 @@ class HealthLisenceController extends Controller
      */
     public function create()
     {
-        $applicant=$this->applicant->get();
-        return view('Admin.Applicant.HealthLisence.HealthLicense1.Add')->with('applicant',$applicant);
+        $applicant = $this->applicant->get();
+        return view('Admin.Applicant.HealthLisence.HealthLicense1.Add')->with('applicant', $applicant);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(HealthLisencevalidator $request)
     {
-        $data=$request->all();
+        $data = $request->all();
         $this->healthlisence->fill($data);
-        $success=$this->healthlisence->save();
+        $success = $this->healthlisence->save();
         if ($request->license_copy) {
-            $first_Name=$this->healthlisence->Applicant_Health->first_name;
-            $middel_Name=$this->healthlisence->Applicant_Health->middel_name;
-            $last_Name=$this->healthlisence->Applicant_Health->surname;
-            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
+            $first_Name = $this->healthlisence->Applicant_Health->first_name;
+            $middel_Name = $this->healthlisence->Applicant_Health->middel_name;
+            $last_Name = $this->healthlisence->Applicant_Health->surname;
+            $name = $first_Name . ' ' . $middel_Name . ' ' . $last_Name;
             $path = 'upload/Health License';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name."-HealthLicense-" . date('Ymdhid') . rand(0, 99) . "." . $request->license_copy->getClientOriginalExtension();
+            $file_name = $name . "-HealthLicense-" . date('Ymdhid') . rand(0, 99) . "." . $request->license_copy->getClientOriginalExtension();
 //        dd($file_name);
             $success = $request->license_copy->move($path, $file_name);
 
@@ -68,12 +69,11 @@ class HealthLisenceController extends Controller
             }
         }
         $this->healthlisence->fill($data);
-        $success=$this->healthlisence->save();
-        if($success){
-            return redirect()->route('HealthLicense.index')->with('success','Health Lisence list Added successfully');
-        }
-        else{
-            return redirect()->route('HealthLicense.index')->with('Error','Sorry! there is an arror adding health lisence list');
+        $success = $this->healthlisence->save();
+        if ($success) {
+            return redirect()->route('HealthLicense.index')->with('success', 'Health Lisence list Added successfully');
+        } else {
+            return redirect()->route('HealthLicense.index')->with('Error', 'Sorry! there is an arror adding health lisence list');
         }
 
     }
@@ -81,7 +81,7 @@ class HealthLisenceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -92,34 +92,41 @@ class HealthLisenceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-            $healthlisence=$this->healthlisence->find($id);
-        $applicant=$this->applicant->get();
-        $app=$healthlisence->Applicant_Health->first_name;
-        return view('Admin.Applicant.HealthLisence.HealthLicense1.Update')->with('healthlisence',$healthlisence)->with('applicant',$applicant)
-            ->with('app',$app);
+        if (Auth::user()->role != 'Admin') {
+            return redirect()->back()->with('delete', 'Sorry you don\'t have access to view the requested resource');
+        }
+        $healthlisence = $this->healthlisence->find($id);
+        $applicant = $this->applicant->get();
+        $app = $healthlisence->Applicant_Health->first_name;
+        return view('Admin.Applicant.HealthLisence.HealthLicense1.Update')->with('healthlisence', $healthlisence)->with('applicant', $applicant)
+            ->with('app', $app);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $healthlisence=$this->healthlisence->find($id);
-        $data=$request->all();
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
+        $healthlisence = $this->healthlisence->find($id);
+        $data = $request->all();
         if ($request->license_copy) {
-            $first_Name=$healthlisence->Applicant_Health->first_name;
-            $middel_Name=$healthlisence->Applicant_Health->middel_name;
-            $last_Name=$healthlisence->Applicant_Health->surname;
-            $name=$first_Name.' '.$middel_Name.' '.$last_Name;
+            $first_Name = $healthlisence->Applicant_Health->first_name;
+            $middel_Name = $healthlisence->Applicant_Health->middel_name;
+            $last_Name = $healthlisence->Applicant_Health->surname;
+            $name = $first_Name . ' ' . $middel_Name . ' ' . $last_Name;
 //            dd($name);
             $image_path = 'upload/Health License/' . $healthlisence->license_copy;
 //        dd($image_path);
@@ -131,7 +138,7 @@ class HealthLisenceController extends Controller
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name."-HealthLicense-" . date('Ymdhid') . rand(0, 99) . "." . $request->license_copy->getClientOriginalExtension();
+            $file_name = $name . "-HealthLicense-" . date('Ymdhid') . rand(0, 99) . "." . $request->license_copy->getClientOriginalExtension();
 //        dd($file_name);
             $success = $request->license_copy->move($path, $file_name);
 
@@ -142,23 +149,26 @@ class HealthLisenceController extends Controller
             }
         }
         $healthlisence->fill($data);
-        $success=$healthlisence->save();
-        if($success){
-            return redirect()->route('HealthLicense.index')->with('success','Health Lisence list updateed successfully');
-        }
-        else{
-            return redirect()->route('HealthLicense.index')->with('Error','Sorry! there is an arror updating health lisence list');
+        $success = $healthlisence->save();
+        if ($success) {
+            return redirect()->route('HealthLicense.index')->with('success', 'Health Lisence list updateed successfully');
+        } else {
+            return redirect()->route('HealthLicense.index')->with('Error', 'Sorry! there is an arror updating health lisence list');
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $healthlisence = $this->healthlisence->find($id);
         if (!$healthlisence) {
             return redirect()->back()->with('Error', 'List Not Found');

@@ -24,7 +24,7 @@ class VisitorLogValidator extends FormRequest
     public function rules()
     {
         return [
-            'visitor_type'=>'required',
+            'visited_by'=>'required',
             'applicant_id'=>'integer',
             'enquiry_id'=>'integer',
             'date'=>'required',

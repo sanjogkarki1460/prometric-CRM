@@ -20,7 +20,7 @@ class CreateVisitorLogsTable extends Migration
             $table->integer('enquiry_id')->nullable();
             $table->date('date');
             $table->time('time');
-            $table->longText('porpose')->nullable();
+            $table->longText('purpose')->nullable();
             $table->longText('remarks')->nullable();
             $table->timestamps();
         });

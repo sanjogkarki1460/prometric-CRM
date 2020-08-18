@@ -88,10 +88,10 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Porpose of call*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Purpose of call*</p>
                                     <textarea class="form form-control"
                                               style="width: 80%;" rows="5"
-                                              type="time" name="porpose"></textarea>
+                                              type="time" name="purpose"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -120,10 +120,12 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a applicant",
+                        allowClear:true
                     });
                     $('#enquiry').select2({
-                        placeholder: "Select a enquiry"
+                        placeholder: "Select a enquiry",
+                        allowClear:true
                     });
 
                     $("#applicant_select").click(function () {

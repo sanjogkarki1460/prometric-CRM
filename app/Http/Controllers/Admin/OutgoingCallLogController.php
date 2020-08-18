@@ -8,6 +8,7 @@ use App\Admin\OutgoingCallLog;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use App\Http\Requests\OutgoingCallLogValidator;
+use Auth;
 
 class OutgoingCallLogController extends Controller
 {
@@ -77,6 +78,10 @@ class OutgoingCallLogController extends Controller
      */
     public function edit($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $calllog=$this->outgoingcalllog->find($id);
 //        dd($calllog);
         if(!$calllog){
@@ -106,6 +111,10 @@ class OutgoingCallLogController extends Controller
      */
     public function update(OutgoingCallLogValidator $request, $id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $calllog=$this->outgoingcalllog->find($id);
         if(!$calllog){
             return redirect()->route('OutgoingCallLog.index')->with('Error','No call log Found');
@@ -128,6 +137,10 @@ class OutgoingCallLogController extends Controller
      */
     public function destroy($id)
     {
+        if(Auth::user()->role!='Admin')
+        {
+            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        }
         $calllog=$this->outgoingcalllog->find($id);
         if(!$calllog){
             return redirect()->route('OutgoingCallLog.index')->with('Error','No call log Found');
