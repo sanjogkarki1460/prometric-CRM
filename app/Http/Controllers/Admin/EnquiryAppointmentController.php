@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AppointmentProvider;
+use App\Mail\AppointmentReceiver;
 use Illuminate\Http\Request;
 use App\Admin\EnquiryAppointment;
 use App\Admin\Enquiry;
 use App\Admin\Admin;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\EnquiryAppointmentValidator;
 use Auth;
 
@@ -53,9 +56,20 @@ class EnquiryAppointmentController extends Controller
     {
         $data=$request->all();
 //        dd($data);
+        $provider=$this->admin->find($request->appointment_with);
+        $providermail=$provider->email;
+        $enquiry=$this->enquiry->find($request->enquiry_id);
+        $enquirymail=$enquiry->email;
         $this->enquiryappointment->fill($data);
         $success=$this->enquiryappointment->save();
         if($success){
+            $objDemo = new \stdClass();
+            $objDemo->provider = $provider->name;
+            $objDemo->receiver = $enquiry->first_name.' '.$enquiry->middle_name.' '.$enquiry->last_name ;
+            $objDemo->date = $request->date;
+            $objDemo->time = date('h:i A',strtotime($request->time));
+            Mail::to($providermail)->send(new AppointmentProvider($objDemo));
+            Mail::to($enquirymail)->send(new AppointmentReceiver($objDemo));
             return redirect()->route('EnquiryAppointment.index')->with('success','New appointment added');
         }
         else{
@@ -113,9 +127,20 @@ class EnquiryAppointmentController extends Controller
         }
         $data=$request->all();
         $appointment=$this->enquiryappointment->find($id);
+        $provider=$this->admin->find($request->appointment_with);
+        $providermail=$provider->email;
+        $enquiry=$this->enquiry->find($request->enquiry_id);
+        $enquirymail=$enquiry->email;
         $appointment->fill($data);
         $success=$appointment->save();
         if($success){
+            $objDemo = new \stdClass();
+            $objDemo->provider = $provider->name;
+            $objDemo->receiver = $enquiry->first_name.' '.$enquiry->middle_name.' '.$enquiry->last_name ;
+            $objDemo->date = $request->date;
+            $objDemo->time = date('h:i A',strtotime($request->time));
+            Mail::to($providermail)->send(new AppointmentProvider($objDemo));
+            Mail::to($enquirymail)->send(new AppointmentReceiver($objDemo));
             return redirect()->route('EnquiryAppointment.index')->with('success','New appointment updated');
         }
         else{

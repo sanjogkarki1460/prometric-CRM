@@ -11,7 +11,7 @@
 
                 <div class=" page-logo" style="background-color: white">
                     <a href="{{route('admin.home')}}">
-                        <span class="logo-default"><img style="margin-top:-15px;margin-left:30px;height: 65px;"src="{{asset('assets/img/pen.png')}}" alt=""></span> </a>
+                        <span class="logo-default"><img style="margin-top:-15px;margin-left:10px;height:65px;"src="{{asset('assets/img/pen.png')}}" alt=""></span> </a>
                 </div>
                 <form class="search-form-opened" action="#" method="GET">
                     <div class="input-group">

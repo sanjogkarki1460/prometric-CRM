@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AppointmentProvider;
+use App\Mail\AppointmentReceiver;
 use Illuminate\Http\Request;
 use App\Admin\ApplicantAppointment;
 use App\Admin\Applicant;
 use App\Http\Requests\ApplicantAppointmentValidator;
+use Illuminate\Support\Facades\Mail;
 use Auth;
 use App\Admin\Admin;
+
 
 class ApplicantAppointmentController extends Controller
 {
@@ -55,9 +59,20 @@ class ApplicantAppointmentController extends Controller
     {
         $data=$request->all();
 //        dd($data);
+        $provider=$this->admin->find($request->appointment_with);
+        $providermail=$provider->email;
+        $applicant=$this->applicant->find($request->applicant_id);
+        $applicantmail=$applicant->email;
         $this->applicantappointment->fill($data);
         $success=$this->applicantappointment->save();
         if($success){
+            $objDemo = new \stdClass();
+            $objDemo->provider = $provider->name;
+            $objDemo->receiver = $applicant->first_name.' '.$applicant->middel_name.' '.$applicant->surname ;
+            $objDemo->date = $request->date;
+            $objDemo->time = date('h:i A',strtotime($request->time));
+            Mail::to($providermail)->send(new AppointmentProvider($objDemo));
+            Mail::to($applicantmail)->send(new AppointmentReceiver($objDemo));
             return redirect()->route('ApplicantAppointment.index')->with('success','New appointment added');
         }
         else{
@@ -84,14 +99,6 @@ class ApplicantAppointmentController extends Controller
      */
     public function edit($id)
     {
-        if(Auth::user()->role!='Admin')
-        {
-            return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');
-        }
-        if(Auth::user()->role!='Admin')
-        {
-            return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');
-        }
         if(Auth::user()->role!='Admin')
         {
             return redirect()->back()->with('delete','Sorry! You Cannot add appointment by yourself');
@@ -121,15 +128,23 @@ class ApplicantAppointmentController extends Controller
         {
             return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');
         }
-        if(Auth::user()->role!='Admin')
-        {
-            return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');
-        }
+
         $data=$request->all();
         $appointment=$this->applicantappointment->find($id);
+        $provider=$this->admin->find($request->appointment_with);
+        $providermail=$provider->email;
+        $applicant=$this->applicant->find($request->applicant_id);
+        $applicantmail=$applicant->email;
         $appointment->fill($data);
         $success=$appointment->save();
         if($success){
+            $objDemo = new \stdClass();
+            $objDemo->provider = $provider->name;
+            $objDemo->receiver = $applicant->first_name.' '.$applicant->middel_name.' '.$applicant->surname ;
+            $objDemo->date = $request->date;
+            $objDemo->time = date('h:i A',strtotime($request->time));
+            Mail::to($providermail)->send(new AppointmentProvider($objDemo));
+            Mail::to($applicantmail)->send(new AppointmentReceiver($objDemo));
             return redirect()->route('ApplicantAppointment.index')->with('success','New appointment updated');
         }
         else{
@@ -145,10 +160,6 @@ class ApplicantAppointmentController extends Controller
      */
     public function destroy($id)
     {
-        if(Auth::user()->role!='Admin')
-        {
-            return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');
-        }
         if(Auth::user()->role!='Admin')
         {
             return redirect()->back()->with('delete','Sorry! You Cannot update appointment by yourself');

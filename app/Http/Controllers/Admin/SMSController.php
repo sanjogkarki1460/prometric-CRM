@@ -66,7 +66,7 @@ class SMSController extends Controller
         }
         $phnumber = implode(',', $number);
         $message = $request->message;
-        $from = 'InfoSms';
+        $from = 'Prometric Exam Nepal';
         $access_token = 'TyUrCzwHXbobGHofD57o';
         $to = $phnumber;
         $message = $message;

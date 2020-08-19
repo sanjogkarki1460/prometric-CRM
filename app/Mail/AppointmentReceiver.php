@@ -11,14 +11,12 @@ class AppointmentReceiver extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $demo;
+
+
+    public function __construct($demo)
     {
-        //
+        $this->demo = $demo;
     }
 
     /**
@@ -28,6 +26,6 @@ class AppointmentReceiver extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('Admin.Mail.AppointmentReceiver');
     }
 }

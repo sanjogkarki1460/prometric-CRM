@@ -47,26 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Password*</p>
-                                    <input required class="form form-control"
-                                           style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="password" name="password" placeholder="Enter Password" >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Confirm Password*</p>
-                                    <input required class="form form-control"
-                                           style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="password" name="confirm_password" placeholder="Enter confrim password">
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">

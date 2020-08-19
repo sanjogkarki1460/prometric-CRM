@@ -1,7 +1,7 @@
 @section('footer')
 
     <div class="page-footer">
-        <div class="page-footer-inner"> 2020 &copy; Visa Immigration
+        <div class="page-footer-inner"> 2020 &copy Visa Immigration
             <a href="https://www.gcn.com.np/" target="_blank" class="makerCss">GCN</a>
         </div>
         <div class="scroll-to-top">

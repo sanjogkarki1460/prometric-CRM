@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\Admin;
 use App\Http\Requests\AdminValidator;
+use App\Http\Requests\AdminUpdateValidator;
 use Hash;
 use Auth;
 
@@ -94,7 +95,7 @@ class AdminController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AdminValidator $request, $id)
+    public function update(AdminUpdateValidator$request, $id)
     {
         $admin = $this->admin->find($id);
         if (!$admin) {
@@ -107,9 +108,9 @@ class AdminController extends Controller
             $admin->fill($data);
             $success = $admin->save();
             if ($success) {
-                return redirect()->route('Admin.index')->with('success', 'New user added');
+                return redirect()->route('Admin.index')->with('success', 'User updated');
             } else {
-                return redirect()->route('Admin.index')->with('Error', 'Sorry! THere is an error adding new user ');
+                return redirect()->route('Admin.index')->with('Error', 'Sorry! THere is an error updating user ');
             }
         }
     }
