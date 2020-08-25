@@ -1,8 +1,8 @@
 @section('footer')
 
     <div class="page-footer">
-        <div class="page-footer-inner"> 2020 &copy Visa Immigration
-            <a href="https://www.gcn.com.np/" target="_blank" class="makerCss">GCN</a>
+        <div class="page-footer-inner"> 2020 &copy
+            <a href="https://www.prometricexamnepal.com/" target="_blank" class="makerCss">Prometric exam Nepal</a>
         </div>
         <div class="scroll-to-top">
             <i class="icon-arrow-up"></i>
