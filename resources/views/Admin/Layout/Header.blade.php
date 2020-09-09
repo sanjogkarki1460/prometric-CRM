@@ -1,7 +1,7 @@
 @section('header')
     @if(count($errors)>0)
         @foreach($errors->all() as $error)
-            {{Session::flash('Error',$error)}}
+            {{Session::flash('error',$error)}}
         @endforeach
     @endif
     <div class="page-wrapper" style="margin-top: -40px;" id="app">

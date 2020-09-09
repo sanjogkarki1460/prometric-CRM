@@ -35,7 +35,7 @@
                 </div>
                 <div class="card">
                     <form action="{{route('Applicant.store')}}" method="post" enctype="multipart/form-data">
-                        <input required type="hidden" name="_token" value="{{ csrf_token() }}">
+                        c
                         <div class="container" style="margin-bottom:-20px;">
                             <div class="row">
                                 <div class="col-md-12">
