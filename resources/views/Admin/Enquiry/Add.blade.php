@@ -29,7 +29,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">First Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">First Name<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="first_name" placeholder="Enter First name">
@@ -39,7 +39,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Last Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Last Name<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="last_name" placeholder="Enter Last name">
@@ -49,7 +49,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Middle Name*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Middle Name</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="middle_name" placeholder="Enter Middle name">
@@ -59,7 +59,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Email*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Email<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="email" name="email" placeholder="Enter Email">
@@ -69,7 +69,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Phone*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Phone<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="number" name="phone" placeholder="Enter Phone">
@@ -79,7 +79,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Address*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Address</p>
                                     <input required class="form form-control form-body"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="text" name="address" placeholder="Enter Address">
@@ -89,7 +89,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">category*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">category<span class="text-danger">*</span></p>
                                     <select required class="form-control form select2" id="category"
                                             style="height:50%;width:80%;margin-top: -20px;" name="Category_id">
                                         <option value="" selected disabled>--select any one--</option>
@@ -105,7 +105,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Subject*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Subject</p>
                                     <select required class="form-control form select2" id="subject"
                                             style="height:50%;width:80%;margin-top: -15px;" name="subject">
                                         <option value="" selected disabled>--select any one--</option>
@@ -125,7 +125,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Qualification Level*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Qualification Level</p>
                                     <select required class="form-control form select2" id="qualification_level"
                                             style="height:50%;width:80%;margin-top: -15px;" name="qualification_level">
                                         <option value="" selected disabled>--select any one--</option>
@@ -139,7 +139,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Experience*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Experience</p>
                                     <select required class="form-control form select2" id="experience"
                                             style="height:50%;width:80%;margin-top: -15px;" name="experience">
                                         <option value="" selected disabled>--select any one--</option>
@@ -160,7 +160,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Country Intrested*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Country Intrested</p>
                                     <select required class="form-control form select2" id="country_interested"
                                             style="height:50%;width:80%;margin-top: -15px;" name="country_interested">
                                         <option value="" selected disabled>--select any one--</option>
@@ -182,7 +182,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Service Intrested*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Service Intrested</p>
                                     <select required class="form-control form select2" id="service_interested"
                                             style="height:50%;width:80%;margin-top: -15px;" name="service_interested">
                                         <option value="" selected disabled>--select any one--</option>
@@ -239,7 +239,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Enquiry From*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Enquiry From</p>
                                     <select class="form-control form select2" id="enquiry_from"
                                             style="height:50%;width:80%;margin-top: -15px;" name="enquiry_from">
                                         <option value="" selected disabled>--select any one--</option>
@@ -266,7 +266,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Souce*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Souce</p>
                                     <select class="form-control form select2" id="source"
                                             style="height:50%;width:80%;margin-top: -15px;" name="source">
                                         <option value="" selected disabled>--select any one--</option>
@@ -283,7 +283,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Enquired date*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Enquired date</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="date" name="Enquired_date">
@@ -293,7 +293,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Office Visited*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Office Visited</p>
                                     <input type="checkbox" name="Office_visited" value="Yes">
                                 </div>
                             </div>
@@ -301,7 +301,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Visited date*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Visited date</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="date" name="Visited_date">
@@ -311,7 +311,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Remarks*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Remarks</p>
                                     <textarea class="form form-control" style="width:80%;margin-top:-15px;"
                                               rows="5"
                                               type="text" name="remarks" placeholder="Enter Remarks"></textarea>
@@ -321,7 +321,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Responded Through*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Responded Through</p>
                                     <select class="form-control form select2 sjs-example-placeholder-multiple js-state"
                                             multiple="multiple" id="responded_through"
                                             style="height:50%;width:80%;margin-top: -10px;" name="responded_through[]">
@@ -340,7 +340,18 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Eligibility*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Color code<span class="text-danger">*</span></p>
+                                    <input type="radio" name="color_code" value="whitelist">White List
+                                    <input type="radio" name="color_code" value="redlist">Red List
+                                    <input type="radio" name="color_code" value="blacklist">Black List
+                                    <input type="radio" name="color_code" value="greenlist">Green List
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Eligibility</p>
                                     <select class="form-control form select2" id="eligibility"
                                             style="height:50%;width:80%;margin-top: -15px;" name="eligibility">
                                         <option value="" selected disabled>--select any one--</option>

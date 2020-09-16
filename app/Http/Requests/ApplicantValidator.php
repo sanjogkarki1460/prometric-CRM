@@ -35,16 +35,18 @@ class ApplicantValidator extends FormRequest
             'passport_no'=>'',
             'birth_country'=>'',
             'country_code'=>'',
-            'mobile_no' =>'integer',
+            'mobile_no' =>'',
             'current_country'=>'',
             'nationality' =>'required',
             'email' =>'required',
-            'passport_docs' =>'file',
+            'passport_docs' =>'',
             'applicant_category' =>'required',
-            'services_id' =>'integer',
+            'services_id' =>'',
             'enquired'=>'required',
-            'enquired_id'=>'integer',
+            'enquired_id'=>'',
             'progress_sts'=>'',
+            'color_code'=>'required',
+            'status'=>'required',
         ];
     }
 }

@@ -43,6 +43,8 @@ class EnquiryValidator extends FormRequest
             'Category_id'=>'required',
             'Office_visited'=>'',
             'Visited_date'=>'',
+            'color_code'=>'required',
+
         ];
     }
 }

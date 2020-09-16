@@ -78,7 +78,7 @@
                                             <span class="title">Add Enquiry</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item ">
+                                    <li class="nav-item   ">
                                         <a href="{{route('Enquiry.index')}}" class="nav-link ">
                                             <span class="title">View Enquiry</span>
                                         </a>
@@ -97,10 +97,35 @@
                                             <span class="title">Add Applicant</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item ">
-                                        <a href="{{route('Applicant.index')}}" class="nav-link ">
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link nav-toggle">
                                             <span class="title">View Applicant</span>
+                                            <span class="arrow "></span>
                                         </a>
+                                        <ul class="sub-menu">
+                                            <li class="nav-item">
+                                                <a href="{{route('Applicant.index')}}" class="nav-link nav-toggle">
+                                                    <i class="title"></i> All Applicant
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('ApplicantWhitelist')}}" class="nav-link">
+                                                    <i class="title"></i> White List </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('ApplicantRedlist')}}" class="nav-link">
+                                                    <i class="title"></i> Red List</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('ApplicantBlacklist')}}" class="nav-link">
+                                                    <i class="title"></i> Black List </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="{{route('ApplicantGreenlist')}}" class="nav-link">
+                                                    <i class="title"></i> Green List </a>
+                                            </li>
+
+                                        </ul>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="{{route('CheckList.index')}}" class="nav-link ">

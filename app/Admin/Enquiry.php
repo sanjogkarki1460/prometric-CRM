@@ -8,7 +8,7 @@ class Enquiry extends Model
 {
     protected $fillable=['first_name','last_name','middle_name','email','phone', 'address', 'subject', 'qualification_level',
         'experience', 'country_interested', 'service_interested', 'enquiry_from', 'source', 'remarks', 'responded_through','eligibility','Category_id',
-        'Enquired_date','Office_visited','Visited_date'];
+        'Enquired_date','Office_visited','Visited_date','color_code'];
 
     public function Category_Enquiry()
     {

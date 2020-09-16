@@ -35,6 +35,7 @@ class CreateEnquiriesTable extends Migration
             $table->date('Enquired_date');
             $table->enum('Office_visited',['Yes','No'])->default('No');
             $table->Date('Visited_date')->nullable();
+            $table->enum('color_code',['whitelist','redlist','blacklist','greenlist'])->nullable();
             $table->timestamps();
         });
     }

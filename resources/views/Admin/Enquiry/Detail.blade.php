@@ -81,10 +81,6 @@
                                 <p>{{$enquiry->source}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">Remarks</h5>
-                                <p>{{$enquiry->remarks}}</p>
-                            </div>
-                            <div class="col-md-3">
                                 <h5 class="text-primary">Responded Through</h5>
                                 <p>{{$enquiry->responded_through}}</p>
                             </div>
@@ -101,12 +97,20 @@
                                 <p>{{@$enquiry->Enquired_date}}</p>
                             </div>
                             <div class="col-md-3">
+                                <h5 class="text-primary">Color Code</h5>
+                                <p>{{$enquiry->color_code}}</p>
+                            </div>
+                            <div class="col-md-3">
                                 <h5 class="text-primary">Office Visited</h5>
                                 <p>{{@$enquiry->Office_visited}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Visited Date</h5>
                                 <p>{{@$enquiry->Visited_date}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Remarks</h5>
+                                <p>{{$enquiry->remarks}}</p>
                             </div>
                         </div>
                         <div class="col-md-12 row">

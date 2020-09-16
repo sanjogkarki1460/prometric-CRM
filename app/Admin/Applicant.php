@@ -8,7 +8,7 @@ class Applicant extends Model
 {
     protected $fillable = ['first_name', 'middel_name', 'surname', 'maiden_name', 'gender', 'dob', 'identity_type', 'identity_card_no',
         'passport_no', 'birth_country', 'country_code', 'mobile_no', 'current_country', 'nationality', 'email', 'passport_docs',
-        'applicant_category', 'services_id', 'enquired', 'enquired_id', 'progress_sts'];
+        'applicant_category', 'services_id', 'enquired', 'enquired_id', 'progress_sts','color_code','status'];
 
     public function Category_Applicant()
     {

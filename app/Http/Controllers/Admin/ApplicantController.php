@@ -67,7 +67,27 @@ class ApplicantController extends Controller
     public function index()
     {
         $applicant = $this->applicant->get();
-        return view('Admin.Applicant.Index')->with('applicant', $applicant);
+        return view('Admin.Applicant.View.ALL')->with('applicant', $applicant);
+    }
+
+    public function Whitelist(){
+        $applicant = $this->applicant->where('color_code','whitelist')->get();
+        return view('Admin.Applicant.View.Whitelist')->with('applicant', $applicant);
+    }
+
+    public function Blacklist(){
+        $applicant = $this->applicant->where('color_code','blacklist')->get();
+        return view('Admin.Applicant.View.Blacklist')->with('applicant', $applicant);
+    }
+
+    public function Redlist(){
+        $applicant = $this->applicant->where('color_code','redlist')->get();
+        return view('Admin.Applicant.View.Redlist')->with('applicant', $applicant);
+    }
+
+    public function Greenlist(){
+        $applicant = $this->applicant->where('color_code','greenlist')->get();
+        return view('Admin.Applicant.View.Greenlist')->with('applicant', $applicant);
     }
 
     /**
@@ -147,14 +167,13 @@ class ApplicantController extends Controller
         $category = $this->category->get();
         $enquiry = $this->enquiry->get();
         $applicant = $this->applicant->find($id);
-//        dd($applicant);
-//        dd($applicant);
+        if (empty($applicant)) {
+            return redirect()->back()->with('Error', 'Applicant Not Found');
+        }
         if ($applicant->applicant_category) {
             $cat = $applicant->Category_Applicant->Name;
-//            dd($cat);
         }
         @$first_name = $applicant->Enquiry_Applicant->first_name;
-//        dd($first_name);
         @$middle_name = $applicant->Enquiry_Applicant->middle_name;
         @$last_name = $applicant->Enquiry_Applicant->last_name;
 
@@ -184,6 +203,9 @@ class ApplicantController extends Controller
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
         $this->applicant = $this->applicant->find($id);
+        if (empty($applicant)) {
+            return redirect()->back()->with('Error', 'Applicant Not Found');
+        }
         $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
         $data = $request->all();
         if ($request->passport_docs) {
@@ -207,18 +229,43 @@ class ApplicantController extends Controller
         $this->applicant->fill($data);
         $success = $this->applicant->save();
         $admin = Admin::all();
-//        dd($admin);
         foreach ($admin as $admin)
             $admin->notify(new \App\Notifications\ApplicantUpdateNotification());
         return redirect()->route('Applicant.index')->with('success', 'Applicant Updated Successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
+    public function ColorUpdate(Request $request,$id){
+
+        $applicant = $this->applicant->find($id);
+        if (empty($applicant)) {
+            return redirect()->back()->with('Error', 'Applicant Not Found');
+        }
+        $data=$request->all();
+        $applicant->fill($data);
+        $success = $applicant->save();
+        if($success){
+            $admin = Admin::all();
+            foreach ($admin as $admin){
+                $admin->notify(new \App\Notifications\ApplicantUpdateNotification());
+            }
+            session()->flash('success','Applicant Updated Successfully');
+        }
+        if ($request->color_code == 'whitelist') {
+            return redirect()->route('ApplicantWhitelist');
+        }
+        if ($request->color_code == 'blacklist') {
+            return redirect()->route('ApplicantBlacklist');
+        }
+        if ($request->color_code == 'redlist') {
+            return redirect()->route('ApplicantRedlist');
+        }
+        if ($request->color_code == 'greenlist') {
+            return redirect()->route('ApplicantGreenlist');
+        }
+    }
+
+
+
     public function destroy($id)
     {
         if(Auth::user()->role!='Admin')
@@ -226,7 +273,7 @@ class ApplicantController extends Controller
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
         $applicant = $this->applicant->find($id);
-        if (!$applicant) {
+        if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
         }
         $image_path = 'upload/Applicant/' . $applicant->passport_docs;
@@ -344,7 +391,7 @@ class ApplicantController extends Controller
     public function Detail($id)
     {
         $applicant = $this->applicant->find($id);
-        if (!$applicant) {
+        if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found Or Already Deleted');
         }
         $checklist = $this->checkList->where('applicant_id', $id)->get();

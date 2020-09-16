@@ -6,13 +6,13 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class=" pull-left">
-                            <div class="page-title">View Enquiry List</div>
+                            <div class="page-title">View Black List Applicant List</div>
                         </div>
                         <ol class="breadcrumb page-breadcrumb pull-right">
                             <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{route('admin.home')}}">Dashboard</a>&nbsp;<i
                                         class="fa fa-angle-right"></i>
                             </li>
-                            <li class="active">Enquiry View</li>
+                            <li class="active">Black List Applicant View</li>
                         </ol>
                     </div>
                 </div>
@@ -20,36 +20,10 @@
                     <div class="col-md-12">
                         <div class="card card-topline-aqua">
                             <div class="card-head">
-                                <div class="col-md-12">
-                                    <div class="col-md-11">
-                                        <form action="{{route('Enquiry.index')}}" method="psot">
-                                            <input required type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <div class="row col-md-12">
-                                                <div class="col-md-7">
-                                                    <header>Search By:</header>
-                                                    <select name="category" id="" style="height: 40px;border-radius:120px;">
-                                                        <option value="" disabled selected>By Category</option>
-                                                        @foreach($category as $category)
-                                                            <option value="{{$category->id}}">{{$category->Name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <select name="color_code" id="" style="height: 40px;border-radius:120px;"
-                                                            class="ml-3">
-                                                        <option value="" disabled selected>By Color Code</option>
-                                                        <option value="whitelist">White List</option>
-                                                        <option value="redlist">Red List</option>
-                                                        <option value="blacklist">Black List</option>
-                                                        <option value="greenlist">Green List</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <button type="submit" class="btn btn-primary mr-4">Search</button>
-                                                    <a href="{{route('Enquiry.index')}}" class="btn btn-danger">Reset</a>
-                                                    <a href="{{route('Enquiry.create')}}" class="btn btn-success fa fa-plus ml-4">Add New</a>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                <header>Black List Applicant Detail Table</header>
+                                <div class="cards pull-right">
+                                    <a href="{{route('Applicant.create')}}" class="btn btn-success fa fa-plus">Add
+                                        New</a>
                                 </div>
                             </div>
                             <div class="card-body ">
@@ -58,25 +32,35 @@
                                         <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>NAME</th>
-                                            <th>EmaiL</th>
-                                            <th>Phone</th>
-                                            <th>CATEGORY</th>
+                                            <th>Name</th>
+                                            <th>MOBILE NO</th>
+                                            <th>EMAIL</th>
+                                            <th>PASSPORT DOCS</th>
+                                            <th>APPLICANT'S CATEGORY</th>
+                                            <th>APPLICANT'S STATUS</th>
                                             <th>COLOR CODE</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($enquiry as $enquiry)
+                                        @foreach($applicant as $applicant)
                                             <tr>
-                                                <td>{{$enquiry->id}}</td>
+                                                <td>{{$applicant->id}}</td>
                                                 <td>
-                                                    <a href="{{route('EnquiryDetail',$enquiry->id)}}">{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</a>
+                                                    <a href="{{route('ApplicantDetail',$applicant->id)}}">{{$applicant->first_name}} {{$applicant->middel_name}} {{$applicant->surname}}</a>
                                                 </td>
-                                                <td>{{$enquiry->email}}</td>
-                                                <td>{{$enquiry->phone}}</td>
-                                                <td>{{@$enquiry->Category_Enquiry->Name}}</td>
-                                                <td class="text-capitalize">{{@$enquiry->color_code}}</td>
+                                                <td>{{$applicant->mobile_no}}</td>
+                                                <td>{{$applicant->email}}</td>
+                                                @if($applicant->passport_docs)
+                                                    <td><a target="_blank"
+                                                           href="{{asset('/upload/Applicant/'.$applicant->passport_docs)}}">Passport
+                                                            Document</a></td>
+                                                @else
+                                                    <td>No Document File</td>
+                                                @endif
+                                                <td>{{@$applicant->Category_Applicant->Name}}</td>
+                                                <td>{{@$applicant->status}}</td>
+                                                <td class="text-capitalize">{{@$applicant->color_code}}</td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button class="btn btn-info dropdown-toggle" type="button"
@@ -88,7 +72,7 @@
                                                              aria-labelledby="dropdownMenu2">
                                                             @if(Auth::user()->role=='Admin')
                                                                 <div class="text-center bg-white ">
-                                                                    <form action="{{ route('Enquiry.edit',$enquiry->id)}}"
+                                                                    <form action="{{ route('Applicant.edit',$applicant->id)}}"
                                                                           method="GET"
                                                                           style="display: inline-block">
                                                                         {{csrf_field()}}
@@ -100,7 +84,7 @@
                                                                     </form>
                                                                 </div>
                                                                 <div class=" text-center bg-white">
-                                                                    <form action="{{ route('Enquiry.destroy',$enquiry->id)}}"
+                                                                    <form action="{{ route('Applicant.destroy',$applicant->id)}}"
                                                                           method="post" style="display: inline-block">
                                                                         {{csrf_field()}}
                                                                         {{method_field('DELETE')}}
@@ -112,7 +96,7 @@
                                                                 </div>
                                                             @endif
                                                             <div class=" text-center bg-white ">
-                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
+                                                                <form action="{{ route('ApplicantColorUpdate',$applicant->id)}}"
                                                                       method="post"
                                                                       style="display: inline-block">
                                                                     {{csrf_field()}}
@@ -127,7 +111,7 @@
                                                                 </form>
                                                             </div>
                                                             <div class=" text-center bg-white ">
-                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
+                                                                <form action="{{ route('ApplicantColorUpdate',$applicant->id)}}"
                                                                       method="post"
                                                                       style="display: inline-block">
                                                                     {{csrf_field()}}
@@ -142,7 +126,7 @@
                                                                 </form>
                                                             </div>
                                                             <div class=" text-center bg-white ">
-                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
+                                                                <form action="{{ route('ApplicantColorUpdate',$applicant->id)}}"
                                                                       method="post"
                                                                       style="display: inline-block">
                                                                     {{csrf_field()}}
@@ -157,7 +141,7 @@
                                                                 </form>
                                                             </div>
                                                             <div class=" text-center bg-white ">
-                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
+                                                                <form action="{{ route('ApplicantColorUpdate',$applicant->id)}}"
                                                                       method="post"
                                                                       style="display: inline-block">
                                                                     {{csrf_field()}}
@@ -188,5 +172,3 @@
     </div>
     </div>
 @endsection
-
-

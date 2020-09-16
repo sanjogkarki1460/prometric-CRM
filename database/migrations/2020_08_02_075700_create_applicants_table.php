@@ -36,6 +36,8 @@ class CreateApplicantsTable extends Migration
             $table->string('enquired');
             $table->string('enquired_id')->nullable();
             $table->string('progress_sts')->nullable();
+            $table->string('status')->nullable();
+            $table->enum('color_code',['whitelist','redlist','blacklist','greenlist'])->nullable();
             $table->timestamps();
         });
     }

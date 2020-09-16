@@ -24,18 +24,21 @@ class EnquiryController extends Controller
         $this->enquiry = $enquiry;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $enquiry = $this->enquiry->get();
-
-        return view('Admin.Enquiry.Index')->with('enquiry', $enquiry);
+//        dd($request->all());
+        $query=$this->enquiry->get();
+        if(isset($request->category)){
+            $query = $query->where('Category_id',$request->category);
+        }
+        if(isset($request->color_code)){
+            $query = $query->where('color_code',$request->color_code);
+        }
+        $enquiry=$query;
+        $category = $this->category->get();
+        return view('Admin.Enquiry.Index')->with('enquiry', $enquiry)->with('category', $category);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $category = $this->category->get();
@@ -77,7 +80,7 @@ class EnquiryController extends Controller
      */
     public function show($id)
     {
-        //
+        dd('hello');
     }
 
     /**
@@ -88,9 +91,8 @@ class EnquiryController extends Controller
      */
     public function edit($id)
     {
-        if(Auth::user()->role!='Admin')
-        {
-            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        if (Auth::user()->role != 'Admin') {
+            return redirect()->back()->with('delete', 'Sorry you don\'t have access to view the requested resource');
         }
         $category = $this->category->get();
         $enquiry = $this->enquiry->find($id);
@@ -115,9 +117,8 @@ class EnquiryController extends Controller
      */
     public function update(EnquiryValidator $request, $id)
     {
-        if(Auth::user()->role!='Admin')
-        {
-            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        if (Auth::user()->role != 'Admin') {
+            return redirect()->back()->with('delete', 'Sorry you don\'t have access to view the requested resource');
         }
         $this->enquiry = $this->enquiry->find($id);
         $data = $request->all();
@@ -128,9 +129,42 @@ class EnquiryController extends Controller
         $this->enquiry->fill($data);
         $success = $this->enquiry->save();
         $admin = Admin::all();
-        foreach ($admin as $admin)
-            $admin->notify(new \App\Notifications\EnquiryUpdateNotification());
-        return redirect()->route('Enquiry.index')->with('success', 'Enquiry Updated Successfully');
+        if ($success) {
+            $admin = Admin::all();
+            foreach ($admin as $admin)
+                $admin->notify(new \App\Notifications\EnquiryUpdateNotification());
+            return redirect()->route('Enquiry.index')->with('success', 'Enquiry Updated Successfully');
+        } else {
+            return redirect()->route('Enquiry.index')->with('error', 'Sorry, there is an error updating enquiry');
+        }
+    }
+
+    public function ColorUpdate(Request $request, $id)
+    {
+        $this->enquiry = $this->enquiry->find($id);
+        $data = $request->all();
+        $this->enquiry->fill($data);
+        $success = $this->enquiry->save();
+        if ($success) {
+            $admin = Admin::all();
+            foreach ($admin as $admin)
+                $admin->notify(new \App\Notifications\EnquiryUpdateNotification());
+            session()->flash('success', 'Enquiry Updated Successfully');
+        } else {
+            session()->flash('error', 'Sorry, there is an error updating enquiry');
+        }
+        if ($request->color_code == 'whitelist') {
+            return redirect()->route('Whitelist');
+        }
+        if ($request->color_code == 'blacklist') {
+            return redirect()->route('Blacklist');
+        }
+        if ($request->color_code == 'redlist') {
+            return redirect()->route('Redlist');
+        }
+        if ($request->color_code == 'greenlist') {
+            return redirect()->route('Greenlist');
+        }
     }
 
     /**
@@ -141,9 +175,8 @@ class EnquiryController extends Controller
      */
     public function destroy($id)
     {
-        if(Auth::user()->role!='Admin')
-        {
-            return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
+        if (Auth::user()->role != 'Admin') {
+            return redirect()->back()->with('delete', 'Sorry you do not have access to view the requested resource');
         }
         $enquiry = $this->enquiry->find($id);
         if (!$enquiry) {
@@ -155,12 +188,14 @@ class EnquiryController extends Controller
         } else {
             return redirect()->route('Enquiry.index')->with('Error', 'Sorry! Enquiry Not Deleted');
         }
-
     }
 
     public function Detail($id)
     {
         $enquiry = $this->enquiry->find($id);
+        if (empty($enquiry)) {
+            return redirect()->back()->with('Error', 'Enquiry list not found');
+        }
         return view('Admin.Enquiry.Detail')->with('enquiry', $enquiry);
     }
 }

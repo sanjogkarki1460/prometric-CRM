@@ -61,6 +61,8 @@
                                                     <th>Name</th>
                                                     <th>Email</th>
                                                     <th>Contact</th>
+                                                    <th>Status</th>
+                                                    <th>Color Code</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -74,6 +76,8 @@
                                                         <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</td>
                                                         <td>{{$applicant->email}}</td>
                                                         <td>{{$applicant->mobile_no}}</td>
+                                                        <td>{{$applicant->status}}</td>
+                                                        <td>{{$applicant->color_code}}</td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>

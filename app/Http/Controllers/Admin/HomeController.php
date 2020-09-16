@@ -21,12 +21,16 @@ class HomeController extends Controller
         $this->sms = $sms;
     }
     public function index(){
-
+        $month=date('m');
         $enquiry = count($this->enquiry->get());
         $applicant = count($this->applicant->get());
+        $applicantthismonth=count($this->applicant->whereMonth('created_at',$month)->get());
+        $enquirythismonth=count($this->enquiry->whereMonth('created_at',$month)->get());
         $enquirySMS=count($this->sms->where('user_type','Enquiry')->get());
         $applicantSMS=count($this->sms->where('user_type','Applicant')->get());
         return view('Admin.Home')->with('enquiry',$enquiry)->with('applicant',$applicant)
-            ->with('applicantSMS',$applicantSMS)->with('enquirySMS',$enquirySMS);
+            ->with('applicantSMS',$applicantSMS)->with('enquirySMS',$enquirySMS)
+            ->with('applicantthismonth',$applicantthismonth)->with('enquirythismonth',$enquirythismonth);
+
     }
 }

@@ -102,6 +102,10 @@
                                 <h5 class="text-primary">Applicant Category</h5>
                                 <p>{{@$applicant->Category_Applicant->Name}}</p>
                             </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Color Code</h5>
+                                <p>{{@$applicant->color_code}}</p>
+                            </div>
                         </div>
                         <hr>
                         @foreach($checklist as $checklist)

@@ -61,6 +61,7 @@
                                                     <th>Name</th>
                                                     <th>Email</th>
                                                     <th>Contact</th>
+                                                    <th>Color Code</th>
                                                     <th>Eligibility</th>
 
                                                 </tr>
@@ -76,6 +77,7 @@
                                                     <td>{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</td>
                                                     <td>{{$enquiry->email}}</td>
                                                     <td>{{$enquiry->phone}}</td>
+                                                    <td>{{$enquiry->color_code}}</td>
                                                     <td>{{$enquiry->eligibility}}</td>
 
 
