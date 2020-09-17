@@ -63,12 +63,12 @@
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>Id</th>
-                                            <th>NAME</th>
+                                            <th>ID</th>
+                                            <th>Name</th>
                                             <th>EmaiL</th>
                                             <th>Phone</th>
-                                            <th>CATEGORY</th>
-                                            <th>COLOR CODE</th>
+                                            <th>Category</th>
+                                            <th>Color Code</th>
                                             <th>Eligibility</th>
                                             <th>Action</th>
                                         </tr>

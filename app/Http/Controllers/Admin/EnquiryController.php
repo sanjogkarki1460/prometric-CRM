@@ -155,18 +155,7 @@ class EnquiryController extends Controller
         } else {
             session()->flash('error', 'Sorry, there is an error updating enquiry');
         }
-        if ($request->color_code == 'whitelist') {
-            return redirect()->route('Whitelist');
-        }
-        if ($request->color_code == 'blacklist') {
-            return redirect()->route('Blacklist');
-        }
-        if ($request->color_code == 'redlist') {
-            return redirect()->route('Redlist');
-        }
-        if ($request->color_code == 'greenlist') {
-            return redirect()->route('Greenlist');
-        }
+            return redirect()->route('Enquiry.index');
     }
 
     /**

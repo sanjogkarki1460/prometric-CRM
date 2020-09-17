@@ -31,10 +31,10 @@
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>Id</th>
+                                            <th>ID</th>
                                             <th>Name</th>
                                             <th>Role</th>
-                                            <th>EMAIL</th>
+                                            <th>Email</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>

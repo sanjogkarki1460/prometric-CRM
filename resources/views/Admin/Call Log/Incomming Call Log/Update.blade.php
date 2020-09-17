@@ -7,7 +7,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add incoming call log update</div>
+                            <div class="page-title">Add Incoming Call Log Update</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -16,11 +16,11 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('IncomingCallLog.index')}}">incoming call log
+                                                 href="{{route('IncomingCallLog.index')}}">Incoming Call Log
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
-                                <li class="active">incoming call log update </li>
+                                <li class="active">Incoming Call Log Update </li>
                             </ol>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">time*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Time*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;"
                                            type="time" name="time" value="{{$calllog->time}}">
@@ -99,7 +99,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">length of call*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Length of Call*</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;"
                                            type="text" name="length" value="{{$calllog->length}}">
@@ -142,7 +142,7 @@
                 $(document).ready(function () {
                     $('#applicant').select2({
                         allowClear:true,
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#call_by').select2({
                         allowClear:true,
@@ -150,7 +150,7 @@
                     });
                     $('#enquiry').select2({
                         allowClear:true,
-                        placeholder: "Select a enquiry"
+                        placeholder: "Select a Enquiry"
                     });
 
                     $("#applicant_select").click(function () {

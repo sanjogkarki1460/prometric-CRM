@@ -126,18 +126,18 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="javascript:;" class="nav-link nav-toggle">
-                                            <span class="title">Health Lisence</span>
+                                            <span class="title">Health License</span>
                                             <span class="arrow "></span>
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="nav-item">
                                                 <a href="{{route('HealthLicense.index')}}" class="nav-link nav-toggle">
-                                                    <i class="title"></i> Health Lisence 1
+                                                    <i class="title"></i> Health License 1
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="{{route('HealthLicense2.index')}}" class="nav-link">
-                                                    <i class="title"></i> Health Lisence 2 </a>
+                                                    <i class="title"></i> Health License 2 </a>
                                             </li>
                                         </ul>
                                     </li>

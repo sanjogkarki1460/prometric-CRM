@@ -95,7 +95,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Issuing Authority City</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
-                                           name="issuing_authority_city" placeholder="Enter Authority city">
+                                           name="issuing_authority_city" placeholder="Enter Authority City">
                                     </input>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">License Number</p>
                                     <input type="text" class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="license_number">
+                                           style="height:34px;width:80%;margin-top: -20px;" placeholder="Enter License Number" name="license_number">
                                     </input>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">License Attained</p>
                                     <input type="text" class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="license_attained">
+                                           style="height:34px;width:80%;margin-top: -20px;" placeholder="Enter License Attained" name="license_attained">
                                     </input>
                                 </div>
                             </div>
@@ -198,16 +198,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#license_status').select2({
-                        placeholder: "Select a license status"
+                        placeholder: "Select a License Status"
                     });
                     $('#license_type').select2({
-                        placeholder: "Select a license type"
+                        placeholder: "Select a License Type"
                     });
                     $('#authority_country').select2({
-                        placeholder: "Select a country"
+                        placeholder: "Select a Country"
                     });
                 });
             </script>

@@ -39,7 +39,7 @@
                                     <div class="row col-md-12">
                                         <div class="col-md-9">
                                             <header>Search By:</header>
-                                            <select name="category" id="" style="height: 40px;border-radius:120px;">
+                                            <select name="category" id="" style="height: 40px;border-radius:120px;width: 120px;">
                                                 <option value="" disabled selected>By Category</option>
                                                 @foreach($category as $category)
                                                     <option value="{{$category->id}}">{{$category->Name}}</option>

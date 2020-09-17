@@ -46,10 +46,10 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px; margin-bottom: 2px;">qualification</p>
+                                    <p class="ah1" style="margin-top: 20px; margin-bottom: 2px;">Qualification</p>
                                     <select  class="form-control form select2" id="qualification"
                                              style="height:34px;width:80%;margin-top: -20px;" name="qualification">
-                                        <option value="" selected disabled>select Qualification</option>
+                                        <option value="" selected disabled>Select Qualification</option>
                                         <option @if($education->qualification=='Diploma') selected @endif value="Diploma">Diploma</option>
                                         <option @if($education->qualification=='Bachelor') selected @endif value="Bachelor">Bachelor</option>
                                         <option @if($education->qualification=='Master') selected @endif value="Master">Masterd</option>
@@ -60,10 +60,10 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Authority country</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Authority Country</p>
                                     <select  class="form-control form select2" id="authority_country"
                                              style="height:34px;width:80%;margin-top: -20px;" name="authority_country">
-                                        <option value="" selected disabled>select Authority country</option>
+                                        <option value="" selected disabled>Select Authority country</option>
                                         <option @if($education->authority_country=='Bangladesh') selected @endif value="Bangladesh" class="form-control">Bangladesh</option>
                                         <option @if($education->authority_country=='Nepal') selected @endif value="Nepal" class="form-control">Nepal</option>
                                         <option @if($education->authority_country=='India') selected @endif value="India" class="form-control">India</option>
@@ -77,7 +77,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority name</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Name</p>
                                     <input type="text"  class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;" name="authority_name" placeholder="Enter Authority Name" value="{{$education->authority_name}}">
                                     </input>
@@ -87,9 +87,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority address</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Address</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_address" placeholder="Enter Authority address" value="{{$education->authority_address}}">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_address" placeholder="Enter Authority Address" value="{{$education->authority_address}}">
                                     </input>
                                 </div>
                             </div>
@@ -97,9 +97,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority city</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority City</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_city" placeholder="Enter Authority city" value="{{$education->authority_city}}">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_city" placeholder="Enter Authority City" value="{{$education->authority_city}}">
                                     </input>
                                 </div>
                             </div>
@@ -107,9 +107,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority state</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority State</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_state" placeholder="Enter Authority state" value="{{$education->authority_state}}">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_state" placeholder="Enter Authority State" value="{{$education->authority_state}}">
                                     </input>
                                 </div>
                             </div>
@@ -117,9 +117,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority country code</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Country Code</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_country_code" placeholder="Enter Authority country code" value="{{$education->authority_country_code}}">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_country_code" placeholder="Enter Authority Country Code" value="{{$education->authority_country_code}}">
                                     </input>
                                 </div>
                             </div>
@@ -127,9 +127,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority phone number</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Phone Number</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_phone" placeholder="Enter Authority phone number" value="{{$education->authority_phone}}">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_phone" placeholder="Enter Authority Phone Number" value="{{$education->authority_phone}}">
                                     </input>
                                 </div>
                             </div>
@@ -137,9 +137,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority email</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Email</p>
                                     <input  type="email"  class="form-control form"
-                                            style="height:34px;width:80%;margin-top: -20px;" name="authority_email" placeholder="Enter Authority email" value="{{$education->authority_email}}">
+                                            style="height:34px;width:80%;margin-top: -20px;" name="authority_email" placeholder="Enter Authority Email" value="{{$education->authority_email}}">
                                     </input>
                                 </div>
                             </div>
@@ -147,9 +147,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority website</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Website</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_website" placeholder="Enter Authority website" value="{{$education->authority_website}}">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_website" placeholder="Enter Authority Website" value="{{$education->authority_website}}">
                                     </input>
                                 </div>
                             </div>
@@ -303,16 +303,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#qualification').select2({
-                        placeholder: "Select a qualification"
+                        placeholder: "Select a Qualification"
                     });
                     $('#authority_country').select2({
-                        placeholder: "Select a authority country"
+                        placeholder: "Select a Authority Country"
                     });
                     $('#mode').select2({
-                        placeholder: "Select a mode"
+                        placeholder: "Select a Mode"
                     });
                 });
             </script>

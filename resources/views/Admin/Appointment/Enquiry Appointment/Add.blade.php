@@ -69,7 +69,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Appointment time*</p>
+                                    <p class="ah1" style="margin-top: 20px;">Appointment Time*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="time" name="time">
@@ -102,11 +102,11 @@
                 $(document).ready(function () {
                     $('#enquiry').select2({
                         allowClear:true,
-                        placeholder: "Select a enquiry"
+                        placeholder: "Select a Enquiry"
                     });
                     $('#appointment').select2({
                         allowClear:true,
-                        placeholder: "Select a appointment with"
+                        placeholder: "Select a Appointment With"
                     });
 
                 });

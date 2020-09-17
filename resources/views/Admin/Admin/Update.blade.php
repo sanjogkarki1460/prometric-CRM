@@ -33,7 +33,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Name*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="name" placeholder="Enter name" value="{{$admin->name}}">
+                                           type="text" name="name" placeholder="Enter Name" value="{{$admin->name}}">
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#role').select2({
-                        placeholder: "Select a role"
+                        placeholder: "Select a Role"
                     });
                 });
             </script>

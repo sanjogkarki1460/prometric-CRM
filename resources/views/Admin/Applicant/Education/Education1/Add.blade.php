@@ -58,7 +58,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Authority country</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Authority Country</p>
                                     <select  class="form-control form select2" id="authority_country"
                                             style="height:34px;width:80%;margin-top: -20px;" name="authority_country">
                                         <option value="" selected disabled>select Authority country</option>
@@ -75,7 +75,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority name</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Name</p>
                                     <input type="text"  class="form-control form"
                                             style="height:34px;width:80%;margin-top: -20px;" name="authority_name" placeholder="Enter Authority Name">
                                     </input>
@@ -85,9 +85,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority address</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Address</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_address" placeholder="Enter Authority address">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_address" placeholder="Enter Authority Address">
                                     </input>
                                 </div>
                             </div>
@@ -95,9 +95,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority city</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority City</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_city" placeholder="Enter Authority city">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_city" placeholder="Enter Authority City">
                                     </input>
                                 </div>
                             </div>
@@ -105,9 +105,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority state</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority State</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_state" placeholder="Enter Authority state">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_state" placeholder="Enter Authority State">
                                     </input>
                                 </div>
                             </div>
@@ -115,9 +115,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority country code</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Country Code</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_country_code" placeholder="Enter Authority country code">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_country_code" placeholder="Enter Authority Country Code">
                                     </input>
                                 </div>
                             </div>
@@ -125,9 +125,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority phone number</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Phone Number</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_phone" placeholder="Enter Authority phone number">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_phone" placeholder="Enter Authority Phone Number">
                                     </input>
                                 </div>
                             </div>
@@ -135,9 +135,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority email</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Email</p>
                                     <input  type="email"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_email" placeholder="Enter Authority email">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_email" placeholder="Enter Authority Email">
                                     </input>
                                 </div>
                             </div>
@@ -145,9 +145,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority website</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Website</p>
                                     <input type="text"  class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_website" placeholder="Enter Authority website">
+                                           style="height:34px;width:80%;margin-top: -20px;" name="authority_website" placeholder="Enter Authority Website">
                                     </input>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode</p>
                                     <select  class="form-control form select2" id="mode"
                                             style="height:34px;width:80%;margin-top: -20px;" name="mode">
-                                        <option value="" selected disabled>select Mode</option>
+                                        <option value="" selected disabled>Select Mode</option>
                                         <option value="Active Enrollment" class="form-control">Active Enrollment</option>
                                         <option value="Online Enrollment" class="form-control">Online Enrollment</option>
 
@@ -301,16 +301,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#qualification').select2({
-                        placeholder: "Select a qualification"
+                        placeholder: "Select a Qualification"
                     });
                     $('#authority_country').select2({
-                        placeholder: "Select a authority country"
+                        placeholder: "Select a Authority Country"
                     });
                     $('#mode').select2({
-                        placeholder: "Select a mode"
+                        placeholder: "Select a Mode"
                     });
                 });
             </script>

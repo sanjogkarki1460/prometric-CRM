@@ -32,7 +32,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Name*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="name" placeholder="Enter name">
+                                           type="text" name="name" placeholder="Enter Name">
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Confirm Password*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="password" name="confirm_password" placeholder="Enter confrim password">
+                                           type="password" name="confirm_password" placeholder="Enter Confrim Password">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#role').select2({
-                        placeholder: "Select a role"
+                        placeholder: "Select a Role"
                     });
                 });
             </script>

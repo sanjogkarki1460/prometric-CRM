@@ -7,7 +7,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add incoming call log</div>
+                            <div class="page-title">Add Incoming Call Log</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -20,7 +20,7 @@
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
-                                <li class="active">incoming call log Create</li>
+                                <li class="active">Incoming Call Log Create</li>
                             </ol>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Select Applicant*</p>
                                     <select class="form-control form select2" id="applicant"
                                             style="height:50%;width:80%;margin-top: -20px;" name="applicant_id">
-                                        <option value="null" selected disabled></option>
+                                        <option value="" selected disabled>--</option>
                                         @foreach($applicant as $applicant)
                                             <option value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middel_name}} {{$applicant->surname}}</option>
                                         @endforeach
@@ -71,7 +71,7 @@
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Phone Number*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;"
-                                           type="text" name="phone">
+                                           type="text" name="phone" placeholder="Enter Phone Number">
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">time*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Time*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;"
                                            type="time" name="time">
@@ -98,17 +98,17 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">length of call*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Length of Call*</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;"
-                                           type="text" name="length">
+                                           type="text" name="length" placeholder="Enter Length of Call">
                                 </div>
                             </div>
                         </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Purpose of call*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Purpose of Call*</p>
                                     <textarea class="form form-control"
                                               style="width: 80%;" rows="5"
                                               type="time" name="purpose"></textarea>
@@ -141,7 +141,7 @@
                 $(document).ready(function () {
                     $('#applicant').select2({
                         allowClear:true,
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#call_by').select2({
                         allowClear:true,
@@ -149,7 +149,7 @@
                     });
                     $('#enquiry').select2({
                         allowClear:true,
-                        placeholder: "Select a enquiry"
+                        placeholder: "Select a Enquiry"
                     });
 
                     $("#applicant_select").click(function () {

@@ -63,10 +63,10 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;"> email</p>
+                                    <p class="ah1" style="margin-top: 20px;"> Email</p>
                                     <input type="email" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;" value="{{$progressflow->email}}" name="email"
-                                           placeholder="Enter  email">
+                                           placeholder="Enter Email">
                                     </input>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Signed Document</p>
                                     <input type="file" class="form-control form"
                                            style="height:27px;width:80%;margin-top: -20px;" value="{{$progressflow->signed_docs}}" name="signed_docs"
-                                           placeholder="Enter Contact Number">
+                                           >
                                     </input>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$progressflow->service_charge_received_by}}" name="service_charge_received_by"
-                                           placeholder="Enter Receiver">
+                                           placeholder="Enter Received By">
                                     </input>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode Of Payment</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode of Payment</p>
                                     <select class="form-control form select2" id="DHA_mode_of_payment"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             value="{{$progressflow->dhamcq_mode_of_payment}}" name="dhamcq_mode_of_payment">
@@ -254,7 +254,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Bls Training Completed Date</p>
+                                    <p class="ah1" style="margin-top: 20px;">BLS Training Completed Date</p>
                                     <input type="date" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$progressflow->bls_training_completed_date}}" name="bls_training_completed_date"
@@ -630,40 +630,40 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#profession').select2({
-                        placeholder: "Select a profession"
+                        placeholder: "Select profession"
                     });
                     $('#signed_by_applicant').select2({
-                        placeholder: "Select a signed by applicant"
+                        placeholder: "Select a Signed By Applicant"
                     });
                     $('#mode_of_payment').select2({
-                        placeholder: "Select a mode of payment"
+                        placeholder: "Select a Mode of Payment"
                     });
                     $('#DHA_mode_of_payment').select2({
-                        placeholder: "Select a mode of payment"
+                        placeholder: "Select a Mode of Payment"
                     });
                     $('#equivalent_certificate').select2({
-                        placeholder: "Select a equivalent_certificate"
+                        placeholder: "Select a Equivalent Certificate"
                     });
                     $('#book_provided').select2({
-                        placeholder: "Select one"
+                        placeholder: "Select One"
                     });
                     $('#DHA_first_mode_of_payment').select2({
-                        placeholder: "Select a mode of payment"
+                        placeholder: "Select a Mode of Payment"
                     });
                     $('#DHA_second_mode_of_payment').select2({
-                        placeholder: "Select a mode of payment"
+                        placeholder: "Select a Mode of Payment"
                     });
                     $('#confirmation').select2({
-                        placeholder: "Select a confrimation mode"
+                        placeholder: "Select a Confrimation Mode"
                     });
                     $('#result').select2({
-                        placeholder: "Select a result"
+                        placeholder: "Select a Result"
                     });
                     $('#data_flow').select2({
-                        placeholder: "Select a data flow report"
+                        placeholder: "Select a Data Flow Report"
                     });
                 });
             </script>

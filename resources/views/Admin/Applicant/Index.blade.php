@@ -67,14 +67,14 @@
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th>Id</th>
+                                            <th>ID</th>
                                             <th>Name</th>
-                                            <th>MOBILE NO</th>
-                                            <th>EMAIL</th>
-                                            <th>PASSPORT DOCS</th>
-                                            <th>APPLICANT'S CATEGORY</th>
-                                            <th>APPLICANT'S STATUS</th>
-                                            <th>COLOR CODE</th>
+                                            <th>Mobile No.</th>
+                                            <th>Email</th>
+                                            <th>Passport Docs</th>
+                                            <th>Applicant's Category</th>
+                                            <th>Applicant's Status</th>
+                                            <th>Color Code</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>

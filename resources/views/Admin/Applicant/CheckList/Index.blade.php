@@ -36,29 +36,29 @@
                                     <table id="example1" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
-                                            <th style="font-size:10px;">APPLICANT</th>
-                                            <th style="font-size:10px;">MRP SIZE PHOTO IN WHITE BACKGROUND</th>
-                                            <th style="font-size:10px;">PASSPORT</th>
-                                            <th style="font-size:10px;">CITIZEN</th>
-                                            <th style="font-size:10px;">SLC MARKSHEET</th>
-                                            <th style="font-size:10px;">SLC CERTIFICATE</th>
-                                            <th style="font-size:10px;">SLC CHARACTER CERTIFICATE</th>
-                                            <th style="font-size:10px;">+2 TRANSCRIPT</th>
-                                            <th style="font-size:10px;">+2 CERTIFICATE</th>
-                                            <th style="font-size:10px;">+2 CHARACTER CERTIFICATE</th>
-                                            <th style="font-size:10px;">PCL/DIPLOMA TRANSCRIPT</th>
-                                            <th style="font-size:10px;">PCL/DIPLOMA CERTIFICATE</th>
-                                            <th style="font-size:10px;">PCL/DIPLOMA CHARACTER CERTIFICATE</th>
-                                            <th style="font-size:10px;">EQUIVALENT CERTIFICATE</th>
-                                            <th style="font-size:10px;">COUNCIL REGISTRATION CERTIFICATE FRONT</th>
-                                            <th style="font-size:10px;">COUNCIL REGISTRATION CERTIFICATE BACK</th>
-                                            <th style="font-size:10px;">COUNCIL GOOD STANDING LETTER</th>
-                                            <th style="font-size:10px;">WORK EXPERIENCE LETTER1</th>
-                                            <th style="font-size:10px;">WORK EXPERIENCE LETTER2</th>
-                                            <th style="font-size:10px;">WORK EXPERIENCE LETTER3</th>
-                                            <th style="font-size:10px;">BASIC LIFE SUPPORT CERTIFICATE</th>
-                                            <th style="font-size:10px;">SIGNED LETTER AUTHORIZATION</th>
-                                            <th style="font-size:10px;">SIGNED SERVICE AGREEMENT</th>
+                                            <th style="font-size:10px;">Applicant</th>
+                                            <th style="font-size:10px;">MRP Size Photo Ib White Background</th>
+                                            <th style="font-size:10px;">Passpory</th>
+                                            <th style="font-size:10px;">Citizen</th>
+                                            <th style="font-size:10px;">SLC Marksheet</th>
+                                            <th style="font-size:10px;">SLC Certificate</th>
+                                            <th style="font-size:10px;">SLC Character Certificate</th>
+                                            <th style="font-size:10px;">+2 Transcript</th>
+                                            <th style="font-size:10px;">+2 Certificate</th>
+                                            <th style="font-size:10px;">+2 Character Certificate</th>
+                                            <th style="font-size:10px;">PCL/Diploma Transcript</th>
+                                            <th style="font-size:10px;">PCL/Diploma Certificate</th>
+                                            <th style="font-size:10px;">PCL/Diploma Character Certificate</th>
+                                            <th style="font-size:10px;">Equivalent Certificate</th>
+                                            <th style="font-size:10px;">Council Registration Certificate Front</th>
+                                            <th style="font-size:10px;">Council Registration Certificate Back</th>
+                                            <th style="font-size:10px;">Council Good Standing Letter</th>
+                                            <th style="font-size:10px;">Work Experience Letter1</th>
+                                            <th style="font-size:10px;">Work Experience Letter2</th>
+                                            <th style="font-size:10px;">Work Experience Letter3</th>
+                                            <th style="font-size:10px;">Basic Life Support Certificate</th>
+                                            <th style="font-size:10px;">Signed Letter Authorization</th>
+                                            <th style="font-size:10px;">Signed Service Agreement</th>
                                             @if(Auth::user()->role=='Admin')
                                                 <th style="font-size:10px;">Action</th>
                                             @endif

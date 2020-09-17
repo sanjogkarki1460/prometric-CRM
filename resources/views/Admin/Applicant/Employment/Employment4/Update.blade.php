@@ -66,7 +66,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Nature of employment</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Nature of Employment</p>
                                     <select class="form-control form select2" id="nature_of_employment"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="nature_of_employment">
@@ -87,8 +87,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">issuing authority
-                                        country</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Issuing Authority
+                                        Country</p>
                                     <select class="form-control form select2" id="issuing_authority_country"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="issuing_authority_country">
@@ -116,7 +116,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority name</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Name</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->issuing_authority_name}}" name="issuing_authority_name"
@@ -128,11 +128,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority address</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Address</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->issuing_authority_address}}"
-                                           name="issuing_authority_address" placeholder="Enter Authority address">
+                                           name="issuing_authority_address" placeholder="Enter Authority Address">
                                     </input>
                                 </div>
                             </div>
@@ -140,11 +140,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority city</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority City</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->issuing_authority_city}}" name="issuing_authority_city"
-                                           placeholder="Enter Authority city">
+                                           placeholder="Enter Authority City">
                                     </input>
                                 </div>
                             </div>
@@ -152,11 +152,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority state</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority State</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->issuing_authority_state}}"
-                                           name="issuing_authority_state" placeholder="Enter Authority state">
+                                           name="issuing_authority_state" placeholder="Enter Authority State">
                                     </input>
                                 </div>
                             </div>
@@ -164,12 +164,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority country code</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Country Code</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->issuing_authority_country_code}}"
                                            name="issuing_authority_country_code"
-                                           placeholder="Enter Authority country code">
+                                           placeholder="Enter Authority Country Code">
                                     </input>
                                 </div>
                             </div>
@@ -177,11 +177,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority phone number</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Phone Number</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->issuing_authority_phone}}"
-                                           name="issuing_authority_phone" placeholder="Enter Authority phone number">
+                                           name="issuing_authority_phone" placeholder="Enter Authority Phone Number">
                                     </input>
                                 </div>
                             </div>
@@ -189,11 +189,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority email</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Email</p>
                                     <input type="email" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->issuing_authority_email}}"
-                                           name="issuing_authority_email" placeholder="Enter Authority email">
+                                           name="issuing_authority_email" placeholder="Enter Authority Email">
                                     </input>
                                 </div>
                             </div>
@@ -201,11 +201,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Authority website</p>
+                                    <p class="ah1" style="margin-top: 20px;">Authority Website</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->issuing_authority_website}}"
-                                           name="issuing_authority_website" placeholder="Enter Authority website">
+                                           name="issuing_authority_website" placeholder="Enter Authority Website">
                                     </input>
                                 </div>
                             </div>
@@ -213,7 +213,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Reason for leaving</p>
+                                    <p class="ah1" style="margin-top: 20px;">Reason for Leaving</p>
                                     <textarea type="text" rows="5" class="form-control form"
                                               style="width:80%;margin-top:-20px;" name="reason_for_leaving">
                                         {{$employment->reason_for_leaving}}
@@ -246,11 +246,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Employee code</p>
+                                    <p class="ah1" style="margin-top: 20px;">Employee Code</p>
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$employment->employee_code}}" name="employee_code"
-                                           placeholder="Enter Employee code">
+                                           placeholder="Enter Employee Code">
                                     </input>
                                 </div>
                             </div>
@@ -270,7 +270,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Experience letter</p>
+                                    <p class="ah1" style="margin-top: 20px;">Experience Letter</p>
                                     <input type="file" class="form-control form"
                                            style="height:27px;width:80%;margin-top: -20px;" name="experience_letter">
                                     </input>
@@ -292,16 +292,16 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#designation').select2({
-                        placeholder: "Select a designation"
+                        placeholder: "Select a Designation"
                     });
                     $('#nature_of_employment').select2({
-                        placeholder: "Select a nature of employment"
+                        placeholder: "Select a Nature of Employment"
                     });
                     $('#issuing_authority_country').select2({
-                        placeholder: "Select a issuing authority country"
+                        placeholder: "Select a Issuing Authority Country"
                     });
                 });
             </script>

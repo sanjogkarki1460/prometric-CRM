@@ -33,7 +33,7 @@
                                     <p class="ah1" style="margin-top: 20px;">First Name<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="first_name" placeholder="Enter First name"
+                                           type="text" name="first_name" placeholder="Enter First Name"
                                            value="{{$enquiry->first_name}}">
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Last Name<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="last_name" placeholder="Enter Last name"
+                                           type="text" name="last_name" placeholder="Enter Last Name"
                                            value="{{$enquiry->last_name}}">
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Middle Name</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="middle_name" placeholder="Enter Middle name"
+                                           type="text" name="middle_name" placeholder="Enter Middle Name"
                                            value="{{$enquiry->middle_name}}">
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">category<span class="text-danger">*</span></p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Category<span class="text-danger">*</span></p>
                                     <select required class="form-control form  select2" id="category"
                                             style="height:50%;width:80%;margin-top: -20px;" name="Category_id">
                                         <option value="" selected disabled>--Select any one--</option>
@@ -415,7 +415,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Enquired date</p>
+                                    <p class="ah1" style="margin-top: 20px;">Enquired Date</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="date" name="Enquired_date" value="{{$enquiry->Enquired_date}}">
@@ -433,7 +433,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Visited date</p>
+                                    <p class="ah1" style="margin-top: 20px;">Visited Date</p>
                                     <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="date" name="Visited_date" value="{{$enquiry->Visited_date}}">
@@ -486,7 +486,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Color code<span class="text-danger">*</span></p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Color Code<span class="text-danger">*</span></p>
                                     <input @if($enquiry->color_code=='whitelist') checked @endif type="radio" name="color_code" value="whitelist">White List
                                     <input @if($enquiry->color_code=='redlist') checked @endif type="radio" name="color_code" value="redlist">Red List
                                     <input @if($enquiry->color_code=='blacklist') checked @endif type="radio" name="color_code" value="blacklist">Black List
@@ -526,34 +526,34 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#category').select2({
-                        placeholder: "Select a category"
+                        placeholder: "Select a Category"
                     });
                     $('#subject').select2({
-                        placeholder: "Select a subject"
+                        placeholder: "Select a Subject"
                     });
                     $('#qualification_level').select2({
                         placeholder: "Select a Qualification Level"
                     });
                     $('#experience').select2({
-                        placeholder: "Select a experience"
+                        placeholder: "Select a Experience"
                     });
                     $('#country_interested').select2({
-                        placeholder: "Select a interested country"
+                        placeholder: "Select a Interested Country"
                     });
                     $('#service_interested').select2({
-                        placeholder: "Select a interested service"
+                        placeholder: "Select a Interested Service"
                     });
                     $('#enquiry_from').select2({
-                        placeholder: "Select a enquiry from"
+                        placeholder: "Select a Enquiry From"
                     });
                     $('#source').select2({
-                        placeholder: "Select a source"
+                        placeholder: "Select a Source"
                     });
                     $('#responded_through').select2({
-                        placeholder: "Select a responded through"
+                        placeholder: "Select a Responded Through"
                     });
                     $('#eligibility').select2({
-                        placeholder: "Select a eligibility"
+                        placeholder: "Select a Eligibility"
                     });
                 });
             </script>

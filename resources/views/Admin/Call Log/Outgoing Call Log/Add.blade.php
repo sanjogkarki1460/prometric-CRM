@@ -7,7 +7,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add Outgoing call log</div>
+                            <div class="page-title">Add Outgoing Call Log</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -16,11 +16,11 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('OutgoingCallLog.index')}}">Outgoing call log
+                                                 href="{{route('OutgoingCallLog.index')}}">Outgoing Call Log
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
-                                <li class="active">Outgoing call log Create</li>
+                                <li class="active">Outgoing Call Log Create</li>
                             </ol>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Phone Number*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;"
-                                           type="text" name="phone">
+                                           type="text" name="phone" placeholder="Enter Phone Number">
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">time*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Time*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;"
                                            type="time" name="time">
@@ -101,7 +101,7 @@
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">length of call*</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;"
-                                           type="text" name="length">
+                                           type="text" name="length" placeholder="Enter Length of Call">
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                 $(document).ready(function () {
                     $('#applicant').select2({
                         allowClear:true,
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#call_by').select2({
                         allowClear:true,
@@ -149,7 +149,7 @@
                     });
                     $('#enquiry').select2({
                         allowClear:true,
-                        placeholder: "Select a enquiry"
+                        placeholder: "Select a Enquiry"
                     });
 
                     $("#applicant_select").click(function () {

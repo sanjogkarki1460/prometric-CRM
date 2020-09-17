@@ -68,7 +68,7 @@
                                     <p class="ah1" style="margin-top: 20px;">First Name<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="first_name" placeholder="Enter First name">
+                                           type="text" name="first_name" placeholder="Enter First Name">
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Last Name<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="surname" placeholder="Enter Last name">
+                                           type="text" name="surname" placeholder="Enter Last Name">
                                 </div>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Middle Name</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="middel_name" placeholder="Enter Middle name">
+                                           type="text" name="middel_name" placeholder="Enter Middle Name">
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                     <p class="ah1" style="margin-top: 20px;">Mobile Number</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="mobile_no" placeholder="Enter Phone">
+                                           type="text" name="mobile_no" placeholder="Enter Mobile Number">
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Date Of Birth<span class="text-danger">*</span></p>
+                                    <p class="ah1" style="margin-top: 20px;">Date of Birth<span class="text-danger">*</span></p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
                                            type="date" name="dob" placeholder="Enter Date of birth">
@@ -148,7 +148,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Identity Type<span class="text-danger">*</span></p>
+                                    <p class="ah1" style="margin-top: 20px;">Identification Document Type<span class="text-danger">*</span></p>
                                     <select required class="form-control form select2" id="identity_type"
                                             style="height:50%;width:80%;margin-top: -20px;" name="identity_type">
                                         <option value="" selected disabled>--select any one--</option>
@@ -162,20 +162,20 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Identity Card No</p>
+                                    <p class="ah1" style="margin-top: 20px;">Citizenship Card No.</p>
                                     <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="identity_card_no" placeholder="Enter Identity Card No">
+                                           type="text" name="identity_card_no" placeholder="Enter Citizenship Card No.">
                                 </div>
                             </div>
                         </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Passport No</p>
+                                    <p class="ah1" style="margin-top: 20px;">Passport No.</p>
                                     <input  class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
-                                           type="text" name="passport_no" placeholder="Enter Passport No">
+                                           type="text" name="passport_no" placeholder="Enter Passport No.">
                                 </div>
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Passport Docs</p>
+                                    <p class="ah1" style="margin-top: 20px;">Upload Passport</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:37%;margin-top:-15px;"
                                            type="file" name="passport_docs" placeholder="Enter Passport Docs">
@@ -255,19 +255,19 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#gender').select2({
-                        placeholder: "Select a gender"
+                        placeholder: "Select a Gender"
                     });
                     $('#identity_type').select2({
-                        placeholder: "Select a identity type"
+                        placeholder: "Select a Identification Document Type"
                     });
                     $('#enquired_id').select2({
                         placeholder: "Select a Enquiry"
                     });
                     $('#category').select2({
-                        placeholder: "Select a category"
+                        placeholder: "Select a Category"
                     });
                     $('#status').select2({
-                        placeholder: "Select a status"
+                        placeholder: "Select a Status"
                     });
                 });
             </script>

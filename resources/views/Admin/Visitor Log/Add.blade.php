@@ -7,7 +7,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add Visitor log</div>
+                            <div class="page-title">Add Visitor Log</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -16,11 +16,11 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('IncomingCallLog.index')}}">Visitor log
+                                                 href="{{route('IncomingCallLog.index')}}">Visitor Log
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
-                                <li class="active">Visitor log Create</li>
+                                <li class="active">Visitor Log Create</li>
                             </ol>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">time*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Time*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;"
                                            type="time" name="time">
@@ -88,7 +88,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Purpose of call*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Purpose of Visit*</p>
                                     <textarea class="form form-control"
                                               style="width: 80%;" rows="5"
                                               type="time" name="purpose"></textarea>
@@ -120,11 +120,11 @@
             <script type="text/javascript">
                 $(document).ready(function () {
                     $('#applicant').select2({
-                        placeholder: "Select a applicant",
+                        placeholder: "Select a Applicant",
                         allowClear:true
                     });
                     $('#enquiry').select2({
-                        placeholder: "Select a enquiry",
+                        placeholder: "Select a Enquiry",
                         allowClear:true
                     });
 

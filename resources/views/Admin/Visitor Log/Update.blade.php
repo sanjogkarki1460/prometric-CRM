@@ -7,7 +7,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add Visitor log update</div>
+                            <div class="page-title">Add Visitor Log Update</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -16,11 +16,11 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('VisitorLog.index')}}">Visitor log
+                                                 href="{{route('VisitorLog.index')}}">Visitor Log
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
-                                <li class="active">Visitor log update </li>
+                                <li class="active">Visitor Log Update </li>
                             </ol>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 40px;margin-bottom:0px;">Call By*</p>
+                                    <p class="ah1" style="margin-top: 40px;margin-bottom:0px;">Visited By*</p>
                                     <input @if($visitorlog->visited_by=='Applicant') checked @endif style="margin-left: 0px;" id="applicant_select" type="radio" name="visited_by" value="Applicant" >Applicant
                                     <input @if($visitorlog->visited_by=='Enquiry') checked @endif type="radio" name="visited_by" id="enquiry_select" value="Enquiry">Enquiry
                                 </div>
@@ -80,7 +80,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">time*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Time*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;"
                                            type="time" name="time" value="{{$visitorlog->time}}">
@@ -90,7 +90,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Purpose of call*</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Purpose of Visit*</p>
                                     <textarea class="form form-control"
                                               style="width: 80%;" rows="5"
                                               type="time" name="porpose">{{$visitorlog->purpose}}</textarea>
@@ -123,11 +123,11 @@
                 $(document).ready(function () {
                     $('#applicant').select2({
                         allowClear:true,
-                        placeholder: "Select a applicant"
+                        placeholder: "Select a Applicant"
                     });
                     $('#enquiry').select2({
                         allowClear:true,
-                        placeholder: "Select a enquiry"
+                        placeholder: "Select a Enquiry"
                     });
 
                     $("#applicant_select").click(function () {
