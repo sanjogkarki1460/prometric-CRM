@@ -2,8 +2,8 @@
 @include('Admin.Layout.Header')
 @include('Admin.Layout.Sidebar')
 @include('Admin.Layout.Footer')
-@yield('head');
-@yield('header');
-@yield('sidebar');
+@yield('head')
+@yield('header')
+@yield('sidebar')
 @yield('main_content')
-@yield('footer');
+@yield('footer')

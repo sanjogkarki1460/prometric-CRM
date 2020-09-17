@@ -1,5 +1,5 @@
 @section('sidebar')
-    <div class="page-container">
+    <div class="page-container" style="margin-top: 100px;">
         <div class="sidebar-container">
             <div class="sidemenu-container navbar-collapse collapse fixed-menu">
                 <div id="remove-scroll" class="left-sidemenu">
@@ -97,35 +97,10 @@
                                             <span class="title">Add Applicant</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="javascript:;" class="nav-link nav-toggle">
+                                    <li class="nav-item   ">
+                                        <a href="{{route('Applicant.index')}}" class="nav-link ">
                                             <span class="title">View Applicant</span>
-                                            <span class="arrow "></span>
                                         </a>
-                                        <ul class="sub-menu">
-                                            <li class="nav-item">
-                                                <a href="{{route('Applicant.index')}}" class="nav-link nav-toggle">
-                                                    <i class="title"></i> All Applicant
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{route('ApplicantWhitelist')}}" class="nav-link">
-                                                    <i class="title"></i> White List </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{route('ApplicantRedlist')}}" class="nav-link">
-                                                    <i class="title"></i> Red List</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{route('ApplicantBlacklist')}}" class="nav-link">
-                                                    <i class="title"></i> Black List </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{route('ApplicantGreenlist')}}" class="nav-link">
-                                                    <i class="title"></i> Green List </a>
-                                            </li>
-
-                                        </ul>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="{{route('CheckList.index')}}" class="nav-link ">

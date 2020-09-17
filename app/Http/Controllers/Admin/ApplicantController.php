@@ -64,37 +64,24 @@ class ApplicantController extends Controller
         $this->progressflow = $progressflow;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $applicant = $this->applicant->get();
-        return view('Admin.Applicant.View.ALL')->with('applicant', $applicant);
+        $query=$this->applicant->get();
+        if(isset($request->category)){
+            $query = $query->where('applicant_category',$request->category);
+        }
+        if(isset($request->color_code)){
+            $query = $query->where('color_code',$request->color_code);
+        }
+        if(isset($request->status)){
+            $query = $query->where('status',$request->status);
+        }
+        $applicant=$query;
+        $category=$this->category->get();
+        return view('Admin.Applicant.Index')->with('applicant', $applicant)->with('category',$category);
     }
 
-    public function Whitelist(){
-        $applicant = $this->applicant->where('color_code','whitelist')->get();
-        return view('Admin.Applicant.View.Whitelist')->with('applicant', $applicant);
-    }
 
-    public function Blacklist(){
-        $applicant = $this->applicant->where('color_code','blacklist')->get();
-        return view('Admin.Applicant.View.Blacklist')->with('applicant', $applicant);
-    }
-
-    public function Redlist(){
-        $applicant = $this->applicant->where('color_code','redlist')->get();
-        return view('Admin.Applicant.View.Redlist')->with('applicant', $applicant);
-    }
-
-    public function Greenlist(){
-        $applicant = $this->applicant->where('color_code','greenlist')->get();
-        return view('Admin.Applicant.View.Greenlist')->with('applicant', $applicant);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $category = $this->category->get();

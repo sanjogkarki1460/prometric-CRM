@@ -52,10 +52,13 @@
                                                     <td style="font-size:13px; ">
                                                         <a href="{{route('ApplicantDetail',$call->applicant_id)}}">{{@$call->Applicant_Outgoing->first_name}} {{@$call->Applicant_Outgoing->middel_name}} {{@$call->Applicant_Outgoing->surname}}</a>
                                                     </td>
-                                                @else
+                                                @endif
+                                                @if($call->call_to=='Enquiry')
                                                     <td style="font-size:13px; ">
                                                         <a href="{{route('EnquiryDetail',$call->enquiry_id)}}">{{@$call->Enquiry_Outgoing->first_name}} {{@$call->Enquiry_Outgoing->middle_name}} {{@$call->Enquiry_Outgoing->last_name}}</a>
                                                     </td>
+                                                @else
+                                                    <td></td>
                                                 @endif
                                                 <td style="font-size:13px; ">{{$call->phone}}</td>
                                                 <td style="font-size:13px; ">{{$call->date}}</td>

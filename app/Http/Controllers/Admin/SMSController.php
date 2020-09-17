@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use App\Admin\SMS;
+use App\Admin\Category;
 use Thebikramlama\Sparrow\Sparrow;
 use Illuminate\Support\Facades\Session;
 
@@ -16,26 +17,50 @@ class SMSController extends Controller
     protected $applicant = null;
     protected $enquiry = null;
     protected $sms = null;
+    protected $category = null;
 
-    public function __construct(Applicant $applicant, Enquiry $enquiry, SMS $sms)
+    public function __construct(Applicant $applicant, Enquiry $enquiry, SMS $sms,Category $category)
     {
         $this->applicant = $applicant;
         $this->enquiry = $enquiry;
         $this->sms = $sms;
+        $this->category = $category;
     }
 
 
-    public function EnquirySMS()
+    public function EnquirySMS(Request $request)
     {
-        $enquiry = $this->enquiry->get();
-        return view('Admin.SMS.enquirysms')->with('enquiry', $enquiry);
+        $query=$this->enquiry->get();
+        if(isset($request->category)){
+            $query = $query->where('Category_id',$request->category);
+        }
+        if(isset($request->color_code)){
+            $query = $query->where('color_code',$request->color_code);
+        }
+        if(isset($request->eligibility)){
+            $query = $query->where('eligibility',$request->eligibility);
+        }
+        $enquiry=$query;
+        $category = $this->category->get();
+        return view('Admin.SMS.enquirysms')->with('enquiry', $enquiry)->with('category', $category);
 
     }
 
-    public function ApplicantSMS()
+    public function ApplicantSMS(Request $request)
     {
-        $applicant = $this->applicant->get();
-        return view('Admin.SMS.applicantsms')->with('applicant', $applicant);
+        $query=$this->applicant->get();
+        if(isset($request->category)){
+            $query = $query->where('applicant_category',$request->category);
+        }
+        if(isset($request->color_code)){
+            $query = $query->where('color_code',$request->color_code);
+        }
+        if(isset($request->status)){
+            $query = $query->where('status',$request->status);
+        }
+        $applicant=$query;
+        $category = $this->category->get();
+        return view('Admin.SMS.applicantsms')->with('applicant', $applicant)->with('category', $category);
     }
 
     public function SendSMS(Request $request)

@@ -20,10 +20,46 @@
                     <div class="col-md-12">
                         <div class="card card-topline-aqua">
                             <div class="card-head">
-                                <header>Applicant Detail Table</header>
-                                <div class="cards pull-right">
-                                    <a href="{{route('Applicant.create')}}" class="btn btn-success fa fa-plus">Add
-                                        New</a>
+                                <div class="col-md-12">
+                                    <form action="{{route('Applicant.index')}}" method="psot">
+                                        <input required type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <div class="row col-md-12">
+                                            <div class="col-md-8">
+                                                <header>Search By:</header>
+                                                <select name="category" id="" style="height: 40px;border-radius:120px;width: 120px;">
+                                                    <option value="" disabled selected>By Category</option>
+                                                    @foreach($category as $category)
+                                                        <option value="{{$category->id}}">{{$category->Name}}</option>
+                                                    @endforeach
+                                                </select>
+                                                <select name="color_code" id=""
+                                                        style="height: 40px;border-radius:120px;"
+                                                        class="ml-3">
+                                                    <option value="" disabled selected>By Color Code</option>
+                                                    <option value="whitelist">White List</option>
+                                                    <option value="redlist">Red List</option>
+                                                    <option value="blacklist">Black List</option>
+                                                    <option value="greenlist">Green List</option>
+                                                </select>
+                                                <select name="status" id="" style="height: 40px;border-radius:120px;"
+                                                        class="ml-3">
+                                                    <option value="" disabled selected>By Status</option>
+                                                    <option value="New">New</option>
+                                                    <option value="In Progress">In Progress</option>
+                                                    <option value="Waiting for test">Waiting for test</option>
+                                                    <option value="Wating for result">Wating for result</option>
+                                                    <option value="Completed">Completed</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <button type="submit" class="btn btn-primary">Search</button>
+                                                <a href="{{route('Applicant.index')}}"
+                                                   class="btn btn-danger ml-1">Reset</a>
+                                                <a href="{{route('Applicant.create')}}"
+                                                   class="btn btn-success fa fa-plus ml-1">Add New</a>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="card-body ">

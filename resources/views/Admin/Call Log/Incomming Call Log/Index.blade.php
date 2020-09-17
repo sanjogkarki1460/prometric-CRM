@@ -50,13 +50,17 @@
                                                 <td style="font-size:13px; ">{{$call->id}}</td>
                                                 @if($call->call_by=='Applicant')
                                                     <td style="font-size:13px; ">
-                                                        <a href="{{route('ApplicantDetail',$call->applicant_id)}}">{{@$call->Applicant_Incomming->first_name}} {{@$call->Applicant_Incomming->middel_name}} {{@$call->Applicant_Incomming->surname}}</a>
+                                                        <a href="{{route('ApplicantDetail',@$call->applicant_id)}}">{{@$call->Applicant_Incomming->first_name}} {{@$call->Applicant_Incomming->middel_name}} {{@$call->Applicant_Incomming->surname}}</a>
                                                     </td>
-                                                @else
+                                                    @endif
+                                                @if($call->call_by=='Enquiry')
                                                     <td style="font-size:13px; ">
                                                         <a href="{{route('EnquiryDetail',$call->enquiry_id)}}">{{@$call->Enquiry_Incomming->first_name}} {{@$call->Enquiry_Incomming->middle_name}} {{@$call->Enquiry_Incomming->last_name}}</a>
                                                     </td>
+                                                @else
+                                                    <td></td>
                                                 @endif
+
                                                 <td style="font-size:13px; ">{{$call->phone}}</td>
                                                 <td style="font-size:13px; ">{{$call->date}}</td>
                                                 <td style="font-size:13px; ">{{date('h:i A',strtotime($call->time))}}</td>

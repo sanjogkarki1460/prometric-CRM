@@ -26,13 +26,15 @@ class EnquiryController extends Controller
 
     public function index(Request $request)
     {
-//        dd($request->all());
         $query=$this->enquiry->get();
         if(isset($request->category)){
             $query = $query->where('Category_id',$request->category);
         }
         if(isset($request->color_code)){
             $query = $query->where('color_code',$request->color_code);
+        }
+        if(isset($request->eligibility)){
+            $query = $query->where('eligibility',$request->eligibility);
         }
         $enquiry=$query;
         $category = $this->category->get();

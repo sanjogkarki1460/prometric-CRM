@@ -34,12 +34,9 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::get('/EnquiryDetail/{id}','Admin\EnquiryController@Detail')->name('EnquiryDetail');
 
     /*Applicant Route*/
-    Route::resource('/Applicant','Admin\ApplicantController')->except('show');
+    Route::resource('/Applicant','Admin\ApplicantController')->except('show','index');
+    Route::any('/Applicant/index','Admin\ApplicantController@index')->name('Applicant.index');
     Route::put('/Applicant/ColorCodeUpdate/{id}','Admin\ApplicantController@ColorUpdate')->name('ApplicantColorUpdate');
-    Route::get('/Applicant/Whitelist','Admin\ApplicantController@Whitelist')->name('ApplicantWhitelist');
-    Route::get('/Applicant/Blacklist','Admin\ApplicantController@Blacklist')->name('ApplicantBlacklist');
-    Route::get('/Applicant/Redlist','Admin\ApplicantController@Redlist')->name('ApplicantRedlist');
-    Route::get('/Applicant/Greenlist','Admin\ApplicantController@Greenlist')->name('ApplicantGreenlist');
     Route::get('/ApplicantDetail/{id}','Admin\ApplicantController@Detail')->name('ApplicantDetail');
     Route::resource('/CheckList','Admin\CheckListController');
     Route::resource('/Education','Admin\EducationController');
@@ -57,13 +54,13 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::resource('/VisitorLog','Admin\VisitorLogController');
 
     /*SMS Route*/
-    Route::get('/EnquirySMS','Admin\SMSController@EnquirySMS')->name('EnquirySMS');
-    Route::get('/ApplicantSMS','Admin\SMSController@ApplicantSMS')->name('ApplicantSMS');
+    Route::any('/EnquirySMS','Admin\SMSController@EnquirySMS')->name('EnquirySMS');
+    Route::any('/ApplicantSMS','Admin\SMSController@ApplicantSMS')->name('ApplicantSMS');
     Route::Post('/SendSMS','Admin\SMSController@SendSMS')->name('SendSMS');
 
     /*Email Route*/
-    Route::get('/EnquiryMail','Admin\MailController@Enquiry')->name('EnquiryMail');
-    Route::get('/ApplicantMail','Admin\MailController@Applicant')->name('ApplicantMail');
+    Route::any('/EnquiryMail','Admin\MailController@Enquiry')->name('EnquiryMail');
+    Route::any('/ApplicantMail','Admin\MailController@Applicant')->name('ApplicantMail');
     Route::post('/SendMail','Admin\MailController@SendMail')->name('SendMail');
 
     /*Notification Route*/

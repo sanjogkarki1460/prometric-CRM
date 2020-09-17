@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
+use App\Admin\Category;
 use Session;
 use DOMDocument;
 
@@ -15,28 +16,51 @@ class MailController extends Controller
 {
     protected $enquiry = null;
     protected $applicant = null;
+    protected $category = null;
 
-    public function __construct(Enquiry $enquiry,Applicant $applicant)
+    public function __construct(Enquiry $enquiry,Applicant $applicant,Category $category)
     {
         $this->enquiry = $enquiry;
         $this->applicant = $applicant;
+        $this->category = $category;
     }
 
-    public function Enquiry()
+    public function Enquiry(Request $request)
     {
-        $enquiry = $this->enquiry->get();
-        return view('Admin.Mail.EnquiryMail')->with('enquiry', $enquiry);
+        $query=$this->enquiry->get();
+        if(isset($request->category)){
+            $query = $query->where('Category_id',$request->category);
+        }
+        if(isset($request->color_code)){
+            $query = $query->where('color_code',$request->color_code);
+        }
+        if(isset($request->eligibility)){
+            $query = $query->where('eligibility',$request->eligibility);
+        }
+        $enquiry=$query;
+        $category = $this->category->get();
+        return view('Admin.Mail.EnquiryMail')->with('enquiry', $enquiry)->with('category', $category);
     }
 
     public function Applicant()
     {
-        $applicant=$this->applicant->get();
-        return view('Admin.Mail.ApplicantMail')->with('applicant',$applicant);
+        $query=$this->applicant->get();
+        if(isset($request->category)){
+            $query = $query->where('applicant_category',$request->category);
+        }
+        if(isset($request->color_code)){
+            $query = $query->where('color_code',$request->color_code);
+        }
+        if(isset($request->status)){
+            $query = $query->where('status',$request->status);
+        }
+        $applicant=$query;
+        $category = $this->category->get();
+        return view('Admin.Mail.ApplicantMail')->with('applicant',$applicant)->with('category', $category);
     }
 
     public function SendMail(Request $request)
     {
-//        dd($request->all());
         if (empty($request->email)) {
             session::flash('Error', 'please Select receiver');
             return redirect()->back();

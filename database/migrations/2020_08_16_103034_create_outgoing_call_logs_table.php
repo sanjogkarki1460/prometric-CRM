@@ -15,7 +15,7 @@ class CreateOutgoingCallLogsTable extends Migration
     {
         Schema::create('outgoing_call_logs', function (Blueprint $table) {
             $table->id();
-            $table->enum('call_to',['Applicant','Enquiry']);
+            $table->enum('call_to',['Applicant','Enquiry'])->nullable();
             $table->integer('applicant_id')->nullable();
             $table->integer('enquiry_id')->nullable();
             $table->string('phone');
