@@ -96,8 +96,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Category<span class="text-danger">*</span></p>
-                                    <select required class="form-control form  select2" id="category"
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Profession<span class="text-danger">*</span></p>
+                                    <select required class="form-control form  select2" id="profession"
                                             style="height:50%;width:80%;margin-top: -20px;" name="Category_id">
                                         <option value="" selected disabled>--Select any one--</option>
                                         @if($enquiry->Category_id)
@@ -525,8 +525,8 @@
             </div>
             <script type="text/javascript">
                 $(document).ready(function () {
-                    $('#category').select2({
-                        placeholder: "Select a Category"
+                    $('#profession').select2({
+                        placeholder: "Select a Profession"
                     });
                     $('#subject').select2({
                         placeholder: "Select a Subject"

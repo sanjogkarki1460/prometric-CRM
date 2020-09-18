@@ -27,7 +27,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = $this->category->orderBy('id', 'desc')->get();
-        return view('Admin.Category.Index')->with('category', $category);
+        return view('Admin.Profession.Index')->with('category', $category);
     }
 
     /**
@@ -37,7 +37,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('Admin.Category.Add');
+        return view('Admin.Profession.Add');
     }
 
     /**
@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $this->category->fill($data);
         $success = $this->category->save();
         if ($success) {
-            return redirect()->route('Category.index')->with('success', 'Category Created Successfully');
+            return redirect()->route('Profession.index')->with('success', 'Category Created Successfully');
         }
 
     }
@@ -83,7 +83,7 @@ class CategoryController extends Controller
         }
 
         $category = Category::findOrfail($id);
-        return view('Admin.Category.Update')->with('category',$category);
+        return view('Admin.Profession.Update')->with('category',$category);
     }
 
     /**
@@ -103,7 +103,7 @@ class CategoryController extends Controller
         $data=$request->all();
         $this->category->fill($data);
         $success = $this->category->save();
-        return redirect()->route('Category.index')->with('success','Category Updated Successfully');
+        return redirect()->route('Profession.index')->with('success','Category Updated Successfully');
     }
 
     /**
@@ -121,7 +121,7 @@ class CategoryController extends Controller
         $category = Category::findOrfail($id);
         $success= $category->delete();
         if ($success) {
-            return redirect()->route('Category.index')->with('success', 'Category Deleted Successfully');
+            return redirect()->route('Profession.index')->with('success', 'Category Deleted Successfully');
         }
 
 

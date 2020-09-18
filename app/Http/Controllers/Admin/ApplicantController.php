@@ -68,7 +68,7 @@ class ApplicantController extends Controller
     {
         $query=$this->applicant->get();
         if(isset($request->category)){
-            $query = $query->where('applicant_category',$request->category);
+            $query = $query->where('Category_id',$request->category);
         }
         if(isset($request->color_code)){
             $query = $query->where('color_code',$request->color_code);
@@ -87,6 +87,13 @@ class ApplicantController extends Controller
         $category = $this->category->get();
         $enquiry = $this->enquiry->get();
         return view('Admin.Applicant.Add')->with('category', $category)->with('enquiry', $enquiry);
+    }
+
+    public function AppApplicant($id)
+    {
+        $category = $this->category->get();
+        $applicantenquiry= $this->enquiry->where('id',$id)->first();
+        return view('Admin.Applicant.Add')->with('category', $category)->with('applicantenquiry', $applicantenquiry);
     }
 
     /**
@@ -151,29 +158,12 @@ class ApplicantController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $category = $this->category->get();
-        $enquiry = $this->enquiry->get();
+
         $applicant = $this->applicant->find($id);
         if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
         }
-        if ($applicant->applicant_category) {
-            $cat = $applicant->Category_Applicant->Name;
-        }
-        @$first_name = $applicant->Enquiry_Applicant->first_name;
-        @$middle_name = $applicant->Enquiry_Applicant->middle_name;
-        @$last_name = $applicant->Enquiry_Applicant->last_name;
-
-        if (empty($applicant)) {
-            return redirect()->back()->with('Error', 'Applicant Not Found');
-        } elseif ($applicant->applicant_category) {
-            return view('Admin.Applicant.Update')->with('applicant', $applicant)->with('category', $category)->with('cat', $cat)
-                ->with('enquiry', $enquiry)->with('first_name', $first_name)->with('last_name', $last_name)->with('middle_name', $middle_name);
-        } else {
-            return view('Admin.Applicant.Update')->with('applicant', $applicant)->with('category', $category)
-                ->with('enquiry', $enquiry)->with('first_name', $first_name)->with('last_name', $last_name)->with('middle_name', $middle_name);
-        }
-
+            return view('Admin.Applicant.Update')->with('applicant', $applicant);
     }
 
     /**
@@ -189,14 +179,14 @@ class ApplicantController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $this->applicant = $this->applicant->find($id);
+        $applicant = $this->applicant->find($id);
         if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
         }
         $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
         $data = $request->all();
         if ($request->passport_docs) {
-            $image_path = 'upload/Applicant/' . $this->applicant->passport_docs;
+            $image_path = 'upload/Applicant/'.$applicant->passport_docs;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
@@ -213,8 +203,8 @@ class ApplicantController extends Controller
                 $data['passport_docs'] = null;
             }
         }
-        $this->applicant->fill($data);
-        $success = $this->applicant->save();
+        $applicant->fill($data);
+        $success = $applicant->save();
         $admin = Admin::all();
         foreach ($admin as $admin)
             $admin->notify(new \App\Notifications\ApplicantUpdateNotification());
@@ -237,18 +227,7 @@ class ApplicantController extends Controller
             }
             session()->flash('success','Applicant Updated Successfully');
         }
-        if ($request->color_code == 'whitelist') {
-            return redirect()->route('ApplicantWhitelist');
-        }
-        if ($request->color_code == 'blacklist') {
-            return redirect()->route('ApplicantBlacklist');
-        }
-        if ($request->color_code == 'redlist') {
-            return redirect()->route('ApplicantRedlist');
-        }
-        if ($request->color_code == 'greenlist') {
-            return redirect()->route('ApplicantGreenlist');
-        }
+            return redirect()->route('Applicant.index');
     }
 
 

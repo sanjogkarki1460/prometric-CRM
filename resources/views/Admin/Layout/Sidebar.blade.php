@@ -50,18 +50,18 @@
                             <li class="nav-item start ">
                                 <a class="nav-link nav-toggle">
                                     <i class="fa fa-list"></i>
-                                    <span class="title">Category</span>
+                                    <span class="title">Profession</span>
                                     <span class="arrow"></span>
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item   ">
-                                        <a href="{{route('Category.create')}}" class="nav-link ">
-                                            <span class="title">Add Category</span>
+                                        <a href="{{route('Profession.create')}}" class="nav-link ">
+                                            <span class="title">Add Profession</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a href="{{route('Category.index')}}" class="nav-link ">
-                                            <span class="title">View Category</span>
+                                        <a href="{{route('Profession.index')}}" class="nav-link ">
+                                            <span class="title">View Profession</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -92,11 +92,6 @@
                                     <span class="arrow"></span>
                                 </a>
                                 <ul class="sub-menu">
-                                    <li class="nav-item   ">
-                                        <a href="{{route('Applicant.create')}}" class="nav-link ">
-                                            <span class="title">Add Applicant</span>
-                                        </a>
-                                    </li>
                                     <li class="nav-item   ">
                                         <a href="{{route('Applicant.index')}}" class="nav-link ">
                                             <span class="title">View Applicant</span>

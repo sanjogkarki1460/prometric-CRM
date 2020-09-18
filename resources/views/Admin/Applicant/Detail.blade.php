@@ -36,19 +36,11 @@
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Middle Name</h5>
-                                <p>{{$applicant->middel_name}}</p>
+                                <p>{{$applicant->middle_name}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Last Name</h5>
-                                <p>{{$applicant->surname}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h5 class="text-primary">Is Enquired</h5>
-                                <p>{{$applicant->enquired}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h5 class="text-primary">Enquired Name</h5>
-                                <p>{{@$applicant->Enquiry_Applicant->first_name}} {{@$applicant->Enquiry_Applicant->middle_name}} {{@$applicant->Enquiry_Applicant->Last_name}}</p>
+                                <p>{{$applicant->last_name}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Gender</h5>
@@ -59,24 +51,48 @@
                                 <p>{{$applicant->dob}}</p>
                             </div>
                             <div class="col-md-3">
+                                <h5 class="text-primary">Address</h5>
+                                <p>{{$applicant->address}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Subject</h5>
+                                <p>{{$applicant->subject}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Qualification </h5>
+                                <p>{{$applicant->qualification_level}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Experience </h5>
+                                <p>{{$applicant->experience}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Interested Country </h5>
+                                <p>{{$applicant->country_interested}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Interested Service</h5>
+                                <p>{{$applicant->service_interested}}</p>
+                            </div>
+                            <div class="col-md-3">
                                 <h5 class="text-primary">Maiden Name</h5>
                                 <p>{{$applicant->maiden_name}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">IdenTity Type</h5>
+                                <h5 class="text-primary">Identity Type</h5>
                                 <p>{{$applicant->identity_type}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">Identity Card Number</h5>
-                                <p>{{$applicant->identity_card_no}}</p>
+                                <h5 class="text-primary">Citizenship Number</h5>
+                                <p>{{$applicant->citizen_no}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">Passport Card Number</h5>
+                                <h5 class="text-primary">Passport Number</h5>
                                 <p>{{$applicant->passport_no}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Mobile Number</h5>
-                                <p>{{$applicant->mobile_no}}</p>
+                                <p>{{$applicant->phone}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Nationality</h5>
@@ -99,7 +115,11 @@
                                 @endif
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">Applicant Category</h5>
+                                <h5 class="text-primary">Status</h5>
+                                <p>{{$applicant->status}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Applicant Profession</h5>
                                 <p>{{@$applicant->Category_Applicant->Name}}</p>
                             </div>
                             <div class="col-md-3">

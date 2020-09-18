@@ -6,13 +6,13 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class=" pull-left">
-                            <div class="page-title">View Category List</div>
+                            <div class="page-title">View Profession List</div>
                         </div>
                         <ol class="breadcrumb page-breadcrumb pull-right">
                             <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{route('admin.home')}}">Dashboard</a>&nbsp;<i
                                         class="fa fa-angle-right"></i>
                             </li>
-                            <li class="active">Category View</li>
+                            <li class="active">Profession View</li>
                         </ol>
                     </div>
                 </div>
@@ -20,9 +20,9 @@
                     <div class="col-md-12">
                         <div class="card card-topline-aqua">
                             <div class="card-head">
-                                <header>Category Detail Table</header>
+                                <header>Profession Detail Table</header>
                                 <div class="cards pull-right">
-                                    <a href="{{route('Category.create')}}" class="btn btn-success fa fa-plus">Add
+                                    <a href="{{route('Profession.create')}}" class="btn btn-success fa fa-plus">Add
                                         New</a>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                                 <td>{{$category->Name}}</td>
                                                 @if(Auth::user()->role=='Admin')
                                                 <td class="text-left">
-                                                    <form action="{{ route('Category.edit', $category->id)}}"
+                                                    <form action="{{ route('Profession.edit', $category->id)}}"
                                                           method="GET"
                                                           style="display: inline-block">
                                                         {{csrf_field()}}
@@ -53,7 +53,7 @@
                                                         <button class="btn btn-primary btn-sm" type="submit">Edit
                                                         </button>
                                                     </form>
-                                                    <form action="{{ route('Category.destroy', $category->id)}}"
+                                                    <form action="{{ route('Profession.destroy', $category->id)}}"
                                                           method="post" style="display: inline-block">
                                                         {{csrf_field()}}
                                                         {{method_field('DELETE')}}
