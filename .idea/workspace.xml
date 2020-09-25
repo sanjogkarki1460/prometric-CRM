@@ -1,64 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f48d3f4f-f188-46cc-a24d-3b47e27de37c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Applicant.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/Applicant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/CheckList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/CheckList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/IncommingCallLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/IncommingCallLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/OutgoingCallLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/OutgoingCallLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/ProgressFlow.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Admin/ProgressFlow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ApplicantController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CheckListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CheckListController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Education2Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Education2Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ApplicantValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ApplicantValidator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/IncommingCallLogValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/IncommingCallLogValidator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/OutgoingCallLogValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/OutgoingCallLogValidator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_02_075700_create_applicants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_02_075700_create_applicants_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_04_060702_create_check_lists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_04_060702_create_check_lists_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_06_073252_create_progress_flows_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_06_073252_create_progress_flows_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_16_103019_create_incomming_call_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_16_103019_create_incomming_call_logs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_16_103034_create_outgoing_call_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_16_103034_create_outgoing_call_logs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/upload/Applicant/Madeson Miriam Lopez Cannon-passport_docs-2020091709491791.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/CheckList/Update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education1/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education1/Add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education1/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education1/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Education/Education2/Update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment1/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment1/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment2/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment2/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment3/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment3/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment4/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment4/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment5/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Employment/Employment5/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense1/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense1/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense2/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/HealthLisence/HealthLicense2/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Progress Flow/Update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Applicant/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Applicant/Update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Incomming Call Log/Update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Call Log/Outgoing Call Log/Update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Category/Add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Category/Index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Category/Update.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Enquiry/Update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/Layout/Sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/Layout/Sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="f48d3f4f-f188-46cc-a24d-3b47e27de37c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,20 +44,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Add.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Add.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Admin/Enquiry/Add.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="150" column="67" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="67" />
+            <state relative-caret-position="234">
+              <caret line="153" column="69" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Update.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Update.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Admin/Enquiry/Update.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="241" column="49" selection-start-line="241" selection-start-column="49" selection-end-line="241" selection-end-column="49" />
+            <state relative-caret-position="314">
+              <caret line="245" column="86" selection-start-line="245" selection-start-column="86" selection-end-line="245" selection-end-column="86" />
+              <caret line="246" column="76" selection-start-line="246" selection-start-column="76" selection-end-line="246" selection-end-column="76" />
+              <caret line="246" column="92" selection-start-line="246" selection-start-column="92" selection-end-line="246" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -324,7 +269,7 @@
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -525,15 +470,15 @@
       <workItem from="1600940511048" duration="154000" />
       <workItem from="1601018446498" duration="30000" />
       <workItem from="1601018506542" duration="30000" />
-      <workItem from="1601022951633" duration="5228000" />
+      <workItem from="1601022951633" duration="5545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="414521000" />
+    <option name="totallyTimeSpent" value="414838000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -943,17 +888,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Enquiry/Add.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Enquiry/Update.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="150" column="67" selection-start-line="150" selection-start-column="55" selection-end-line="150" selection-end-column="67" />
+        <state relative-caret-position="314">
+          <caret line="245" column="86" selection-start-line="245" selection-start-column="86" selection-end-line="245" selection-end-column="86" />
+          <caret line="246" column="76" selection-start-line="246" selection-start-column="76" selection-end-line="246" selection-end-column="76" />
+          <caret line="246" column="92" selection-start-line="246" selection-start-column="92" selection-end-line="246" selection-end-column="92" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Enquiry/Update.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/Admin/Enquiry/Add.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="241" column="49" selection-start-line="241" selection-start-column="49" selection-end-line="241" selection-end-column="49" />
+        <state relative-caret-position="234">
+          <caret line="153" column="69" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="69" />
         </state>
       </provider>
     </entry>
