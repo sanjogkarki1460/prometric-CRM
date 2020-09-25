@@ -56,6 +56,8 @@
                                             <th style="font-size:10px;">Work Experience Letter1</th>
                                             <th style="font-size:10px;">Work Experience Letter2</th>
                                             <th style="font-size:10px;">Work Experience Letter3</th>
+                                            <th style="font-size:10px;">Work Experience Letter4</th>
+                                            <th style="font-size:10px;">Work Experience Letter5</th>
                                             <th style="font-size:10px;">Basic Life Support Certificate</th>
                                             <th style="font-size:10px;">Signed Letter Authorization</th>
                                             <th style="font-size:10px;">Signed Service Agreement</th>
@@ -68,7 +70,7 @@
                                         @foreach($checklist as $checklist)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('ApplicantDetail',$checklist->applicant_id)}}">{{$checklist->Applicant_CheckList->first_name}} {{$checklist->Applicant_CheckList->middel_name}} {{$checklist->Applicant_CheckList->surname}}</a>
+                                                    <a href="{{route('ApplicantDetail',$checklist->applicant_id)}}">{{$checklist->Applicant_CheckList->first_name}} {{$checklist->Applicant_CheckList->middle_name}} {{$checklist->Applicant_CheckList->last_name}}</a>
                                                 </td>
                                                 @if($checklist->mrp_size_photo=='Yes')
                                                     <td>
@@ -169,9 +171,6 @@
                                                             <input type="checkbox" disabled=""></div>
                                                     </td>
                                                 @endif
-
-
-
                                                 @if($checklist->diploma_transcript=='Yes')
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
@@ -272,6 +271,28 @@
                                                     </td>
                                                 @endif
                                                 @if($checklist->work_experience_letter3=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->work_experience_letter4=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->work_experience_letter5=='Yes')
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox" checked="" disabled=""></div>

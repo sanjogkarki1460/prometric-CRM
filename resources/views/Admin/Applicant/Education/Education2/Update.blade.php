@@ -16,7 +16,7 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('Education.index')}}">Applicant Education
+                                                 href="{{route('Education2.index')}}">Applicant Education
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>

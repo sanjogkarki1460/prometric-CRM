@@ -54,7 +54,7 @@
                                             <tr>
                                                 <td>{{$healthlicense->id}}</td>
                                                 <td>
-                                                    <a href="{{route('ApplicantDetail',$healthlicense->applicant_id)}}">{{$healthlicense->Applicant_Health2->first_name}} {{$healthlicense->Applicant_Health2->middel_name}} {{$healthlicense->Applicant_Health2->surname}}</a>
+                                                    <a href="{{route('ApplicantDetail',$healthlicense->applicant_id)}}">{{$healthlicense->Applicant_Health2->first_name}} {{$healthlicense->Applicant_Health2->middle_name}} {{$healthlicense->Applicant_Health2->last_name}}</a>
                                                 </td>
                                                 <td>{{$healthlicense->professional_designation}}</td>
                                                 <td>{{$healthlicense->issuing_authority_name}}</td>

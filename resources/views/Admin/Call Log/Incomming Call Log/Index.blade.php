@@ -33,6 +33,7 @@
                                         <tr>
                                             <th style="font-size:13px; ">ID</th>
                                             <th style="font-size:13px; ">Name of Person</th>
+                                            <th style="font-size:13px; ">Received_by</th>
                                             <th style="font-size:13px; ">Phone Number</th>
                                             <th style="font-size:13px; ">Date of call</th>
                                             <th style="font-size:13px; ">Time of call</th>
@@ -57,10 +58,12 @@
                                                     <td style="font-size:13px; ">
                                                         <a href="{{route('EnquiryDetail',$call->enquiry_id)}}">{{@$call->Enquiry_Incomming->first_name}} {{@$call->Enquiry_Incomming->middle_name}} {{@$call->Enquiry_Incomming->last_name}}</a>
                                                     </td>
-                                                @else
-                                                    <td></td>
                                                 @endif
 
+                                                @if($call->call_by==null)
+                                                    <td></td>
+                                                @endif
+                                                <td style="font-size:13px; ">{{$call->received_by}}</td>
                                                 <td style="font-size:13px; ">{{$call->phone}}</td>
                                                 <td style="font-size:13px; ">{{$call->date}}</td>
                                                 <td style="font-size:13px; ">{{date('h:i A',strtotime($call->time))}}</td>

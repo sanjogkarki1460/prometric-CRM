@@ -24,7 +24,7 @@
                                     <form action="{{route('Applicant.index')}}" method="psot">
                                         <input required type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <div class="row col-md-12">
-                                            <div class="col-md-8">
+                                            <div class="col-md-9">
                                                 <header>Search By:</header>
                                                 <select name="category" id="" style="height: 40px;border-radius:120px;width: 120px;">
                                                     <option value="" disabled selected>By Category</option>
@@ -51,12 +51,10 @@
                                                     <option value="Completed">Completed</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <button type="submit" class="btn btn-primary">Search</button>
                                                 <a href="{{route('Applicant.index')}}"
                                                    class="btn btn-danger ml-1">Reset</a>
-                                                <a href="{{route('Applicant.create')}}"
-                                                   class="btn btn-success fa fa-plus ml-1">Add New</a>
                                             </div>
                                         </div>
                                     </form>
@@ -72,7 +70,7 @@
                                             <th>Mobile No.</th>
                                             <th>Email</th>
                                             <th>Passport Docs</th>
-                                            <th>Applicant's Category</th>
+                                            <th>Applicant's Profession</th>
                                             <th>Applicant's Status</th>
                                             <th>Color Code</th>
                                             <th>Action</th>
@@ -83,9 +81,9 @@
                                             <tr>
                                                 <td>{{$applicant->id}}</td>
                                                 <td>
-                                                    <a href="{{route('ApplicantDetail',$applicant->id)}}">{{$applicant->first_name}} {{$applicant->middel_name}} {{$applicant->surname}}</a>
+                                                    <a href="{{route('ApplicantDetail',$applicant->id)}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</a>
                                                 </td>
-                                                <td>{{$applicant->mobile_no}}</td>
+                                                <td>{{$applicant->phone}}</td>
                                                 <td>{{$applicant->email}}</td>
                                                 @if($applicant->passport_docs)
                                                     <td><a target="_blank"

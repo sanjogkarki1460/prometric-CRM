@@ -69,6 +69,16 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Received By*</p>
+                                    <input required class="form form-control"
+                                           style="width: 80%;height:34px;"
+                                           type="text" name="received_by" placeholder="Enter Received By" value="{{$calllog->received_by}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 0px;">Phone Number*</p>
                                     <input required class="form form-control"
                                            style="width: 80%;height:34px;"

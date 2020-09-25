@@ -123,6 +123,8 @@ class CheckListController extends Controller
         $work_experience_letter1= $request->has('work_experience_letter1') ? 'Yes' : 'No';
         $work_experience_letter2= $request->has('work_experience_letter2') ? 'Yes' : 'No';
         $work_experience_letter3= $request->has('work_experience_letter3') ? 'Yes' : 'No';
+        $work_experience_letter4= $request->has('work_experience_letter4') ? 'Yes' : 'No';
+        $work_experience_letter5= $request->has('work_experience_letter5') ? 'Yes' : 'No';
         $basic_life_support_certificate= $request->has('basic_life_support_certificate') ? 'Yes' : 'No';
         $signed_letter_authorization= $request->has('signed_letter_authorization') ? 'Yes' : 'No';
         $signed_service_agreement= $request->has('signed_service_agreement') ? 'Yes' : 'No';
@@ -145,6 +147,8 @@ class CheckListController extends Controller
         $checklist->work_experience_letter1=$work_experience_letter1;
         $checklist->work_experience_letter2=$work_experience_letter2;
         $checklist->work_experience_letter3=$work_experience_letter3;
+        $checklist->work_experience_letter4=$work_experience_letter4;
+        $checklist->work_experience_letter5=$work_experience_letter5;
         $checklist->basic_life_support_certificate=$basic_life_support_certificate;
         $checklist->signed_letter_authorization=$signed_letter_authorization;
         $checklist->signed_service_agreement=$signed_service_agreement;

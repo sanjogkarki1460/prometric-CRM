@@ -22,7 +22,7 @@
                             <div class="card-head">
                                 <header>Applicant Education Detail Table</header>
                                 <div class="cards pull-right">
-                                    <a href="{{route('Education.create')}}" class="btn btn-success fa fa-plus">Add
+                                    <a href="{{route('Education3.create')}}" class="btn btn-success fa fa-plus">Add
                                         New</a>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                         @foreach($education as $education)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('ApplicantDetail',$education->applicant_id)}}">{{$education->Applicant_Education->first_name}} {{$education->Applicant_Education->middle_name}} {{$education->Applicant_Education->last_name}}</a>
+                                                    <a href="{{route('ApplicantDetail',$education->applicant_id)}}">{{$education->Applicant_Education3->first_name}} {{$education->Applicant_Education3->middle_name}} {{$education->Applicant_Education3->last_name}}</a>
                                                 </td>
                                                 <td>{{$education->authority_name}}</td>
                                                 <td>{{$education->authority_address}}</td>
@@ -113,7 +113,7 @@
                                                 @endif
                                                 @if(Auth::user()->role=='Admin')
                                                     <td class="text-left">
-                                                        <form action="{{ route('Education.edit', $education->id)}}"
+                                                        <form action="{{ route('Education3.edit', $education->id)}}"
                                                               method="GET"
                                                               style="display: inline-block">
                                                             {{csrf_field()}}
@@ -121,7 +121,7 @@
                                                             <button class="btn btn-primary btn-sm" type="submit">Edit
                                                             </button>
                                                         </form>
-                                                        <form action="{{ route('Education.destroy', $education->id)}}"
+                                                        <form action="{{ route('Education3.destroy', $education->id)}}"
                                                               method="post" style="display: inline-block">
                                                             {{csrf_field()}}
                                                             {{method_field('DELETE')}}

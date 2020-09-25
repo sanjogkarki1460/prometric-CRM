@@ -86,7 +86,7 @@
                                         @foreach($progressflow as $progressflow)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('ApplicantDetail',$progressflow->applicant_id)}}">{{$progressflow->Applicant_ProgressFlow->first_name}} {{$progressflow->Applicant_ProgressFlow->middel_name}} {{$progressflow->Applicant_ProgressFlow->surname}}</a>
+                                                    <a href="{{route('ApplicantDetail',$progressflow->applicant_id)}}">{{$progressflow->Applicant_ProgressFlow->first_name}} {{$progressflow->Applicant_ProgressFlow->middle_name}} {{$progressflow->Applicant_ProgressFlow->last_name}}</a>
                                                 </td>
                                                 <td>{{$progressflow->profession}}</td>
                                                 <td>{{$progressflow->email}}</td>

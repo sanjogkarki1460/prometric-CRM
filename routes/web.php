@@ -26,7 +26,7 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     });
     Route::get('/PasswordChangeView','Admin\AdminController@PasswordChangeView')->name('PasswordChangeView');
     Route::put('/PasswordChange{id}','Admin\AdminController@PasswordChange')->name('PasswordChange');
-    Route::resource('/Category','Admin\CategoryController');
+    Route::resource('/Profession','Admin\CategoryController');
     /*Enquiry Route*/
     Route::resource('/Enquiry','Admin\EnquiryController')->except('show','index');
     Route::any('/Enquiry/index','Admin\EnquiryController@index')->name('Enquiry.index');
@@ -34,13 +34,15 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::get('/EnquiryDetail/{id}','Admin\EnquiryController@Detail')->name('EnquiryDetail');
 
     /*Applicant Route*/
-    Route::resource('/Applicant','Admin\ApplicantController')->except('show','index');
+    Route::resource('/Applicant','Admin\ApplicantController')->except('show','index','create');
+    Route::any('/Applicant/create/{id}','Admin\ApplicantController@AppApplicant')->name('AddTOApplicant');
     Route::any('/Applicant/index','Admin\ApplicantController@index')->name('Applicant.index');
     Route::put('/Applicant/ColorCodeUpdate/{id}','Admin\ApplicantController@ColorUpdate')->name('ApplicantColorUpdate');
     Route::get('/ApplicantDetail/{id}','Admin\ApplicantController@Detail')->name('ApplicantDetail');
     Route::resource('/CheckList','Admin\CheckListController');
     Route::resource('/Education','Admin\EducationController');
     Route::resource('/Education2','Admin\Education2Controller');
+    Route::resource('/Education3','Admin\Education3Controller');
     Route::resource('/HealthLicense','Admin\HealthLisenceController');
     Route::resource('/HealthLicense2','Admin\HealthLicense2Controller');
     Route::resource('/Employment','Admin\EmploymentController');

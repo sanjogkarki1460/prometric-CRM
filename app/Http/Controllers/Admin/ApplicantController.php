@@ -12,6 +12,7 @@ use File;
 use App\Admin\CheckList;
 use App\Admin\Education;
 use App\Admin\Education2;
+use App\Admin\Education3;
 use App\Admin\HealthLisence;
 use App\Admin\HealthLicense2;
 use App\Admin\Employment;
@@ -34,6 +35,7 @@ class ApplicantController extends Controller
     protected $checklist = null;
     protected $education = null;
     protected $education2 = null;
+    protected $education3 = null;
     protected $healthlisence = null;
     protected $healthlicense2 = null;
     protected $employment = null;
@@ -44,7 +46,7 @@ class ApplicantController extends Controller
     protected $progressflow = null;
 
     public function __construct(Applicant $applicant, Category $category, Enquiry $enquiry, CheckList $checkList,
-                                Education2 $education2, Education $education, HealthLisence $healthlisence, HealthLicense2 $healthlicense2,
+                                Education2 $education2, Education $education,Education3 $education3,HealthLisence $healthlisence, HealthLicense2 $healthlicense2,
                                 Employment $employment, Employment2 $employment2, Employment3 $employment3, Employment4 $employment4
         ,Employment5 $employment5, ProgressFlow $progressflow)
     {
@@ -54,6 +56,7 @@ class ApplicantController extends Controller
         $this->checkList = $checkList;
         $this->education = $education;
         $this->education2 = $education2;
+        $this->education3 = $education3;
         $this->healthlisence = $healthlisence;
         $this->healthlicense2 = $healthlicense2;
         $this->employment = $employment;
@@ -68,7 +71,7 @@ class ApplicantController extends Controller
     {
         $query=$this->applicant->get();
         if(isset($request->category)){
-            $query = $query->where('applicant_category',$request->category);
+            $query = $query->where('Category_id',$request->category);
         }
         if(isset($request->color_code)){
             $query = $query->where('color_code',$request->color_code);
@@ -89,6 +92,13 @@ class ApplicantController extends Controller
         return view('Admin.Applicant.Add')->with('category', $category)->with('enquiry', $enquiry);
     }
 
+    public function AppApplicant($id)
+    {
+        $category = $this->category->get();
+        $applicantenquiry= $this->enquiry->where('id',$id)->first();
+        return view('Admin.Applicant.Add')->with('category', $category)->with('applicantenquiry', $applicantenquiry);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -98,7 +108,7 @@ class ApplicantController extends Controller
     public function store(ApplicantValidator $request, Admin $thread)
     {
         $data = $request->all();
-        $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
+        $name = $request->first_name . ' ' . $request->middle_name . ' ' . $request->last_name;
         if ($request->passport_docs) {
             $path = 'upload/Applicant';
             if (!File::exists($path)) {
@@ -151,29 +161,12 @@ class ApplicantController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $category = $this->category->get();
-        $enquiry = $this->enquiry->get();
+
         $applicant = $this->applicant->find($id);
         if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
         }
-        if ($applicant->applicant_category) {
-            $cat = $applicant->Category_Applicant->Name;
-        }
-        @$first_name = $applicant->Enquiry_Applicant->first_name;
-        @$middle_name = $applicant->Enquiry_Applicant->middle_name;
-        @$last_name = $applicant->Enquiry_Applicant->last_name;
-
-        if (empty($applicant)) {
-            return redirect()->back()->with('Error', 'Applicant Not Found');
-        } elseif ($applicant->applicant_category) {
-            return view('Admin.Applicant.Update')->with('applicant', $applicant)->with('category', $category)->with('cat', $cat)
-                ->with('enquiry', $enquiry)->with('first_name', $first_name)->with('last_name', $last_name)->with('middle_name', $middle_name);
-        } else {
-            return view('Admin.Applicant.Update')->with('applicant', $applicant)->with('category', $category)
-                ->with('enquiry', $enquiry)->with('first_name', $first_name)->with('last_name', $last_name)->with('middle_name', $middle_name);
-        }
-
+            return view('Admin.Applicant.Update')->with('applicant', $applicant);
     }
 
     /**
@@ -189,14 +182,14 @@ class ApplicantController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $this->applicant = $this->applicant->find($id);
+        $applicant = $this->applicant->find($id);
         if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found');
         }
-        $name = $request->first_name . ' ' . $request->middel_name . ' ' . $request->surname;
+        $name = $request->first_name . ' ' . $request->middle_name . ' ' . $request->last_name;
         $data = $request->all();
         if ($request->passport_docs) {
-            $image_path = 'upload/Applicant/' . $this->applicant->passport_docs;
+            $image_path = 'upload/Applicant/'.$applicant->passport_docs;
             if (File::exists($image_path)) {
                 $delete = File::delete($image_path);
             }
@@ -213,8 +206,8 @@ class ApplicantController extends Controller
                 $data['passport_docs'] = null;
             }
         }
-        $this->applicant->fill($data);
-        $success = $this->applicant->save();
+        $applicant->fill($data);
+        $success = $applicant->save();
         $admin = Admin::all();
         foreach ($admin as $admin)
             $admin->notify(new \App\Notifications\ApplicantUpdateNotification());
@@ -237,18 +230,7 @@ class ApplicantController extends Controller
             }
             session()->flash('success','Applicant Updated Successfully');
         }
-        if ($request->color_code == 'whitelist') {
-            return redirect()->route('ApplicantWhitelist');
-        }
-        if ($request->color_code == 'blacklist') {
-            return redirect()->route('ApplicantBlacklist');
-        }
-        if ($request->color_code == 'redlist') {
-            return redirect()->route('ApplicantRedlist');
-        }
-        if ($request->color_code == 'greenlist') {
-            return redirect()->route('ApplicantGreenlist');
-        }
+            return redirect()->route('Applicant.index');
     }
 
 
@@ -271,6 +253,7 @@ class ApplicantController extends Controller
         $checkList = $this->checkList->where('applicant_id', $id)->get();
         $education = $this->education->where('applicant_id', $id)->get();
         $education2 = $this->education2->where('applicant_id', $id)->get();
+        $education3 = $this->education3->where('applicant_id', $id)->get();
         $healthlisence = $this->healthlisence->where('applicant_id', $id)->get();
         $healthlicense2 = $this->healthlicense2->where('applicant_id', $id)->get();
         $employment = $this->employment->where('applicant_id', $id)->get();
@@ -310,6 +293,21 @@ class ApplicantController extends Controller
                 $delete = File::delete($character_certificate);
             }
             DB::table('education2s')->where('applicant_id', $id)->delete();
+        };
+        foreach ($education3 as $data) {
+            $qualification_certificate = 'upload/Education/'.$data->qualification_certificate;
+            if (File::exists($qualification_certificate)) {
+                $delete = File::delete($qualification_certificate);
+            }
+            $marksheet = 'upload/Education/'.$data->marksheet;
+            if (File::exists($marksheet)) {
+                $delete = File::delete($marksheet);
+            }
+            $character_certificate = 'upload/Education/'.$data->character_certificate;
+            if (File::exists($character_certificate)) {
+                $delete = File::delete($character_certificate);
+            }
+            DB::table('education3s')->where('applicant_id', $id)->delete();
         };
         foreach ($healthlisence as $data) {
             $image_path = 'upload/Health License/' . $data->license_copy;
@@ -384,6 +382,7 @@ class ApplicantController extends Controller
         $checklist = $this->checkList->where('applicant_id', $id)->get();
         $education = $this->education->where('applicant_id', $id)->get();
         $education2 = $this->education2->where('applicant_id', $id)->get();
+        $education3 = $this->education3->where('applicant_id', $id)->get();
         $healthlisence = $this->healthlisence->where('applicant_id', $id)->get();
         $healthlicense2 = $this->healthlicense2->where('applicant_id', $id)->get();
         $employment = $this->employment->where('applicant_id', $id)->get();
@@ -394,7 +393,7 @@ class ApplicantController extends Controller
         $progressflow = $this->progressflow->where('applicant_id', $id)->get();
 //        dd($education);
         return view('Admin.Applicant.Detail')->with('applicant', $applicant)->with('checklist', $checklist)
-            ->with('education2', $education2)->with('education', $education)->with('healthlisence', $healthlisence)
+            ->with('education2', $education2)->with('education', $education)->with('education3', $education3)->with('healthlisence', $healthlisence)
             ->with('healthlicense2', $healthlicense2)->with('employment', $employment)->with('employment2', $employment2)
             ->with('employment3', $employment3)->with('employment4', $employment4)->with('employment5', $employment5)
             ->with('progressflow', $progressflow);

@@ -120,7 +120,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Signed Document</p>
+                                    <p class="ah1" style="margin-top: 20px;">Service Agreement Document</p>
                                     <input type="file" class="form-control form"
                                            style="height:27px;width:80%;margin-top: -20px;" name="signed_docs"
                                            >
@@ -142,16 +142,6 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Paid Date</p>
-                                    <input type="date" class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" name="service_paid_date">
-                                    </input>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode Of Payment</p>
                                     <select class="form-control form select2" id="mode_of_payment"
                                             style="height:34px;width:80%;margin-top: -20px;"
@@ -163,6 +153,16 @@
                                         <option value="E-Sewa">E-Sewa</option>
                                         <option value="IME">IME</option>
                                     </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Paid Date</p>
+                                    <input type="date" class="form-control form"
+                                           style="height:34px;width:80%;margin-top: -20px;" name="service_paid_date">
+                                    </input>
                                 </div>
                             </div>
                         </div>
@@ -203,6 +203,17 @@
                                         <option value="E-Sewa">E-Sewa</option>
                                         <option value="IME">IME</option>
                                     </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Received By</p>
+                                    <input type="number" class="form-control form"
+                                           style="height:34px;width:80%;margin-top: -20px;" name="dhamcq_fee_received_by"
+                                           placeholder="Enter Received By">
+                                    </input>
                                 </div>
                             </div>
                         </div>
@@ -381,7 +392,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Paid Date</p>
+                                    <p class="ah1" style="margin-top: 20px;">First Installment Paid Date</p>
                                     <input type="date" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            name="first_installment_paid_date"
@@ -393,7 +404,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode Of Payment</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">First Installment Mode Of Payment</p>
                                     <select class="form-control form select2" id="DHA_first_mode_of_payment"
                                             style="height:34px;width:80%;margin-top: -20px;"
                                             name="first_installment_mode_of_payment">
@@ -410,17 +421,14 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Received By</p>
-                                    <input type="text" class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;"
-                                           name="first_installment_received_by"
+                                    <p class="ah1" style="margin-top: 20px;">First Installment Received By</p>
+                                    <input type="number" class="form-control form"
+                                           style="height:34px;width:80%;margin-top: -20px;" name="first_installment_received_by"
                                            placeholder="Enter Received By">
                                     </input>
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
@@ -525,7 +533,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">DHA Exam Eligibility Id</p>
+                                    <p class="ah1" style="margin-top: 20px;">DHA Exam Eligibility Letter</p>
                                     <input type="email" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            name="dha_exam_eligibility_id"

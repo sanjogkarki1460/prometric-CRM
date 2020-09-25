@@ -16,7 +16,7 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('Education2.index')}}">Applicant Education
+                                                 href="{{route('Education3.index')}}">Applicant Education
                                         View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <form action="{{route('Education2.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('Education3.store')}}" method="post" enctype="multipart/form-data">
                         <input  type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="container">
                             <div class="row">

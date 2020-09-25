@@ -6,7 +6,7 @@
                 <div class="page-bar">
                     <div class="page-title-breadcrumb">
                         <div class="pull-left">
-                            <div class="page-title">Add Enquiry</div>
+                            <div class="page-title">Add Profession</div>
                         </div>
                         <div class=" pull-right">
                             <ol class="breadcrumb page-breadcrumb pull-right">
@@ -15,24 +15,23 @@
                                             class="fa fa-angle-right"></i>
                                 </li>
                                 <li></i>&nbsp;<a class="parent-item"
-                                                 href="{{route('Category.index')}}">Category View</a>&nbsp;<i
+                                                 href="{{route('Profession.index')}}">Profession View</a>&nbsp;<i
                                             class="fa fa-angle-right"></i>
                                 </li>
-                                <li class="active">Category Create</li>
+                                <li class="active">Profession Create</li>
                             </ol>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <form action="{{route('Category.update',$category->id)}}" method="post">
-                        {{csrf_field()}}
-                        <input required type="hidden" name="_method" value="put">
+                    <form action="{{route('Profession.store')}}" method="post">
+                        <input required type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="type_name">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p class="ah1">Name*</p>
-                                        <input  class="form form-control" required style="width: 100%;height:45%" type="text" name="Name" value="{{$category->Name}}" placeholder="Enter Category name">
+                                        <input  class="form form-control" style="width: 100%;height:45%" type="text" name="Name" placeholder="Enter Profession name">
                                     </div>
                                 </div>
                             </div>
@@ -49,4 +48,5 @@
                     </form>
                 </div>
             </div>
+
 @endsection

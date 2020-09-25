@@ -33,6 +33,7 @@
                                         <tr>
                                             <th style="font-size:13px; ">ID</th>
                                             <th style="font-size:13px; ">Name of Person</th>
+                                            <th style="font-size:13px; ">Call By</th>
                                             <th style="font-size:13px; ">Phone Number</th>
                                             <th style="font-size:13px; ">Date of call</th>
                                             <th style="font-size:13px; ">Time of call</th>
@@ -50,16 +51,18 @@
                                                 <td style="font-size:13px; ">{{$call->id}}</td>
                                                 @if($call->call_to=='Applicant')
                                                     <td style="font-size:13px; ">
-                                                        <a href="{{route('ApplicantDetail',$call->applicant_id)}}">{{@$call->Applicant_Outgoing->first_name}} {{@$call->Applicant_Outgoing->middel_name}} {{@$call->Applicant_Outgoing->surname}}</a>
+                                                        <a href="{{route('ApplicantDetail',$call->applicant_id)}}">{{@$call->Applicant_Outgoing->first_name}} {{@$call->Applicant_Outgoing->middle_name}} {{@$call->Applicant_Outgoing->last_name}}</a>
                                                     </td>
                                                 @endif
                                                 @if($call->call_to=='Enquiry')
                                                     <td style="font-size:13px; ">
                                                         <a href="{{route('EnquiryDetail',$call->enquiry_id)}}">{{@$call->Enquiry_Outgoing->first_name}} {{@$call->Enquiry_Outgoing->middle_name}} {{@$call->Enquiry_Outgoing->last_name}}</a>
                                                     </td>
-                                                @else
+                                                @endif
+                                                @if($call->call_to==null)
                                                     <td></td>
                                                 @endif
+                                                <td style="font-size:13px; ">{{$call->call_by}}</td>
                                                 <td style="font-size:13px; ">{{$call->phone}}</td>
                                                 <td style="font-size:13px; ">{{$call->date}}</td>
                                                 <td style="font-size:13px; ">{{date('h:i A',strtotime($call->time))}}</td>

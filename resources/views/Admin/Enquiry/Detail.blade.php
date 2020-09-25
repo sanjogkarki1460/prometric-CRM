@@ -89,7 +89,7 @@
                                 <p>{{$enquiry->eligibility}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">Category</h5>
+                                <h5 class="text-primary">Profession</h5>
                                 <p>{{@$enquiry->Category_Enquiry->Name}}</p>
                             </div>
                             <div class="col-md-3">

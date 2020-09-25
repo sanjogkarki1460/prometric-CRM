@@ -121,7 +121,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Signed Document</p>
+                                    <p class="ah1" style="margin-top: 20px;">Service Agreement Document</p>
                                     <input type="file" class="form-control form"
                                            style="height:27px;width:80%;margin-top: -20px;" value="{{$progressflow->signed_docs}}" name="signed_docs"
                                            >
@@ -143,16 +143,6 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Paid Date</p>
-                                    <input type="date" class="form-control form"
-                                           style="height:34px;width:80%;margin-top: -20px;" value="{{$progressflow->service_paid_date}}" name="service_paid_date">
-                                    </input>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Mode Of Payment</p>
                                     <select class="form-control form select2" id="mode_of_payment"
                                             style="height:34px;width:80%;margin-top: -20px;"
@@ -164,6 +154,16 @@
                                         <option @if($progressflow->service_mode_of_payment=='E-Sewa') selected @endif value="E-Sewa">E-Sewa</option>
                                         <option @if($progressflow->service_mode_of_payment=='IME') selected @endif value="IME">IME</option>
                                     </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Paid Date</p>
+                                    <input type="date" class="form-control form"
+                                           style="height:34px;width:80%;margin-top: -20px;" value="{{$progressflow->service_paid_date}}" name="service_paid_date">
+                                    </input>
                                 </div>
                             </div>
                         </div>
@@ -214,6 +214,17 @@
                                     <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;" value="{{$progressflow->dhamcq_subject}}" name="dhamcq_subject"
                                            placeholder="Enter DHAMCQ Subject">
+                                    </input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Received By</p>
+                                    <input type="number" class="form-control form"
+                                           style="height:34px;width:80%;margin-top: -20px;" name="dhamcq_fee_received_by"
+                                           placeholder="Enter Received By" value="{{$progressflow->dhamcq_fee_received_b}}">
                                     </input>
                                 </div>
                             </div>
@@ -526,7 +537,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">DHA Exam Eligibility Id</p>
+                                    <p class="ah1" style="margin-top: 20px;">DHA Exam Eligibility Letter</p>
                                     <input type="email" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$progressflow->dha_exam_eligibility_id}}" name="dha_exam_eligibility_id"

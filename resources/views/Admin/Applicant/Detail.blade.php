@@ -36,19 +36,11 @@
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Middle Name</h5>
-                                <p>{{$applicant->middel_name}}</p>
+                                <p>{{$applicant->middle_name}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Last Name</h5>
-                                <p>{{$applicant->surname}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h5 class="text-primary">Is Enquired</h5>
-                                <p>{{$applicant->enquired}}</p>
-                            </div>
-                            <div class="col-md-3">
-                                <h5 class="text-primary">Enquired Name</h5>
-                                <p>{{@$applicant->Enquiry_Applicant->first_name}} {{@$applicant->Enquiry_Applicant->middle_name}} {{@$applicant->Enquiry_Applicant->Last_name}}</p>
+                                <p>{{$applicant->last_name}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Gender</h5>
@@ -59,24 +51,48 @@
                                 <p>{{$applicant->dob}}</p>
                             </div>
                             <div class="col-md-3">
+                                <h5 class="text-primary">Address</h5>
+                                <p>{{$applicant->address}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Subject</h5>
+                                <p>{{$applicant->subject}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Qualification </h5>
+                                <p>{{$applicant->qualification_level}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Experience </h5>
+                                <p>{{$applicant->experience}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Interested Country </h5>
+                                <p>{{$applicant->country_interested}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Interested Service</h5>
+                                <p>{{$applicant->service_interested}}</p>
+                            </div>
+                            <div class="col-md-3">
                                 <h5 class="text-primary">Maiden Name</h5>
                                 <p>{{$applicant->maiden_name}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">IdenTity Type</h5>
+                                <h5 class="text-primary">Identity Type</h5>
                                 <p>{{$applicant->identity_type}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">Identity Card Number</h5>
-                                <p>{{$applicant->identity_card_no}}</p>
+                                <h5 class="text-primary">Citizenship Number</h5>
+                                <p>{{$applicant->citizen_no}}</p>
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">Passport Card Number</h5>
+                                <h5 class="text-primary">Passport Number</h5>
                                 <p>{{$applicant->passport_no}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Mobile Number</h5>
-                                <p>{{$applicant->mobile_no}}</p>
+                                <p>{{$applicant->phone}}</p>
                             </div>
                             <div class="col-md-3">
                                 <h5 class="text-primary">Nationality</h5>
@@ -99,7 +115,11 @@
                                 @endif
                             </div>
                             <div class="col-md-3">
-                                <h5 class="text-primary">Applicant Category</h5>
+                                <h5 class="text-primary">Status</h5>
+                                <p>{{$applicant->status}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5 class="text-primary">Applicant Profession</h5>
                                 <p>{{@$applicant->Category_Applicant->Name}}</p>
                             </div>
                             <div class="col-md-3">
@@ -507,10 +527,10 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <h5 class="text-primary">Character Certificate</h5>
-                                                @if($education->character_certificate)
+                                                @if($education2->character_certificate)
                                                     <p><a target="_blank"
                                                           style="color: blue"
-                                                          href="{{asset('/upload/Education/'.$education->character_certificate)}}">Click
+                                                          href="{{asset('/upload/Education/'.$education2->character_certificate)}}">Click
                                                             here for Character
                                                             Certificate</a></p>
                                                 @else
@@ -523,6 +543,131 @@
                                                     <p><a target="_blank"
                                                           style="color: blue"
                                                           href="{{asset('/upload/Education/'.$education2->marksheet)}}">Click
+                                                            Here for MarkSheet</a></p>
+                                                @else
+                                                    <p>No Marksheet found</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                <hr>
+                                @foreach($education3 as $education3)
+                                    <hr>
+                                    <div>
+                                        <h3 class="text-center text-danger">Applicant's Third Education Detail1</h3>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's Name</h5>
+                                                <p>{{$education3->authority_name}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's Address</h5>
+                                                <p>{{$education3->authority_address}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's City</h5>
+                                                <p>{{$education3->authority_city}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's State</h5>
+                                                <p>{{$education3->authority_state}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's Country</h5>
+                                                <p>{{$education3->authority_country}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's Country Code</h5>
+                                                <p>{{$education3->authority_country_code}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's Phone</h5>
+                                                <p>{{$education3->authority_phone}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's Email</h5>
+                                                <p>{{$education3->authority_email}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Authority's Website</h5>
+                                                <p>{{$education3->authority_website}}.com.np</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Qualification</h5>
+                                                <p>{{$education3->qualification}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Institution</h5>
+                                                <p>{{$education3->institution}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Mode</h5>
+                                                <p>{{$education3->mode}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Major Subject</h5>
+                                                <p>{{$education3->major_subject}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Minor Subject</h5>
+                                                <p>{{$education3->minor_subject}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Roll</h5>
+                                                <p>{{$education3->roll}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Study From</h5>
+                                                <p>{{$education3->study_from}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Study To</h5>
+                                                <p>{{$education3->study_to}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Confered Date</h5>
+                                                <p>{{$education3->conferred_date}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Degree Issue Date</h5>
+                                                <p>{{$education3->degree_issue_date}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Expected Degree Issue Date</h5>
+                                                <p>{{$education3->expected_degree_issue_date}}</p>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Qualification Certificate</h5>
+                                                @if($education3->qualification_certificate)
+                                                    <p><a target="_blank"
+                                                          style="color: blue"
+                                                          href="{{asset('/upload/Education/'.$education3->qualification_certificate)}}">Click
+                                                            here for Qualification
+                                                            Certificate</a></p>
+                                                @else
+                                                    <p>No Qualification Certificate Found</p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Character Certificate</h5>
+                                                @if($education3->character_certificate)
+                                                    <p><a target="_blank"
+                                                          style="color: blue"
+                                                          href="{{asset('/upload/Education/'.$education3->character_certificate)}}">Click
+                                                            here for Character
+                                                            Certificate</a></p>
+                                                @else
+                                                    <p>No Character Certificate Found</p>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h5 class="text-primary">Marksheet</h5>
+                                                @if($education3->marksheet)
+                                                    <p><a target="_blank"
+                                                          style="color: blue"
+                                                          href="{{asset('/upload/Education/'.$education3->marksheet)}}">Click
                                                             Here for MarkSheet</a></p>
                                                 @else
                                                     <p>No Marksheet found</p>
@@ -1100,13 +1245,12 @@
                                                 <p>{{$progressflow->signed_by_applicant}}</p>
                                             </div>
                                             <div class="col-md-3">
-                                                <h5 class="text-primary">Signed Docs</h5>
+                                                <h5 class="text-primary">Service Agreement Document</h5>
                                                 @if($progressflow->signed_docs)
                                                     <a target="_blank"
                                                        style="color: blue"
-                                                       href="{{asset('/upload/Progress flow/'.$progressflow->signed_docs)}}">Clisck
-                                                        here for Signed
-                                                        Docs</a>
+                                                       href="{{asset('/upload/Progress flow/'.$progressflow->signed_docs)}}">Click
+                                                        here for Service Agreement Document</a>
                                                 @else
                                                     <p>No Signed document found</p>
                                                 @endif

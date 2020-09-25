@@ -26,6 +26,7 @@ class OutgoingCallLogValidator extends FormRequest
         return [
             'applicant_id'=>'',
             'enquiry_id'=>'',
+            'call_by'=>'required',
             'phone'=>'required',
             'date'=>'required',
             'time'=>'required',

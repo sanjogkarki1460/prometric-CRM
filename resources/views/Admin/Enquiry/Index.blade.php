@@ -67,7 +67,7 @@
                                             <th>Name</th>
                                             <th>EmaiL</th>
                                             <th>Phone</th>
-                                            <th>Category</th>
+                                            <th>Profession</th>
                                             <th>Color Code</th>
                                             <th>Eligibility</th>
                                             <th>Action</th>
@@ -119,6 +119,10 @@
                                                                     </form>
                                                                 </div>
                                                             @endif
+                                                                <div class=" text-center bg-white">
+                                                                    <a class=" btn text-primary "
+                                                                       style="width: 180px;" href="{{route('AddTOApplicant',$enquiry->id)}}">Add to Applicant</a>
+                                                                </div>
                                                             <div class=" text-center bg-white ">
                                                                 <form action="{{ route('ColorUpdate',$enquiry->id)}}"
                                                                       method="post"

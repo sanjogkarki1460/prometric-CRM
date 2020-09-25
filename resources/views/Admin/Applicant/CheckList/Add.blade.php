@@ -103,6 +103,12 @@
                                     <label class="control-label" for="name">Work Experience Letter 3</label>
                                     <input type="checkbox" name="work_experience_letter3" id="a10" value="Yes">
                                     <br>
+                                    <label class="control-label" for="name">Work Experience Letter 4</label>
+                                    <input type="checkbox" name="work_experience_letter4" id="a10" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Work Experience Letter 5</label>
+                                    <input type="checkbox" name="work_experience_letter5" id="a10" value="Yes">
+                                    <br>
                                     <label class="control-label" for="name">Basic Life Support For Certificate</label>
                                     <input type="checkbox" name="basic_life_support_certificate" id="a11" value="Yes">
                                     <br>

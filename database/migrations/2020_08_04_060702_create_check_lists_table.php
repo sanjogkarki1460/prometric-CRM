@@ -35,6 +35,8 @@ class CreateCheckListsTable extends Migration
             $table->enum('work_experience_letter1',['Yes','No'])->default('No');
             $table->enum('work_experience_letter2',['Yes','No'])->default('No');
             $table->enum('work_experience_letter3',['Yes','No'])->default('No');
+            $table->enum('work_experience_letter4',['Yes','No'])->default('No');
+            $table->enum('work_experience_letter5',['Yes','No'])->default('No');
             $table->enum('basic_life_support_certificate',['Yes','No'])->default('No');
             $table->enum('signed_letter_authorization',['Yes','No'])->default('No');
             $table->enum('signed_service_agreement',['Yes','No'])->default('No');

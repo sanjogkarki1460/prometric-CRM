@@ -6,18 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Applicant extends Model
 {
-    protected $fillable = ['first_name', 'middel_name', 'surname', 'maiden_name', 'gender', 'dob', 'identity_type', 'identity_card_no',
-        'passport_no', 'birth_country', 'country_code', 'mobile_no', 'current_country', 'nationality', 'email', 'passport_docs',
-        'applicant_category', 'services_id', 'enquired', 'enquired_id', 'progress_sts','color_code','status'];
+    protected $fillable = ['first_name','last_name','middle_name','email','phone','maiden_name','gender','dob','address',
+        'subject','Category_id','qualification_level','experience','country_interested','service_interested','identity_type',
+        'citizen_no','passport_no','birth_country','country_code','current_country','nationality','passport_docs',
+        'progress_sts','status','remarks','color_code'];
+
+
 
     public function Category_Applicant()
     {
-        return $this->belongsTO('App\Admin\Category', 'applicant_category');
-    }
-
-    public function Enquiry_Applicant()
-    {
-        return $this->belongsTo('App\Admin\Enquiry', 'enquired_id');
+        return $this->belongsTO('App\Admin\Category', 'Category_id');
     }
 
     public function CheckList()

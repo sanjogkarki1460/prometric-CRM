@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class OutgoingCallLog extends Model
 {
-    protected $fillable=['call_to','applicant_id','enquiry_id','phone','date','time','length','purpose','remarks'];
+    protected $fillable=['call_to','call_by','applicant_id','enquiry_id','phone','date','time','length','purpose','remarks'];
 
     public function Applicant_Outgoing()
     {

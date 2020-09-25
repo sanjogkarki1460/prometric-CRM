@@ -58,7 +58,7 @@
                                         @foreach($employment as $employment)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('ApplicantDetail',$employment->applicant_id)}}">{{$employment->Applicant_Employment5->first_name}} {{$employment->Applicant_Employment5->middel_name}} {{$employment->Applicant_Employment5->surname}}</a>
+                                                    <a href="{{route('ApplicantDetail',$employment->applicant_id)}}">{{$employment->Applicant_Employment5->first_name}} {{$employment->Applicant_Employment5->middle_name}} {{$employment->Applicant_Employment5->last_name}}</a>
                                                 </td>
                                                 <td>{{$employment->designation}}</td>
                                                 <td>{{$employment->issuing_authority_name}}</td>

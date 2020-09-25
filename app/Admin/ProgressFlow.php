@@ -8,7 +8,7 @@ class ProgressFlow extends Model
 {
     protected $fillable=['applicant_id', 'profession', 'email', 'contact_number', 'date_of_birth', 'passport_number',
             'signed_by_applicant', 'signed_docs', 'service_charge', 'service_paid_date', 'service_mode_of_payment',
-        'service_charge_received_by', 'dhamcq_fee', 'dhamcq_mode_of_payment', 'dhamcq_subject', 'dhamcq_username',
+        'service_charge_received_by', 'dhamcq_fee', 'dhamcq_mode_of_payment','dhamcq_fee_received_by', 'dhamcq_subject', 'dhamcq_username',
         'dhamcq_password', 'dhamcq_email_sent', 'books_provided', 'bls_training_completed_date', 'good_standing_certificate_issue_date',
         'equivalent_certificate', 'dha_email_account', 'dha_unique_id', 'dha_username', 'dha_password', 'dha_application_ref_number',
         'dha_fees_first_installment', 'first_installment_paid_date', 'first_installment_mode_of_payment', 'first_installment_received_by',

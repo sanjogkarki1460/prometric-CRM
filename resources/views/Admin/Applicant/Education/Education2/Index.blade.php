@@ -65,7 +65,7 @@
                                         @foreach($education as $education)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('ApplicantDetail',$education->applicant_id)}}">{{$education->Applicant_Education2->first_name}} {{$education->Applicant_Education2->middel_name}} {{$education->Applicant_Education2->surname}}</a>
+                                                    <a href="{{route('ApplicantDetail',$education->applicant_id)}}">{{$education->Applicant_Education2->first_name}} {{$education->Applicant_Education2->middle_name}} {{$education->Applicant_Education2->last_name}}</a>
                                                 </td>
                                                 <td>{{$education->authority_name}}</td>
                                                 <td>{{$education->authority_address}}</td>

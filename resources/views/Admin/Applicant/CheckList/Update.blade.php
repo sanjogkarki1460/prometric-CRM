@@ -92,6 +92,12 @@
                                     <label class="control-label">Work Experience Letter 3</label>
                                     <input type="checkbox" @if($checklist->work_experience_letter3=='Yes') checked @endif name="work_experience_letter3" id="a10" value="Yes">
                                     <br>
+                                    <label class="control-label">Work Experience Letter 4</label>
+                                    <input type="checkbox" @if($checklist->work_experience_letter4=='Yes') checked @endif name="work_experience_letter4" id="a10" value="Yes">
+                                    <br>
+                                    <label class="control-label">Work Experience Letter 5</label>
+                                    <input type="checkbox" @if($checklist->work_experience_letter5=='Yes') checked @endif name="work_experience_letter5" id="a10" value="Yes">
+                                    <br>
                                     <label class="control-label">Basic Life Support For Certificate</label>
                                     <input type="checkbox" @if($checklist->basic_life_support_certificate=='Yes') checked @endif name="basic_life_support_certificate" id="a11" value="Yes">
                                     <br>

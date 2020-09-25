@@ -5,28 +5,28 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\Education;
-use App\Admin\Education2;
+use App\Admin\Education3;
 use App\Http\Requests\Educationvalidator;
 use App\Admin\Applicant;
 use File;
 use Auth;
 
-class Education2Controller extends Controller
+class Education3Controller extends Controller
 {
-    protected $education2 = null;
+    protected $education3 = null;
     protected $applicant = null;
 
-    public function __construct(Education2 $education2, Applicant $applicant)
+    public function __construct(Education3 $education3, Applicant $applicant)
     {
-        $this->education2 = $education2;
+        $this->education3 = $education3;
         $this->applicant = $applicant;
     }
 
     public function index()
     {
-        $education = $this->education2->get();
+        $education = $this->education3->get();
 //        dd($education);
-        return view('Admin.Applicant.Education.Education2.Index')->with('education', $education);
+        return view('Admin.Applicant.Education.Education3.Index')->with('education', $education);
     }
 
     /**
@@ -38,7 +38,7 @@ class Education2Controller extends Controller
     {
         $applicant = $this->applicant->get();
 //        dd($applicant);
-        return view('Admin.Applicant.Education.Education2.Add')->with('applicant', $applicant);
+        return view('Admin.Applicant.Education.Education3.Add')->with('applicant', $applicant);
     }
 
     /**
@@ -50,20 +50,20 @@ class Education2Controller extends Controller
     public function store(Educationvalidator $request)
     {
         $data = $request->all();
-        $this->education2->fill($data);
-        $success = $this->education2->save();
+        $this->education3->fill($data);
+        $success = $this->education3->save();
         /*Qualification certificate*/
         if ($request->qualification_certificate) {
-            $first_Name = $this->education2->Applicant_Education2->first_name;
-            $middel_Name = $this->education2->Applicant_Education2->middel_name;
-            $last_Name = $this->education2->Applicant_Education2->surname;
+            $first_Name = $this->education3->Applicant_Education3->first_name;
+            $middel_Name = $this->education3->Applicant_Education3->middel_name;
+            $last_Name = $this->education3->Applicant_Education3->surname;
             $name = $first_Name . ' ' . $middel_Name . ' ' . $last_Name;
 //            dd($name);
             $path = 'upload/Education';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name . '-Qualification Certificate2-' . date('Ymdhid') . rand(0, 99) . "." . $request->qualification_certificate->getClientOriginalExtension();
+            $file_name = $name . '-Qualification Certificate3-' . date('Ymdhid') . rand(0, 99) . "." . $request->qualification_certificate->getClientOriginalExtension();
 //            dd($file_name);
             $success = $request->qualification_certificate->move($path, $file_name);
 
@@ -75,15 +75,15 @@ class Education2Controller extends Controller
         }
         /*Marksheet*/
         if ($request->marksheet) {
-            $first_Name = $this->education2->Applicant_Education2->first_name;
-            $middel_Name = $this->education2->Applicant_Education2->middel_name;
-            $last_Name = $this->education2->Applicant_Education2->surname;
+            $first_Name = $this->education3->Applicant_Education3->first_name;
+            $middel_Name = $this->education3->Applicant_Education3->middel_name;
+            $last_Name = $this->education3->Applicant_Education3->surname;
             $name = $first_Name . ' ' . $middel_Name . ' ' . $last_Name;
             $path = 'upload/Education';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name . "-marksheet2-" . date('Ymdhid') . rand(0, 99) . "." . $request->marksheet->getClientOriginalExtension();
+            $file_name = $name . "-marksheet3-" . date('Ymdhid') . rand(0, 99) . "." . $request->marksheet->getClientOriginalExtension();
             $success = $request->marksheet->move($path, $file_name);
 
             if ($success) {
@@ -94,15 +94,15 @@ class Education2Controller extends Controller
         }
         /*Character Certificate*/
         if ($request->character_certificate) {
-            $first_Name=$this->education2->Applicant_Education2->first_name;
-            $middel_Name=$this->education2->Applicant_Education2->middel_name;
-            $last_Name=$this->education2->Applicant_Education2->surname;
+            $first_Name=$this->education3->Applicant_Education3->first_name;
+            $middel_Name=$this->education3->Applicant_Education3->middel_name;
+            $last_Name=$this->education3->Applicant_Education3->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = 'upload/Education';
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name."-character_certificate2-" . date('Ymdhid') . rand(0, 99) . "." . $request->character_certificate->getClientOriginalExtension();
+            $file_name = $name."-character_certificate3-" . date('Ymdhid') . rand(0, 99) . "." . $request->character_certificate->getClientOriginalExtension();
             $success = $request->character_certificate->move($path, $file_name);
 
             if ($success) {
@@ -112,12 +112,12 @@ class Education2Controller extends Controller
             }
 
         }
-        $this->education2->fill($data);
-        $success = $this->education2->save();
+        $this->education3->fill($data);
+        $success = $this->education3->save();
         if ($success) {
-            return redirect()->route('Education2.index')->with('success', 'Applicant Education Added Successfully');
+            return redirect()->route('Education3.index')->with('success', 'Applicant Education Added Successfully');
         } else {
-            return redirect()->route('Education2.index')->with('Error', 'Sorry! There is an error adding applicant education list');
+            return redirect()->route('Education3.index')->with('Error', 'Sorry! There is an error adding applicant education list');
         }
     }
 
@@ -144,10 +144,10 @@ class Education2Controller extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $education = $this->education2->find($id);
+        $education = $this->education3->find($id);
         $applicant = $this->applicant->get();
-        $app = $education->Applicant_Education2->first_name;
-        return view('Admin.Applicant.Education.Education2.Update')->with('applicant', $applicant)->with('education', $education)
+        $app = $education->Applicant_Education3->first_name;
+        return view('Admin.Applicant.Education.Education3.Update')->with('applicant', $applicant)->with('education', $education)
             ->with('app', $app);
     }
 
@@ -164,14 +164,14 @@ class Education2Controller extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $this->education2 = $this->education2->find($id);
+        $this->education3 = $this->education3->find($id);
         $data = $request->all();
         if ($request->qualification_certificate) {
-            $first_name = $this->education2->Applicant_Education2->first_name;
-            $middel_name = $this->education2->Applicant_Education2->middel_name;
-            $surname = $this->education2->Applicant_Education2->surname;
+            $first_name = $this->education3->Applicant_Education3->first_name;
+            $middel_name = $this->education3->Applicant_Education3->middel_name;
+            $surname = $this->education3->Applicant_Education3->surname;
             $name = $name = $first_name . ' ' . $middel_name . ' ' . $surname;
-            $qualification_certificate = 'upload/Education/' . $this->education2->qualification_certificate;
+            $qualification_certificate = 'upload/Education/' . $this->education3->qualification_certificate;
             if (File::exists($qualification_certificate)) {
                 $delete = File::delete($qualification_certificate);
             }
@@ -179,7 +179,7 @@ class Education2Controller extends Controller
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name . "-qualification_certificate2-" . date('Ymdhid') . rand(0, 99) . "." . $request->qualification_certificate->getClientOriginalExtension();
+            $file_name = $name . "-qualification_certificate3-" . date('Ymdhid') . rand(0, 99) . "." . $request->qualification_certificate->getClientOriginalExtension();
             $success = $request->qualification_certificate->move($path, $file_name);
 
             if ($success) {
@@ -190,11 +190,11 @@ class Education2Controller extends Controller
 
         }
         if ($request->marksheet) {
-            $first_name = $this->education2->Applicant_Education2->first_name;
-            $middel_name = $this->education2->Applicant_Education2->middel_name;
-            $surname = $this->education2->Applicant_Education2->surname;
+            $first_name = $this->education3->Applicant_Education3->first_name;
+            $middel_name = $this->education3->Applicant_Education3->middel_name;
+            $surname = $this->education3->Applicant_Education3->surname;
             $name = $name = $first_name . ' ' . $middel_name . ' ' . $surname;
-            $marksheet = 'upload/Education/' . $this->education2->marksheet;
+            $marksheet = 'upload/Education/' . $this->education3->marksheet;
             if (File::exists($marksheet)) {
                 $delete = File::delete($marksheet);
             }
@@ -202,7 +202,7 @@ class Education2Controller extends Controller
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name . "-marksheet2-" . date('Ymdhid') . rand(0, 99) . "." . $request->marksheet->getClientOriginalExtension();
+            $file_name = $name . "-marksheet3-" . date('Ymdhid') . rand(0, 99) . "." . $request->marksheet->getClientOriginalExtension();
             $success = $request->marksheet->move($path, $file_name);
 
             if ($success) {
@@ -214,11 +214,11 @@ class Education2Controller extends Controller
         }
         /*Character Certificate*/
         if ($request->character_certificate) {
-            $first_Name=$this->education2->Applicant_Education2->first_name;
-            $middel_Name=$this->education2->Applicant_Education2->middel_name;
-            $last_Name=$this->education2->Applicant_Education2->surname;
+            $first_Name=$this->education3->Applicant_Education3->first_name;
+            $middel_Name=$this->education3->Applicant_Education3->middel_name;
+            $last_Name=$this->education3->Applicant_Education3->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
-            $character_certificate = 'upload/Education/'.$this->education2->character_certificate;
+            $character_certificate = 'upload/Education/'.$this->education3->character_certificate;
             if (File::exists($character_certificate)) {
                 $delete = File::delete($character_certificate);
             }
@@ -226,7 +226,7 @@ class Education2Controller extends Controller
             if (!File::exists($path)) {
                 File::makeDirectory($path, true, true);
             }
-            $file_name = $name."-character_certificate2-" . date('Ymdhid') . rand(0, 99) . "." . $request->character_certificate->getClientOriginalExtension();
+            $file_name = $name."-character_certificate3-" . date('Ymdhid') . rand(0, 99) . "." . $request->character_certificate->getClientOriginalExtension();
             $success = $request->character_certificate->move($path, $file_name);
 
             if ($success) {
@@ -236,12 +236,12 @@ class Education2Controller extends Controller
             }
 
         }
-        $this->education2->fill($data);
-        $success = $this->education2->save();
+        $this->education3->fill($data);
+        $success = $this->education3->save();
         if ($success) {
-            return redirect()->route('Education2.index')->with('success', 'Applicant Education Updated Successfully');
+            return redirect()->route('Education3.index')->with('success', 'Applicant Education Updated Successfully');
         } else {
-            return redirect()->route('Education2.index')->with('Error', 'Sorry! There is an error updating applicant education list');
+            return redirect()->route('Education3.index')->with('Error', 'Sorry! There is an error updating applicant education list');
         }
     }
 
@@ -257,7 +257,7 @@ class Education2Controller extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $education=$this->education2->find($id);
+        $education=$this->education3->find($id);
         if(!$education){
             return redirect()->route()->with('Error','Applicant education list not found');
         }
@@ -275,10 +275,10 @@ class Education2Controller extends Controller
         }
         $success=$education->delete();
         if($success){
-            return redirect()->route('Education2.index')->with('success','Applicant Education Deleted Successfully');
+            return redirect()->route('Education3.index')->with('success','Applicant Education Deleted Successfully');
         }
         {
-            return redirect()->route('Education2.index')->with('Error','Sorry! There is an error deleting applicant education list');
+            return redirect()->route('Education3.index')->with('Error','Sorry! There is an error deleting applicant education list');
         }
     }
 }

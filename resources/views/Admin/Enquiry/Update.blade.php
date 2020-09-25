@@ -96,8 +96,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Category<span class="text-danger">*</span></p>
-                                    <select required class="form-control form  select2" id="category"
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Profession<span class="text-danger">*</span></p>
+                                    <select required class="form-control form  select2" id="profession"
                                             style="height:50%;width:80%;margin-top: -20px;" name="Category_id">
                                         <option value="" selected disabled>--Select any one--</option>
                                         @if($enquiry->Category_id)
@@ -126,23 +126,125 @@
                                         <option @if($enquiry->subject=='Physiotherapy') selected
                                                 @endif value="Physiotherapy">Physiotherapy
                                         </option>
-                                        <option @if($enquiry->subject=='Dentistry') selected @endif value="Dentistry">
-                                            Dentistry
-                                        </option>
-                                        <option @if($enquiry->subject=='Optometry') selected @endif value="Optometry">
-                                            Optometry
-                                        </option>
-                                        <option @if($enquiry->subject=='MBBS(Doctor)') selected
-                                                @endif value="MBBS(Doctor)">MBBS(Doctor)
-                                        </option>
-                                        <option @if($enquiry->subject=='MD/MS(Doctor)') selected
-                                                @endif value="MD/MS(Doctor)">MD/MS(Doctor)
-                                        </option>
-                                        <option @if($enquiry->subject=='Ocupational Therapy') selected
-                                                @endif value="Ocupational Therapy">Ocupational Therapy
+                                        <option @if($enquiry->subject=='Dentistry(BDS)') selected @endif value="Dentistry(BDS)">
+                                            Dentistry(BDS)
                                         </option>
                                         <option @if($enquiry->subject=='Radiography') selected
                                                 @endif value="Radiography">Radiography
+                                        </option>
+                                        <option @if($enquiry->subject=='Midwifery') selected
+                                                @endif value="Midwifery">Midwifery
+                                        </option>
+                                        <option @if($enquiry->subject=='Medicine(MBBS)') selected
+                                                @endif value="Medicine(MBBS)">Medicine(MBBS)
+                                        </option>
+                                        <option @if($enquiry->subject=='Medical Laboratory') selected
+                                                @endif value="Medical Laboratory">Medical Laboratory
+                                        </option>
+                                        <option @if($enquiry->subject=='Anesthesia') selected
+                                                @endif value="Anesthesia">Anesthesia
+                                        </option>
+                                        <option @if($enquiry->subject=='Dental Hygiene') selected
+                                                @endif value="Dental Hygiene">Dental Hygiene
+                                        </option>
+                                        <option @if($enquiry->subject=='Cardiology') selected
+                                                @endif value="Cardiology">Cardiology
+                                        </option>
+                                        <option @if($enquiry->subject=='Clinical Pathology') selected
+                                                @endif value="Clinical Pathology">Clinical Pathology
+                                        </option>
+                                        <option @if($enquiry->subject=='Dermatology') selected
+                                                @endif value="Dermatology">Dermatology
+                                        </option>
+                                        <option @if($enquiry->subject=='Emergency Medicine') selected
+                                                @endif value="Emergency Medicine">Emergency Medicine
+                                        </option>
+                                        <option @if($enquiry->subject=='Endocrinology') selected
+                                                @endif value="Endocrinology">Endocrinology
+                                        </option>
+                                        <option @if($enquiry->subject=='Family Medicine') selected
+                                                @endif value="Family Medicine">Family Medicine
+                                        </option>
+                                        <option @if($enquiry->subject=='Gastroenterology') selected
+                                                @endif value="Gastroenterology">Gastroenterology
+                                        </option>
+                                        <option @if($enquiry->subject=='Gastrointestinal Surgery') selected
+                                                @endif value="Gastrointestinal Surgery">Gastrointestinal Surgery
+                                        </option>
+                                        <option @if($enquiry->subject=='General Surgery') selected
+                                                @endif value="General Surgery">General Surgery
+                                        </option>
+                                        <option @if($enquiry->subject=='Internal Medicine') selected
+                                                @endif value="Internal Medicine">Internal Medicine
+                                        </option>
+                                        <option @if($enquiry->subject=='Neonatology') selected
+                                                @endif value="Neonatology">Neonatology
+                                        </option>
+                                        <option @if($enquiry->subject=='Nephrology') selected
+                                                @endif value="Nephrology">Nephrology
+                                        </option>
+                                        <option @if($enquiry->subject=='Neurology') selected
+                                                @endif value="Neurology">Neurology
+                                        </option>
+                                        <option @if($enquiry->subject=='Neurosurgery') selected
+                                                @endif value="Neurosurgery">Neurosurgery
+                                        </option>
+                                        <option @if($enquiry->subject=='Nuclear Medicine') selected
+                                                @endif value="Nuclear Medicine">Nuclear Medicine
+                                        </option>
+                                        <option @if($enquiry->subject=='Obstetric and Gynecology') selected
+                                                @endif value="Obstetric and Gynecology">Obstetric and Gynecology
+                                        </option>
+                                        <option @if($enquiry->subject=='Oncology') selected
+                                                @endif value="Oncology">Oncology
+                                        </option>
+                                        <option @if($enquiry->subject=='Opthalmology') selected
+                                                @endif value="Opthalmology">Opthalmology
+                                        </option>
+                                        <option @if($enquiry->subject=='Orthopedice surgery') selected
+                                                @endif value="Orthopedice surgery">Orthopedice surgery
+                                        </option>
+                                        <option @if($enquiry->subject=='Otolaryngology') selected
+                                                @endif value="Otolaryngology">Otolaryngology
+                                        </option>
+                                        <option @if($enquiry->subject=='pediatric') selected
+                                                @endif value="pediatric">pediatric
+                                        </option>
+                                        <option @if($enquiry->subject=='Plastic Surgery') selected
+                                                @endif value="Plastic Surgery">Plastic Surgery
+                                        </option>
+                                        <option @if($enquiry->subject=='Psychiatry') selected
+                                                @endif value="Psychiatry">Psychiatry
+                                        </option>
+                                        <option @if($enquiry->subject=='Radiology') selected
+                                                @endif value="Radiology">Radiology
+                                        </option>
+                                        <option @if($enquiry->subject=='Urology') selected
+                                                @endif value="Urology">Urology
+                                        </option>
+                                        <option @if($enquiry->subject=='TCAM Homeopathy') selected
+                                                @endif value="TCAM Homeopathy">TCAM Homeopathy
+                                        </option>
+                                        <option @if($enquiry->subject=='Psychologist') selected
+                                                @endif value="Psychologist">Psychologist
+                                        </option>
+                                        <option @if($enquiry->subject=='Endodontics') selected
+                                                @endif value="Endodontics">Endodontics
+                                        </option>
+                                        <option @if($enquiry->subject=='Oral and Maxillofacial surgery') selected
+                                                @endif value="Oral and Maxillofacial surgery">Oral and Maxillofacial surgery
+                                        </option>
+                                        <option @if($enquiry->subject=='Oral Surgery') selected
+                                                @endif value="Oral Surgery">Oral Surgery
+                                        </option>
+                                        <option @if($enquiry->subject=='Orthodontics') selected
+                                                @endif value="Orthodontics">Orthodontics
+                                        </option>
+                                        <option @if($enquiry->subject=='Periodontics') selected
+                                                @endif value="Periodontics">Periodontics
+                                        </option>
+                                        <option @if($enquiry->subject=='Prosthodontics') selected
+                                                @endif value="Prosthodontics">Prosthodontics
                                         </option>
                                     </select>
                                 </div>
@@ -202,6 +304,12 @@
                                         <option @if($enquiry->country_interested=='UAE-abu Dhabi') selected
                                                 @endif value="UAE-abu Dhabi">UAE-abu Dhabi
                                         </option>
+                                        <option @if($enquiry->country_interested=='UAE Others State') selected
+                                                @endif value="UAE Others State">UAE Others State
+                                        </option>
+                                        <option @if($enquiry->country_interested=='Saudi Arabia') selected
+                                                @endif value="Saudi Arabia">Saudi Arabia
+                                        </option>
                                         <option @if($enquiry->country_interested=='Qatar') selected
                                                 @endif value="Qatar">Qatar
                                         </option>
@@ -239,89 +347,83 @@
                                     <select required class="form-control form select2" id="service_interested"
                                             style="height:50%;width:80%;margin-top: -20px;" name="service_interested">
                                         <option value="" selected disabled>--select any one--</option>
-                                        <option @if($enquiry->service_interested=='Sasto Website') selected
-                                                @endif  value="Sasto Website">Sasto Website
+                                        <option @if($enquiry->service_interested=='DHA License Package for Nurse(Diploma)') selected
+                                                @endif  value="DHA License Package for Nurse(Diploma)">DHA License Package for Nurse(Diploma)
                                         </option>
-                                        <option @if($enquiry->service_interested=='DHA Service Charge') selected
-                                                @endif  value="DHA Service Charge">DHA Service Charge
+                                        <option @if($enquiry->service_interested=='DHA License Package for Nurse(Bachelor)') selected
+                                                @endif  value="DHA License Package for Nurse(Bachelor)">DHA License Package for Nurse(Bachelor)
                                         </option>
-                                        <option @if($enquiry->service_interested=='DHA License Exam Preparation') selected
-                                                @endif  value="DHA License Exam Preparation">DHA License Exam
-                                            Preparation
+                                        <option @if($enquiry->service_interested=='DHA License Package for Doctor(MBBS)') selected
+                                                @endif  value="DHA License Package for Doctor(MBBS)">DHA License Package for Doctor(MBBS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='HAAD License Application') selected
-                                                @endif  value="HAAD License Application">HAAD License Application
+                                        <option @if($enquiry->service_interested=='DHA License Package for Doctor(MD/MS)') selected
+                                                @endif  value="DHA License Package for Doctor(MD/MS)">DHA License Package for Doctor(MD/MS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='MOH License Application') selected
-                                                @endif  value="MOH License Application">MOH License Application
+                                        <option @if($enquiry->service_interested=='DHA License Package for Doctor(BDS)') selected
+                                                @endif  value="DHA License Package for Doctor(BDS)">DHA License Package for Doctor(BDS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='MOH License Exam Preparation') selected
-                                                @endif  value="MOH License Exam Preparation">MOH License Exam
-                                            Preparation
+                                        <option @if($enquiry->service_interested=='DHA License Package for Doctor(MDS)') selected
+                                                @endif  value="DHA License Package for Doctor(MDS)">DHA License Package for Doctor(MDS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='QCHP License Application') selected
-                                                @endif  value="QCHP License Application">QCHP License Application
+                                        <option @if($enquiry->service_interested=='DHA License Package for Others Health Profession(Bachelor)') selected
+                                                @endif  value="DHA License Package for Others Health Profession(Bachelor)">DHA License Package for Others Health Profession(Bachelor)
                                         </option>
-                                        <option @if($enquiry->service_interested=='QCHP License Exam Preparation') selected
-                                                @endif  value="QCHP License Exam Preparation">QCHP License Exam
-                                            Preparation
+                                        <option @if($enquiry->service_interested=='DHA License Package for Others Health Profession(Diploma)') selected
+                                                @endif  value="DHA License Package for Others Health Profession(Diploma)">DHA License Package for Others Health Profession(Diploma)
                                         </option>
-                                        <option @if($enquiry->service_interested=='OMSB License Application') selected
-                                                @endif  value="OMSB License Application">OMSB License Application
+                                        <option @if($enquiry->service_interested=='HAAD License Package for Nurse(Diploma)') selected
+                                                @endif  value="HAAD License Package for Nurse(Diploma)">HAAD License Package for Nurse(Diploma)
                                         </option>
-                                        <option @if($enquiry->service_interested=='OMSB License Exam Preparation') selected
-                                                @endif  value="OMSB License Exam Preparation">OMSB License Exam
-                                            Preparation
+                                        <option @if($enquiry->service_interested=='HAAD License Package for Nurse(Bachelor)') selected
+                                                @endif  value="HAAD License Package for Nurse(Bachelor)">HAAD License Package for Nurse(Bachelor)
                                         </option>
-                                        <option @if($enquiry->service_interested=='SLE/SCFHS License Application') selected
-                                                @endif  value="SLE/SCFHS License Application">SLE/SCFHS License
-                                            Application
+                                        <option @if($enquiry->service_interested=='HAAD License Package for Doctor(MBBS)') selected
+                                                @endif  value="HAAD License Package for Doctor(MBBS)">HAAD License Package for Doctor(MBBS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='SLE/SCFHS License Exam Preparation') selected
-                                                @endif  value="SLE/SCFHS License Exam Preparation">SLE/SCFHS License
-                                            Exam Preparation
+                                        <option @if($enquiry->service_interested=='HAAD License Package for Doctor(MD/MS)') selected
+                                                @endif  value="HAAD License Package for Doctor(MD/MS)">HAAD License Package for Doctor(MD/MS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NHRA License Application') selected
-                                                @endif  value="NHRA License Application">NHRA License Application
+                                        <option @if($enquiry->service_interested=='HAAD License Package for Doctor(BDS)') selected
+                                                @endif  value="HAAD License Package for Doctor(BDS)">HAAD License Package for Doctor(BDS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NHRA License Exam Preparation') selected
-                                                @endif  value="NHRA License Exam Preparation">NHRA License Exam
-                                            Preparation
+                                        <option @if($enquiry->service_interested=='HAAD License Package for Doctor(MDS)') selected
+                                                @endif  value="HAAD License Package for Doctor(MDS)">HAAD License Package for Doctor(MDS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NCLEX-(USA) License Application') selected
-                                                @endif  value="NCLEX-(USA) License Application">NCLEX-(USA) License
-                                            Application
+                                        <option @if($enquiry->service_interested=='HAAD License Package for Others Health Profession(Bachelor)') selected
+                                                @endif  value="HAAD License Package for Others Health Profession(Bachelor)">HAAD License Package for Others Health Profession(Bachelor)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NCLEX-(USA) License Exam Preparation') selected
-                                                @endif  value="NCLEX-(USA) License Exam Preparation">NCLEX-(USA) License
-                                            Exam Preparation
+                                        <option @if($enquiry->service_interested=='HAAD License Package for Others Health Profession(Diploma)') selected
+                                                @endif  value="HAAD License Package for Others Health Profession(Diploma)">HAAD License Package for Others Health Profession(Diploma)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NCLEX-(Canada) License Application') selected
-                                                @endif  value="NCLEX-(Canada) License Application">NCLEX-(Canada)
-                                            License Application
+                                        <option @if($enquiry->service_interested=='MOH License Package for Nurse(Diploma)') selected
+                                                @endif  value="MOH License Package for Nurse(Diploma)">MOH License Package for Nurse(Diploma)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NCLEX-(Canada) License Exam Preparation') selected
-                                                @endif  value="NCLEX-(Canada) License Exam Preparation">NCLEX-(Canada)
-                                            License Exam Preparation
+                                        <option @if($enquiry->service_interested=='MOH License Package for Nurse(Bachelor)') selected
+                                                @endif  value="MOH License Package for Nurse(Bachelor)">MOH License Package for Nurse(Bachelor)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NMC-(UK) License Exam Preparation') selected
-                                                @endif  value="NMC-(UK) License Exam Preparation">NMC-(UK) License Exam
-                                            Preparation
+                                        <option @if($enquiry->service_interested=='MOH License Package for Doctor(MBBS)') selected
+                                                @endif  value="MOH License Package for Doctor(MBBS)">MOH License Package for Doctor(MBBS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NMC-(UK) License Application') selected
-                                                @endif  value="NMC-(UK) License Application">NMC-(UK) License
-                                            Application
+                                        <option @if($enquiry->service_interested=='MOH License Package for Doctor(MD/MS)') selected
+                                                @endif  value="MOH License Package for Doctor(MD/MS)">MOH License Package for Doctor(MD/MS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NMBI-(Ireland) License Application') selected
-                                                @endif  value="NMBI-(Ireland) License Application">NMBI-(Ireland)
-                                            License Application
+                                        <option @if($enquiry->service_interested=='MOH License Package for Doctor(BDS)') selected
+                                                @endif  value="MOH License Package for Doctor(BDS)">MOH License Package for Doctor(BDS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='NMBI-(Ireland) License Exam Preparation') selected
-                                                @endif  value="NMBI-(Ireland) License Exam Preparation">NMBI-(Ireland)
-                                            License Exam Preparation
+                                        <option @if($enquiry->service_interested=='MOH License Package for Doctor(MDS)') selected
+                                                @endif  value="MOH License Package for Doctor(MDS)">MOH License Package for Doctor(MDS)
                                         </option>
-                                        <option @if($enquiry->service_interested=='Irma Cherry') selected
-                                                @endif  value="Irma Cherry">Irma Cherry
+                                        <option @if($enquiry->service_interested=='MOH License Package for Others Health Profession(Bachelor)') selected
+                                                @endif  value="MOH License Package for Others Health Profession(Bachelor)">MOH License Package for Others Health Profession(Bachelor)
+                                        </option>
+                                        <option @if($enquiry->service_interested=='MOH License Package for Others Health Profession(Diploma)') selected
+                                                @endif  value="MOH License Package for Others Health Profession(Diploma)">MOH License Package for Others Health Profession(Diploma)
+                                        </option>
+                                        <option @if($enquiry->service_interested=='Visa Application Assistance') selected
+                                                @endif  value="Visa Application Assistance">Visa Application Assistance
+                                        </option>
+                                        <option @if($enquiry->service_interested=='Permanent Residence(PR) Application') selected
+                                                @endif  value="Permanent Residence(PR) Application">Permanent Residence(PR) Application
                                         </option>
                                     </select>
                                 </div>
@@ -342,6 +444,12 @@
                                         </option>
                                         <option @if($enquiry->enquiry_from=='DHA Exam Nepal') selected
                                                 @endif value="DHA Exam Nepal">DHA Exam Nepal
+                                        </option>
+                                        <option @if($enquiry->enquiry_from=='HAAD Exam Nepal') selected
+                                                @endif value="HAAD Exam Nepal">HAAD Exam Nepal
+                                        </option>
+                                        <option @if($enquiry->enquiry_from=='PLAB Preparation Nepal') selected
+                                                @endif value="PLAB Preparation Nepal">PLAB Preparation Nepal
                                         </option>
                                         <option @if($enquiry->enquiry_from=='Medical Exam Abroad') selected
                                                 @endif value="Medical Exam Abroad">Medical Exam Abroad
@@ -389,7 +497,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Souce</p>
+                                    <p class="ah1" style="margin-top: 20px;margin-bottom:5px;">Source</p>
                                     <select class="form-control form select2" id="source"
                                             style="height:50%;width:80%;margin-top: -20px;" name="source">
                                         <option value="" selected disabled>--select any one--</option>
@@ -408,6 +516,8 @@
                                             Website
                                         </option>
                                         <option @if($enquiry->source=='Twak') selected @endif value="Twak">Twak</option>
+                                        <option @if($enquiry->source=='Twitter') selected @endif value="Twitter">Twitter</option>
+                                        <option @if($enquiry->source=='Refer by old student') selected @endif value="Refer by old student">Refer by old student</option>
                                     </select>
                                 </div>
                             </div>
@@ -479,6 +589,18 @@
                                         <option @if($enquiry->responded_through=='WhatsApp') selected
                                                 @endif value="WhatsApp">WhatsApp
                                         </option>
+                                        <option @if($enquiry->responded_through=='Twak') selected
+                                                @endif value="Twak">Twak
+                                        </option>
+                                        <option @if($enquiry->responded_through=='Twitter') selected
+                                                @endif value="Twitter">Twitter
+                                        </option>
+                                        <option @if($enquiry->responded_through=='Linkdin') selected
+                                                @endif value="Linkdin">Linkdin
+                                        </option>
+                                        <option @if($enquiry->responded_through=='Instagram') selected
+                                                @endif value="Instagram">Instagram
+                                        </option>
                                     </select>
                                 </div>
                             </div>
@@ -525,8 +647,8 @@
             </div>
             <script type="text/javascript">
                 $(document).ready(function () {
-                    $('#category').select2({
-                        placeholder: "Select a Category"
+                    $('#profession').select2({
+                        placeholder: "Select a Profession"
                     });
                     $('#subject').select2({
                         placeholder: "Select a Subject"

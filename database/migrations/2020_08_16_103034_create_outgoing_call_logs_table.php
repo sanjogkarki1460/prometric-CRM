@@ -18,6 +18,7 @@ class CreateOutgoingCallLogsTable extends Migration
             $table->enum('call_to',['Applicant','Enquiry'])->nullable();
             $table->integer('applicant_id')->nullable();
             $table->integer('enquiry_id')->nullable();
+            $table->string('call_by');
             $table->string('phone');
             $table->date('date');
             $table->time('time');
