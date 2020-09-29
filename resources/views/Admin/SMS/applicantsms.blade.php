@@ -1,4 +1,4 @@
-@extends('Admin.Layout.master')
+    @extends('Admin.Layout.master')
 @section('main_content')
     <script type="text/javascript">
         $(document).ready(function () {
@@ -104,14 +104,14 @@
                                                 @foreach($applicant as $applicant)
                                                     <tr>
                                                         <td><input type="checkbox" id="phonenumbers"
-                                                                   value="{{ $applicant->mobile_no }}"
+                                                                   value="{{ $applicant->phone }}"
                                                                    name="phone_number[]">
                                                         </td>
                                                         <td>{{$applicant->id}}</td>
                                                         <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</td>
                                                         <td>{{$applicant->email}}</td>
-                                                        <td>{{$applicant->mobile_no}}</td>
-                                                        <td>{{$applicant->Category_Applicant->Name}}</td>
+                                                        <td>{{$applicant->phone}}</td>
+                                                        <td>{{@$applicant->Category_Applicant->Name}}</td>
                                                         <td>{{$applicant->status}}</td>
                                                         <td>{{$applicant->color_code}}</td>
                                                     </tr>
@@ -123,37 +123,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{--<div class="mt-5">--}}
-                            {{--<div class="row">--}}
-                                {{--<div class="col-12 ">--}}
-                                    {{--<table class="table table-bordered">--}}
-                                        {{--<thead>--}}
-                                        {{--<tr>--}}
-                                            {{--<th><input type="checkbox" id="checkbox" name="checkbox"></th>--}}
-                                            {{--<th scope="col">Id</th>--}}
-                                            {{--<th scope="col">Name</th>--}}
-                                            {{--<th scope="col">Email</th>--}}
-                                            {{--<th scope="col">Contact</th>--}}
-                                        {{--</tr>--}}
-                                        {{--</thead>--}}
-                                        {{--@foreach($applicant as $applicant)--}}
-                                            {{--<tbody>--}}
-                                            {{--<tr>--}}
-                                                {{--<td><input type="checkbox" id="phonenumbers"--}}
-                                                           {{--value="{{ $applicant->mobile_no }}" name="phone_number[]">--}}
-                                                {{--</td>--}}
-                                                {{--<td>{{$applicant->id}}</td>--}}
-                                                {{--<td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->surname}}</td>--}}
-                                                {{--<td>{{$applicant->email}}</td>--}}
-                                                {{--<td>{{$applicant->mobile_no}}</td>--}}
 
-                                            {{--</tr>--}}
-                                            {{--</tbody>--}}
-                                        {{--@endforeach--}}
-                                    {{--</table>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
                     </form>
                 </div>
             </div>

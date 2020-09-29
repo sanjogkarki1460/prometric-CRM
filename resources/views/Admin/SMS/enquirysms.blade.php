@@ -109,7 +109,7 @@
                                                     <td>{{$enquiry->first_name}} {{$enquiry->middle_name}} {{$enquiry->last_name}}</td>
                                                     <td>{{$enquiry->email}}</td>
                                                     <td>{{$enquiry->phone}}</td>
-                                                    <td>{{$enquiry->Category_Enquiry->Name}}</td>
+                                                    <td>{{@$enquiry->Category_Enquiry->Name}}</td>
                                                     <td>{{$enquiry->color_code}}</td>
                                                     <td>{{$enquiry->eligibility}}</td>
 

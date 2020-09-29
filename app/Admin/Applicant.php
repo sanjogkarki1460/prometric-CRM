@@ -9,6 +9,7 @@ class Applicant extends Model
     protected $fillable = ['first_name','last_name','middle_name','email','phone','maiden_name','gender','dob','address',
         'subject','Category_id','qualification_level','experience','country_interested','service_interested','identity_type',
         'citizen_no','passport_no','birth_country','country_code','current_country','nationality','passport_docs',
+        'identity_card_no','passport_no','birth_country','country_code','current_country','nationality','passport_docs',
         'progress_sts','status','remarks','color_code'];
 
 
