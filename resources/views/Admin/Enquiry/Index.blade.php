@@ -27,13 +27,15 @@
                                             <div class="row col-md-12">
                                                 <div class="col-md-8">
                                                     <header>Search By:</header>
-                                                    <select name="category" id="" style="height: 40px;border-radius:120px;width: 120px;">
-                                                        <option value="" disabled selected>By Category</option>
+                                                    <select name="category" id=""
+                                                            style="height: 40px;border-radius:120px;width: 120px;">
+                                                        <option value="" disabled selected>By Profession</option>
                                                         @foreach($category as $category)
                                                             <option value="{{$category->id}}">{{$category->Name}}</option>
                                                         @endforeach
                                                     </select>
-                                                    <select name="color_code" id="" style="height: 40px;border-radius:120px;"
+                                                    <select name="color_code" id=""
+                                                            style="height: 40px;border-radius:120px;"
                                                             class="ml-3">
                                                         <option value="" disabled selected>By Color Code</option>
                                                         <option value="whitelist">White List</option>
@@ -41,7 +43,8 @@
                                                         <option value="blacklist">Black List</option>
                                                         <option value="greenlist">Green List</option>
                                                     </select>
-                                                    <select name="eligibility" id="" style="height: 40px;border-radius:120px;"
+                                                    <select name="eligibility" id=""
+                                                            style="height: 40px;border-radius:120px;"
                                                             class="ml-3">
                                                         <option value="" disabled selected>By Eligibility</option>
                                                         <option value="Eligible">Eligible</option>
@@ -50,8 +53,10 @@
                                                 </div>
                                                 <div class="col-md-4">
                                                     <button type="submit" class="btn btn-primary mr-1">Search</button>
-                                                    <a href="{{route('Enquiry.index')}}" class="btn btn-danger">Reset</a>
-                                                    <a href="{{route('Enquiry.create')}}" class="btn btn-success fa fa-plus ml-1">Add New</a>
+                                                    <a href="{{route('Enquiry.index')}}"
+                                                       class="btn btn-danger">Reset</a>
+                                                    <a href="{{route('Enquiry.create')}}"
+                                                       class="btn btn-success fa fa-plus ml-1">Add New</a>
                                                 </div>
                                             </div>
                                         </form>
@@ -83,8 +88,140 @@
                                                 <td>{{$enquiry->email}}</td>
                                                 <td>{{$enquiry->phone}}</td>
                                                 <td>{{@$enquiry->Category_Enquiry->Name}}</td>
-                                                <td class="text-capitalize">{{@$enquiry->color_code}}</td>
-                                                <td class="text-capitalize">{{@$enquiry->eligibility}}</td>
+                                                <td class="text-capitalize">
+                                                    <div type="button"
+                                                         id="dropdownMenu2" data-toggle="dropdown"
+                                                         aria-haspopup="true" aria-expanded="false">
+                                                        @if($enquiry->color_code=='whitelist')
+                                                            <p>white</p>
+                                                        @elseif($enquiry->color_code=='redlist')
+                                                            <p class="btn-danger btn-circle text-center">Red</p>
+                                                        @elseif($enquiry->color_code=='blacklist')
+                                                            <p class="btn-dark btn-circle text-center">Black</p>
+                                                        @elseif($enquiry->color_code=='greenlist')
+                                                            <p class="btn-success btn-circle text-center">Green</p>
+                                                        @else
+                                                            <p class="btn-default btn-circle text-center">None</p>
+                                                        @endif
+                                                    </div>
+                                                    <ul class="dropdown-menu pull-left" role="menu">
+                                                        <li>
+                                                            <div class=" text-center bg-white ">
+                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
+                                                                      method="post"
+                                                                      style="display: inline-block">
+                                                                    {{csrf_field()}}
+                                                                    <input required type="hidden" name="_method"
+                                                                           value="put">
+                                                                    <input type="hidden" name="color_code"
+                                                                           value="whitelist">
+                                                                    <button class=" btn text-primary "
+                                                                            style="width: 180px;"
+                                                                            type="submit"> White List
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class=" text-center bg-white ">
+                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
+                                                                      method="post"
+                                                                      style="display: inline-block">
+                                                                    {{csrf_field()}}
+                                                                    <input required type="hidden" name="_method"
+                                                                           value="put">
+                                                                    <input type="hidden" name="color_code"
+                                                                           value="redlist">
+                                                                    <button class=" btn text-danger "
+                                                                            style="width: 180px;"
+                                                                            type="submit"> Red List
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class=" text-center bg-white ">
+                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
+                                                                      method="post"
+                                                                      style="display: inline-block">
+                                                                    {{csrf_field()}}
+                                                                    <input required type="hidden" name="_method"
+                                                                           value="put">
+                                                                    <input type="hidden" name="color_code"
+                                                                           value="blacklist">
+                                                                    <button class=" btn text-black "
+                                                                            style="width: 180px;"
+                                                                            type="submit"> Black List
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class=" text-center bg-white ">
+                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
+                                                                      method="post"
+                                                                      style="display: inline-block">
+                                                                    {{csrf_field()}}
+                                                                    <input required type="hidden" name="_method"
+                                                                           value="put">
+                                                                    <input type="hidden" name="color_code"
+                                                                           value="greenlist">
+                                                                    <button class=" btn text-success "
+                                                                            style="width: 180px;"
+                                                                            type="submit"> Green List
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                                <td class="text-capitalize">
+                                                    <div type="button"
+                                                         id="dropdownMenu2" data-toggle="dropdown"
+                                                         aria-haspopup="true" aria-expanded="false">
+                                                        @if($enquiry->eligibility=='Eligible')
+                                                            <p style="padding: 5px;" class="btn-success btn-circle btn-sm text-center">Eligible</p>
+                                                        @else
+                                                            <p style="padding: 5px;" class="btn-danger btn-circle btn-sm text-center">Not Eligible</p>
+                                                        @endif
+                                                    </div>
+                                                    <ul class="dropdown-menu pull-left" role="menu">
+                                                        <li>
+                                                            <div class=" text-center bg-white ">
+                                                                <form action="{{ route('EligibilityUpdate',$enquiry->id)}}"
+                                                                      method="post"
+                                                                      style="display: inline-block">
+                                                                    {{csrf_field()}}
+                                                                    <input required type="hidden" name="_method"
+                                                                           value="put">
+                                                                    <input type="hidden" name="eligibility"
+                                                                           value="Eligible">
+                                                                    <button class=" btn text-dark"
+                                                                            style="width: 180px; "
+                                                                            type="submit"> Eligible
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class=" text-center bg-white ">
+                                                                <form action="{{ route('EligibilityUpdate',$enquiry->id)}}"
+                                                                      method="post"
+                                                                      style="display: inline-block">
+                                                                    {{csrf_field()}}
+                                                                    <input required type="hidden" name="_method"
+                                                                           value="put">
+                                                                    <input type="hidden" name="eligibility"
+                                                                           value="Noteligible">
+                                                                    <button class=" btn text-dark "
+                                                                            style="width: 180px;"
+                                                                            type="submit"> Not Eligible
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
                                                 <td>
                                                     <div class="dropdown">
                                                         <button class="btn btn-info dropdown-toggle" type="button"
@@ -119,69 +256,11 @@
                                                                     </form>
                                                                 </div>
                                                             @endif
-                                                                <div class=" text-center bg-white">
-                                                                    <a class=" btn text-primary "
-                                                                       style="width: 180px;" href="{{route('AddTOApplicant',$enquiry->id)}}">Add to Applicant</a>
-                                                                </div>
-                                                            <div class=" text-center bg-white ">
-                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
-                                                                      method="post"
-                                                                      style="display: inline-block">
-                                                                    {{csrf_field()}}
-                                                                    <input required type="hidden" name="_method"
-                                                                           value="put">
-                                                                    <input type="hidden" name="color_code"
-                                                                           value="whitelist">
-                                                                    <button class=" btn text-primary "
-                                                                            style="width: 180px;"
-                                                                            type="submit"> White List
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                            <div class=" text-center bg-white ">
-                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
-                                                                      method="post"
-                                                                      style="display: inline-block">
-                                                                    {{csrf_field()}}
-                                                                    <input required type="hidden" name="_method"
-                                                                           value="put">
-                                                                    <input type="hidden" name="color_code"
-                                                                           value="redlist">
-                                                                    <button class=" btn text-danger "
-                                                                            style="width: 180px;"
-                                                                            type="submit"> Red List
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                            <div class=" text-center bg-white ">
-                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
-                                                                      method="post"
-                                                                      style="display: inline-block">
-                                                                    {{csrf_field()}}
-                                                                    <input required type="hidden" name="_method"
-                                                                           value="put">
-                                                                    <input type="hidden" name="color_code"
-                                                                           value="blacklist">
-                                                                    <button class=" btn text-black "
-                                                                            style="width: 180px;"
-                                                                            type="submit"> Black List
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                            <div class=" text-center bg-white ">
-                                                                <form action="{{ route('ColorUpdate',$enquiry->id)}}"
-                                                                      method="post"
-                                                                      style="display: inline-block">
-                                                                    {{csrf_field()}}
-                                                                    <input required type="hidden" name="_method"
-                                                                           value="put">
-                                                                    <input type="hidden" name="color_code"
-                                                                           value="greenlist">
-                                                                    <button class=" btn text-success "
-                                                                            style="width: 180px;"
-                                                                            type="submit"> Green List
-                                                                    </button>
-                                                                </form>
+                                                            <div class=" text-center bg-white">
+                                                                <a class=" btn text-primary "
+                                                                   style="width: 180px;"
+                                                                   href="{{route('AddTOApplicant',$enquiry->id)}}">Add
+                                                                    to Applicant</a>
                                                             </div>
                                                         </div>
                                                     </div>

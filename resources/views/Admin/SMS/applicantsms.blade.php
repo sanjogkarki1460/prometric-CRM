@@ -40,7 +40,7 @@
                                         <div class="col-md-9">
                                             <header>Search By:</header>
                                             <select name="category" id="" style="height: 40px;border-radius:120px;width: 120px;">
-                                                <option value="" disabled selected>By Category</option>
+                                                <option value="" disabled selected>By Profession</option>
                                                 @foreach($category as $category)
                                                     <option value="{{$category->id}}">{{$category->Name}}</option>
                                                 @endforeach
@@ -108,12 +108,31 @@
                                                                    name="phone_number[]">
                                                         </td>
                                                         <td>{{$applicant->id}}</td>
-                                                        <td>{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</td>
-                                                        <td>{{$applicant->email}}</td>
-                                                        <td>{{$applicant->phone}}</td>
+                                                        <td>{{@$applicant->first_name}} {{@$applicant->middle_name}} {{@$applicant->last_name}}</td>
+                                                        <td>{{@$applicant->email}}</td>
+                                                        <td>{{@$applicant->phone}}</td>
                                                         <td>{{@$applicant->Category_Applicant->Name}}</td>
-                                                        <td>{{$applicant->status}}</td>
-                                                        <td>{{$applicant->color_code}}</td>
+                                                        <td>{{@$applicant->status}}</td>
+                                                        <td>
+                                                            <div
+                                                                    id="dropdownMenu2" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false">
+                                                                @if($applicant->color_code=='whitelist')
+                                                                    <p>white</p>
+                                                                @elseif($applicant->color_code=='redlist')
+                                                                    <p class="btn-danger btn-circle text-center">Red</p>
+                                                                @elseif($applicant->color_code=='blacklist')
+                                                                    <p class="btn-dark btn-circle text-center">Black</p>
+                                                                @elseif($applicant->color_code=='greenlist')
+                                                                    <p class="btn-success btn-circle text-center">
+                                                                        Green</p>
+                                                                @else
+                                                                    <p class="btn-default btn-circle text-center">
+                                                                        None</p>
+                                                                @endif
+                                                            </div>
+                                                        </td>
+
                                                     </tr>
                                                 @endforeach
                                                 </tbody>

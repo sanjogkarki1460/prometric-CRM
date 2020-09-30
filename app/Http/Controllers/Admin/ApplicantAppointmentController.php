@@ -29,7 +29,12 @@ class ApplicantAppointmentController extends Controller
 
     public function index()
     {
-        $appointment=$this->applicantappointment->orderBy('id','desc')->get();
+        $user = Auth::user()->id;
+        if (Auth::user()->role == 'Admin') {
+            $appointment = $this->applicantappointment->orderBy('id', 'desc')->get();
+        } else {
+            $appointment = $this->applicantappointment->where('appointment_with', $user)->orderBy('id', 'desc')->get();
+        }
         return view('Admin.Appointment.Applicant Appointment.Index')->with('appointment',$appointment);
     }
 

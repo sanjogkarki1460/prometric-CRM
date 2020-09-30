@@ -27,7 +27,6 @@
                 <div class="card">
                     <form action="{{route('CheckList.update',$checklist->id)}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
-                        {{--@if($checklist->password_citizenship_certificate=='Yes') Checked @endif--}}
                         <input  type="hidden" name="_method" value="put">
                         <input class="d-none" type="hidden" name="applicant_id" readonly value="{{$checklist->applicant_id}}">
                         <div class="container mt-5">

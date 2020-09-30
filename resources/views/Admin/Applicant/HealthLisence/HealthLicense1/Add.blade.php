@@ -36,7 +36,7 @@
                                             style="height:34px;width:80%;margin-top: -20px;" name="applicant_id">
                                         <option value="" selected disabled>select</option>
                                         @foreach($applicant as $applicant)
-                                            <option value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middel_name}} {{$applicant->surname}}</option>
+                                            <option value="{{$applicant->id}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</option>
                                         @endforeach
                                     </select>
                                 </div>

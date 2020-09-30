@@ -158,6 +158,23 @@ class EnquiryController extends Controller
             return redirect()->route('Enquiry.index');
     }
 
+    public function EligibilityUpdate(Request $request,$id)
+    {
+        $this->enquiry = $this->enquiry->find($id);
+        $data = $request->all();
+        $this->enquiry->fill($data);
+        $success = $this->enquiry->save();
+        if ($success) {
+            $admin = Admin::all();
+            foreach ($admin as $admin)
+                $admin->notify(new \App\Notifications\EnquiryUpdateNotification());
+            session()->flash('success', 'Enquiry Updated Successfully');
+        } else {
+            session()->flash('error', 'Sorry, there is an error updating enquiry');
+        }
+        return redirect()->route('Enquiry.index');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

@@ -48,7 +48,7 @@
                                         @foreach($appointment as $appointment)
                                             <tr>
                                                 <td style="font-size:13px;"><a
-                                                            href="{{route('ApplicantDetail',$appointment->applicant_id)}}">{{$appointment->Applicant_Appointment->first_name}} {{$appointment->Applicant_Appointment->middel_name}} {{$appointment->Applicant_Appointment->surname}}</a>
+                                                            href="{{route('ApplicantDetail',$appointment->applicant_id)}}">{{$appointment->Applicant_Appointment->first_name}} {{$appointment->Applicant_Appointment->middle_name}} {{$appointment->Applicant_Appointment->last_name}}</a>
                                                 </td>
                                                 <td style="font-size:13px;">{{$appointment->date}}</td>
                                                 <td style="font-size:13px;">{{date('h:i A',strtotime($appointment->time))}}</td>
@@ -58,7 +58,7 @@
                                                     <td>{{$appointment->Applicant_Admin->name}}</td>
                                                 @endif
                                                 <td style="font-size:13px;">{{$appointment->remarks}}</td>
-                                                <td style="font-size:13px;">{{$appointment->Applicant_Appointment->mobile_no}}</td>
+                                                <td style="font-size:13px;">{{$appointment->Applicant_Appointment->phone}}</td>
                                                 <td style="font-size:13px;">{{$appointment->Applicant_Appointment->email}}</td>
                                                 @if(Auth::user()->role=='Admin')
                                                     <td class="text-left">

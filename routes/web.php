@@ -30,6 +30,7 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     /*Enquiry Route*/
     Route::resource('/Enquiry','Admin\EnquiryController')->except('show','index');
     Route::any('/Enquiry/index','Admin\EnquiryController@index')->name('Enquiry.index');
+    Route::put('/Enquiry/EligibilityUpdate/{id}','Admin\EnquiryController@EligibilityUpdate')->name('EligibilityUpdate');
     Route::put('/Enquiry/ColorCodeUpdate/{id}','Admin\EnquiryController@ColorUpdate')->name('ColorUpdate');
     Route::get('/EnquiryDetail/{id}','Admin\EnquiryController@Detail')->name('EnquiryDetail');
 
