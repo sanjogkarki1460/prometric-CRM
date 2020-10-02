@@ -30,8 +30,8 @@ class SMSController extends Controller
 
     public function EnquirySMS(Request $request)
     {
-        if($request->id){
-            $id=$request->id;
+        if ($request->id) {
+            $id = $request->id;
         }
         $query = $this->enquiry->get();
         if (isset($request->category)) {
@@ -45,11 +45,10 @@ class SMSController extends Controller
         }
         $enquiry = $query;
         $category = $this->category->get();
-        if($request->id){
+        if ($request->id) {
             return view('Admin.SMS.enquirysms')->with('enquiry', $enquiry)->with('category', $category)
-                ->with('id',$id);
-        }
-        else{
+                ->with('id', $id);
+        } else {
             return view('Admin.SMS.enquirysms')->with('enquiry', $enquiry)->with('category', $category);
         }
 
@@ -58,6 +57,9 @@ class SMSController extends Controller
 
     public function ApplicantSMS(Request $request)
     {
+        if ($request->id) {
+            $id = $request->id;
+        }
         $query = $this->applicant->get();
         if (isset($request->category)) {
             $query = $query->where('applicant_category', $request->category);
@@ -70,7 +72,12 @@ class SMSController extends Controller
         }
         $applicant = $query;
         $category = $this->category->get();
-        return view('Admin.SMS.applicantsms')->with('applicant', $applicant)->with('category', $category);
+        if ($request->id) {
+            return view('Admin.SMS.applicantsms')->with('applicant', $applicant)->with('category', $category)
+                ->with('id', $id);
+        } else {
+            return view('Admin.SMS.applicantsms')->with('applicant', $applicant)->with('category', $category);
+        }
     }
 
     public function SendSMS(Request $request)

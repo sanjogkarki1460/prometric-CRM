@@ -121,7 +121,8 @@
                                                 <tbody>
                                                 @foreach($applicant as $applicant)
                                                     <tr>
-                                                        <td><input type="checkbox" id="phonenumbers"
+                                                        <td><input @if($applicant->id==@$id) checked
+                                                                   @endif type="checkbox" id="phonenumbers"
                                                                    value="{{ $applicant->phone }}"
                                                                    name="phone_number[]">
                                                         </td>

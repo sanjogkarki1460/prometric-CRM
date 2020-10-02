@@ -108,7 +108,7 @@
                                                 <tbody>
                                                 @foreach($enquiry as $enquiry)
                                                     <tr>
-                                                        <td><input type="checkbox" id="email"
+                                                        <td><input @if($enquiry->id==@$id) checked @endif type="checkbox" id="email"
                                                                    value="{{ $enquiry->email }}"
                                                                    name="email[]">
                                                         </td>
