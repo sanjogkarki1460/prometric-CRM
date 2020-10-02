@@ -87,10 +87,11 @@
                             Enter Message
                         </label>
                         <div>
-                            <textarea name="message" id="field" onkeyup="countChar(this)" maxlength="160" cols="30" rows="5"
+                            <textarea name="message" id="field" onkeyup="countChar(this)" maxlength="160" cols="30"
+                                      rows="5"
                                       class="form-control"></textarea>
                         </div>
-                        <div >
+                        <div>
                             Total character:
                             <span id="charNum">0</span>
                         </div>
@@ -117,10 +118,11 @@
                                                 <tbody>
                                                 @foreach($enquiry as $enquiry)
                                                     <tr>
-                                                        <td><input type="checkbox" id="phonenumbers"
-                                                                   value="{{ $enquiry->phone }}"
-                                                                   name="phone_number[]">
-                                                        </td>
+                                                            <td><input @if($enquiry->id==@$id) checked
+                                                                       @endif type="checkbox" id="phonenumbers"
+                                                                       value="{{ $enquiry->phone }}"
+                                                                       name="phone_number[]">
+                                                            </td>
                                                         <td>{{$enquiry->id}}</td>
                                                         <td>{{@$enquiry->first_name}} {{@$enquiry->middle_name}} {{@$enquiry->last_name}}</td>
                                                         <td>{{@$enquiry->email}}</td>

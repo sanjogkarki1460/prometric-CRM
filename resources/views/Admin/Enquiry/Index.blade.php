@@ -262,6 +262,18 @@
                                                                    href="{{route('AddTOApplicant',$enquiry->id)}}">Add
                                                                     to Applicant</a>
                                                             </div>
+                                                                <div class="text-center bg-white ">
+                                                                    <form action="{{ route('EnquirySMS')}}"
+                                                                          method="post"
+                                                                          style="display: inline-block">
+                                                                        @csrf
+                                                                        <input type="hidden" name="id" value="{{$enquiry->id}}">
+                                                                        <button class=" btn text-primary "
+                                                                                style="width: 180px;"
+                                                                                type="submit"> Send SMS
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                 </td>
