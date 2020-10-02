@@ -21,7 +21,7 @@
                         </ol>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="printableArea">
                     <h3 class="text-center text-danger">Applicant's Detail</h3>
                     <hr>
                     <div class="container">
@@ -1397,8 +1397,10 @@
                                     </div>
                                 
                                 <div class="row">
-                                    <div class="col-md-10"></div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-8"></div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-info" onclick="printDiv('printableArea')">Print this page
+                                         </button>
                                         <a  href="{{route('ApplicantDetailPdf',$applicant->id)}}" class="btn btn-warning" target="_blank">Export Pdf</a>
                                     </div>
                                 </div>
