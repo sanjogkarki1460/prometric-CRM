@@ -162,7 +162,7 @@
                             </div>
                             <div class="card-body ">
                                 <div class="table-scrollable">
-                                    <table id="example2" class="display" style="width:100%;">
+                                    <table id="applicantAppointment" class="display" style="width:100%;">
                                         <thead>
                                         <tr>
                                             <th style="font-size:13px;">Applicant</th>

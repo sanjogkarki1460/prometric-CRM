@@ -21,10 +21,6 @@
     <script src="{{asset('assets/js/app.js')}}"></script>
     <script src="{{asset('assets/js/layout.js')}}"></script>
     <script src="{{asset('assets/js/theme-color.js')}}"></script>
-    {{--<script src="{{asset('js/app.js')}}"></script>--}}
-
-
-
     <!-- Material -->
     <script src="{{asset('assets/plugins/material/material.min.js')}}"></script>
 
@@ -72,6 +68,7 @@
         document.body.innerHTML = originalContents;
         location.reload();
     }
+    $('#applicantAppointment').dataTable();
 </script>
 
     <!--select2-->
