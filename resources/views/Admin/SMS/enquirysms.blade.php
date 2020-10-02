@@ -10,6 +10,16 @@
             })
         });
     </script>
+    <script>
+        function countChar(val) {
+            var len = val.value.length;
+            if (len >= 500) {
+                val.value = val.value.substring(0, 500);
+            } else {
+                $('#charNum').text(len);
+            }
+        };
+    </script>
     <div class="page-container" style="margin-top:-30px;">
         <div class="page-content-wrapper">
             <div class="page-content">
@@ -77,7 +87,12 @@
                             Enter Message
                         </label>
                         <div>
-                            <textarea name="message" id="" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea name="message" id="field" onkeyup="countChar(this)" maxlength="160" cols="30" rows="5"
+                                      class="form-control"></textarea>
+                        </div>
+                        <div >
+                            Total character:
+                            <span id="charNum">0</span>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Send</button>
                         <div class="row">
@@ -113,10 +128,10 @@
                                                         <td>{{@$enquiry->Category_Enquiry->Name}}</td>
                                                         <td>
                                                             <div
-                                                                 id="dropdownMenu2" data-toggle="dropdown"
-                                                                 aria-haspopup="true" aria-expanded="false">
+                                                                    id="dropdownMenu2" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false">
                                                                 @if($enquiry->color_code=='whitelist')
-                                                                    <p>white</p>
+                                                                    <p class="text-center">white</p>
                                                                 @elseif($enquiry->color_code=='redlist')
                                                                     <p class="btn-danger btn-circle text-center">Red</p>
                                                                 @elseif($enquiry->color_code=='blacklist')
@@ -132,8 +147,8 @@
                                                         </td>
                                                         <td>
                                                             <div
-                                                                 id="dropdownMenu2" data-toggle="dropdown"
-                                                                 aria-haspopup="true" aria-expanded="false">
+                                                                    id="dropdownMenu2" data-toggle="dropdown"
+                                                                    aria-haspopup="true" aria-expanded="false">
                                                                 @if($enquiry->eligibility=='Eligible')
                                                                     <p style="padding: 5px;"
                                                                        class="btn-success btn-circle btn-sm text-center">
@@ -159,6 +174,9 @@
                     </form>
                 </div>
             </div>
-
-
+        </div>
+    </div>
 @endsection
+
+
+

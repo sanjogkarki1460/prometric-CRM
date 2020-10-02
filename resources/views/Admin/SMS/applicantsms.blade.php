@@ -1,4 +1,4 @@
-    @extends('Admin.Layout.master')
+@extends('Admin.Layout.master')
 @section('main_content')
     <script type="text/javascript">
         $(document).ready(function () {
@@ -9,6 +9,16 @@
                 });
             })
         });
+    </script>
+    <script>
+        function countChar(val) {
+            var len = val.value.length;
+            if (len >= 500) {
+                val.value = val.value.substring(0, 500);
+            } else {
+                $('#charNum').text(len);
+            }
+        };
     </script>
     <div class="page-container" style="margin-top:-30px;">
         <div class="page-content-wrapper">
@@ -39,7 +49,8 @@
                                     <div class="row col-md-12">
                                         <div class="col-md-9">
                                             <header>Search By:</header>
-                                            <select name="category" id="" style="height: 40px;border-radius:120px;width: 120px;">
+                                            <select name="category" id=""
+                                                    style="height: 40px;border-radius:120px;width: 120px;">
                                                 <option value="" disabled selected>By Profession</option>
                                                 @foreach($category as $category)
                                                     <option value="{{$category->id}}">{{$category->Name}}</option>
@@ -53,7 +64,8 @@
                                                 <option value="blacklist">Black List</option>
                                                 <option value="greenlist">Green List</option>
                                             </select>
-                                            <select name="status" id="" style="height: 40px;border-radius:120px;width:120px;"
+                                            <select name="status" id=""
+                                                    style="height: 40px;border-radius:120px;width:120px;"
                                                     class="ml-3">
                                                 <option value="" disabled selected>By Status</option>
                                                 <option value="New">New</option>
@@ -79,7 +91,13 @@
                             Enter Message
                         </label>
                         <div>
-                            <textarea name="message" id="" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea  name="message" id="field" onkeyup="countChar(this)"  maxlength="160" cols="30" rows="5"
+                                      class="form-control"></textarea>
+
+                        </div>
+                        <div>
+                            Total character:
+                            <span id="charNum">0</span>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Send</button>
                         <div class="row">
@@ -118,7 +136,7 @@
                                                                     id="dropdownMenu2" data-toggle="dropdown"
                                                                     aria-haspopup="true" aria-expanded="false">
                                                                 @if($applicant->color_code=='whitelist')
-                                                                    <p>white</p>
+                                                                    <p class="text-center">white</p>
                                                                 @elseif($applicant->color_code=='redlist')
                                                                     <p class="btn-danger btn-circle text-center">Red</p>
                                                                 @elseif($applicant->color_code=='blacklist')
@@ -146,5 +164,6 @@
                     </form>
                 </div>
             </div>
-
-@endsection
+            @endsection
+        </div>
+    </div>

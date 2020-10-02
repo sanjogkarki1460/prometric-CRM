@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use App\Admin\SMS;
-use App\Admin\ApplicantAppointment;
-use App\Admin\EnquiryAppointment;
+use App\Admin\Appointment;
+use Auth;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -17,6 +17,7 @@ class HomeController extends Controller
     protected $enquiry = null;
     protected $sms = null;
 
+
     public function __construct(Applicant $applicant, Enquiry $enquiry, SMS $sms)
     {
         $this->applicant = $applicant;
@@ -24,6 +25,7 @@ class HomeController extends Controller
         $this->sms = $sms;
     }
     public function index(){
+        $user = Auth::user()->id;
         $month=date('m');
         $enquiry = count($this->enquiry->get());
         $applicant = count($this->applicant->get());

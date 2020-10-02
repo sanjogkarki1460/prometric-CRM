@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHealthLisencesTable extends Migration
+class CreateHealthLicense1sTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateHealthLisencesTable extends Migration
      */
     public function up()
     {
-        Schema::create('health_lisences', function (Blueprint $table) {
+        Schema::create('health_license1s', function (Blueprint $table) {
             $table->id();
             $table->string('applicant_id');
             $table->string('professional_designation')->nullable();
@@ -38,6 +38,6 @@ class CreateHealthLisencesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('health_lisences');
+        Schema::dropIfExists('health_license1s');
     }
 }

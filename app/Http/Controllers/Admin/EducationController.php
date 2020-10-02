@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Admin\Education;
+use App\Admin\Education1;
 use App\Http\Requests\Educationvalidator;
 use App\Admin\Applicant;
 use File;
@@ -12,18 +12,18 @@ use Auth;
 
 class EducationController extends Controller
 {
-    protected $education = null;
+    protected $education1 = null;
     protected $applicant = null;
 
-    public function __construct(Education $education, Applicant $applicant)
+    public function __construct(Education1 $education1, Applicant $applicant)
     {
-        $this->education = $education;
+        $this->education1 = $education1;
         $this->applicant = $applicant;
     }
 
     public function index()
     {
-        $education = $this->education->get();
+        $education = $this->education1->get();
         return view('Admin.Applicant.Education.Education1.Index')->with('education', $education);
     }
 
@@ -48,13 +48,13 @@ class EducationController extends Controller
     public function store(Educationvalidator $request)
     {
         $data = $request->all();
-        $this->education->fill($data);
-        $success=$this->education->save();
+        $this->education1->fill($data);
+        $success=$this->education1->save();
 
         if ($request->qualification_certificate) {
-            $first_Name=$this->education->Applicant_Education->first_name;
-            $middel_Name=$this->education->Applicant_Education->middel_name;
-            $last_Name=$this->education->Applicant_Education->surname;
+            $first_Name=$this->education1->Applicant_Education->first_name;
+            $middel_Name=$this->education1->Applicant_Education->middel_name;
+            $last_Name=$this->education1->Applicant_Education->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = 'upload/Education';
             if (!File::exists($path)) {
@@ -72,9 +72,9 @@ class EducationController extends Controller
         }
         /*Marksheet*/
         if ($request->marksheet) {
-            $first_Name=$this->education->Applicant_Education->first_name;
-            $middel_Name=$this->education->Applicant_Education->middel_name;
-            $last_Name=$this->education->Applicant_Education->surname;
+            $first_Name=$this->education1->Applicant_Education->first_name;
+            $middel_Name=$this->education1->Applicant_Education->middel_name;
+            $last_Name=$this->education1->Applicant_Education->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = 'upload/Education';
 //            dd($path);
@@ -94,9 +94,9 @@ class EducationController extends Controller
         }
         /*Chearacter Certificate*/
         if ($request->character_certificate) {
-            $first_Name=$this->education->Applicant_Education->first_name;
-            $middel_Name=$this->education->Applicant_Education->middel_name;
-            $last_Name=$this->education->Applicant_Education->surname;
+            $first_Name=$this->education1->Applicant_Education->first_name;
+            $middel_Name=$this->education1->Applicant_Education->middel_name;
+            $last_Name=$this->education1->Applicant_Education->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = 'upload/Education';
 //            dd($path);
@@ -114,8 +114,8 @@ class EducationController extends Controller
             }
 
         }
-        $this->education->fill($data);
-        $success=$this->education->save();
+        $this->education1->fill($data);
+        $success=$this->education1->save();
         if($success){
             return redirect()->route('Education.index')->with('success','Applicant Education Added Successfully');
         }
@@ -147,7 +147,7 @@ class EducationController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $education=$this->education->find($id);
+        $education=$this->education1->find($id);
         $applicant = $this->applicant->get();
         $app=$education->Applicant_Education->first_name;
 //        dd($app);
@@ -168,7 +168,7 @@ class EducationController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $this->education = $this->education->find($id);
+        $this->education = $this->education1->find($id);
         $data = $request->all();
 //        dd($data);
         /*Qualification Certificate*/
@@ -269,7 +269,7 @@ class EducationController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $education=$this->education->find($id);
+        $education=$this->education1->find($id);
 //        dd($education);
         if(!$education){
             return redirect()->route()->with('Error','Applicant education list not found');

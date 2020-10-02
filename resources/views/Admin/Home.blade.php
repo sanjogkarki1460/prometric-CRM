@@ -72,7 +72,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-6  col-md-6 col-6">
                             <div class="info-box bg-b-pink">
                                 <span class="info-box-icon push-bottom mt-0"><i class="material-icons">person</i></span>
@@ -222,6 +221,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

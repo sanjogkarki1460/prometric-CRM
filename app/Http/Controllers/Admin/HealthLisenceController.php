@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Admin\HealthLicense2;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\Applicant;
-use App\Admin\HealthLisence;
+use App\Admin\HealthLicense1;
 use App\Http\Requests\HealthLisencevalidator;
 use File;
 use Auth;
@@ -13,17 +14,17 @@ use Auth;
 class HealthLisenceController extends Controller
 {
     protected $applicant = null;
-    protected $healthlisence = null;
+    protected $healthlicense1 = null;
 
-    public function __construct(Applicant $appliant, HealthLisence $healthLisence)
+    public function __construct(Applicant $appliant, HealthLicense1 $healthLicense1)
     {
         $this->applicant = $appliant;
-        $this->healthlisence = $healthLisence;
+        $this->healthlicense1 = $healthLicense1;
     }
 
     public function index()
     {
-        $healthlisence = $this->healthlisence->get();
+        $healthlisence = $this->healthlicense1->get();
         return view('Admin.Applicant.HealthLisence.HealthLicense1.Index')->with('healthlisence', $healthlisence);
     }
 
@@ -47,12 +48,12 @@ class HealthLisenceController extends Controller
     public function store(HealthLisencevalidator $request)
     {
         $data = $request->all();
-        $this->healthlisence->fill($data);
-        $success = $this->healthlisence->save();
+        $this->healthlicense1->fill($data);
+        $success = $this->healthlicense1->save();
         if ($request->license_copy) {
-            $first_Name = $this->healthlisence->Applicant_Health->first_name;
-            $middel_Name = $this->healthlisence->Applicant_Health->middel_name;
-            $last_Name = $this->healthlisence->Applicant_Health->surname;
+            $first_Name = $this->healthlicense1->Applicant_Health->first_name;
+            $middel_Name = $this->healthlicense1->Applicant_Health->middel_name;
+            $last_Name = $this->healthlicense1->Applicant_Health->surname;
             $name = $first_Name . ' ' . $middel_Name . ' ' . $last_Name;
             $path = 'upload/Health License';
             if (!File::exists($path)) {
@@ -68,8 +69,8 @@ class HealthLisenceController extends Controller
                 $data['license_copy'] = null;
             }
         }
-        $this->healthlisence->fill($data);
-        $success = $this->healthlisence->save();
+        $this->healthlicense1->fill($data);
+        $success = $this->healthlicense1->save();
         if ($success) {
             return redirect()->route('HealthLicense.index')->with('success', 'Health Lisence list Added successfully');
         } else {
@@ -100,7 +101,7 @@ class HealthLisenceController extends Controller
         if (Auth::user()->role != 'Admin') {
             return redirect()->back()->with('delete', 'Sorry you don\'t have access to view the requested resource');
         }
-        $healthlisence = $this->healthlisence->find($id);
+        $healthlisence = $this->healthlicense1->find($id);
         $applicant = $this->applicant->get();
         $app = $healthlisence->Applicant_Health->first_name;
         return view('Admin.Applicant.HealthLisence.HealthLicense1.Update')->with('healthlisence', $healthlisence)->with('applicant', $applicant)
@@ -120,7 +121,7 @@ class HealthLisenceController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $healthlisence = $this->healthlisence->find($id);
+        $healthlisence = $this->healthlicense1->find($id);
         $data = $request->all();
         if ($request->license_copy) {
             $first_Name = $healthlisence->Applicant_Health->first_name;
@@ -169,7 +170,7 @@ class HealthLisenceController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $healthlisence = $this->healthlisence->find($id);
+        $healthlisence = $this->healthlicense1->find($id);
         if (!$healthlisence) {
             return redirect()->back()->with('Error', 'List Not Found');
         }

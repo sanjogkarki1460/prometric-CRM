@@ -122,7 +122,7 @@
                                                                     id="dropdownMenu2" data-toggle="dropdown"
                                                                     aria-haspopup="true" aria-expanded="false">
                                                                 @if($enquiry->color_code=='whitelist')
-                                                                    <p>white</p>
+                                                                    <p class="text-center">white</p>
                                                                 @elseif($enquiry->color_code=='redlist')
                                                                     <p class="btn-danger btn-circle text-center">Red</p>
                                                                 @elseif($enquiry->color_code=='blacklist')

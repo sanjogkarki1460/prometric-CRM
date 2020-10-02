@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Admin\Employment;
+use App\Admin\Employment1;
 use App\Admin\Applicant;
 use App\Http\Requests\EmploymentValidator;
 use File;
@@ -12,18 +12,18 @@ use Auth;
 
 class EmploymentController extends Controller
 {
-    protected $employment = null;
+    protected $employment1 = null;
     protected $applicant = null;
 
-    public function __construct(Employment $employment, Applicant $applicant)
+    public function __construct(Employment1 $employment1, Applicant $applicant)
     {
         $this->applicant = $applicant;
-        $this->employment = $employment;
+        $this->employment1 = $employment1;
     }
 
     public function index()
     {
-        $employment = $this->employment->get();
+        $employment = $this->employment1->get();
         return view('Admin.Applicant.Employment.Employment1.Index')->with('employment', $employment);
     }
 
@@ -48,12 +48,12 @@ class EmploymentController extends Controller
     {
         $data = $request->all();
 //        dd($data);
-        $this->employment->fill($data);
-        $success = $this->employment->save();
+        $this->employment1->fill($data);
+        $success = $this->employment1->save();
         if ($request->experience_letter) {
-            $first_Name=$this->employment->Applicant_Employment->first_name;
-            $middel_Name=$this->employment->Applicant_Employment->middel_name;
-            $last_Name=$this->employment->Applicant_Employment->surname;
+            $first_Name=$this->employment1->Applicant_Employment->first_name;
+            $middel_Name=$this->employment1->Applicant_Employment->middel_name;
+            $last_Name=$this->employment1->Applicant_Employment->surname;
             $name=$first_Name.' '.$middel_Name.' '.$last_Name;
             $path = 'upload/Employment';
             if (!File::exists($path)) {
@@ -67,8 +67,8 @@ class EmploymentController extends Controller
             } else {
                 $data['experience_letter'] = null;
             }
-            $this->employment->fill($data);
-            $success = $this->employment->save();
+            $this->employment1->fill($data);
+            $success = $this->employment1->save();
         }
         if ($success) {
             return redirect()->route('Employment.index')->with('success', 'Applicant Employment detail Added Successfully');
@@ -100,7 +100,7 @@ class EmploymentController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $employment = $this->employment->find($id);
+        $employment = $this->employment1->find($id);
         $applicant = $this->applicant->get();
         $app = $employment->Applicant_Employment->first_name;
         return view('Admin.Applicant.Employment.Employment1.Update')->with('applicant', $applicant)->with('employment', $employment)
@@ -121,7 +121,7 @@ class EmploymentController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $employment = $this->employment->find($id);
+        $employment = $this->employment1->find($id);
         $data = $request->all();
         if ($request->experience_letter) {
             $first_Name=$employment->Applicant_Employment->first_name;
@@ -167,7 +167,7 @@ class EmploymentController extends Controller
         {
             return redirect()->back()->with('delete','Sorry you don\'t have access to view the requested resource');
         }
-        $employment = $this->employment->find($id);
+        $employment = $this->employment1->find($id);
 //        dd($employment);
         if (!$employment) {
             return redirect()->route()->with('Error', 'Applicant employment list not found');

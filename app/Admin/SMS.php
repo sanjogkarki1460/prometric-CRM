@@ -4,7 +4,7 @@ namespace App\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SMS extends Model
+class sms extends Model
 {
     protected $fillable=['phone_number','user_type','message'];
 }
