@@ -87,6 +87,141 @@
                         </div>
                     </div>
                 </div>
+                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-topline-aqua">
+                            <div class="card-head">
+                                <header>Today's Enquiry Appointment Detail Table</header>
+                            </div>
+                            <div class="card-body ">
+                                <div class="table-scrollable">
+                                    <table id="example1" class="display" style="width:100%;">
+                                        <thead>
+                                        <tr>
+                                            <th style="font-size:13px; ">Enquiry</th>
+                                            <th style="font-size:13px; ">Appointment Date</th>
+                                            <th style="font-size:13px; ">Appointment Time</th>
+                                            <th style="font-size:13px; ">Appointment With</th>
+                                            <th style="font-size:13px; ">Remarks</th>
+                                            <th style="font-size:13px; ">Enquiry's Contact No.</th>
+                                            <th style="font-size:13px; ">Enquiry'S Email</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th style="font-size:13px; ">Action</th>
+                                            @endif
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($todaysEnquiryAppointment as $appointment)
+                                            <tr>
+                                                <td style="font-size:13px;"><a
+                                                            href="{{route('EnquiryDetail',$appointment->enquiry_id)}}">{{$appointment->Enquiry_Appointment->first_name}} {{$appointment->Enquiry_Appointment->middle_name}} {{$appointment->Enquiry_Appointment->last_name}}</a>
+                                                </td>
+                                                <td style="font-size:13px;">{{$appointment->date}}</td>
+                                                <td style="font-size:13px;">{{date('h:i A',strtotime($appointment->time))}}</td>
+                                                @if(Auth::user()->id==$appointment->appointment_with)
+                                                    <td>You</td>
+                                                @else
+                                                    <td>{{$appointment->Enquiry_Admin->name}}</td>
+                                                @endif
+                                                <td style="font-size:13px;">{{$appointment->remarks}}</td>
+                                                <td style="font-size:13px;">{{$appointment->Enquiry_Appointment->phone}}</td>
+                                                <td style="font-size:13px;">{{$appointment->Enquiry_Appointment->email}}</td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('EnquiryAppointment.edit', $appointment->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('EnquiryAppointment.destroy', $appointment->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-topline-aqua">
+                            <div class="card-head">
+                                <header>Today's Applicant Appointment Detail Table</header>
+
+                            </div>
+                            <div class="card-body ">
+                                <div class="table-scrollable">
+                                    <table id="example1" class="display" style="width:100%;">
+                                        <thead>
+                                        <tr>
+                                            <th style="font-size:13px;">Applicant</th>
+                                            <th style="font-size:13px;">Appointment Date</th>
+                                            <th style="font-size:13px;">Appointment Time</th>
+                                            <th style="font-size:13px; ">Appointment With</th>
+                                            <th style="font-size:13px;">Remarks</th>
+                                            <th style="font-size:13px;">Applicant's Contact No.</th>
+                                            <th style="font-size:13px;">APPLICANT'S Email</th>
+                                            @if(Auth::user()->role=='Admin')
+                                                <th style="font-size:13px;">Action</th>
+                                            @endif
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($todaysApplicantAppointment as $appointment)
+                                            <tr>
+                                                <td style="font-size:13px;"><a
+                                                            href="{{route('ApplicantDetail',$appointment->applicant_id)}}">{{$appointment->Applicant_Appointment->first_name}} {{$appointment->Applicant_Appointment->middle_name}} {{$appointment->Applicant_Appointment->last_name}}</a>
+                                                </td>
+                                                <td style="font-size:13px;">{{$appointment->date}}</td>
+                                                <td style="font-size:13px;">{{date('h:i A',strtotime($appointment->time))}}</td>
+                                                @if(Auth::user()->id==$appointment->appointment_with)
+                                                    <td>You</td>
+                                                @else
+                                                    <td>{{$appointment->Applicant_Admin->name}}</td>
+                                                @endif
+                                                <td style="font-size:13px;">{{$appointment->remarks}}</td>
+                                                <td style="font-size:13px;">{{$appointment->Applicant_Appointment->phone}}</td>
+                                                <td style="font-size:13px;">{{$appointment->Applicant_Appointment->email}}</td>
+                                                @if(Auth::user()->role=='Admin')
+                                                    <td class="text-left">
+                                                        <form action="{{ route('ApplicantAppointment.edit', $appointment->id)}}"
+                                                              method="GET"
+                                                              style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('PUT')}}
+                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('ApplicantAppointment.destroy', $appointment->id)}}"
+                                                              method="post" style="display: inline-block">
+                                                            {{csrf_field()}}
+                                                            {{method_field('DELETE')}}
+                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                @endif
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
