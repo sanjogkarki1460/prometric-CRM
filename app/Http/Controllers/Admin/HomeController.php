@@ -8,6 +8,8 @@ use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use App\Admin\SMS;
 use App\Admin\Appointment;
+use App\Admin\ApplicantAppointment;
+use App\Admin\EnquiryAppointment;
 use Auth;
 use Carbon\Carbon;
 
@@ -16,13 +18,17 @@ class HomeController extends Controller
     protected $applicant = null;
     protected $enquiry = null;
     protected $sms = null;
+    private $applicantappointment=null;
 
 
-    public function __construct(Applicant $applicant, Enquiry $enquiry, SMS $sms)
+    public function __construct(Applicant $applicant, Enquiry $enquiry, SMS $sms,ApplicantAppointment $applicantappointment
+    ,EnquiryAppointment $enquiryappointment)
     {
         $this->applicant = $applicant;
         $this->enquiry = $enquiry;
         $this->sms = $sms;
+        $this->applicantappointment = $applicantappointment;
+        $this->enquiryappointment = $enquiryappointment;
     }
     public function index(){
         $user = Auth::user()->id;
