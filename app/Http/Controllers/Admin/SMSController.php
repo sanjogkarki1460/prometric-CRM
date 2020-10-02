@@ -30,6 +30,9 @@ class SMSController extends Controller
 
     public function EnquirySMS(Request $request)
     {
+        if($request->id){
+            $id=$request->id;
+        }
         $query = $this->enquiry->get();
         if (isset($request->category)) {
             $query = $query->where('Category_id', $request->category);
@@ -42,7 +45,14 @@ class SMSController extends Controller
         }
         $enquiry = $query;
         $category = $this->category->get();
-        return view('Admin.SMS.enquirysms')->with('enquiry', $enquiry)->with('category', $category);
+        if($request->id){
+            return view('Admin.SMS.enquirysms')->with('enquiry', $enquiry)->with('category', $category)
+                ->with('id',$id);
+        }
+        else{
+            return view('Admin.SMS.enquirysms')->with('enquiry', $enquiry)->with('category', $category);
+        }
+
 
     }
 
