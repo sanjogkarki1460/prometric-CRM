@@ -380,18 +380,18 @@ class ApplicantController extends Controller
         if (empty($applicant)) {
             return redirect()->back()->with('Error', 'Applicant Not Found Or Already Deleted');
         }
-        $checklist = $this->checkList->where('applicant_id', $id)->get();
-        $education = $this->education1->where('applicant_id', $id)->get();
-        $education2 = $this->education2->where('applicant_id', $id)->get();
-        $education3 = $this->education3->where('applicant_id', $id)->get();
-        $healthlisence = $this->healthLicense1->where('applicant_id', $id)->get();
-        $healthlicense2 = $this->healthlicense2->where('applicant_id', $id)->get();
-        $employment = $this->employment1->where('applicant_id', $id)->get();
-        $employment2 = $this->employment2->where('applicant_id', $id)->get();
-        $employment3 = $this->employment3->where('applicant_id', $id)->get();
-        $employment4 = $this->employment4->where('applicant_id', $id)->get();
-        $employment5 = $this->employment5->where('applicant_id', $id)->get();
-        $progressflow = $this->progressflow->where('applicant_id', $id)->get();
+        $checklist = $this->checkList->where('applicant_id', $id)->first();
+        $education = $this->education1->where('applicant_id', $id)->first();
+        $education2 = $this->education2->where('applicant_id', $id)->first();
+        $education3 = $this->education3->where('applicant_id', $id)->first();
+        $healthlisence = $this->healthLicense1->where('applicant_id', $id)->first();
+        $healthlicense2 = $this->healthlicense2->where('applicant_id', $id)->first();
+        $employment = $this->employment1->where('applicant_id', $id)->first();
+        $employment2 = $this->employment2->where('applicant_id', $id)->first();
+        $employment3 = $this->employment3->where('applicant_id', $id)->first();
+        $employment4 = $this->employment4->where('applicant_id', $id)->first();
+        $employment5 = $this->employment5->where('applicant_id', $id)->first();
+        $progressflow = $this->progressflow->where('applicant_id', $id)->first();
         return view('Admin.Applicant.Detail')->with('applicant', $applicant)->with('checklist', $checklist)
             ->with('education2', $education2)->with('education', $education)->with('education3', $education3)->with('healthlisence', $healthlisence)
             ->with('healthlicense2', $healthlicense2)->with('employment', $employment)->with('employment2', $employment2)
@@ -403,12 +403,12 @@ class ApplicantController extends Controller
     {
         $applicant = $this->applicant->find($id);
         $checklist = $this->checkList->where('applicant_id', $id)->first();
-        $education = $this->education->where('applicant_id', $id)->first();
+        $education = $this->education1->where('applicant_id', $id)->first();
         $education2 = $this->education2->where('applicant_id', $id)->first();
         $education3 = $this->education3->where('applicant_id', $id)->first();
-        $healthlisence = $this->healthlisence->where('applicant_id', $id)->first();
+        $healthlisence = $this->healthLicense1->where('applicant_id', $id)->first();
         $healthlicense2 = $this->healthlicense2->where('applicant_id', $id)->first();
-        $employment = $this->employment->where('applicant_id', $id)->first();
+        $employment = $this->employment1->where('applicant_id', $id)->first();
         $employment2 = $this->employment2->where('applicant_id', $id)->first();
         $employment3 = $this->employment3->where('applicant_id', $id)->first();
         $employment4 = $this->employment4->where('applicant_id', $id)->first();

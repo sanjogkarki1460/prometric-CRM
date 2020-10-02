@@ -217,6 +217,35 @@
                                                                         </button>
                                                                     </form>
                                                                 </div>
+<<<<<<< HEAD
+=======
+                                                                <div class="text-center bg-white ">
+                                                                    <form action="{{ route('ApplicantSMS')}}"
+                                                                          method="post"
+                                                                          style="display: inline-block">
+                                                                        @csrf
+                                                                        <input type="hidden" name="id"
+                                                                               value="{{$applicant->id}}">
+                                                                        <button class=" btn text-success"
+                                                                                style="width: 180px;"
+                                                                                type="submit"> Send SMS
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="text-center bg-white ">
+                                                                    <form action="{{ route('ApplicantMail')}}"
+                                                                          method="post"
+                                                                          style="display: inline-block">
+                                                                        @csrf
+                                                                        <input type="hidden" name="id"
+                                                                               value="{{$applicant->id}}">
+                                                                        <button class=" btn text-default "
+                                                                                style="width: 180px;"
+                                                                                type="submit"> Send Email
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+>>>>>>> a737b6e368bde094576b782a02e3fb792e94c2ae
                                                             </div>
                                                         </div>
                                                     </td>
