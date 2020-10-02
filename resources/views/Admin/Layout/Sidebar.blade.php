@@ -186,12 +186,12 @@
                             <ul class="sub-menu">
                                 <li class="nav-item   ">
                                     <a href="{{route('EnquiryAppointment.index')}}" class="nav-link ">
-                                        <span class="title">Enquiry Applintment</span>
+                                        <span class="title">Enquiry Appointment</span>
                                     </a>
                                 </li>
                                 <li class="nav-item ">
                                     <a href="{{route('ApplicantAppointment.index')}}" class="nav-link ">
-                                        <span class="title">Applicant Applontment</span>
+                                        <span class="title">Applicant Appointment</span>
                                     </a>
                                 </li>
                             </ul>

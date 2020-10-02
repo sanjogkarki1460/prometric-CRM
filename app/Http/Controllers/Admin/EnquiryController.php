@@ -200,10 +200,21 @@ class EnquiryController extends Controller
 
     public function Detail($id)
     {
-        $enquiry = $this->enquiry->find($id);
+        $enquiry = $this->enquiryDetails($id);
         if (empty($enquiry)) {
             return redirect()->back()->with('Error', 'Enquiry list not found');
         }
         return view('Admin.Enquiry.Detail')->with('enquiry', $enquiry);
+    }
+
+    public function pdf($id)
+    {
+        $enquiry = $this->enquiryDetails($id);
+        $pdf = \PDF::loadView('Admin.Enquiry.pdf.pdf',compact('enquiry'));
+        return $pdf->download($enquiry->first_name.'.pdf');
+    }
+    protected function enquiryDetails($id)
+    {
+       return $this->enquiry->find($id);
     }
 }

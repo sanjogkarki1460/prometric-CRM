@@ -33,6 +33,8 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::put('/Enquiry/EligibilityUpdate/{id}','Admin\EnquiryController@EligibilityUpdate')->name('EligibilityUpdate');
     Route::put('/Enquiry/ColorCodeUpdate/{id}','Admin\EnquiryController@ColorUpdate')->name('ColorUpdate');
     Route::get('/EnquiryDetail/{id}','Admin\EnquiryController@Detail')->name('EnquiryDetail');
+    Route::get('/EnquiryDetail/Pdf/{id}','Admin\EnquiryController@pdf')->name('EnquiryDetailPdf');
+
 
     /*Applicant Route*/
     Route::resource('/Applicant','Admin\ApplicantController')->except('show','index','create');
@@ -40,6 +42,7 @@ Route::group(['prefix'=>'admin','middleware'=>['AdminAuth']],function(){
     Route::any('/Applicant/index','Admin\ApplicantController@index')->name('Applicant.index');
     Route::put('/Applicant/ColorCodeUpdate/{id}','Admin\ApplicantController@ColorUpdate')->name('ApplicantColorUpdate');
     Route::get('/ApplicantDetail/{id}','Admin\ApplicantController@Detail')->name('ApplicantDetail');
+    Route::get('ApplicantDetail/Pdf/{id}','Admin\ApplicantController@pdf')->name('ApplicantDetailPdf');
     Route::resource('/CheckList','Admin\CheckListController');
     Route::resource('/Education','Admin\EducationController');
     Route::resource('/Education2','Admin\Education2Controller');

@@ -21,7 +21,7 @@
                         </ol>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="printableArea">
                     <h3 class="text-center text-danger">Applicant's Detail</h3>
                     <hr>
                     <div class="container">
@@ -128,7 +128,6 @@
                             </div>
                         </div>
                         <hr>
-                        @foreach($checklist as $checklist)
                             <div>
                                 <div>
                                     <h3 class="text-center text-danger">Applicant's Document Checklist</h3>
@@ -302,8 +301,6 @@
                                     <div class="col-md-6">
                                     </div>
                                 </div>
-                                @endforeach
-                                @foreach($education as $education)
                                     <hr>
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Education Detail1</h3>
@@ -426,8 +423,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
-                                @foreach($education2 as $education2)
                                     <hr>
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Second Education Detail1</h3>
@@ -550,9 +545,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                               
                                 <hr>
-                                @foreach($education3 as $education3)
                                     <hr>
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Third Education Detail1</h3>
@@ -675,9 +669,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
+                               
                                 <hr>
-                                @foreach($healthlisence as $healthlisence)
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Health License Detail</h3>
                                         <hr>
@@ -735,8 +728,6 @@
                                         </div>
                                     </div>
                                     <hr>
-                                @endforeach
-                                @foreach($healthlicense2 as $healthlicense2)
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Second Health License Detail</h3>
                                         <hr>
@@ -794,8 +785,7 @@
                                         </div>
                                     </div>
                                     <hr>
-                                @endforeach
-                                @foreach($employment as $employment)
+
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Employment Detail</h3>
                                         <hr>
@@ -878,8 +868,7 @@
                                         </div>
                                     </div>
                                     <hr>
-                                @endforeach
-                                @foreach($employment2 as $employment2)
+                        
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Second Employment Detail</h3>
                                         <hr>
@@ -962,8 +951,7 @@
                                         </div>
                                     </div>
                                     <hr>
-                                @endforeach
-                                @foreach($employment3 as $employment3)
+
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Third Employment Detail</h3>
                                         <hr>
@@ -1046,8 +1034,6 @@
                                         </div>
                                     </div>
                                     <hr>
-                                @endforeach
-                                @foreach($employment4 as $employment4)
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Fourth Employment Detail</h3>
                                         <hr>
@@ -1130,8 +1116,7 @@
                                         </div>
                                     </div>
                                     <hr>
-                                @endforeach
-                                @foreach($employment5 as $employment5 )
+
                                     <div>
                                         <h3 class="text-center text-danger">Applicant's Fifth Employment Detail</h3>
                                         <hr>
@@ -1214,8 +1199,6 @@
                                         </div>
                                     </div>
                                     <hr>
-                                @endforeach
-                                @foreach($progressflow as $progressflow)
                                     <div>
                                         <h3 class="text-center text-danger">Applicant Progress Flow Report</h3>
                                         <hr>
@@ -1412,7 +1395,15 @@
                                         </div>
 
                                     </div>
-                                @endforeach
+                                
+                                <div class="row">
+                                    <div class="col-md-8"></div>
+                                    <div class="col-md-4">
+                                        <button class="btn btn-info" onclick="printDiv('printableArea')">Print this page
+                                         </button>
+                                        <a  href="{{route('ApplicantDetailPdf',$applicant->id)}}" class="btn btn-warning" target="_blank">Export Pdf</a>
+                                    </div>
+                                </div>
                             </div>
                     </div>
                 </div>
