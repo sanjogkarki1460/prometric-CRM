@@ -273,7 +273,7 @@
                                                                     @csrf
                                                                     <input type="hidden" name="id"
                                                                            value="{{$enquiry->id}}">
-                                                                    <button class=" btn text-primary "
+                                                                    <button class=" btn text-success"
                                                                             style="width: 180px;"
                                                                             type="submit"> Send SMS
                                                                     </button>
@@ -286,7 +286,7 @@
                                                                     @csrf
                                                                     <input type="hidden" name="id"
                                                                            value="{{$enquiry->id}}">
-                                                                    <button class=" btn text-primary "
+                                                                    <button class=" btn text-default"
                                                                             style="width: 180px;"
                                                                             type="submit"> Send Email
                                                                     </button>
