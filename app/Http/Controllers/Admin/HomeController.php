@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
 use App\Admin\SMS;
+use App\Admin\Appointment;
+use Auth;
 
 class HomeController extends Controller
 {
     protected $applicant = null;
     protected $enquiry = null;
     protected $sms = null;
+
 
     public function __construct(Applicant $applicant, Enquiry $enquiry, SMS $sms)
     {
@@ -21,6 +24,7 @@ class HomeController extends Controller
         $this->sms = $sms;
     }
     public function index(){
+        $user = Auth::user()->id;
         $month=date('m');
         $enquiry = count($this->enquiry->get());
         $applicant = count($this->applicant->get());

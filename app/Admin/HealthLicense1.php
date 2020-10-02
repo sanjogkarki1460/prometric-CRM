@@ -4,7 +4,7 @@ namespace App\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HealthLisence extends Model
+class HealthLicense1 extends Model
 {
     protected $fillable=['applicant_id', 'professional_designation' , 'issuing_authority_name' , 'issuing_authority_country',
         'issuing_authority_city' , 'license_conferred_date' , 'license_expiry_date' , 'license_type' , 'license_number' ,
@@ -14,5 +14,3 @@ class HealthLisence extends Model
         return $this->belongsTO('App\Admin\Applicant','applicant_id');
     }
 }
-
-

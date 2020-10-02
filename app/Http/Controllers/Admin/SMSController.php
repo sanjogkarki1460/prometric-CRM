@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Admin\Applicant;
 use App\Admin\Enquiry;
-use App\Admin\SMS;
+use App\Admin\sms;
 use App\Admin\Category;
 use Thebikramlama\Sparrow\Sparrow;
 use Illuminate\Support\Facades\Session;
@@ -19,7 +19,7 @@ class SMSController extends Controller
     protected $sms = null;
     protected $category = null;
 
-    public function __construct(Applicant $applicant, Enquiry $enquiry, SMS $sms,Category $category)
+    public function __construct(Applicant $applicant, Enquiry $enquiry, sms $sms, Category $category)
     {
         $this->applicant = $applicant;
         $this->enquiry = $enquiry;
@@ -30,17 +30,17 @@ class SMSController extends Controller
 
     public function EnquirySMS(Request $request)
     {
-        $query=$this->enquiry->get();
-        if(isset($request->category)){
-            $query = $query->where('Category_id',$request->category);
+        $query = $this->enquiry->get();
+        if (isset($request->category)) {
+            $query = $query->where('Category_id', $request->category);
         }
-        if(isset($request->color_code)){
-            $query = $query->where('color_code',$request->color_code);
+        if (isset($request->color_code)) {
+            $query = $query->where('color_code', $request->color_code);
         }
-        if(isset($request->eligibility)){
-            $query = $query->where('eligibility',$request->eligibility);
+        if (isset($request->eligibility)) {
+            $query = $query->where('eligibility', $request->eligibility);
         }
-        $enquiry=$query;
+        $enquiry = $query;
         $category = $this->category->get();
         return view('Admin.SMS.enquirysms')->with('enquiry', $enquiry)->with('category', $category);
 
@@ -48,17 +48,17 @@ class SMSController extends Controller
 
     public function ApplicantSMS(Request $request)
     {
-        $query=$this->applicant->get();
-        if(isset($request->category)){
-            $query = $query->where('applicant_category',$request->category);
+        $query = $this->applicant->get();
+        if (isset($request->category)) {
+            $query = $query->where('applicant_category', $request->category);
         }
-        if(isset($request->color_code)){
-            $query = $query->where('color_code',$request->color_code);
+        if (isset($request->color_code)) {
+            $query = $query->where('color_code', $request->color_code);
         }
-        if(isset($request->status)){
-            $query = $query->where('status',$request->status);
+        if (isset($request->status)) {
+            $query = $query->where('status', $request->status);
         }
-        $applicant=$query;
+        $applicant = $query;
         $category = $this->category->get();
         return view('Admin.SMS.applicantsms')->with('applicant', $applicant)->with('category', $category);
     }
@@ -76,12 +76,12 @@ class SMSController extends Controller
             return redirect()->back();
 
         }
-            foreach ($request->phone_number as $item => $v)
-                SMS::create([
-                    'user_type' => $request->user_type,
-                    'message' => $request->message,
-                    'phone_number' => $request->phone_number[$item],
-                ]);
+        foreach ($request->phone_number as $item => $v)
+            sms::create([
+                'user_type' => $request->user_type,
+                'message' => $request->message,
+                'phone_number' => $request->phone_number[$item],
+            ]);
         $number = array();
         foreach ($request->phone_number as $phone_number) {
 

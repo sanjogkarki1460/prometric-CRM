@@ -4,7 +4,7 @@ namespace App\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Education extends Model
+class Education1 extends Model
 {
     protected $fillable=['authority_name', 'authority_address' , 'authority_city', 'authority_state' , 'authority_country',
         'authority_phone_type', 'authority_country_code', 'authority_phone', 'authority_email', 'authority_website',
@@ -16,6 +16,3 @@ class Education extends Model
         return $this->belongsTo('App\Admin\Applicant','applicant_id');
     }
 }
-
-
-
