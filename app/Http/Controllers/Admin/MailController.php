@@ -27,6 +27,9 @@ class MailController extends Controller
 
     public function Enquiry(Request $request)
     {
+        if($request->id){
+            $id=$request->id;
+        }
         $query=$this->enquiry->get();
         if(isset($request->category)){
             $query = $query->where('Category_id',$request->category);
@@ -39,11 +42,20 @@ class MailController extends Controller
         }
         $enquiry=$query;
         $category = $this->category->get();
-        return view('Admin.Mail.EnquiryMail')->with('enquiry', $enquiry)->with('category', $category);
+        if($request->id) {
+            return view('Admin.Mail.EnquiryMail')->with('enquiry', $enquiry)->with('category', $category)
+                ->with('id',$id);
+        }
+        else{
+            return view('Admin.Mail.EnquiryMail')->with('enquiry', $enquiry)->with('category', $category);
+        }
     }
 
-    public function Applicant()
+    public function Applicant(Request $request)
     {
+        if($request->id){
+            $id=$request->id;
+        }
         $query=$this->applicant->get();
         if(isset($request->category)){
             $query = $query->where('applicant_category',$request->category);
@@ -56,7 +68,13 @@ class MailController extends Controller
         }
         $applicant=$query;
         $category = $this->category->get();
-        return view('Admin.Mail.ApplicantMail')->with('applicant',$applicant)->with('category', $category);
+        if($request->id) {
+            return view('Admin.Mail.ApplicantMail')->with('applicant',$applicant)->with('category', $category)
+                ->with('id',$id);
+        }
+        else{
+            return view('Admin.Mail.ApplicantMail')->with('applicant',$applicant)->with('category', $category);
+        }
     }
 
     public function SendMail(Request $request)
