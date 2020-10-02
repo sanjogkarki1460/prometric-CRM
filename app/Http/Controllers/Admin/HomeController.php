@@ -9,6 +9,7 @@ use App\Admin\Enquiry;
 use App\Admin\SMS;
 use App\Admin\Appointment;
 use Auth;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -32,9 +33,12 @@ class HomeController extends Controller
         $enquirythismonth=count($this->enquiry->whereMonth('created_at',$month)->get());
         $enquirySMS=count($this->sms->where('user_type','Enquiry')->get());
         $applicantSMS=count($this->sms->where('user_type','Applicant')->get());
+        $todaysApplicantAppointment=ApplicantAppointment::whereDate('date',Carbon::today())->get();
+        $todaysEnquiryAppointment = EnquiryAppointment::whereDate('date',Carbon::today())->get();
+
         return view('Admin.Home')->with('enquiry',$enquiry)->with('applicant',$applicant)
             ->with('applicantSMS',$applicantSMS)->with('enquirySMS',$enquirySMS)
-            ->with('applicantthismonth',$applicantthismonth)->with('enquirythismonth',$enquirythismonth);
+            ->with('applicantthismonth',$applicantthismonth)->with('enquirythismonth',$enquirythismonth)->with('todaysApplicantAppointment',$todaysApplicantAppointment)->with('todaysEnquiryAppointment',$todaysEnquiryAppointment);
 
     }
 }

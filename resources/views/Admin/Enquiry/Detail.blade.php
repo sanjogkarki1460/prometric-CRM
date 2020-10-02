@@ -118,8 +118,8 @@
                         </div>
                     </div>
                     <div class="col-md-12 row">
-                        <div class="col-md-9"></div>
-                        <div class="col-md-3">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
                             @if(Auth::user()->role=='Admin')
                                 <form action="{{ route('Enquiry.edit',$enquiry->id)}}"
                                       method="GET"
@@ -140,6 +140,7 @@
                             <a href="{{route('Enquiry.index')}}" class="btn btn-primary">Back</a>
                             <button class="btn btn-info" onclick="printDiv('printableArea')">Print this page
                             </button>
+                            <a target="_blank" href="{{ route('EnquiryDetailPdf',$enquiry->id) }}" class="btn btn-warning">Export Pdf</a>
                         </div>
                     </div>
                 </div>
@@ -148,15 +149,3 @@
     </div>
     </div>
 @endsection
-<script>
-    function printDiv(divName) {
-        var printContents = document.getElementById(divName).innerHTML;
-        var originalContents = document.body.innerHTML;
-
-        document.body.innerHTML = printContents;
-
-        window.print();
-
-        document.body.innerHTML = originalContents;
-    }
-</script>

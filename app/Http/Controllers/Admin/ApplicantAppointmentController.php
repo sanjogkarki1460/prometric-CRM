@@ -14,6 +14,7 @@ use Auth;
 use App\Admin\Admin;
 
 
+
 class ApplicantAppointmentController extends Controller
 {
     protected $applicantappointment=null;

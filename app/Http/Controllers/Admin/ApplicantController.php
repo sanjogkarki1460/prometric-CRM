@@ -398,4 +398,24 @@ class ApplicantController extends Controller
             ->with('employment3', $employment3)->with('employment4', $employment4)->with('employment5', $employment5)
             ->with('progressflow', $progressflow);
     }
+
+     public function pdf($id)
+    {
+        $applicant = $this->applicant->find($id);
+        $checklist = $this->checkList->where('applicant_id', $id)->first();
+        $education = $this->education->where('applicant_id', $id)->first();
+        $education2 = $this->education2->where('applicant_id', $id)->first();
+        $education3 = $this->education3->where('applicant_id', $id)->first();
+        $healthlisence = $this->healthlisence->where('applicant_id', $id)->first();
+        $healthlicense2 = $this->healthlicense2->where('applicant_id', $id)->first();
+        $employment = $this->employment->where('applicant_id', $id)->first();
+        $employment2 = $this->employment2->where('applicant_id', $id)->first();
+        $employment3 = $this->employment3->where('applicant_id', $id)->first();
+        $employment4 = $this->employment4->where('applicant_id', $id)->first();
+        $employment5 = $this->employment5->where('applicant_id', $id)->first();
+        $progressflow = $this->progressflow->where('applicant_id', $id)->first();
+        $pdf = \PDF::loadView('Admin.Applicant.pdf.pdf',compact('applicant','checklist','education','education2','education3','healthlisence','healthlicense2','employment','employment2','employment3','employment4','employment5','progressflow'));
+        return $pdf->download($applicant->first_name.'.pdf');
+    }
+
 }

@@ -60,7 +60,19 @@
     <!--select2-->
     <script src="{{asset('assets/plugins/select2/js/select2.js')}}"></script>
     <script src="{{asset('assets/js/pages/select2/select2-init.js')}}"></script>
+    <script>
+    function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
 
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+        location.reload();
+    }
+</script>
 
     <!--select2-->
     <!-- end js include path -->
