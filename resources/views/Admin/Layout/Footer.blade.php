@@ -70,7 +70,18 @@
     }
     $('#applicantAppointment').dataTable();
 </script>
-
+<script type="text/javascript">
+    $('#bookss').select2({
+            placeholder: "Select One..."
+    });
+     $('#person').select2({
+            placeholder: "Select One..."
+    });
+     $('#mcqss').select2({
+            placeholder: "Select One..."
+    });
+</script>
+@stack('scripts')
     <!--select2-->
     <!-- end js include path -->
     </body>

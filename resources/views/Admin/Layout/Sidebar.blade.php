@@ -87,6 +87,66 @@
                             </li>
                             <li class="nav-item start ">
                                 <a class="nav-link nav-toggle">
+                                    <i class="fa fa-book"></i>
+                                    <span class="title">Book</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item   ">
+                                        <a href="{{route('book.create')}}" class="nav-link ">
+                                            <span class="title">Add Book</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item   ">
+                                        <a href="{{route('book.index')}}" class="nav-link ">
+                                            <span class="title">View Book</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item   ">
+                                        <a href="{{route('soldbook.create')}}" class="nav-link ">
+                                            <span class="title">Add Sold Book</span>
+                                        </a>
+                                    </li>
+                                     <li class="nav-item   ">
+                                        <a href="{{route('soldbook.index')}}" class="nav-link ">
+                                            <span class="title">View Sold Book</span>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                             <li class="nav-item start ">
+                                <a class="nav-link nav-toggle">
+                                    <i class="fa fa-book"></i>
+                                    <span class="title">MCQ</span>
+                                    <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item   ">
+                                        <a href="{{route('MCQ.create')}}" class="nav-link ">
+                                            <span class="title">Add MCQ</span>
+                                        </a>
+                                    </li>
+                                   
+                                    <li class="nav-item   ">
+                                        <a href="{{route('MCQ.index')}}" class="nav-link ">
+                                            <span class="title">View MCQ</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item   ">
+                                        <a href="{{route('soldMCQ.create')}}" class="nav-link ">
+                                            <span class="title">Add Sold MCQ</span>
+                                        </a>
+                                    </li>
+                                     <li class="nav-item">
+                                        <a href="{{route('soldMCQ.index')}}" class="nav-link ">
+                                            <span class="title">View Sold MCQ</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item start ">
+                                <a class="nav-link nav-toggle">
                                     <i class="fa fa-calendar-check-o"></i>
                                     <span class="title">Applicant</span>
                                     <span class="arrow"></span>
@@ -278,7 +338,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li
+                        </li>
                     </ul>
                 </div>
             </div>
