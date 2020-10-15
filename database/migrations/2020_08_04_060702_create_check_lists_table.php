@@ -28,6 +28,13 @@ class CreateCheckListsTable extends Migration
             $table->enum('diploma_certificate',['Yes','No'])->default('No') ;
             $table->enum('diploma_transcript',['Yes','No'])->default('No');
             $table->enum('diploma_character_certificate',['Yes','No'])->default('No');
+            $table->enum('bachelor_certificate',['Yes','No'])->default('No');
+            $table->enum('bachelor_character_certificate',['Yes','No'])->default('No');
+            $table->enum('bachelor_transcript',['Yes','No'])->default('No');
+            $table->enum('master_certificate',['Yes','No'])->default('No');
+            $table->enum('master_character_certificate',['Yes','No'])->default('No');
+            $table->enum('master_transcript',['Yes','No'])->default('No');
+            $table->enum('internship_completion_certificate',['Yes','No'])->default('No');
             $table->enum('equivalent_certificate',['Yes','No'])->default('No');
             $table->enum('council_registration_certificate_front',['Yes','No'])->default('No');
             $table->enum('council_registration_certificate_back',['Yes','No'])->default('No');

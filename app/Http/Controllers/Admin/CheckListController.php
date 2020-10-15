@@ -116,6 +116,13 @@ class CheckListController extends Controller
         $diploma_certificate= $request->has('diploma_certificate') ? 'Yes' : 'No';
         $diploma_transcript= $request->has('diploma_transcript') ? 'Yes' : 'No';
         $diploma_character_certificate= $request->has('diploma_character_certificate') ? 'Yes' : 'No';
+        $bachelor_certificate= $request->has('bachelor_certificate') ? 'Yes' : 'No';
+        $bachelor_transcript= $request->has('bachelor_transcript') ? 'Yes' : 'No';
+        $bachelor_character_certificate= $request->has('bachelor_character_certificate') ? 'Yes' : 'No';
+        $master_certificate= $request->has('master_certificate') ? 'Yes' : 'No';
+        $master_transcript= $request->has('master_transcript') ? 'Yes' : 'No';
+        $master_character_certificate= $request->has('master_character_certificate') ? 'Yes' : 'No';
+        $internship_completion_certificate= $request->has('internship_completion_certificate') ? 'Yes' : 'No';
         $equivalent_certificate= $request->has('equivalent_certificate') ? 'Yes' : 'No';
         $council_registration_certificate_front= $request->has('council_registration_certificate_front') ? 'Yes' : 'No';
         $council_registration_certificate_back= $request->has('council_registration_certificate_back') ? 'Yes' : 'No';
@@ -140,6 +147,13 @@ class CheckListController extends Controller
         $checklist->diploma_certificate=$diploma_certificate;
         $checklist->diploma_transcript=$diploma_transcript;
         $checklist->diploma_character_certificate=$diploma_character_certificate;
+        $checklist->bachelor_certificate=$bachelor_certificate;
+        $checklist->bachelor_transcript=$bachelor_transcript;
+        $checklist->bachelor_character_certificate=$bachelor_character_certificate;
+        $checklist->master_certificate=$master_certificate;
+        $checklist->master_transcript=$master_transcript;
+        $checklist->master_character_certificate=$master_character_certificate;
+        $checklist->internship_completion_certificate=$internship_completion_certificate;
         $checklist->equivalent_certificate=$equivalent_certificate;
         $checklist->council_registration_certificate_front=$council_registration_certificate_front;
         $checklist->council_registration_certificate_back=$council_registration_certificate_back;

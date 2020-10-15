@@ -48,18 +48,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Designation</p>
-                                    <select class="form-control form select2" id="designation"
-                                            style="height:34px;width:80%;margin-top: -20px;" name="designation">
-                                        <option value="" selected disabled>Select Designation</option>
-                                        <option @if($employment->designation=='Mr.') selected @endif value="Mr.">Mr.
-                                        </option>
-                                        <option @if($employment->designation=='Mrs') selected @endif value="Mrs">Mrs
-                                        </option>
-                                        <option @if($employment->designation=='Miss') selected @endif value="Miss">
-                                            Miss
-                                        </option>
-                                    </select>
+                                    <p class="ah1" style="margin-top: 20px;">Designation</p>
+                                    <input class="form-control form select2" id="designation"
+                                            style="height:34px;width:80%;margin-top: -20px;" name="designation" value="{{$employment->designation}}">
                                 </div>
                             </div>
                         </div>
@@ -68,7 +59,7 @@
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Nature of Employment</p>
                                     <select class="form-control form select2" id="nature_of_employment"
-                                            style="height:34px;width:80%;margin-top: -20px;"
+                                            style="height:34px;width:80%;"
                                             name="nature_of_employment">
                                         <option value="" selected disabled>select Nature of employment</option>
                                         <option @if($employment->nature_of_employment=='Full Time') selected
@@ -76,9 +67,6 @@
                                         </option>
                                         <option @if($employment->nature_of_employment=='Part Time') selected
                                                 @endif value="Part Time" class="form-control">Part Time
-                                        </option>
-                                        <option @if($employment->nature_of_employment=='Online') selected
-                                                @endif value="Online" class="form-control">Online
                                         </option>
                                     </select>
                                 </div>
@@ -90,7 +78,7 @@
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Issuing Authority
                                         Country</p>
                                     <select class="form-control form select2" id="issuing_authority_country"
-                                            style="height:34px;width:80%;margin-top: -20px;"
+                                            style="height:34px;width:80%;"
                                             name="issuing_authority_country">
                                         <option value="" selected disabled>select issuing authority country</option>
                                         <option @if($employment->issuing_authority_country=='Bangladesh') selected

@@ -81,8 +81,18 @@
                         <input class="form form-control"
                                style="width: 80%;height:37%;margin-top:-15px;"
                                type="hidden" name="color_code" value="{{@$applicantenquiry->color_code}}">
-                        <h2 class="text-center"">Add {{@$applicantenquiry->first_name}} {{@$applicantenquiry->middle_name}} {{@$applicantenquiry->last_name}} to Applicant List</h2>
+                        <h2 class="text-center">Add {{@$applicantenquiry->first_name}} {{@$applicantenquiry->middle_name}} {{@$applicantenquiry->last_name}} to Applicant List</h2>
                         <h3 class="container text-primary" style="text-decoration: underline">Additional Information</h3>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Upload Passport</p>
+                                    <input class="form form-control"
+                                           style="width: 80%;height:37%;margin-top:-15px;"
+                                           type="file" name="pp_photo" placeholder="Enter Passport Docs">
+                                </div>
+                            </div>
+                        </div>
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
@@ -186,7 +196,8 @@
                                         <option value="In Progress">In Progress</option>
                                         <option value="Waiting for test">Waiting for test</option>
                                         <option value="Wating for result">Wating for result</option>
-                                        <option value="Completed">Completed</option>
+                                        <option value="Completed(Pass)">Completed(Pass)</option>
+                                        <option value="Completed(Fail)">Completed(Fail)</option>
                                     </select>
                                 </div>
                             </div>

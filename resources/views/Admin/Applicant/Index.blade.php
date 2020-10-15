@@ -68,9 +68,9 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Photo</th>
                                             <th>Mobile No.</th>
                                             <th>Email</th>
-                                            <th>Passport Docs</th>
                                             <th>Applicant's Profession</th>
                                             <th>Applicant's Status</th>
                                             <th>Color Code</th>
@@ -86,15 +86,16 @@
                                                 <td>
                                                     <a href="{{route('ApplicantDetail',$applicant->id)}}">{{$applicant->first_name}} {{$applicant->middle_name}} {{$applicant->last_name}}</a>
                                                 </td>
+                                                @if($applicant->pp_photo)
+                                                    <td><img
+                                                           src="{{asset('/upload/Applicant/'.$applicant->pp_photo)}}" style="width: 110%">
+                                                        </img>
+                                                    </td>
+                                                @else
+                                                    <td>No Image</td>
+                                                @endif
                                                 <td>{{$applicant->phone}}</td>
                                                 <td>{{$applicant->email}}</td>
-                                                @if($applicant->passport_docs)
-                                                    <td><a target="_blank"
-                                                           href="{{asset('/upload/Applicant/'.$applicant->passport_docs)}}">Passport
-                                                            Document</a></td>
-                                                @else
-                                                    <td>No Document File</td>
-                                                @endif
                                                 <td>{{@$applicant->Category_Applicant->Name}}</td>
                                                 <td>{{@$applicant->status}}</td>
                                                 <td class="text-capitalize">
@@ -200,7 +201,7 @@
                                                                           style="display: inline-block">
                                                                         {{csrf_field()}}
                                                                         {{method_field('PUT')}}
-                                                                        <button class=" btn text-primary "
+                                                                        <button class=" btn text-primary"
                                                                                 style="width: 180px;"
                                                                                 type="submit"> Edit
                                                                         </button>
@@ -217,8 +218,9 @@
                                                                         </button>
                                                                     </form>
                                                                 </div>
-<<<<<<< HEAD
-=======
+                                                                <div class=" text-center bg-white">
+                                                                    <a href="{{route('ApplicantDetail',$applicant->id)}}" class="btn text-dark" style="width: 180px;">View</a>
+                                                                </div>
                                                                 <div class="text-center bg-white ">
                                                                     <form action="{{ route('ApplicantSMS')}}"
                                                                           method="post"
@@ -245,7 +247,6 @@
                                                                         </button>
                                                                     </form>
                                                                 </div>
->>>>>>> a737b6e368bde094576b782a02e3fb792e94c2ae
                                                             </div>
                                                         </div>
                                                     </td>

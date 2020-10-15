@@ -18,6 +18,7 @@ class CreateApplicantsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('middle_name')->nullable();
+            $table->string('pp_photo')->nullable();
             $table->string('email')->nullable();
             $table->string('phone');
             $table->string('maiden_name')->nullable();

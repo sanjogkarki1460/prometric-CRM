@@ -222,7 +222,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Received By</p>
-                                    <input type="number" class="form-control form"
+                                    <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;" name="dhamcq_fee_received_by"
                                            placeholder="Enter Received By" value="{{$progressflow->dhamcq_fee_received_b}}">
                                     </input>
@@ -490,7 +490,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Dataflow Email</p>
-                                    <input type="email" class="form-control form"
+                                    <input type="text" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
                                            value="{{$progressflow->dataflow_email}}" name="dataflow_email"
                                            placeholder="Enter Dataflow Email">
@@ -537,11 +537,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">DHA Exam Eligibility Letter</p>
-                                    <input type="email" class="form-control form"
+                                    <p class="ah1" style="margin-top: 20px;">Eligibility Date</p>
+                                    <input type="date" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
-                                           value="{{$progressflow->dha_exam_eligibility_id}}" name="dha_exam_eligibility_id"
-                                           placeholder="Enter DHA Exam Eligibility Id">
+                                           value="{{$progressflow->eligibility_date}}" name="eligibility_date"
+                                           placeholder="Enter Eligibility Date">
                                     </input>
                                 </div>
                             </div>
@@ -549,11 +549,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;">Eligibility Date</p>
-                                    <input type="date" class="form-control form"
+                                    <p class="ah1" style="margin-top: 20px;">DHA Exam Eligibility Letter</p>
+                                    <input type="email" class="form-control form"
                                            style="height:34px;width:80%;margin-top: -20px;"
-                                           value="{{$progressflow->eligibility_date}}" name="eligibility_date"
-                                           placeholder="Enter Eligibility Date">
+                                           value="{{$progressflow->dha_exam_eligibility_id}}" name="dha_exam_eligibility_id"
+                                           placeholder="Enter DHA Exam Eligibility Id">
                                     </input>
                                 </div>
                             </div>
@@ -668,7 +668,7 @@
                         placeholder: "Select a Mode of Payment"
                     });
                     $('#confirmation').select2({
-                        placeholder: "Select a Confrimation Mode"
+                        placeholder: "Select a Conformation Mode"
                     });
                     $('#result').select2({
                         placeholder: "Select a Result"

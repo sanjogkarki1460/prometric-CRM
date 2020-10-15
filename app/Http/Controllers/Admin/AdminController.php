@@ -49,8 +49,8 @@ class AdminController extends Controller
         if ($request->password != $request->confirm_password) {
             return redirect()->back()->with('Error', 'Password and confirm password does not match');
         } else {
-            $password = Hash::make($request->password);
-            $data['password'] = $password;
+                $password = Hash::make($request->password);
+                $data['password'] = $password;
 //        dd($password);
             $this->admin->fill($data);
             $success = $this->admin->save();
@@ -157,7 +157,7 @@ class AdminController extends Controller
         if (Hash::check($current, $old_password)) {
             $user->password = Hash::make($new_pwd);
             $user->update();
-            return redirect()->route('admin.home')->with('success', 'Password Changed Successfully');
+            return redirect()->route('Dashboard')->with('success', 'Password Changed Successfully');
         } else {
             return redirect()->back()->with('Error', 'Current Password Incorrect please try again');
         }

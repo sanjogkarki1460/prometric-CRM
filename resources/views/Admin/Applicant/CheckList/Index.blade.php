@@ -49,6 +49,13 @@
                                             <th style="font-size:10px;">PCL/Diploma Transcript</th>
                                             <th style="font-size:10px;">PCL/Diploma Certificate</th>
                                             <th style="font-size:10px;">PCL/Diploma Character Certificate</th>
+                                            <th style="font-size:10px;">Bachelor Transcript</th>
+                                            <th style="font-size:10px;">Bachelor Certificate</th>
+                                            <th style="font-size:10px;">Bachelor Character Certificate</th>
+                                            <th style="font-size:10px;">Master Transcript</th>
+                                            <th style="font-size:10px;">Master Certificate</th>
+                                            <th style="font-size:10px;">Master Character Certificate</th>
+                                            <th style="font-size:10px;">Internship Completion Certificate</th>
                                             <th style="font-size:10px;">Equivalent Certificate</th>
                                             <th style="font-size:10px;">Council Registration Certificate Front</th>
                                             <th style="font-size:10px;">Council Registration Certificate Back</th>
@@ -194,6 +201,83 @@
                                                     </td>
                                                 @endif
                                                 @if($checklist->diploma_character_certificate=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->bachelor_transcript=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->bachelor_certificate=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->bachelor_character_certificate=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->master_transcript=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->master_certificate=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->master_character_certificate=='Yes')
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" checked="" disabled=""></div>
+                                                    </td>
+                                                @else()
+                                                    <td>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" disabled=""></div>
+                                                    </td>
+                                                @endif
+                                                @if($checklist->internship_completion_certificate=='Yes')
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox" checked="" disabled=""></div>
@@ -351,6 +435,10 @@
                                                             {{csrf_field()}}
                                                             {{method_field('DELETE')}}
                                                             <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                            </button>
+                                                        </form>
+                                                        <form action="{{ route('ApplicantDetail', $checklist->id)}}" style="display: inline-block">
+                                                            <button class="btn btn-success btn-sm" type="submit">View
                                                             </button>
                                                         </form>
                                                     </td>

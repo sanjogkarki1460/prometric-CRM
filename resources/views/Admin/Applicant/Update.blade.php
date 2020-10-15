@@ -58,6 +58,17 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
+                                    <p class="ah1" style="margin-top: 20px;">Upload Passport</p>
+                                    <input class="form form-control"
+                                           style="width: 80%;height:37%;margin-top:-15px;"
+                                           type="file" name="pp_photo" placeholder="Enter Passport Docs">
+                                </div>
+                            </div>
+                            <img src="{{ asset('/Upload/Applicant/'.$applicant->pp_photo) }}" style="width: 10%"/>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;">Maiden Name</p>
                                     <input class="form form-control"
                                            style="width: 80%;height:34px;margin-top:-15px;"
@@ -158,7 +169,8 @@
                                         <option @if($applicant->status=='In Progress')  selected @endif value="In Progress">In Progress</option>
                                         <option @if($applicant->status=='Waiting for test')  selected @endif value="Waiting for test">Waiting for test</option>
                                         <option @if($applicant->status=='Wating for result') selected @endif  value="Wating for result">Wating for result</option>
-                                        <option @if($applicant->status=='Completed') selected @endif  value="Completed">Completed</option>
+                                        <option @if($applicant->status=='Completed(Pass)') selected @endif  value="Completed(Pass)">Completed(Pass)</option>
+                                        <option @if($applicant->status=='Completed(Fail)') selected @endif  value="Completed(Fail)">Completed(Fail)</option>
                                     </select>
                                 </div>
                             </div>

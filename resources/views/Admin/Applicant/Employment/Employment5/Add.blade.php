@@ -44,14 +44,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Designation</p>
-                                    <select class="form-control form select2" id="designation"
-                                            style="height:34px;width:80%;margin-top: -20px;" name="designation">
-                                        <option value="" selected disabled>select Designation</option>
-                                        <option value="Mr.">Mr.</option>
-                                        <option value="Mrs">Mrs</option>
-                                        <option value="Miss">Miss</option>
-                                    </select>
+                                    <p class="ah1" style="margin-top: 20px;">Designation</p>
+                                    <input type="text" class="form-control form select2" id="designation"
+                                           style="height:34px;width:80%;margin-top: -20px;" name="designation">
                                 </div>
                             </div>
                         </div>
@@ -60,12 +55,11 @@
                                 <div class="col-md-12">
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Nature of Employment</p>
                                     <select class="form-control form select2" id="nature_of_employment"
-                                            style="height:34px;width:80%;margin-top: -20px;"
+                                            style="height:34px;width:80%;"
                                             name="nature_of_employment">
                                         <option value="" selected disabled>select Nature of employment</option>
                                         <option value="Full Time" class="form-control">Full Time</option>
                                         <option value="Part Time" class="form-control">Part Time</option>
-                                        <option value="Online" class="form-control">Online</option>
                                     </select>
                                 </div>
                             </div>
@@ -76,7 +70,7 @@
                                     <p class="ah1" style="margin-top: 20px;margin-bottom: 2px;">Issuing Authority
                                         Country</p>
                                     <select class="form-control form select2" id="issuing_authority_country"
-                                            style="height:34px;width:80%;margin-top: -20px;"
+                                            style="height:34px;width:80%;"
                                             name="issuing_authority_country">
                                         <option value="" selected disabled>select issuing authority country</option>
                                         <option value="Bangladesh" class="form-control">Bangladesh</option>

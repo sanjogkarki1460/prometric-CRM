@@ -70,6 +70,27 @@
                                     <label class="control-label">PCL/Diploma Character Certificate</label>
                                     <input type="checkbox" @if($checklist->diploma_character_certificate=='Yes') checked @endif name="diploma_character_certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
+                                    <label class="control-label">Bachelor Transcript</label>
+                                    <input type="checkbox" @if($checklist->bachelor_transcript=='Yes') checked @endif name="bachelor_transcript" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label">Bachelor Certificate</label>
+                                    <input type="checkbox" @if($checklist->bachelor_certificate=='Yes') checked @endif name="bachelor_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label">Bachelor Character Certificate</label>
+                                    <input type="checkbox" @if($checklist->bachelor_character_certificate=='Yes') checked @endif name="bachelor_character_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label">Master Transcript</label>
+                                    <input type="checkbox" @if($checklist->master_transcript=='Yes') checked @endif name="master_transcript" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label">Master Certificate</label>
+                                    <input type="checkbox" @if($checklist->master_certificate=='Yes') checked @endif name="master_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label">Master Character Certificate</label>
+                                    <input type="checkbox" @if($checklist->master_character_certificate=='Yes') checked @endif name="master_character_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label">Internship Completion Certificate</label>
+                                    <input type="checkbox" @if($checklist->internship_completion_certificate=='Yes') checked @endif name="internship_completion_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
                                     <label class="control-label">Equivalent Certificate</label>
                                     <input type="checkbox" @if($checklist->equivalent_certificate=='Yes') checked @endif name="equivalent_certificate" id="a6" value="Yes">
                                     <br>
