@@ -75,21 +75,31 @@
                                                 @endif
                                                 @if(Auth::user()->role=='Admin')
                                                     <td class="text-left">
-                                                        <form action="{{ route('HealthLicense.edit', $healthlisence ->id)}}"
-                                                              method="GET"
-                                                              style="display: inline-block">
-                                                            {{csrf_field()}}
-                                                            {{method_field('PUT')}}
-                                                            <button class="btn btn-primary btn-sm" type="submit">Edit
-                                                            </button>
-                                                        </form>
-                                                        <form action="{{ route('HealthLicense.destroy', $healthlisence ->id)}}"
-                                                              method="post" style="display: inline-block">
-                                                            {{csrf_field()}}
-                                                            {{method_field('DELETE')}}
-                                                            <button class="btn btn-danger btn-sm" type="submit">Delete
-                                                            </button>
-                                                        </form>
+                                                        <div>
+                                                            <form action="{{ route('HealthLicense.edit', $healthlisence ->id)}}"
+                                                                  method="GET"
+                                                                  style="display: inline-block">
+                                                                {{csrf_field()}}
+                                                                {{method_field('PUT')}}
+                                                                <button class="btn btn-primary btn-sm" type="submit">Edit
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                        <div class="mt-1">
+                                                            <form action="{{ route('HealthLicense.destroy', $healthlisence ->id)}}"
+                                                                  method="post" style="display: inline-block">
+                                                                {{csrf_field()}}
+                                                                {{method_field('DELETE')}}
+                                                                <button class="btn btn-danger btn-sm" type="submit">Delete
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                        <div class="mt-1">
+                                                            <form action="{{ route('ApplicantDetail', $healthlisence->id)}}" style="display: inline-block">
+                                                                <button class="btn btn-success btn-sm" type="submit">View
+                                                                </button>
+                                                            </form>
+                                                        </div>
                                                     </td>
                                                 @endif
                                             </tr>

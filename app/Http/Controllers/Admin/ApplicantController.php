@@ -109,6 +109,22 @@ class ApplicantController extends Controller
     {
         $data = $request->all();
         $name = $request->first_name . ' ' . $request->middle_name . ' ' . $request->last_name;
+        if ($request->pp_photo) {
+            $path = 'upload/Applicant';
+            if (!File::exists($path)) {
+                File::makeDirectory($path, true, true);
+            }
+            $file_name = $name .'-pp_photo-' . date('Ymdhid') . rand(0, 99) . "." . $request->pp_photo->getClientOriginalExtension();
+
+            $success = $request->pp_photo->move($path, $file_name);
+
+            if ($success) {
+                $data['pp_photo'] = $file_name;
+            } else {
+                $data['pp_photo'] = null;
+            }
+
+        }
         if ($request->passport_docs) {
             $path = 'upload/Applicant';
             if (!File::exists($path)) {
@@ -188,6 +204,24 @@ class ApplicantController extends Controller
         }
         $name = $request->first_name . ' ' . $request->middle_name . ' ' . $request->last_name;
         $data = $request->all();
+        if ($request->pp_photo) {
+            $image_path = 'upload/Applicant/'.$applicant->pp_photo;
+            if (File::exists($image_path)) {
+                $delete = File::delete($image_path);
+            }
+            $path = 'upload/Applicant/';
+            if (!File::exists($path)) {
+                File::makeDirectory($path, true, true);
+            }
+            $file_name = $name . '-pp_photo-' . date('Ymdhid') . rand(0, 99) . "." . $request->pp_photo->getClientOriginalExtension();
+            $success = $request->pp_photo->move($path, $file_name);
+
+            if ($success) {
+                $data['pp_photo'] = $file_name;
+            } else {
+                $data['pp_photo'] = null;
+            }
+        }
         if ($request->passport_docs) {
             $image_path = 'upload/Applicant/'.$applicant->passport_docs;
             if (File::exists($image_path)) {
@@ -248,6 +282,10 @@ class ApplicantController extends Controller
         $image_path = 'upload/Applicant/' . $applicant->passport_docs;
         if (File::exists($image_path)) {
             $delete = File::delete($image_path);
+        }
+        $pp_photo = 'upload/Applicant/' . $applicant->pp_photo;
+        if (File::exists($pp_photo)) {
+            $delete = File::delete($pp_photo);
         }
         $success = $applicant->delete();
         $checkList = $this->checkList->where('applicant_id', $id)->get();

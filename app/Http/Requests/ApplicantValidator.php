@@ -27,6 +27,7 @@ class ApplicantValidator extends FormRequest
             'first_name'=>'required',
             'last_name'=>'required',
             'middle_name'=>'',
+            'pp_image'=>'',
             'email'=>'',
             'phone'=>'required',
             'maiden_name'=>'',

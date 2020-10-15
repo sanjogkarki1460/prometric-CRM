@@ -261,6 +261,10 @@
                                                                 </div>
                                                             @endif
                                                             <div class=" text-center bg-white">
+                                                                <a href="{{route('EnquiryDetail',$enquiry->id)}}"
+                                                                   class="btn text-dark" style="width: 180px;">View</a>
+                                                            </div>
+                                                            <div class=" text-center bg-white">
                                                                 <a class=" btn text-primary "
                                                                    style="width: 180px;"
                                                                    href="{{route('AddTOApplicant',$enquiry->id)}}">Add

@@ -82,6 +82,27 @@
                                     <label class="control-label" for="name">PCL/Diploma Character Certificate</label>
                                     <input type="checkbox" name="diploma_character_certificate" class="toggleswitch" id="a2" value="Yes">
                                     <br>
+                                    <label class="control-label" for="name">Bachelor Transcript</label>
+                                    <input type="checkbox" name="bachelor_transcript" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Bachelor Certificate</label>
+                                    <input type="checkbox" name="bachelor_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Bachelor Character Certificate</label>
+                                    <input type="checkbox" name="bachelor_character_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Master Transcript</label>
+                                    <input type="checkbox" name="master_transcript" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Master Certificate</label>
+                                    <input type="checkbox" name="master_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Master Character Certificate</label>
+                                    <input type="checkbox" name="master_character_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
+                                    <label class="control-label" for="name">Internship Completion Certificate</label>
+                                    <input type="checkbox" name="internship_completion_certificate" class="toggleswitch" id="a2" value="Yes">
+                                    <br>
                                     <label class="control-label" for="name">Equivalent Certificate</label>
                                     <input type="checkbox" name="equivalent_certificate" id="a6" value="Yes">
                                     <br>
