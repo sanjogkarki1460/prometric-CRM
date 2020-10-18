@@ -18,6 +18,7 @@ class CreateSoldmcqsTable extends Migration
             $table->unsignedInteger('mcqId');
             $table->unsignedInteger('enquiryId');
             $table->integer('totalAmount');
+            $table->date('date');
             $table->timestamps();
         });
     }

@@ -45,6 +45,10 @@
                                 <input type="number" value="{{@$mcq->price ?? old('price')}}" name="price" class="form-control" placeholder="Price">
                             </div>
                             <div class="form-group">
+                                <label class="control-label">Available</label>
+                                <input type="checkbox" name="status" value="1" @if(isset($mcq)) {{$mcq->status==1 ? 'checked' : ''}} @endif>
+                            </div>
+                            <div class="form-group">
                                 <button class="btn btn-primary">{{isset($mcq) ? 'Edit' : 'Add'}}</button>
                             </div>
                         </div>
