@@ -17,15 +17,6 @@ class MCQ extends Model
 
     public function MCQStore($data)
     {
-    	$data['status']=$this->status($data['noofsets']);
     	self::create($data);
-    }
-
-    public function status($noofset)
-    {
-    	if($noofset<=0)
-    		return $data['status']=0;
-    	else
-    		return $data['status']=1;
     }
 }

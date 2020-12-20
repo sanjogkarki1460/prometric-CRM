@@ -34,7 +34,8 @@ class SoldController extends Controller
     	$data=$request->validate([
     		'bookId'=>'required',
     		'enquiryId'=>'required',
-    		'totalAmount'=>'required'
+    		'totalAmount'=>'required',
+            'date'=>'required'
     	]);
     	
 
@@ -46,6 +47,10 @@ class SoldController extends Controller
     	if($book->qty<=0)
     		return redirect()->route('soldbook.create')->with('Error','This book was out of stock');
     	$book->decrement('qty');
+        /*if($book->qty==1)
+        {
+            
+        }*/
     	if($book->qty<=0)
     	{
 

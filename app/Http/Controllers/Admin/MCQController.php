@@ -39,7 +39,7 @@ class MCQController extends Controller
     public function update(MCQ $mcq)
     {
     	$data=$this->validationRequest($mcq->id);
-    	$data['status']=$this->mcq->status($data['noofsets']);
+        $data['status']=isset($data['status']) ? 1 : 0;
     	$mcq->update($data);
     	return redirect()->route('MCQ.index')->with('success','MCQ updated successfully');
     }
@@ -55,7 +55,8 @@ class MCQController extends Controller
     	return request()->validate([
     		'title'=>'required|unique:m_c_q_s,title,'.@$id,
     		'noofsets'=>'required',
-    		'price'=>'required'
+    		'price'=>'required',
+            'status'=>'nullable'
     	]);
     }
 

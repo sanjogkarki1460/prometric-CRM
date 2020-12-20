@@ -35,7 +35,8 @@ class SoldmcqController extends Controller
     	$data=$request->validate([
     		'mcqId'=>'required',
     		'enquiryId'=>'required',
-    		'totalAmount'=>'required'
+    		'totalAmount'=>'required',
+            'date'=>'required'
     	]);
     	
 
@@ -44,18 +45,9 @@ class SoldmcqController extends Controller
     	if($sold>0)
     		return redirect()->route('soldMCQ.create')->with('Error','This MCQ was already sold by him or her');
     	
-    	if($mcq->noofsets<=0)
-    		return redirect()->route('soldMCQ.create')->with('Error','This MCQ was out of stock');
-    	$mcq->decrement('noofsets');
-    	if($mcq->noofsets<=0)
-    	{
-
-    		$status=$this->mcq->status($mcq->noofsets);
-    		$mcq->update(['status'=>$status]);
-    	}
+    	if($mcq->status<=0)
+    		return redirect()->route('soldMCQ.create')->with('Error','This MCQ is not available');
        	$this->soldmcq->soldMCQStore($data);
-
-    	
     	return redirect()->route('soldMCQ.index')->with('success','Sold book added successfully');
     }
 

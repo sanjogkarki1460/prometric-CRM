@@ -57,7 +57,7 @@
                                                     <td>{{$mcq->title}} </td>
                                                      <td>{{$mcq->noofsets}}</td>
                                                      <td>Rs.{{$mcq->price}}</td>
-                                                     <td>@if($mcq->status==1) <span class="green">In Stock</span>@else <span class="red">Out of Stock</span>@endif</td>
+                                                     <td>@if($mcq->status==1) <span class="green">Available</span>@else <span class="red">Not Available</span>@endif</td>
                                                     <td><a href="{{route('MCQ.edit',$mcq->id)}}" class="btn btn-primary">Edit</a>&nbsp;&nbsp;<a class="btn btn-danger" href="{{route('MCQ.delete',$mcq->id)}}">Delete</a></td>
                                                 </tr>
                                             @endforeach

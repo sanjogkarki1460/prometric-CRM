@@ -64,6 +64,10 @@
                                 <input type="number" id="price" name="totalAmount" class="form-control" placeholder="Price" value="{{@$soldmcq->totalAmount ?? old('totalAmount')}}">
                             </div>
                             <div class="form-group">
+                                <label class="control-label">Sold Date</label>
+                                <input type="date" name="date" class="form-control" value="{{@$soldmcq->date ?? old('date')}}">
+                            </div>
+                            <div class="form-group">
                                 <button class="btn btn-primary">{{isset($soldmcq) ? 'Edit Sold Book' : "Add Sold MCQ"}}</button>
                             </div>
                         </div>

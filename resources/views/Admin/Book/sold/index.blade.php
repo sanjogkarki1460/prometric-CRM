@@ -45,6 +45,7 @@
                                             <th>S.No</th>
                                             <th>Name</th>
                                             <th>Book Name</th>
+                                            <th>Sold Date</th>
                                             <th>Total Price</th>
                                            <!--  <th>Action</th> -->
                                         </tr>
@@ -55,6 +56,7 @@
                                                     <td>{{$key+1}}</td>
                                                     <td>{{$sold->enquiry->first_name}} {{$sold->enquiry->middle_name}} {{$sold->enquiry->last_name}}</td>
                                                      <td>{{$sold->book->bookname}}</td>
+                                                     <td>{{date('F d,D Y', strtotime($sold->date))}}</td>
                                                      <td>Rs.{{$sold->totalAmount}}</td>
                                                     <!-- <td><a href="{{route('soldbook.edit',$sold->id)}}" class="btn btn-primary">Edit</a></td> -->
                                                 </tr>

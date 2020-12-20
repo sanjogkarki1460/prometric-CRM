@@ -18,7 +18,7 @@ class CreateMCQSTable extends Migration
             $table->string('title');
             $table->integer('noofsets');
             $table->integer('price');
-            $table->tinyinteger('status');
+            $table->tinyinteger('status')->default(0);
             $table->timestamps();
         });
     }
